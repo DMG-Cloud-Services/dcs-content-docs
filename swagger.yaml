@@ -10423,34 +10423,34 @@ responses:
     examples:
       application/vnd.api+json:
         {
-            "data": {
-                "type": "nodes",
-                "id": "urn:adsk.content:node:34c4b87b-76f6-4b88-adf6-0438c7dbe4b0",
-                "memberAccessInfos": [
-                    {
-                        "role": "CREATOR",
-                        "members": [
-                            {
-                                "userId": "1z1jrkfPPZacTkFid1V889lHfDuQzhKf"
-                            },
-                            {
-                                "userId": "S8MNRK2XZXCK2"
-                            }
-                        ]
-                    },
-                    {
-                        "role": "READER",
-                        "members": [
-                            {
-                                "userId": "1z1jrkfPPZacTkFid1V889lHfDuQzhKf"
-                            },
-                            {
-                                "userId": "S8MNRK2XZXCK2"
-                            }
-                        ]
-                    }
+          "data": {
+            "type": "nodes",
+            "id": "urn:adsk.content:node:34c4b87b-76f6-4b88-adf6-0438c7dbe4b0",
+            "memberAccessInfos": [
+              {
+                "role": "CREATOR",
+                "members": [
+                  {
+                      "userId": "1z1jrkfPPZacTkFid1V889lHfDuQzhKf"
+                  },
+                  {
+                      "userId": "S8MNRK2XZXCK2"
+                  }
                 ]
-            }
+              },
+              {
+                "role": "READER",
+                "members": [
+                  {
+                      "userId": "1z1jrkfPPZacTkFid1V889lHfDuQzhKf"
+                  },
+                  {
+                      "userId": "S8MNRK2XZXCK2"
+                  }
+                ]
+              }
+            ]
+          }
         }
 
   content_members:
@@ -10497,37 +10497,37 @@ responses:
     examples:
       application/vnd.api+json:
         {
-            "data": {
-                "type": "policies",
-                "id": "ForgeContentAlphaDB:urn:adsk.content:library:34c4b87b-76f6-4b88-adf6-0438c7dbe4b0:CONTENT_READER",
-                "attributes": {
-                    "new": false,
-                    "Type": "Policy",
-                    "Version": "ACM-1.0",
-                    "Permissions": [
-                        {
-                            "Id": "1",
-                            "Effect": "Allow",
-                            "Subjects": {
-                                "O2User": [
-                                    "1z1jrkfPPZacTkFid1V889lHfDuQzhKf",
-                                    "S8MNRK2XZXCK"
-                                ],
-                                "O2Group": [],
-                                "O2Tenant": []
-                            },
-                            "Action": "CONTENT_READER"
-                        }
-                    ],
-                    "Resources": [
-                        "urn:adsk:dmg:content:library:urn:adsk.content:library:34c4b87b-76f6-4b88-adf6-0438c7dbe4b0:CONTENT_READER"
-                    ],
-                    "Namespace": "ForgeContentAlphaDB"
-                },
-                "relationships": {},
-                "links": {
-                    "self": "https://developer-stg.api.autodesk.com/content/v1/policies/ForgeContentAlphaDB:urn:adsk.content:library:34c4b87b-76f6-4b88-adf6-0438c7dbe4b0:CONTENT_READER"
-                }
-            },
-            "included": []
+          "data": {
+              "type": "policies",
+              "id": "ForgeContentAlphaDB:urn:adsk.content:library:34c4b87b-76f6-4b88-adf6-0438c7dbe4b0:CONTENT_READER",
+              "attributes": {
+                "new": false,
+                "Type": "Policy",
+                "Version": "ACM-1.0",
+                "Permissions": [
+                    {
+                        "Id": "1",
+                        "Effect": "Allow",
+                        "Subjects": {
+                            "O2User": [
+                                "1z1jrkfPPZacTkFid1V889lHfDuQzhKf",
+                                "S8MNRK2XZXCK"
+                            ],
+                            "O2Group": [],
+                            "O2Tenant": []
+                        },
+                        "Action": "CONTENT_READER"
+                    }
+                ],
+                "Resources": [
+                    "urn:adsk:dmg:content:library:urn:adsk.content:library:34c4b87b-76f6-4b88-adf6-0438c7dbe4b0:CONTENT_READER"
+                ],
+                "Namespace": "ForgeContentAlphaDB"
+              },
+              "relationships": {},
+              "links": {
+                  "self": "https://developer-stg.api.autodesk.com/content/v1/policies/ForgeContentAlphaDB:urn:adsk.content:library:34c4b87b-76f6-4b88-adf6-0438c7dbe4b0:CONTENT_READER"
+              }
+          },
+          "included": []
         }
