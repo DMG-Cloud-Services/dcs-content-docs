@@ -1,5 +1,6 @@
-swagger: '2.0'
+swagger: "2.0"
 info:
+  version: 1.0.0
   title: Forge Content API
   description: |
     
@@ -3250,7 +3251,7 @@ info:
           }
       }
     ```
-    rom the response, make a note of the **content id** that you want to use for adding relationship.
+    From the response, make a note of the **content id** that you want to use for adding relationship.
 
     ## Step 5: Create Relationship between Library, Sub Library, Node, and Content
     
@@ -3476,9 +3477,6 @@ info:
     ```
     
     On successful updation of the relationship, the resource provides a 204 response without any content.
-    
-   
-  version: 1.0.0
   
   contact:
     url: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+V1+Proposal
