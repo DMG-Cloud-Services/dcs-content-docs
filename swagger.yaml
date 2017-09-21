@@ -5699,14 +5699,14 @@ paths:
           schema:
             $ref: '#/definitions/json_api_input_new_flag'
             example: {
-	"data": {
-		"type": "flags",
-		"attributes": [{
-			"id": "FDC1FWTJ7JS759Y",
-			"status": "APPROVED"
-		}]
-	}
-}
+              "data": {
+                "type": "flags",
+                "attributes": [{
+                  "id": "FDC1FWTJ7JS759Y",
+                  "status": "APPROVED"
+                }]
+              }
+            }
         responses:
           '204': { $ref: '' } 
       get:
@@ -8461,37 +8461,37 @@ responses:
           type: integer
     examples:
       application/vnd.api+json: {
-	"data": [{
-		"type": "followings",
-		"id": "GK6UJWUMUD73",
-		"attributes": {
-			"firstName": "Dmg",
-			"lastName": "Community",
-			"libraryIds": [""],
-			"followDate": "2017-09-19T08:06:01Z",
-			"followersCount": 1,
-			"followingsCount": 0
-		},
-		"relationships": {
-			"roles": {
-				"links": {
-					"self": "https://developer-stg.api.autodesk.com/content-alpha/v1/followings/GK6UJWUMUD73/relationships/roles",
-					"related": "https://developer-stg.api.autodesk.com/content-alpha/v1/followings/GK6UJWUMUD73/roles"
-				}
-			}
-		},
-		"links": {
-			"self": "https://developer-stg.api.autodesk.com/content-alpha/v1/followings/GK6UJWUMUD73"
-		}
-	}],
-	"included": [],
-	"links": {
-		"prev": "",
-		"next": "",
-		"first": "https://developer-stg.api.autodesk.com/content-alpha/v1/followings?page[number]=1&page[size]=20",
-		"last": "https://developer-stg.api.autodesk.com/content-alpha/v1/followings?page[number]=1&page[size]=20"
-	}
-}
+        "data": [{
+          "type": "followings",
+          "id": "GK6UJWUMUD73",
+          "attributes": {
+            "firstName": "Dmg",
+            "lastName": "Community",
+            "libraryIds": [""],
+            "followDate": "2017-09-19T08:06:01Z",
+            "followersCount": 1,
+            "followingsCount": 0
+          },
+          "relationships": {
+            "roles": {
+              "links": {
+                "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/followings/GK6UJWUMUD73/relationships/roles",
+                "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/followings/GK6UJWUMUD73/roles"
+              }
+            }
+          },
+          "links": {
+            "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/followings/GK6UJWUMUD73"
+          }
+        }],
+        "included": [],
+        "links": {
+          "prev": "",
+          "next": "",
+          "first": "https://developer-stg.api.autodesk.com/content-alpha/v1/followings?page[number]=1&page[size]=20",
+          "last": "https://developer-stg.api.autodesk.com/content-alpha/v1/followings?page[number]=1&page[size]=20"
+        }
+      }
   
   followUser:
     description: Successful response
@@ -8511,27 +8511,27 @@ responses:
           type: integer
     examples:
       {
-	"data": {
-		"type": "follows",
-		"id": "ABCSUUBNHC",
-		"attributes": {
-			"followersCount": 0,
-			"followingsCount": 0
-		},
-		"relationships": {
-			"roles": {
-				"links": {
-					"self": "https://developer-stg.api.autodesk.com/content-alpha/v1/follows/ABCSUUBNHC/relationships/roles",
-					"related": "https://developer-stg.api.autodesk.com/content-alpha/v1/follows/ABCSUUBNHC/roles"
-				}
-			}
-		},
-		"links": {
-			"self": "https://developer-stg.api.autodesk.com/content-alpha/v1/follows/ABCSUUBNHC"
-		}
-	},
-	"included": []
-}
+        "data": {
+          "type": "follows",
+          "id": "ABCSUUBNHC",
+          "attributes": {
+            "followersCount": 0,
+            "followingsCount": 0
+          },
+          "relationships": {
+            "roles": {
+              "links": {
+                "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/follows/ABCSUUBNHC/relationships/roles",
+                "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/follows/ABCSUUBNHC/roles"
+              }
+            }
+          },
+          "links": {
+            "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/follows/ABCSUUBNHC"
+          }
+        },
+        "included": []
+      }
   getCommunityContentComment:
     description: Successful response
     schema:
