@@ -1211,7 +1211,7 @@ info:
     
     From the response, make note of **id** attribute, which is the id of the new library.
     
-    ## Step 2: Crete a new Node in the Library
+    ## Step 2: Create a new Node in the Library
 
     In this step you create a node inside the library that you created in Step 1. For more information about Node, see [Content Model](/en/docs/content/v1/overview/content-model).
     
