@@ -349,20 +349,20 @@ info:
     ### Sample
     
     ```json
-      {
-        "data": {
-          "type": "libraries",
-          "attributes": {
-              "title": "test.library",
-              "description": "Test Library",
-              "tags": "test, library",
-              "language": "EN",
-              "region": "US",
-              "status": "PRIVATE/PUBLISHED"
-          }
+    {
+      "data": {
+        "type": "libraries",
+        "attributes": {
+            "title": "test.library",
+            "description": "Test Library",
+            "tags": "test, library",
+            "language": "EN",
+            "region": "US",
+            "status": "PRIVATE/PUBLISHED"
         }
       }
-      ```
+    }
+    ```
     
     ##<a name="sublibrary-entity-attributes"></a>Sub Library Entity Attributes
     
@@ -374,21 +374,21 @@ info:
     
     ### Sample
     
-      ```json
-        {
-          "data": {
-            "type": "subLibraries",
-            "attributes": {
-              "title": "test.subLibrary",
-              "description": "Test Sub Library",
-              "tags": "test, sub library",
-              "language": "EN",
-              "region": "US",
-              "status": "PRIVATE/PUBLISHED"
-            }
-          }
+    ```json
+    {
+      "data": {
+        "type": "subLibraries",
+        "attributes": {
+          "title": "test.subLibrary",
+          "description": "Test Sub Library",
+          "tags": "test, sub library",
+          "language": "EN",
+          "region": "US",
+          "status": "PRIVATE/PUBLISHED"
         }
-      ```
+      }
+    }
+    ```
     
     ##<a name="node-entity-attributes"></a>Node Entity Attributes
     
@@ -401,19 +401,19 @@ info:
     ### Sample
     
     ```json
-      {
-        "data": {
-          "type": "nodes",
-          "attributes": {
-            "title": "test.node",
-            "description": "Test Node",
-            "tags": "test, node",
-            "language": "EN",
-            "region": "US",
-            "schemaFamily": "contents:autodesk.mdb.alpha:materialAM-1.0.0"
-          }
+    {
+      "data": {
+        "type": "nodes",
+        "attributes": {
+          "title": "test.node",
+          "description": "Test Node",
+          "tags": "test, node",
+          "language": "EN",
+          "region": "US",
+          "schemaFamily": "contents:autodesk.mdb.alpha:materialAM-1.0.0"
         }
       }
+    }
     ```
     
     ##<a name="content-entity-attributes"></a>Content Entity Attributes
@@ -431,71 +431,71 @@ info:
       
     ### Sample
     
-      ```json
-        {
-            "data": {
-            "type": "contents",
-            "attributes": {
-                "description": "contents",
-                "tags": "tags",
-                "title": "FormLabs Form 2 PreForm",
-                "region": "US",
-                "language": "EN",
-                "license": "Apache License 2.0",
-                "status": "draft",
-                "extension": {
-                    "type": "contents:autodesk.mdb.alpha:machineAM",
-                    "version": "2.0.0",
-                    "data": {
-                        "displayName": "FormLabs-Form 2",
-                        "manufacturerName": "FormLabs",
-                        "firmwareVersion": "PreForm",
-                        "machinePrice": {
-                            "value": 1500,
-                            "units": "$"
-                        },
-                        "hardwareVersion": "1.0",
-                        "contentReferences": [
-                            {
-                                "contentId": "urn:adsk.content:content:de4e10a1-ca53-4c4a-806c-f7aaf740ec91",
-                                "version": 1
-                            }
-                        ]
-                    }
-                },
-                "files": [
-                    {
-                        "title": "sfo.jpg",
-                        "description": "sfo",
-                        "size": 325729,
-                        "checksum": "0426238196c1109b17754484aedb7bf1496403cc",
-                        "objectKey": "29f54d3d-ec56-4c63-9860-02f18f061d55.sfo.jpg"
-                    }
-                ],
-                "thumbnails": [
-                    {
-                        "title": "sfo.jpg",
-                        "description": "sfo",
-                        "size": 325729,
-                        "checksum": "0426238196c1109b17754484aedb7bf1496403cc",
-                        "objectKey": "29f54d3d-ec56-4c63-9860-02f18f061d55.sfo.jpg",
-                        "width": 1231,
-                        "height": 534
-                    }
-                ]
-            },
-            "relationships": {
-                "nodes": {
-                    "data": [
+    ```json
+    {
+        "data": {
+        "type": "contents",
+        "attributes": {
+            "description": "contents",
+            "tags": "tags",
+            "title": "FormLabs Form 2 PreForm",
+            "region": "US",
+            "language": "EN",
+            "license": "Apache License 2.0",
+            "status": "draft",
+            "extension": {
+                "type": "contents:autodesk.mdb.alpha:machineAM",
+                "version": "2.0.0",
+                "data": {
+                    "displayName": "FormLabs-Form 2",
+                    "manufacturerName": "FormLabs",
+                    "firmwareVersion": "PreForm",
+                    "machinePrice": {
+                        "value": 1500,
+                        "units": "$"
+                    },
+                    "hardwareVersion": "1.0",
+                    "contentReferences": [
                         {
-                            "type": "nodes",
-                            "id": "urn:adsk.content:node:a62a09d5-5135-42df-8ae4-156e4edd1ce5"
+                            "contentId": "urn:adsk.content:content:de4e10a1-ca53-4c4a-806c-f7aaf740ec91",
+                            "version": 1
                         }
                     ]
                 }
+            },
+            "files": [
+                {
+                    "title": "sfo.jpg",
+                    "description": "sfo",
+                    "size": 325729,
+                    "checksum": "0426238196c1109b17754484aedb7bf1496403cc",
+                    "objectKey": "29f54d3d-ec56-4c63-9860-02f18f061d55.sfo.jpg"
+                }
+            ],
+            "thumbnails": [
+                {
+                    "title": "sfo.jpg",
+                    "description": "sfo",
+                    "size": 325729,
+                    "checksum": "0426238196c1109b17754484aedb7bf1496403cc",
+                    "objectKey": "29f54d3d-ec56-4c63-9860-02f18f061d55.sfo.jpg",
+                    "width": 1231,
+                    "height": 534
+                }
+            ]
+        },
+        "relationships": {
+            "nodes": {
+                "data": [
+                    {
+                        "type": "nodes",
+                        "id": "urn:adsk.content:node:a62a09d5-5135-42df-8ae4-156e4edd1ce5"
+                    }
+                ]
             }
         }
-      ```
+    }
+    ```
     
     ##<a name="file-entity-attributes"></a>File Entity Attributes
     
@@ -514,25 +514,25 @@ info:
     
     ### Sample
     
-      ```json
-        {
-          "data": {
-            "type": "contentFiles",
-            "attributes": {
-              "files": [
-                {
-                    "title": "sfo.jpg",
-                    "description": "sfo",
-                    "size": 325729,
-                    "checksum": "0426238196c1109b17754484aedb7bf1496403cc",
-                    "objectKey": "29f54d3d-ec56-4c63-9860-02f18f061d55.sfo.jpg"
-                    "mimeType": "MIMETYPE"
-                }
-              ]
+    ```json
+    {
+      "data": {
+        "type": "contentFiles",
+        "attributes": {
+          "files": [
+            {
+                "title": "sfo.jpg",
+                "description": "sfo",
+                "size": 325729,
+                "checksum": "0426238196c1109b17754484aedb7bf1496403cc",
+                "objectKey": "29f54d3d-ec56-4c63-9860-02f18f061d55.sfo.jpg"
+                "mimeType": "MIMETYPE"
             }
-          }
+          ]
         }
-      ```
+      }
+    }
+    ```
   
     ##<a name="thumbnail-entity-attributes"></a>Thumbnail Entity Attributes
     
@@ -552,13 +552,13 @@ info:
         "attributes": {
           "thumbnails": [
             {
-                "title": "sfo.jpg",
-                "description": "sfo",
-                "size": 325729,
-                "checksum": "0426238196c1109b17754484aedb7bf1496403cc",
-                "objectKey": "29f54d3d-ec56-4c63-9860-02f18f061d55.sfo.jpg",
-                "width": 1231,
-                "height": 534
+              "title": "sfo.jpg",
+              "description": "sfo",
+              "size": 325729,
+              "checksum": "0426238196c1109b17754484aedb7bf1496403cc",
+              "objectKey": "29f54d3d-ec56-4c63-9860-02f18f061d55.sfo.jpg",
+              "width": 1231,
+              "height": 534
             }
           ]
         }
@@ -582,30 +582,30 @@ info:
     
     ### Sample
     
-      ```json
-        {
-          "data": {
-            "type": "contents",
-            "attributes": {
-              "type": "VIDEO",
-              "references": [
-                {
-                    "id": "12345",
-                    "title": "title",
-                    "description": "description",
-                    "url": "https://www.youtube.com/watch?v=GKSRyLdjsPA"
-                },
-                {
-                    "id": "568976",
-                    "title": "title",
-                    "description": "description",
-                    "url": "<iframe width='854' height='480' src='https://www.youtube.com/embed/GKSRyLdjsPA' frameborder='0' allowfullscreen></iframe>"
-                }
-              ]
+    ```json
+    {
+      "data": {
+        "type": "contents",
+        "attributes": {
+          "type": "VIDEO",
+          "references": [
+            {
+                "id": "12345",
+                "title": "title",
+                "description": "description",
+                "url": "https://www.youtube.com/watch?v=GKSRyLdjsPA"
+            },
+            {
+                "id": "568976",
+                "title": "title",
+                "description": "description",
+                "url": "<iframe width='854' height='480' src='https://www.youtube.com/embed/GKSRyLdjsPA' frameborder='0' allowfullscreen></iframe>"
             }
-          }
+          ]
         }
-      ```
+      }
+    }
+    ```
     
     [@tutorials]: <>
     # Step-by-Step Tutorials
@@ -663,67 +663,66 @@ info:
     ### Example
       
     ```shell
-      curl -X POST 
-      -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
-      -H "Accept: application/vnd.api+json" 
-      -H "Content-Type: application/vnd.api+json" 
-      -d
-      '{
-        "data": {
-          "type": "libraries",
-          "attributes": {
-            "title": "MaterialLibrary",
-            "description": "The Library for the Material",
-            "status": "DRAFT",
-            "language": "EN",
-            "region": "US"
-          }
+    curl -X POST 
+    -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
+    -H "Accept: application/vnd.api+json" 
+    -H "Content-Type: application/vnd.api+json" 
+    -d
+    '{
+      "data": {
+        "type": "libraries",
+        "attributes": {
+          "title": "MaterialLibrary",
+          "description": "The Library for the Material",
+          "status": "DRAFT",
+          "language": "EN",
+          "region": "US"
         }
-      }' "https://developer.api.autodesk.com/content/v1/libraries"
-    
+      }
+    }' "https://developer.api.autodesk.com/content/v1/libraries"
     ```
     The resource provides the following response:
       
     ```json
-      {
-        "data": {
-            "type": "libraries",
-            "id": "urn:adsk.content:library:5e9aca82-4675-4542-8d21-bde10c1c2d71",
-            "attributes": {
-                "entityPaths": [
-                    "/urn:adsk.content:library:5e9aca82-4675-4542-8d21-bde10c1c2d71"
-                ],
-                "lastModifiedTime": "2017-07-10T13:24:11Z",
-                "lastModifiedBy": "TGTBKCMEJFW5",
-                "childNodesCount": 0,
-                "description": "The library of the material",
-                "language": "EN",
-                "createdByAppId": "NdlQsCnWddpRB5Os6t0gV5lufz16SMQ2",
-                "title": "MaterialLibrary",
-                "interestedAppIds": [
-                    "NdlQsCnWddpRB5Os6t0gV5lufz16SMQ2"
-                ],
-                "createTime": "2017-07-10T13:24:11Z",
-                "createdBy": "TGTBKCMEJFW5",
-                "region": "US",
-                "status": "draft"
-            },
-            "relationships": {
-                "nodes": {
-                    "links": {
-                        "self": "https://developer-stg.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:5e9aca82-4675-4542-8d21-bde10c1c2d71/relationships/nodes",
-                        "related": "https://developer-stg.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:5e9aca82-4675-4542-8d21-bde10c1c2d71/nodes"
-                    },
-                    "data": []
-                }
-            },
-            "links": {
-                "self": "https://developer-stg.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:5e9aca82-4675-4542-8d21-bde10c1c2d71"
+    {
+      "data": {
+        "type": "libraries",
+        "id": "urn:adsk.content:library:5e9aca82-4675-4542-8d21-bde10c1c2d71",
+        "attributes": {
+            "entityPaths": [
+                "/urn:adsk.content:library:5e9aca82-4675-4542-8d21-bde10c1c2d71"
+            ],
+            "lastModifiedTime": "2017-07-10T13:24:11Z",
+            "lastModifiedBy": "TGTBKCMEJFW5",
+            "childNodesCount": 0,
+            "description": "The library of the material",
+            "language": "EN",
+            "createdByAppId": "NdlQsCnWddpRB5Os6t0gV5lufz16SMQ2",
+            "title": "MaterialLibrary",
+            "interestedAppIds": [
+                "NdlQsCnWddpRB5Os6t0gV5lufz16SMQ2"
+            ],
+            "createTime": "2017-07-10T13:24:11Z",
+            "createdBy": "TGTBKCMEJFW5",
+            "region": "US",
+            "status": "draft"
+        },
+        "relationships": {
+            "nodes": {
+                "links": {
+                    "self": "https://developer-stg.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:5e9aca82-4675-4542-8d21-bde10c1c2d71/relationships/nodes",
+                    "related": "https://developer-stg.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:5e9aca82-4675-4542-8d21-bde10c1c2d71/nodes"
+                },
+                "data": []
             }
         },
-        "included": [],
-        "meta": {}
-      }
+        "links": {
+            "self": "https://developer-stg.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:5e9aca82-4675-4542-8d21-bde10c1c2d71"
+        }
+      },
+      "included": [],
+      "meta": {}
+    }
     ```
     From the response, make note of the **id** attribute, which is the id of the new library.
       
@@ -736,78 +735,77 @@ info:
     ### Example
       
     ```shell
-      curl -X POST 
-      -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
-      -H "Accept: application/vnd.api+json" 
-      -H "Content-Type: application/vnd.api+json" 
-      -d
-      '{
-        "data": {
-          "type": "subLibraries",
-          "attributes": {
-            "title": "MaterialSubLibrary",
-            "description": "The Sub Library for the Material",
-            "status": "DRAFT",
-            "language": "EN",
-            "region": "US"
-          }
-        },
-        "relationships": {
-          "libraries": {
-            "data": [
-              {
-                "type": "libraries",
-                "id": "{Library ID}"
-              }
-            ]
-          }
-        } 
-      }'"https://developer.api.autodesk.com/content/v1/libraries/{libraryid}/subLibraries"
-    
+    curl -X POST 
+    -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
+    -H "Accept: application/vnd.api+json" 
+    -H "Content-Type: application/vnd.api+json" 
+    -d
+    '{
+      "data": {
+        "type": "subLibraries",
+        "attributes": {
+          "title": "MaterialSubLibrary",
+          "description": "The Sub Library for the Material",
+          "status": "DRAFT",
+          "language": "EN",
+          "region": "US"
+        }
+      },
+      "relationships": {
+        "libraries": {
+          "data": [
+            {
+              "type": "libraries",
+              "id": "{Library ID}"
+            }
+          ]
+        }
+      } 
+    }'"https://developer.api.autodesk.com/content/v1/libraries/{libraryid}/subLibraries"
     ```
     The resource provides the following response:
       
     ```json
     {
       "data": {
-          "type": "subLibraries",
-          "id": "urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01",
-          "attributes": {
-              "entityPaths": [
-                  "/urn:adsk.content:library:5f5c7b29-4b9c-4f6d-9326-e7074b34badd/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01"
-              ],
-              "lastModifiedTime": "2017-08-10T08:14:14Z",
-              "createTime": "2017-08-10T08:14:14Z",
-              "createdBy": "TGTBKCMEJFW5",
-              "lastModifiedBy": "TGTBKCMEJFW5",
-              "description": "Test Sub Library",
-              "language": "en",
-              "title": "TestSubLibrary",
-              "region": "US",
-              "status": "private",
-              "tags": "test, sub library"
-          },
-          "relationships": {
-              "libraries": {
-                  "links": {
-                      "self": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01/relationships/libraries",
-                      "related": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01/libraries"
-                  }
-              },
-              "nodes": {
-                  "links": {
-                      "self": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01/relationships/nodes",
-                      "related": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01/nodes"
-                  }
-              }
-          },
-          "links": {
-              "self": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01"
-          }
+        "type": "subLibraries",
+        "id": "urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01",
+        "attributes": {
+            "entityPaths": [
+                "/urn:adsk.content:library:5f5c7b29-4b9c-4f6d-9326-e7074b34badd/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01"
+            ],
+            "lastModifiedTime": "2017-08-10T08:14:14Z",
+            "createTime": "2017-08-10T08:14:14Z",
+            "createdBy": "TGTBKCMEJFW5",
+            "lastModifiedBy": "TGTBKCMEJFW5",
+            "description": "Test Sub Library",
+            "language": "en",
+            "title": "TestSubLibrary",
+            "region": "US",
+            "status": "private",
+            "tags": "test, sub library"
+        },
+        "relationships": {
+            "libraries": {
+                "links": {
+                    "self": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01/relationships/libraries",
+                    "related": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01/libraries"
+                }
+            },
+            "nodes": {
+                "links": {
+                    "self": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01/relationships/nodes",
+                    "related": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01/nodes"
+                }
+            }
+        },
+        "links": {
+            "self": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01"
+        }
       },
       "included": [],
       "meta": {}
-     }
+    }
     ```
     From the response, make note of **id** attribute, which is the id of the new sub library.
     
@@ -824,108 +822,108 @@ info:
     ### Example
       
     ```shell
-      curl -X POST 
-      -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
-      -H "Accept: application/vnd.api+json" 
-      -H "Content-Type: application/vnd.api+json"
-      -d
-      '
-        "data": {
-          "type": "nodes",
-          "attributes": {
-            "title": "MaterialNode",
-            "description": "The node for storing material content",
-            "language": "EN",
-            "tags": "material, content",
-            "region": "US"
+    curl -X POST 
+    -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
+    -H "Accept: application/vnd.api+json" 
+    -H "Content-Type: application/vnd.api+json"
+    -d
+    '{
+      "data": {
+        "type": "nodes",
+        "attributes": {
+          "title": "MaterialNode",
+          "description": "The node for storing material content",
+          "language": "EN",
+          "tags": "material, content",
+          "region": "US"
+        },
+        "relationships": {
+          "libraries": {
+            "data": [
+              {
+                "type": "libraries",
+                "id": "[Library ID]"
+              }
+            ]
           },
-          "relationships": {
-            "libraries": {
-              "data": [
-                {
-                  "type": "libraries",
-                  "id": "[Library ID]"
-                }
-              ]
-            },
-            "subLibraries": {
-              "data": [
-                {
-                  "type": "subLibraries",
-                  "id": "[Sub Library ID]"
-                }
-              ]
-            },
-            "nodes": {
-              "data": [
-                {
-                  "type": "nodes",
-                  "id": "[Node ID]"
-                }
-              ]
-            }
+          "subLibraries": {
+            "data": [
+              {
+                "type": "subLibraries",
+                "id": "[Sub Library ID]"
+              }
+            ]
+          },
+          "nodes": {
+            "data": [
+              {
+                "type": "nodes",
+                "id": "[Node ID]"
+              }
+            ]
           }
         }
-      }' "https://developer-stg.api.autodesk.com/content/v1/libraries/{libraryId}/nodes"
+      }
+    }' "https://developer-stg.api.autodesk.com/content/v1/libraries/{libraryId}/nodes"
     ```
     
     The resource provides the following response:
     
     ```json
-      {
-        "data": {
-          "type": "nodes",
-          "id": "urn:adsk.content:node:fe9bcf2f-9872-4b89-b228-6b6bc47e999d",
-          "attributes": {
-              "entityPaths": [
-                  "/urn:adsk.content:library:e5108ad7-1051-4293-b50f-73958019f779/urn:adsk.content:node:fe9bcf2f-9872-4b89-b228-6b6bc47e999d"
-              ],
-              "lastModifiedTime": "2017-07-31T09:05:45Z",
-              "lastModifiedBy": "TGTBKCMEJFW5",
-              "childNodesCount": 0,
-              "description": "The node for demo creation of the node.",
-              "language": "EN",
-              "title": "DemoNode",
-              "tags": "demo, node, content",
-              "totalChildrenCount": 0,
-              "createTime": "2017-07-31T09:05:45Z",
-              "createdBy": "TGTBKCMEJFW5",
-              "region": "US",
-              "childContentsCount": 0
-          },
-          "relationships": {
-              "libraries": {
-                  "links": {
-                      "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6/relationships/libraries",
-                      "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6/libraries"
-                  }
-              },
-              "contents": {
-                  "links": {
-                      "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6/relationships/contents",
-                      "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6/contents"
-                  },
-                  "data": []
-              },
-              "nodes": {
-                  "links": {
-                      "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6/relationships/nodes",
-                      "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6/nodes"
-                  }
-              },
-              "subLibraries": {
-                  "links": {
-                      "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6/relationships/subLibraries",
-                      "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6/subLibraries"
-                  }
-              }
-          },
-          "links": {
-              "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6"
-          }
+    {
+      "data": {
+        "type": "nodes",
+        "id": "urn:adsk.content:node:fe9bcf2f-9872-4b89-b228-6b6bc47e999d",
+        "attributes": {
+            "entityPaths": [
+                "/urn:adsk.content:library:e5108ad7-1051-4293-b50f-73958019f779/urn:adsk.content:node:fe9bcf2f-9872-4b89-b228-6b6bc47e999d"
+            ],
+            "lastModifiedTime": "2017-07-31T09:05:45Z",
+            "lastModifiedBy": "TGTBKCMEJFW5",
+            "childNodesCount": 0,
+            "description": "The node for demo creation of the node.",
+            "language": "EN",
+            "title": "DemoNode",
+            "tags": "demo, node, content",
+            "totalChildrenCount": 0,
+            "createTime": "2017-07-31T09:05:45Z",
+            "createdBy": "TGTBKCMEJFW5",
+            "region": "US",
+            "childContentsCount": 0
         },
-        "included": []
-      }
+        "relationships": {
+            "libraries": {
+                "links": {
+                    "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6/relationships/libraries",
+                    "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6/libraries"
+                }
+            },
+            "contents": {
+                "links": {
+                    "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6/relationships/contents",
+                    "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6/contents"
+                },
+                "data": []
+            },
+            "nodes": {
+                "links": {
+                    "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6/relationships/nodes",
+                    "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6/nodes"
+                }
+            },
+            "subLibraries": {
+                "links": {
+                    "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6/relationships/subLibraries",
+                    "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6/subLibraries"
+                }
+            }
+        },
+        "links": {
+            "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6"
+        }
+      },
+      "included": []
+    }
     ```
       
     ## Step 4: Create Content in a Node
@@ -949,110 +947,110 @@ info:
     ### Example
       
     ```shell
-      curl -X POST
-      -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
-      -H "Accept: application/vnd.api+json" 
-      -H "Content-Type: application/vnd.api+json"
-      -d
-      '{
-        "data": {
-          "type": "contents",
-          "attributes": {
-            "title": "ContentTitle",
-            "description": "ContentDescription",
-            "tags": "ContentTag",
-            "language": "EN",
-            "region": "US",
-            "status": "draft",
-            "extension": {
-              "type": "contents:autodesk.mdb.alpha:machineAM",
-              "version": "2.0.0",
-              "data": {
-                "facetId": "additiveManufacturing",
-                "displayName": "FormLabs-Form 2",
-                "amTech": "SLA",
-                "manufacturerName": "FormLabs",
-                "modelName": "Form 2",
-                "firmwareVersion": "PreForm",
-                "maxBuildHeight": {
-                    "value": 175,
-                    "units": "cm"
+    curl -X POST
+    -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
+    -H "Accept: application/vnd.api+json" 
+    -H "Content-Type: application/vnd.api+json"
+    -d
+    '{
+      "data": {
+        "type": "contents",
+        "attributes": {
+          "title": "ContentTitle",
+          "description": "ContentDescription",
+          "tags": "ContentTag",
+          "language": "EN",
+          "region": "US",
+          "status": "draft",
+          "extension": {
+            "type": "contents:autodesk.mdb.alpha:machineAM",
+            "version": "2.0.0",
+            "data": {
+              "facetId": "additiveManufacturing",
+              "displayName": "FormLabs-Form 2",
+              "amTech": "SLA",
+              "manufacturerName": "FormLabs",
+              "modelName": "Form 2",
+              "firmwareVersion": "PreForm",
+              "maxBuildHeight": {
+                  "value": 175,
+                  "units": "cm"
+              },
+              "bedSize": {
+                "breadth": {
+                  "value": 50,
+                  "units": "cm"
                 },
-                "bedSize": {
-                  "breadth": {
-                    "value": 50,
-                    "units": "cm"
-                  },
-                  "height": {
-                    "value": 175,
-                    "units": "cm"
-                  },
-                  "length": {
-                    "value": 75,
-                    "units": "cm"
-                  }
+                "height": {
+                  "value": 175,
+                  "units": "cm"
                 },
-                "machinePrice": {
-                  "value": 1500,
-                  "units": "$"
-                },
-                "hardwareVersion": "1.0"
-              }
-            }
-          },
-          "relationships": {
-            "nodes": {
-              "data": [
-                {
-                  "type": "nodes",
-                  "id": "NodeId"
+                "length": {
+                  "value": 75,
+                  "units": "cm"
                 }
-              ]
+              },
+              "machinePrice": {
+                "value": 1500,
+                "units": "$"
+              },
+              "hardwareVersion": "1.0"
             }
           }
+        },
+        "relationships": {
+          "nodes": {
+            "data": [
+              {
+                "type": "nodes",
+                "id": "NodeId"
+              }
+            ]
+          }
         }
-      }' "https://developer-stg.api.autodesk.com/content/v1/libraries/libraryId/contents"
+      }
+    }' "https://developer-stg.api.autodesk.com/content/v1/libraries/libraryId/contents"
     ```
     
     The resource provides the following response:
     
     ```json
-      {
-        "data": {
-            "type": "contents",
-            "id": "urn:adsk.content:content:f1179def-979e-4aad-b017-768c82360194",
-            "attributes": {
-                "entityPaths": [
-                    "/urn:adsk.content:library:5e9aca82-4675-4542-8d21-bde10c1c2d71/urn:adsk.content:node:9c3762f6-c097-4be2-b314-94010c4d26ae/urn:adsk.content:content:f1179def-979e-4aad-b017-768c82360194"
-                ],
-                "lastModifiedTime": "2017-07-18T10:04:13Z",
-                "contentDownloadCount": 0,
-                "lastModifiedBy": "TGTBKCMEJFW5",
-                "description": "ContentDescription",
-                "language": "EN",
-                "title": "ContentTitle",
-                "version": "draft",
-                "tags": "ContentTag",
-                "createTime": "2017-07-18T10:04:13Z",
-                "createdBy": "TGTBKCMEJFW5",
-                "lock": false,
-                "region": "US",
-                "status": "draft"
-            },
-            "relationships": {
-                "nodes": {
-                    "links": {
-                        "self": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.content:content:f1179def-979e-4aad-b017-768c82360194/relationships/nodes",
-                        "related": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.content:content:f1179def-979e-4aad-b017-768c82360194/nodes"
-                    }
-                }
-            },
-            "links": {
-                "self": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.content:content:f1179def-979e-4aad-b017-768c82360194"
-            }
-        },
-        "included": []
-      }
+    {
+      "data": {
+          "type": "contents",
+          "id": "urn:adsk.content:content:f1179def-979e-4aad-b017-768c82360194",
+          "attributes": {
+              "entityPaths": [
+                  "/urn:adsk.content:library:5e9aca82-4675-4542-8d21-bde10c1c2d71/urn:adsk.content:node:9c3762f6-c097-4be2-b314-94010c4d26ae/urn:adsk.content:content:f1179def-979e-4aad-b017-768c82360194"
+              ],
+              "lastModifiedTime": "2017-07-18T10:04:13Z",
+              "contentDownloadCount": 0,
+              "lastModifiedBy": "TGTBKCMEJFW5",
+              "description": "ContentDescription",
+              "language": "EN",
+              "title": "ContentTitle",
+              "version": "draft",
+              "tags": "ContentTag",
+              "createTime": "2017-07-18T10:04:13Z",
+              "createdBy": "TGTBKCMEJFW5",
+              "lock": false,
+              "region": "US",
+              "status": "draft"
+          },
+          "relationships": {
+              "nodes": {
+                  "links": {
+                      "self": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.content:content:f1179def-979e-4aad-b017-768c82360194/relationships/nodes",
+                      "related": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.content:content:f1179def-979e-4aad-b017-768c82360194/nodes"
+                  }
+              }
+          },
+          "links": {
+              "self": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.content:content:f1179def-979e-4aad-b017-768c82360194"
+          }
+      },
+      "included": []
+    }
     ```
       
     ## Step 5: Publish the Content
@@ -1101,34 +1099,34 @@ info:
     The resource provides the following response:
     
     ```json
-      {
-        "data": {
-            "type": "contents",
-            "id": "urn:adsk.wipstg:dm.lineage:PP_zlFyQSAa8GkbiZ55b1w",
-            "attributes": {
-              "lastModifiedTime": "2016-11-22T11:03:17Z",
-              "createTime": "2016-11-22T11:03:17Z",
-              "description": "The library of industrial material",
-              "language": "EN",
-              "title": "Material Library",
-              "region": "US",
-              "version": "draft",
-              "tags": "material, library, industry",
-              "status": "published",
-            },
-            "relationships": {
-              "nodes": {
-                "links": {
-                  "self": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.wipstg:dm.lineage:PP_zlFyQSAa8GkbiZ55b1w/relationships/nodes",
-                  "related": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.wipstg:dm.lineage:PP_zlFyQSAa8GkbiZ55b1w/nodes"
-                }
+    {
+      "data": {
+          "type": "contents",
+          "id": "urn:adsk.wipstg:dm.lineage:PP_zlFyQSAa8GkbiZ55b1w",
+          "attributes": {
+            "lastModifiedTime": "2016-11-22T11:03:17Z",
+            "createTime": "2016-11-22T11:03:17Z",
+            "description": "The library of industrial material",
+            "language": "EN",
+            "title": "Material Library",
+            "region": "US",
+            "version": "draft",
+            "tags": "material, library, industry",
+            "status": "published",
+          },
+          "relationships": {
+            "nodes": {
+              "links": {
+                "self": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.wipstg:dm.lineage:PP_zlFyQSAa8GkbiZ55b1w/relationships/nodes",
+                "related": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.wipstg:dm.lineage:PP_zlFyQSAa8GkbiZ55b1w/nodes"
               }
-            },
-            "links": {
-              "self": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.wipstg:dm.lineage:PP_zlFyQSAa8GkbiZ55b1w"
             }
+          },
+          "links": {
+            "self": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.wipstg:dm.lineage:PP_zlFyQSAa8GkbiZ55b1w"
           }
-      }
+        }
+    }
     ```
     [@tutorials/create-content-in-new-library-without-sublibrary]: <>
     # Create Content in a New Library without Sub Library
