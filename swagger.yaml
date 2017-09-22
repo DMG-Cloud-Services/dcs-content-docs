@@ -28,7 +28,7 @@ info:
     
     ## Getting Started
 
-    The [API Basics](/en/docs/content/v1/overview/basics.rst) section guides you through the process of getting started with the API and explains the main concepts and functionality.
+    The [API Basics](/en/docs/content/v1/overview/basics) section guides you through the process of getting started with the API and explains the main concepts and functionality.
     
     [@overview/basics]: <>
     # API Basics
@@ -52,32 +52,32 @@ info:
     All APIs follow the JSON API resources using similar structure:
     
     ```JSON
-      {
-         "data": {
-          "type": "type",
-          "id": "identifier",
-          "attributes": {
-            "title": " ",
-            "description": " ",
-            "status": " "
-          },
-          "relationships": {
-            "contents": {
-                "links": {},
-                "data": []
-              },
-              "libraries": {
-                "links": {},
-                "data": []
-              },
-              "nodes": {
-                "links": {},
-                "data": []
-              }
-          },
-          "links": {}
-        }
+    {
+       "data": {
+        "type": "type",
+        "id": "identifier",
+        "attributes": {
+          "title": " ",
+          "description": " ",
+          "status": " "
+        },
+        "relationships": {
+          "contents": {
+              "links": {},
+              "data": []
+            },
+            "libraries": {
+              "links": {},
+              "data": []
+            },
+            "nodes": {
+              "links": {},
+              "data": []
+            }
+        },
+        "links": {}
       }
+    }
     ```  
     **Note**: The full representation is omitted for easy understanding.
       
@@ -97,16 +97,16 @@ info:
     For example, here is an example error payload accompanying an HTTP 403, returned because a the user is not authenticated:
     
     ```JSON
-      {
-        "errors": [
-          {
-            "id": "d3f6d37c-a8d1-4dab-8beb-1462d06ef252",
-            "status": "403",
-            "code": "USER_NOT_AUTHENTICATED",
-            "detail": "The user was not authenticated."
-          }
-        ]
-      }
+    {
+      "errors": [
+        {
+          "id": "d3f6d37c-a8d1-4dab-8beb-1462d06ef252",
+          "status": "403",
+          "code": "USER_NOT_AUTHENTICATED",
+          "detail": "The user was not authenticated."
+        }
+      ]
+    }
     ```
     
     ## Status Codes
@@ -616,10 +616,10 @@ info:
     
     ## Create Content in a New Library with Sub Library
       This tutorial explains how to create content in a new library.
-    
+      
     ## Create Content in a New Library without Sub Library
       This tutorial explains how to create content in a new library with sub library.
-    
+      
     ## Create Content in an Existing Library
       This tutorial explains how to create content in an existing library.
       
@@ -2764,63 +2764,63 @@ info:
     The resource provides the following response:
     
     ```json
-      {
-        "data": [
-            {
-                "type": "subLibraries",
-                "id": "urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01",
-                "attributes": {
-                    "entityPaths": [
-                        "/urn:adsk.content:library:5f5c7b29-4b9c-4f6d-9326-e7074b34badd/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01"
-                    ],
-                    "role": "LIBRARY_MANAGER",
-                    "lastModifiedTime": "2017-08-10T08:14:16Z",
-                    "createTime": "2017-08-10T08:14:16Z",
-                    "createdBy": "TGTBKCMEJFW5",
-                    "lastModifiedBy": "TGTBKCMEJFW5",
-                    "description": "Test Sub Library",
-                    "language": "en",
-                    "title": "TestSubLibrary",
-                    "region": "US",
-                    "status": "private",
-                    "tags": "test, sub library"
-                },
-                "relationships": {
-                    "nodes": {
-                        "links": {
-                            "self": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01/relationships/nodes",
-                            "related": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01/nodes"
-                        }
-                    },
-                    "libraries": {
-                        "links": {
-                            "self": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01/relationships/libraries",
-                            "related": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01/libraries"
-                        }
-                    }
-                },
-                "links": {
-                    "self": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01"
-                }
-            }
-        ],
-        "included": [],
-        "meta": {
-            "paginationInfo": {
-                "totalResults": 1,
-                "pageNumber": 1,
-                "totalPages": 1,
-                "pageSize": 20
-            }
-        },
-        "links": {
-            "prev": "",
-            "next": "",
-            "first": "https://developer-stg.api.autodesk.com/content/v1/subLibraries?filter[contents][libraryId]=urn:adsk.content:library:5f5c7b29-4b9c-4f6d-9326-e7074b34badd&page[number]=1&page[size]=20",
-            "last": "https://developer-stg.api.autodesk.com/content/v1/subLibraries?filter[contents][libraryId]=urn:adsk.content:library:5f5c7b29-4b9c-4f6d-9326-e7074b34badd&page[number]=1&page[size]=20"
+    {
+      "data": [
+        {
+          "type": "subLibraries",
+          "id": "urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01",
+          "attributes": {
+            "entityPaths": [
+              "/urn:adsk.content:library:5f5c7b29-4b9c-4f6d-9326-e7074b34badd/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01"
+            ],
+            "role": "LIBRARY_MANAGER",
+            "lastModifiedTime": "2017-08-10T08:14:16Z",
+            "createTime": "2017-08-10T08:14:16Z",
+            "createdBy": "TGTBKCMEJFW5",
+            "lastModifiedBy": "TGTBKCMEJFW5",
+            "description": "Test Sub Library",
+            "language": "en",
+            "title": "TestSubLibrary",
+            "region": "US",
+            "status": "private",
+            "tags": "test, sub library"
+          },
+          "relationships": {
+              "nodes": {
+                  "links": {
+                      "self": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01/relationships/nodes",
+                      "related": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01/nodes"
+                  }
+              },
+              "libraries": {
+                  "links": {
+                      "self": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01/relationships/libraries",
+                      "related": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01/libraries"
+                  }
+              }
+          },
+          "links": {
+              "self": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01"
+          }
         }
+      ],
+      "included": [],
+      "meta": {
+          "paginationInfo": {
+              "totalResults": 1,
+              "pageNumber": 1,
+              "totalPages": 1,
+              "pageSize": 20
+          }
+      },
+      "links": {
+          "prev": "",
+          "next": "",
+          "first": "https://developer-stg.api.autodesk.com/content/v1/subLibraries?filter[contents][libraryId]=urn:adsk.content:library:5f5c7b29-4b9c-4f6d-9326-e7074b34badd&page[number]=1&page[size]=20",
+          "last": "https://developer-stg.api.autodesk.com/content/v1/subLibraries?filter[contents][libraryId]=urn:adsk.content:library:5f5c7b29-4b9c-4f6d-9326-e7074b34badd&page[number]=1&page[size]=20"
       }
-      ```
+    }
+    ```
     From the response, make a note of the **sub library id** that you want to use for adding relationship.
     
   
@@ -8283,68 +8283,68 @@ responses:
     examples:
       application/vnd.api+json:
         {
-    "collection": [
-        {
-            "quarantineItemId": "231f3995-ffd6-4fc3-8bb0-7f3e57a86721",
-            "quarantineItemType": "content",
-            "communityContent": {
-                "id": "231f3995-ffd6-4fc3-8bb0-7f3e57a86721",
-                "contentId": "231f3995-ffd6-4fc3-8bb0-7f3e57a86721",
-                "contentVersion": null,
-                "libraryId": "ab5ac8e0-b5bd-48c1-a783-261ab7c201c0",
-                "title": "regression communityContent",
-                "approved": false,
-                "authorId": "CMEYPT4NJ6GRO24J",
-                "authorOxygenId": "AYK2Q7S52XRU",
-                "addedDate": 1505886945000,
-                "modifierId": "CMEYPT4NJ6GRO24J",
-                "modifierOxygenId": "AYK2Q7S52XRU",
-                "modifiedDate": null,
-                "description": "regression communityContent description",
-                "imageUrls": "http://regressionCommunityContent.com",
-                "wasLimbo": false,
-                "commentCount": 0,
-                "status": "QUARANTINED",
-                "lastCommentId": null,
-                "likeCount": 0,
-                "featured": false,
-                "lastQuarantineDate": 1505886953000,
-                "featuredBy": null,
-                "featuredByOxygenId": null,
-                "featuredDate": null,
-                "authorFirstName": "hiteshkumar",
-                "authorLastName": "prajapati",
-                "authorImageUrl": null,
-                "authorDisplayName": null,
-                "lastCommentDate": null,
-                "totalHits": 0,
-                "keywords": null,
-                "publishDate": "2017-09-20 11:25:45.0",
-                "activityDate": null
+          "collection": [
+            {
+              "quarantineItemId": "231f3995-ffd6-4fc3-8bb0-7f3e57a86721",
+              "quarantineItemType": "content",
+              "communityContent": {
+                  "id": "231f3995-ffd6-4fc3-8bb0-7f3e57a86721",
+                  "contentId": "231f3995-ffd6-4fc3-8bb0-7f3e57a86721",
+                  "contentVersion": null,
+                  "libraryId": "ab5ac8e0-b5bd-48c1-a783-261ab7c201c0",
+                  "title": "regression communityContent",
+                  "approved": false,
+                  "authorId": "CMEYPT4NJ6GRO24J",
+                  "authorOxygenId": "AYK2Q7S52XRU",
+                  "addedDate": 1505886945000,
+                  "modifierId": "CMEYPT4NJ6GRO24J",
+                  "modifierOxygenId": "AYK2Q7S52XRU",
+                  "modifiedDate": null,
+                  "description": "regression communityContent description",
+                  "imageUrls": "http://regressionCommunityContent.com",
+                  "wasLimbo": false,
+                  "commentCount": 0,
+                  "status": "QUARANTINED",
+                  "lastCommentId": null,
+                  "likeCount": 0,
+                  "featured": false,
+                  "lastQuarantineDate": 1505886953000,
+                  "featuredBy": null,
+                  "featuredByOxygenId": null,
+                  "featuredDate": null,
+                  "authorFirstName": "hiteshkumar",
+                  "authorLastName": "prajapati",
+                  "authorImageUrl": null,
+                  "authorDisplayName": null,
+                  "lastCommentDate": null,
+                  "totalHits": 0,
+                  "keywords": null,
+                  "publishDate": "2017-09-20 11:25:45.0",
+                  "activityDate": null
+              }
             }
+          ],
+          "firstLink": {
+              "href": "https://developer-stg.api.autodesk.com/content-alpha/v1/libraries/ab5ac8e0-b5bd-48c1-a783-261ab7c201c0/quarantines?filter[contents][entryType]=content&page[number]=1&page[size]=20",
+              "meta": null
+          },
+          "lastLink": {
+              "href": "https://developer-stg.api.autodesk.com/content-alpha/v1/libraries/ab5ac8e0-b5bd-48c1-a783-261ab7c201c0/quarantines?filter[contents][entryType]=content&page[number]=1&page[size]=20",
+              "meta": null
+          },
+          "previousLink": {
+              "href": null,
+              "meta": null
+          },
+          "nextLink": {
+              "href": null,
+              "meta": null
+          },
+          "additionalProperties": {
+              
+          },
+          "totalResultCount": 1
         }
-    ],
-    "firstLink": {
-        "href": "https://developer-stg.api.autodesk.com/content-alpha/v1/libraries/ab5ac8e0-b5bd-48c1-a783-261ab7c201c0/quarantines?filter[contents][entryType]=content&page[number]=1&page[size]=20",
-        "meta": null
-    },
-    "lastLink": {
-        "href": "https://developer-stg.api.autodesk.com/content-alpha/v1/libraries/ab5ac8e0-b5bd-48c1-a783-261ab7c201c0/quarantines?filter[contents][entryType]=content&page[number]=1&page[size]=20",
-        "meta": null
-    },
-    "previousLink": {
-        "href": null,
-        "meta": null
-    },
-    "nextLink": {
-        "href": null,
-        "meta": null
-    },
-    "additionalProperties": {
-        
-    },
-    "totalResultCount": 1
-}
   getFlag:
     description: Successful response
     schema:
@@ -8402,11 +8402,11 @@ responses:
     examples:
       application/vnd.api+json:
         {
-    "data": [
-        {
-            "type": "follows",
-            "id": "AYK2Q7S52XRU",
-            "attributes": {
+          "data": [
+            {
+              "type": "follows",
+              "id": "AYK2Q7S52XRU",
+              "attributes": {
                 "firstName": "Foo",
                 "lastName": "Bar",
                 "libraryIds": [
@@ -8415,30 +8415,30 @@ responses:
                 "followDate": "2017-09-19T08:06:01Z",
                 "followersCount": 0,
                 "followingsCount": 1
-            },
-            "relationships": {
-                "roles": {
-                    "links": {
+              },
+              "relationships": {
+                  "roles": {
+                      "links": {
                         "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/follows/AYK2Q7S52XRU/relationships/roles",
                         "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/follows/AYK2Q7S52XRU/roles"
-                    }
-                }
-            },
-            "links": {
+                      }
+                  }
+              },
+              "links": {
                 "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/follows/AYK2Q7S52XRU"
-            }
+              }
+            } 
+          ],
+          "included": [
+              
+          ],
+          "links": {
+              "prev": "",
+              "next": "",
+              "first": "https://developer-stg.api.autodesk.com/content-alpha/v1/follows?filter[member][id]=GK6UJWUMUD73&page[number]=1&page[size]=20",
+              "last": "https://developer-stg.api.autodesk.com/content-alpha/v1/follows?filter[member][id]=GK6UJWUMUD73&page[number]=1&page[size]=20"
+          }
         }
-    ],
-    "included": [
-        
-    ],
-    "links": {
-        "prev": "",
-        "next": "",
-        "first": "https://developer-stg.api.autodesk.com/content-alpha/v1/follows?filter[member][id]=GK6UJWUMUD73&page[number]=1&page[size]=20",
-        "last": "https://developer-stg.api.autodesk.com/content-alpha/v1/follows?filter[member][id]=GK6UJWUMUD73&page[number]=1&page[size]=20"
-    }
-}
   getFollowing:
     description: Successful response
     schema:
@@ -8488,7 +8488,6 @@ responses:
           "last": "https://developer-stg.api.autodesk.com/content-alpha/v1/followings?page[number]=1&page[size]=20"
         }
       }
-  
   followUser:
     description: Successful response
     schema:
@@ -8685,39 +8684,39 @@ responses:
     examples:
       application/vnd.api+json:
         {
-    "collection": [
-        {
-            "id": ,
-            "words": [
-                "kill",
-                "white power",
-                "shit",
-                "Stabbed",
-                "suicide",
-                "thief",
-                "stolen"
-            ]
+            "collection": [
+              {
+                "id": ,
+                "words": [
+                    "kill",
+                    "white power",
+                    "shit",
+                    "Stabbed",
+                    "suicide",
+                    "thief",
+                    "stolen"
+                ]
+              }
+            ],
+            "firstLink": {
+              "href": "https://developer-stg.api.autodesk.com/content/v1/libraries/COMMUNITYREGRESSIONALPHA/badwords?page[number]=1&page[size]=20",
+              "meta": null
+            },
+            "lastLink": {
+              "href": "https://developer-stg.api.autodesk.com/content/v1/libraries/COMMUNITYREGRESSIONALPHA/badwords?page[number]=1&page[size]=20",
+              "meta": null
+            },
+            "previousLink": {
+              "href": null,
+              "meta": null
+            },
+            "nextLink": {
+              "href": "https://developer-stg.api.autodesk.com/content/v1/libraries/COMMUNITYREGRESSIONALPHA/badwords?page[number]=2&page[size]=20",
+              "meta": null
+            },
+            "additionalProperties": {},
+            "totalResultCount": 7
         }
-    ],
-    "firstLink": {
-        "href": "https://developer-stg.api.autodesk.com/content/v1/libraries/COMMUNITYREGRESSIONALPHA/badwords?page[number]=1&page[size]=20",
-        "meta": null
-    },
-    "lastLink": {
-        "href": "https://developer-stg.api.autodesk.com/content/v1/libraries/COMMUNITYREGRESSIONALPHA/badwords?page[number]=1&page[size]=20",
-        "meta": null
-    },
-    "previousLink": {
-        "href": null,
-        "meta": null
-    },
-    "nextLink": {
-        "href": "https://developer-stg.api.autodesk.com/content/v1/libraries/COMMUNITYREGRESSIONALPHA/badwords?page[number]=2&page[size]=20",
-        "meta": null
-    },
-    "additionalProperties": {},
-    "totalResultCount": 7
-}
        
   getFeaturedCommentsResponse:
     description: Successful response
@@ -8796,8 +8795,7 @@ responses:
         
           },
           "totalResultCount": 1
-        }         
-    
+        }
   createCommunityContentLike:
     description: Successful response
     schema:
@@ -9280,7 +9278,6 @@ responses:
                 "last": "https://developer-stg.api.autodesk.com/content/v1/libraries?page[number]=514&page[size]=2"
             }
         }
-        
   subLibraries:
     description: Successful sub-libraries response
     schema:
@@ -9374,8 +9371,7 @@ responses:
             "first": "https://developer-stg.api.autodesk.com/content/v1/subLibraries?filter[contents][libraryId]=urn:adsk.content:library:5ace48a2-d4e2-472b-a2c2-51a3e361c8f5&page[number]=1&page[size]=16",
             "last": "https://developer-stg.api.autodesk.com/content/v1/subLibraries?filter[contents][libraryId]=urn:adsk.content:library:5ace48a2-d4e2-472b-a2c2-51a3e361c8f5&page[number]=1&page[size]=16"
           }
-        }        
-        
+        }
   node:
     description: Successful Node response
     schema:
@@ -9428,7 +9424,6 @@ responses:
                 }
             }
         }
-        
   nodes:
     description: Successful Node response
     schema:
@@ -9498,7 +9493,6 @@ responses:
                 "last": "https://developer-stg.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:690ab1b4-22a9-4b86-b8cc-c78e5a8399b9/nodes?page[number]=4&page[size]=1"
             }
         }
-        
   nodescontents:
     description: Successful Contents response
     schema:
@@ -9591,7 +9585,6 @@ responses:
               "last": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:a62a09d5-5135-42df-8ae4-156e4edd1ce5/contents?page[number]=7&page[size]=1"
           }
       }
-        
   nodesallcontents:
     description: Successful Contents response
     schema:
@@ -9709,7 +9702,6 @@ responses:
                 ]
             }
         }
-        
   nodesallparents:
     description: Successful Contents response
     schema:
@@ -9767,7 +9759,6 @@ responses:
                 ]
             }
         }
-      
   content:
     description: Successful Content response
     schema:
@@ -9927,7 +9918,6 @@ responses:
                 }
             }
         }
-        
   contentVersions:
     description: Successful Library response
     schema:
@@ -9952,7 +9942,6 @@ responses:
                 }
             ]
         }  
-        
   fileURL:
     description: return an oss url which can be used for upload
     schema:
@@ -9971,7 +9960,6 @@ responses:
                 }
             }
         } 
-        
   fileDetails:
     description: the details of the file uploaded in the library bucket in OSS
     schema:
@@ -9986,7 +9974,6 @@ responses:
           "contentType": "text/plain",
           "storageType": "OSS"
         }
-        
   contentSearch:
     description: Successful Search response
     schema:
@@ -10363,7 +10350,6 @@ responses:
                 "last": "https://developer-stg.api.autodesk.com/content/v1/contentsSearch?filter[contents][libraryId]=urn:adsk.wipstg:fs.folder:co.jsJ-UIC0T9-1VvwpG5xAuQ&page[number]=1&page[size]=20"
             }
         }
-  
   library_members:
     description: returns the list of user , groups, or tenants who has access to this library along with thier roles.
     schema:
@@ -10411,7 +10397,6 @@ responses:
                 ]
             }
         }
-
   node_members:
     description: returns the list of user , groups, or tenants who has access to this node along with thier roles.
     schema:
@@ -10448,7 +10433,6 @@ responses:
             ]
           }
         }
-
   content_members:
     description: returns the list of user , groups, or tenants who has access to this content along with thier roles.
     schema:
@@ -10485,7 +10469,6 @@ responses:
                 ]
             }
         }
-   
   library_policies:
     description: returns the list of user , groups, or tenants which are added in item policies.
     schema:
