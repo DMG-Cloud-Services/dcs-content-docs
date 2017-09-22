@@ -179,6 +179,7 @@ info:
     
     The following sample structure can give you an idea on when you can use Sub Library for your content structure.
     
+    ```
     Materials (Base Library)
       
       GlobalAttributes (System Library)
@@ -204,6 +205,7 @@ info:
         Project C (Node)
       
           Content (Content)
+    ```
     
     ##<a name="node"></a>**Node**
       
@@ -257,7 +259,7 @@ info:
     -  **version number**: Retrives the specified version of the content.
     -  **tip**: Retrieves the latest published version of the content.
     
-    For more information about searching the content, see [GET ContentsSearch API](#/en/docs/content/v1/reference/http/contentsSearch-GET).
+    For more information about searching the content, see [GET ContentsSearch API](/en/docs/content/v1/reference/http/contentsSearch-GET).
       
     [@overview/content-validation]: <>
     # Content Validation
@@ -645,7 +647,7 @@ info:
         
       HTTP `POST` requests to the Forge Schema require the `data:create` scope, but can also be called with the `data:write` scope.
     
-    [@tutorials/create-content-in-new-library-with-sublibrary]: <>
+      [@tutorials/create-content-in-new-library-with-sublibrary]: <>
     # Create Content in a New Library with Sub Library
     
     This tutorial explains how to create content in a new library that contains a sub library. This tutorial provides the steps based on the following content model:
@@ -1139,7 +1141,7 @@ info:
     
     ## Step 1: Create a New Library
     
-    In this step you create a new library where you store the contents. For more information about library, see `Content Model </en/docs/content/v1/overview/content-model>`_.
+    In this step you create a new library where you store the contents. For more information about library, see [Content Model](/en/docs/content/v1/overview/content-model).
 
     The Library API provides the ``POST libraries`` endpoint that allows you to create a new library.
     
@@ -1315,7 +1317,7 @@ info:
 
     ## Step 3: Create Content in a Node
 
-    In this step, you create the actual content in the node that you created in the `Step 2`_. For more information about Content, see `Content Model </en/docs/content/v1/overview/content-model>`_.
+    In this step, you create the actual content in the node that you created in the `Step 2`_. For more information about Content, see [Content Model](/en/docs/content/v1/overview/content-model).
     
     The Library Content API provides the ``POST libraries/{libraryId}/content`` endpoint that allows you to create your content.
     
@@ -1541,7 +1543,7 @@ info:
     | **page[size]**                          | The total number of pages that you want to display for the content.
     | **page[number]**                        | The page number of the content that you want to display.
 
-    >**Notes**: 
+    **Notes**: 
     
     * In the API request if you do not specify a valid token, the API applies the filter criteria only on the libraries with the status as published.
     * In the API request if you do not specify the role, the API retrieves all libraries that the user, who is sending the request, has created.   
@@ -2273,7 +2275,7 @@ info:
 
     You need to use the ``PUT`` request along with the ``uploadUrl``. 
     
-    In the ``PUT`` request, you need to specify the parameter named \`objectKey' and the value as the name of the file that you are uploading. This file name can be different from the actual file name. 
+    In the ``PUT`` request, you need to specify the parameter named `objectKey' and the value as the name of the file that you are uploading. This file name can be different from the actual file name. 
     
     Along with the request, you also need to specify the actual file that you want to upload.
     
@@ -2314,14 +2316,14 @@ info:
     
     If the content already contain any files, the API deletes all the existing files and then add the new files. However, if you want to retain the existing files and add new files to it, then you must use the `PATCH` request instead of `POST`.
     
-    >**Notes**: 
-    >* The files are always added to the draft version of the content.
-    >* You can add the file's data to the different locations:
-    > * If you use the `/libraries/{libraryId}/contents/{contentId}/files` endpoint, the API adds the file data to the core `files` attribute.
-    > * If you use the `/libraries/{libraryId}/contents/{contentId}/thumbnails` endpoint, the API adds the file data to the core `thumbnails` attribute.
-    > * If you use the `/libraries/{libraryId}/contents/{contentId}/{extension.data file attribute}` endpoint, the API adds the file data directly to the attribute defined inside extension.data.
-    >* The API supports only the first level file attribute that is present inside extension.data.
-    >* The attribute must be of custom type, for example `customTypes:autodesk.core:file`.
+    **Notes**: 
+    * The files are always added to the draft version of the content.
+    * You can add the file's data to the different locations:
+    * If you use the `/libraries/{libraryId}/contents/{contentId}/files` endpoint, the API adds the file data to the core `files` attribute.
+    * If you use the `/libraries/{libraryId}/contents/{contentId}/thumbnails` endpoint, the API adds the file data to the core `thumbnails` attribute.
+    * If you use the `/libraries/{libraryId}/contents/{contentId}/{extension.data file attribute}` endpoint, the API adds the file data directly to the attribute defined inside extension.data.
+    * The API supports only the first level file attribute that is present inside extension.data.
+    * The attribute must be of custom type, for example `customTypes:autodesk.core:file`.
     
     In the `POST` or `PATCH` request, you need to specify the Id of the content to which you want to upload the file and the Id of the library in which the content exists.
     
@@ -2441,7 +2443,9 @@ info:
 
     If the content already contain any files, the API deletes all the existing files and then add the new files. However, if you want to retain the existing files and add new files to it, then you must use the ``PATCH`` request instead of ``POST``.
 
-    **Notes**: The files are always added to the draft version of the content. You can add the file's data to the different locations:
+    **Notes**: The files are always added to the draft version of the content.
+    
+    * You can add the file's data at the different locations:
     
     - If you use the ``/libraries/{libraryId}/contents/{contentId}/thumbnails`` endpoint, the API adds the file data to the core ``thumbnails`` attribute.
     - If you use the ``/libraries/{libraryId}/contents/{contentId}/{extension.data file attribute}`` endpoint, the API adds the file data directly to the attribute defined inside extension.data.
@@ -2581,14 +2585,14 @@ info:
     }
     ```
     [@tutorials/add-renationships]: <>
-    # Add Relationship between Libraries, Nodes, and Contents
+    # Add Relationship of Nodes and Contents with Sub Library and Library
     
     This tutorial explains how to create and update the relationships of [Nodes](/en/docs/content/v1/overview/content-model), and [Contents](/en/docs/content/v1/overview/content-model) with [Sub Library](/en/docs/content/v1/overview/content-model) and [Library](/en/docs/content/v1/overview/content-model).
-
-    **Note**: The relationship of nodes and contents with sub library and library fully depends on the [content model](/en/docs/content/v1/overview/content-model) that you select. If your content model contains a sub library, you cannot create or update the relationship of nodes and contents with a library. You can only create relationship with different nodes in a sub library.
-
+    
     With the Relationship API, you can create the parent-child relationship of nodes and contents with a sub library and library.
 
+    The relationship of nodes and contents with sub library and library fully depends on the [Content Model](/en/docs/content/v1/overview/content-model) that you select. If your content model contains a sub library, you cannot create or update the relationship of nodes and contents with a library. You can only create relationship with different nodes in a sub library.
+    
     **Note**: You can only create the relationship of nodes and contents in a single sub library or library. You cannot create relationship of nodes and contents from different sub libraries or different libraries.
     
     ## Step 1: Get the List of Libraries
@@ -2609,7 +2613,7 @@ info:
     | **page[size]**                          | The total number of pages that you want to display for the content.
     | **page[number]**                        | The page number of the content that you want to display.
 
-    >**Notes**: 
+    **Notes**: 
     
     *  In the API request if you do not specify a valid token, the API applies the filter criteria only on the libraries with the status as published.
     *  In the API request if you do not specify the role, the API retrieves all libraries that the user, who is sending the request, has created.
@@ -2748,10 +2752,27 @@ info:
     
     The Library Node API provides the ``GET libraries/libraryId/subLibraries`` endpoint that allows you to get the list of sub libraries from the specified library.
     
-    In the ``GET`` request, you need to specify the Id of the library from which you want the list of sub libraries.
+    In the ``GET`` request, you need to specify the Id of the library from which you want the list of sub libraries. In the ``GET`` request, you can also use different filters to retrieve the specific sub libraries.
     
-    Example
-    =======
+    ### Filters
+    
+    | Attribute                               | Description
+    | --------------------------------------- | -------------------------------------------------------------------------------------------------------
+    | **filter[contents][role]**              | Displays the sub libraries for the specified role. Possible roles are: LIBRARY_MANAGER, CONTENT_CREATOR, CONTENT_READER, and ANONYMOUS.
+    | **filter[contents][tags]**              | Displays the sub libraries that contains the specified tags. You can specify multiple tags separate by comma.
+    | **filter[contents][publicLibrary]**     | Displays the sub libraries that are released to external poeple.
+    | **filter[contents][createdBy]**         | Displays the sub libraries that the specified user has created.
+    | **filter[contents][createdByAppId]**    | Displays the sub libraries that the specific application has created. You need to specify the application Id.
+    | **filter[contents][interestedAppIds]**  | Displays the sub libraries where the specified application Ids are added in the interestedAppIds list.
+    | **page[size]**                          | The total number of pages that you want to display for the content.
+    | **page[number]**                        | The page number of the content that you want to display.
+
+    **Notes**:
+
+    -  In the API request if you do not specify a valid token, the API applies the filter criteria only on the sub libraries that are released to public with the status as published.
+    -  In the API request if you do not specify the role, the API retrieves all sub libraries that the user, who is sending the request, has access to.  
+    
+    ### Example
     
     ```shell
     curl -X GET 
@@ -2823,7 +2844,6 @@ info:
     ```
     From the response, make a note of the **sub library id** that you want to use for adding relationship.
     
-  
     ## Step 3: Get the List of Nodes from a Library
     
     In this step you get a list of nodes from the specified library. For more information about Library and Node, see [Content Model](/en/docs/content/v1/overview/content-model).
@@ -3017,7 +3037,7 @@ info:
     | **page[size]**  | The total number of pages that you want to display for the search result.
     | **page[number]**  | The page number of the search result that you want to display.
     
-    The filter also supports the ``boost`` clause in the filter parameter. You need to specify the boost value of a particular parameter in the**{key^boostValue}** format.
+    The filter also supports the ``boost`` clause in the filter parameter. You need to specify the boost value of a particular parameter in the **{key^boostValue}** format.
 
     For example, filter[contents][title^5.0]=Material
     
@@ -3251,7 +3271,7 @@ info:
     ```
     From the response, make a note of the **content id** that you want to use for adding relationship.
 
-    ## Step 5: Create Relationship between Library, Sub Library, Node, and Content
+    ## Step 5: Create Relationship of Nodes and Contents with Library and Sub Library
     
     In this step, you actually create the relationship between the libraries, sub libraries, nodes, and content.
 
@@ -3371,7 +3391,7 @@ info:
     ```
     On successful creation of a relationship, the resource provides a 204 response without any content.
 
-    ## Step 6: Update Relationship between Library, Sub Library, Node, and Content
+    ## Step 6: Update Relationship of Nodes and Contents with Library and Sub Library
     
     In this step, you update the relationship between the libraries, sub libraries, nodes, and content.
     
@@ -3473,7 +3493,6 @@ info:
       }
     }' "https://developer-stg.api.autodesk.com/content/v1/relationships/contents/{contentId}"
     ```
-    
     On successful updation of the relationship, the resource provides a 204 response without any content.
   
   contact:
@@ -4111,7 +4130,7 @@ paths:
                   }
                 }
               }
-          }
+            }
           }'' "https://developer.api.autodesk.com/content/v1/libraries/libraryId/contents"'
       security:
         [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] }, { oauth2_application: [ 'data:create' ] }]
@@ -4147,7 +4166,7 @@ paths:
                   "lock": false
                 }
               }
-          }
+            }
           }'' "https://developer.api.autodesk.com/content/v1/libraries/libraryId/contents/contentId"'
       security:
         [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] } ,{ oauth2_application: [ 'data:write' ] }]
@@ -4279,37 +4298,37 @@ paths:
       x-ads-docs-cli-example: 'curl -X POST -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" -H "Content-Type: application/vnd.api+json" -d
           ''{
              "data": {
-        "type": "contentFiles",
-        "attributes": {
-            "files": [
-                {
-                    "title": "incididunt sit non culpa tempor",
-                    "description": "Ut anim",
-                    "size": 28465419,
-                    "checksum": "l",
-                    "objectKey": "pariatur cillum",
-                    "mimeType": "ex elit eu id voluptate"
-                },
-                {
-                    "title": "enim ut in dolore dolor",
-                    "description": "irure reprehenderit",
-                    "size": 32305129,
-                    "checksum": "sit mollit pariatur",
-                    "objectKey": "proident",
-                    "mimeType": "consequat irure pariatur"
-                },
-                {
-                    "title": "ea occaecat dolore nisi aliquip",
-                    "description": "reprehenderit",
-                    "size": -410337,
-                    "checksum": "mollit ut voluptate",
-                    "objectKey": "Lorem ut aliqua",
-                    "mimeType": "nostrud in sunt aute incididunt"
+                "type": "contentFiles",
+                "attributes": {
+                  "files": [
+                    {
+                      "title": "incididunt sit non culpa tempor",
+                      "description": "Ut anim",
+                      "size": 28465419,
+                      "checksum": "l",
+                      "objectKey": "pariatur cillum",
+                      "mimeType": "ex elit eu id voluptate"
+                    },
+                    {
+                      "title": "enim ut in dolore dolor",
+                      "description": "irure reprehenderit",
+                      "size": 32305129,
+                      "checksum": "sit mollit pariatur",
+                      "objectKey": "proident",
+                      "mimeType": "consequat irure pariatur"
+                    },
+                    {
+                      "title": "ea occaecat dolore nisi aliquip",
+                      "description": "reprehenderit",
+                      "size": -410337,
+                      "checksum": "mollit ut voluptate",
+                      "objectKey": "Lorem ut aliqua",
+                      "mimeType": "nostrud in sunt aute incididunt"
+                    }
+                  ]
                 }
-            ]
-        }
-    }
-          }
+              }
+            }
           }'' "https://developer.api.autodesk.com/content/v1/libraries/libraryId/contents/contentId/fileType"'
       security:
         [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
@@ -4352,39 +4371,39 @@ paths:
         '403': { $ref: '#/responses/forbidden' }
       x-ads-docs-cli-example: 'curl -X PATCH -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" -H "Content-Type: application/vnd.api+json" -d
           ''{
-             "data": {
-        "type": "contentFiles",
-    "attributes": {
-        "files": [
-            {
-                "title": "amet labore nulla",
-                "description": "magna Lorem",
-                "size": 21478466,
-                "checksum": "sint",
-                "objectKey": "aliqua nulla aute magna ea",
-                "mimeType": "culpa elit sit"
-            },
-            {
-                "title": "nulla Excepteur",
-                "description": "sunt ut labo",
-                "size": 21190109,
-                "checksum": "",
-                "objectKey": "veniam occaecat mollit",
-                "mimeType": "in"
-            },
-            {
-                "title": "in exercitation",
-                "description": "aute aliqua ex",
-                "size": 15706284,
-                "checksum": "do nisi Lorem",
-                "objectKey": "sunt cupidatat",
-                "mimeType": "labore elit "
+              "data": {
+                "type": "contentFiles",
+                "attributes": {
+                  "files": [
+                    {
+                        "title": "amet labore nulla",
+                        "description": "magna Lorem",
+                        "size": 21478466,
+                        "checksum": "sint",
+                        "objectKey": "aliqua nulla aute magna ea",
+                        "mimeType": "culpa elit sit"
+                    },
+                    {
+                        "title": "nulla Excepteur",
+                        "description": "sunt ut labo",
+                        "size": 21190109,
+                        "checksum": "",
+                        "objectKey": "veniam occaecat mollit",
+                        "mimeType": "in"
+                    },
+                    {
+                        "title": "in exercitation",
+                        "description": "aute aliqua ex",
+                        "size": 15706284,
+                        "checksum": "do nisi Lorem",
+                        "objectKey": "sunt cupidatat",
+                        "mimeType": "labore elit "
+                    }
+                  ]
+                }
+              }
             }
-        ]
-    }
-    }
-          }
-          '' "https://developer.api.autodesk.com/content/v1/libraries/libraryId/contents/contentId/fileType"'
+            '' "https://developer.api.autodesk.com/content/v1/libraries/libraryId/contents/contentId/fileType"'
       security:
         [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
       tags: ["Library Content File"]
@@ -4488,7 +4507,7 @@ paths:
                        "type": "contents",
                        "id": "commodo"
                      }
-                     ]
+                    ]
                  }
              }
           }
@@ -4512,24 +4531,24 @@ paths:
       x-ads-docs-cli-example: 'curl -X POST -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" -H "Content-Type: application/vnd.api+json" -d
           ''{
              "data": {
-                 "type": "relationships",
-            "relationships": {
-                "parent": {
+                "type": "relationships",
+                "relationships": {
+                  "parent": {
                     "data": {
-                        "type": "libraries",
-                        "id": "f"
+                      "type": "libraries",
+                      "id": "f"
                     }
+                  }
+                },
+                "attributes": {
+                  "child": {
+                      "type": "nodes",
+                      "id": "of"
+                  }
                 }
-            },
-            "attributes": {
-                "child": {
-                    "type": "nodes",
-                    "id": "of"
-                }
-            }
              }
-          }
-          '' "https://developer.api.autodesk.com/content/v1/relationships"'
+            }
+            '' "https://developer.api.autodesk.com/content/v1/relationships"'
       security:
         [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
       tags: ["Relationships"]      
@@ -4833,91 +4852,91 @@ paths:
                "type": "nodes",
                "attributes": [
                   {
-                      "role": "READER",
-                      "subjects": {
-                          "o2Users": [
-                              "aute in ut",
-                              "voluptate ut"
-                          ]
-                      },
-                      "deletedSubjects": {
-                          "o2Users": [
-                              "fugia",
-                              "consequat sunt Except",
-                              "officia dolor est aliquip",
-                              "Duis do non cillum"
-                          ]
-                      }
+                    "role": "READER",
+                    "subjects": {
+                        "o2Users": [
+                            "aute in ut",
+                            "voluptate ut"
+                        ]
+                    },
+                    "deletedSubjects": {
+                        "o2Users": [
+                            "fugia",
+                            "consequat sunt Except",
+                            "officia dolor est aliquip",
+                            "Duis do non cillum"
+                        ]
+                    }
                   },
                   {
-                      "role": "READER",
-                      "subjects": {
-                          "o2Users": [
-                              "Duis officia ea exercitation culpa",
-                              "ea mollit u",
-                              "aliqua deserunt id",
-                              "sed culpa Duis ad sunt",
-                              "magna laborum occaecat"
-                          ]
-                      },
-                      "deletedSubjects": {
-                          "o2Users": [
-                              "adipisicing non dolor",
-                              "Duis et",
-                              "enim",
-                              "Duis"
-                          ]
-                      }
+                    "role": "READER",
+                    "subjects": {
+                        "o2Users": [
+                            "Duis officia ea exercitation culpa",
+                            "ea mollit u",
+                            "aliqua deserunt id",
+                            "sed culpa Duis ad sunt",
+                            "magna laborum occaecat"
+                        ]
+                    },
+                    "deletedSubjects": {
+                        "o2Users": [
+                            "adipisicing non dolor",
+                            "Duis et",
+                            "enim",
+                            "Duis"
+                        ]
+                    }
                   },
                   {
-                      "role": "CREATOR",
-                      "subjects": {
-                          "o2Users": [
-                              "non anim velit qui nisi"
-                          ]
-                      },
-                      "deletedSubjects": {
-                          "o2Users": [
-                              "pariatur",
-                              "aliquip dolore esse labore"
-                          ]
-                      }
+                    "role": "CREATOR",
+                    "subjects": {
+                        "o2Users": [
+                            "non anim velit qui nisi"
+                        ]
+                    },
+                    "deletedSubjects": {
+                        "o2Users": [
+                            "pariatur",
+                            "aliquip dolore esse labore"
+                        ]
+                    }
                   },
                   {
-                      "role": "CREATOR",
-                      "subjects": {
-                          "o2Users": [
-                              "aute",
-                              "aute eiusmod amet ut ex",
-                              "aute ut ea elit et",
-                              "sit voluptate laboris adipisicing"
-                          ]
-                      },
-                      "deletedSubjects": {
-                          "o2Users": [
-                              "ea amet in",
-                              "officia Lorem velit",
-                              "t"
-                          ]
-                      }
+                    "role": "CREATOR",
+                    "subjects": {
+                        "o2Users": [
+                            "aute",
+                            "aute eiusmod amet ut ex",
+                            "aute ut ea elit et",
+                            "sit voluptate laboris adipisicing"
+                        ]
+                    },
+                    "deletedSubjects": {
+                        "o2Users": [
+                            "ea amet in",
+                            "officia Lorem velit",
+                            "t"
+                        ]
+                    }
                   },
                   {
-                      "role": "CREATOR",
-                      "subjects": {
-                          "o2Users": [
-                              "ut veniam velit tempor dolor"
-                          ]
-                      },
-                      "deletedSubjects": {
-                          "o2Users": [
-                              "Excepteur",
-                              "dolor cupidatat do",
-                              "laboris nisi ullamco ad",
-                              "laborum qui"
-                          ]
-                      }
+                    "role": "CREATOR",
+                    "subjects": {
+                        "o2Users": [
+                            "ut veniam velit tempor dolor"
+                        ]
+                    },
+                    "deletedSubjects": {
+                        "o2Users": [
+                            "Excepteur",
+                            "dolor cupidatat do",
+                            "laboris nisi ullamco ad",
+                            "laborum qui"
+                        ]
+                    }
                   }
-              ]
+                ]
              }
           }
           '' "https://developer-stg.api.autodesk.com/content/v1/libraries/libraryId/nodes/nodeId/members"'
@@ -4941,75 +4960,75 @@ paths:
       x-ads-docs-cli-example: 'curl -X PUT -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" -H "Content-Type: application/vnd.api+json" -d
           ''{
              "data": {
-                 "type": "nodes",
-                 "attributes": [
-                    {
-                        "role": "CREATOR",
-                        "subjects": {
-                            "o2Users": [
-                                "laboris",
-                                "enim"
-                            ]
-                        },
-                        "deletedSubjects": {
-                            "o2Users": [
-                                "in et sed",
-                                "occaecat exercitation tempor in"
-                            ]
-                        }
-                    },
-                    {
-                        "role": "CREATOR",
-                        "subjects": {
-                            "o2Users": [
-                                "laboris anim cupidatat officia",
-                                "qui proident Duis enim irure",
-                                "laboris Lorem incididunt"
-                            ]
-                        },
-                        "deletedSubjects": {
-                            "o2Users": [
-                                "labore dolore aliqua sit",
-                                "do",
-                                "veniam labore Excepteur",
-                                "nulla"
-                            ]
-                        }
-                    },
-                    {
-                        "role": "READER",
-                        "subjects": {
-                            "o2Users": [
-                                "id",
-                                "ad elit dolor",
-                                "ad"
-                            ]
-                        },
-                        "deletedSubjects": {
-                            "o2Users": [
-                                "incididunt",
-                                "elit nisi Ut culpa",
-                                "qui nostrud dolor consectetur Duis",
-                                "esse enim",
-                                "veniam et"
-                            ]
-                        }
-                    },
-                    {
-                        "role": "READER",
-                        "subjects": {
-                            "o2Users": [
-                                "eu"
-                            ]
-                        },
-                        "deletedSubjects": {
-                            "o2Users": [
-                                "eu ex proident deserunt Lorem",
-                                "ipsum"
-                            ]
-                        }
-                    }
-                  ]
+               "type": "nodes",
+               "attributes": [
+                  {
+                      "role": "CREATOR",
+                      "subjects": {
+                          "o2Users": [
+                              "laboris",
+                              "enim"
+                          ]
+                      },
+                      "deletedSubjects": {
+                          "o2Users": [
+                              "in et sed",
+                              "occaecat exercitation tempor in"
+                          ]
+                      }
+                  },
+                  {
+                      "role": "CREATOR",
+                      "subjects": {
+                          "o2Users": [
+                              "laboris anim cupidatat officia",
+                              "qui proident Duis enim irure",
+                              "laboris Lorem incididunt"
+                          ]
+                      },
+                      "deletedSubjects": {
+                          "o2Users": [
+                              "labore dolore aliqua sit",
+                              "do",
+                              "veniam labore Excepteur",
+                              "nulla"
+                          ]
+                      }
+                  },
+                  {
+                      "role": "READER",
+                      "subjects": {
+                          "o2Users": [
+                              "id",
+                              "ad elit dolor",
+                              "ad"
+                          ]
+                      },
+                      "deletedSubjects": {
+                          "o2Users": [
+                              "incididunt",
+                              "elit nisi Ut culpa",
+                              "qui nostrud dolor consectetur Duis",
+                              "esse enim",
+                              "veniam et"
+                          ]
+                      }
+                  },
+                  {
+                      "role": "READER",
+                      "subjects": {
+                          "o2Users": [
+                              "eu"
+                          ]
+                      },
+                      "deletedSubjects": {
+                          "o2Users": [
+                              "eu ex proident deserunt Lorem",
+                              "ipsum"
+                          ]
+                      }
+                  }
+                ]
              }
           }
           '' "https://developer-stg.api.autodesk.com/content/v1/libraries/libraryId/nodes/nodeId/members"'
@@ -5098,58 +5117,58 @@ paths:
                 "type": "contents",
                 "attributes": [
                     {
-                        "role": "READER",
-                        "subjects": {
-                            "o2Users": [
-                                "consectetur dolore occaecat",
-                                "Excepteur Duis commod",
-                                "occaecat nisi Ut",
-                                "id pariatur"
-                            ]
-                        },
-                        "deletedSubjects": {
-                            "o2Users": [
-                                "adipisicing minim sit Ut",
-                                "exercitation es",
-                                "ad occaecat adipisicing voluptate dolor",
-                                "officia"
-                            ]
-                        }
+                      "role": "READER",
+                      "subjects": {
+                          "o2Users": [
+                              "consectetur dolore occaecat",
+                              "Excepteur Duis commod",
+                              "occaecat nisi Ut",
+                              "id pariatur"
+                          ]
+                      },
+                      "deletedSubjects": {
+                          "o2Users": [
+                              "adipisicing minim sit Ut",
+                              "exercitation es",
+                              "ad occaecat adipisicing voluptate dolor",
+                              "officia"
+                          ]
+                      }
                     },
                     {
-                        "role": "READER",
-                        "subjects": {
-                            "o2Users": [
-                                "ut ad",
-                                "nostrud veniam eiusmod ut"
-                            ]
-                        },
-                        "deletedSubjects": {
-                            "o2Users": [
-                                "ut culpa Duis",
-                                "enim Excepteur i",
-                                "irure",
-                                "aliquip",
-                                "veniam consectetur cillum"
-                            ]
-                        }
+                      "role": "READER",
+                      "subjects": {
+                          "o2Users": [
+                              "ut ad",
+                              "nostrud veniam eiusmod ut"
+                          ]
+                      },
+                      "deletedSubjects": {
+                          "o2Users": [
+                              "ut culpa Duis",
+                              "enim Excepteur i",
+                              "irure",
+                              "aliquip",
+                              "veniam consectetur cillum"
+                          ]
+                      }
                     },
                     {
-                        "role": "CREATOR",
-                        "subjects": {
-                            "o2Users": [
-                                "laboris co",
-                                "velit"
-                            ]
-                        },
-                        "deletedSubjects": {
-                            "o2Users": [
-                                "dolore",
-                                "laborum",
-                                "occaecat mollit dolor dolore",
-                                "Duis elit adipisicing"
-                            ]
-                        }
+                      "role": "CREATOR",
+                      "subjects": {
+                          "o2Users": [
+                              "laboris co",
+                              "velit"
+                          ]
+                      },
+                      "deletedSubjects": {
+                          "o2Users": [
+                              "dolore",
+                              "laborum",
+                              "occaecat mollit dolor dolore",
+                              "Duis elit adipisicing"
+                          ]
+                      }
                     }
                 ]
              }
@@ -5192,57 +5211,57 @@ paths:
              "data": {
                  "type": "policies",
                   "attributes": {
-                      "new": false,
-                      "Type": "Policy",
-                      "Namespace": "dolore",
-                      "Version": "est f",
-                      "Permission": [
-                          {
-                              "Id": "1",
-                              "Effect": "Allow",
-                              "Subjects": {
-                                  "O2User": [
-                                      "non minim",
-                                      "labore cillum velit aliquip",
-                                      "Duis qui"
-                                  ]
-                              },
-                              "DeletedSubjects": {
-                                  "O2User": [
-                                      "occaecat reprehenderit",
-                                      "enim"
-                                  ]
-                              },
-                              "Action": "CONTENT_READER"
-                          },
-                          {
-                              "Id": "1",
-                              "Effect": "Allow",
-                              "Subjects": {
-                                  "O2User": [
-                                      "aliqua nisi ea ut eu",
-                                      "eu proident ullamco",
-                                      "est",
-                                      "consectetur officia aute dolore",
-                                      "elit cillum"
-                                  ]
-                              },
-                              "DeletedSubjects": {
-                                  "O2User": [
-                                      "Ut in deserunt",
-                                      "incididunt dolor pariatur cupidatat sunt",
-                                      "officia aliquip dolore",
-                                      "sed pariatur"
-                                  ]
-                              },
-                              "Action": "CONTENT_READER"
-                          }
-                      ]
+                    "new": false,
+                    "Type": "Policy",
+                    "Namespace": "dolore",
+                    "Version": "est f",
+                    "Permission": [
+                      {
+                        "Id": "1",
+                        "Effect": "Allow",
+                        "Subjects": {
+                            "O2User": [
+                                "non minim",
+                                "labore cillum velit aliquip",
+                                "Duis qui"
+                            ]
+                        },
+                        "DeletedSubjects": {
+                            "O2User": [
+                                "occaecat reprehenderit",
+                                "enim"
+                            ]
+                        },
+                        "Action": "CONTENT_READER"
+                      },
+                      {
+                        "Id": "1",
+                        "Effect": "Allow",
+                        "Subjects": {
+                            "O2User": [
+                                "aliqua nisi ea ut eu",
+                                "eu proident ullamco",
+                                "est",
+                                "consectetur officia aute dolore",
+                                "elit cillum"
+                            ]
+                        },
+                        "DeletedSubjects": {
+                            "O2User": [
+                                "Ut in deserunt",
+                                "incididunt dolor pariatur cupidatat sunt",
+                                "officia aliquip dolore",
+                                "sed pariatur"
+                            ]
+                        },
+                        "Action": "CONTENT_READER"
+                      }
+                    ]
                   },
                   "id": "commodo reprehenderit adipisicing"
-             }
-          }
-          '' "https://developer.api.autodesk.com/content/v1/policies/policy_id"'
+              }
+            }
+            '' "https://developer.api.autodesk.com/content/v1/policies/policy_id"'
       responses:
         '200': { $ref: '#/responses/library_policies' }
         '400': { $ref: '#/responses/bad_input' }
@@ -6503,7 +6522,6 @@ definitions:
         properties:
           data: { $ref: '#/definitions/json_api_resource'}
 
-  
   json_api_collection:
     allOf:
       - type: object
@@ -8263,7 +8281,7 @@ responses:
             "meta": null,
             "href": null
         }
-    }
+      }
   getQuarantinedContentOrCommentResult:
     description: Successful response
     schema:
@@ -8717,7 +8735,6 @@ responses:
             "additionalProperties": {},
             "totalResultCount": 7
         }
-       
   getFeaturedCommentsResponse:
     description: Successful response
     schema:
@@ -9060,7 +9077,6 @@ responses:
                 }
             ]
         }
-        
   delete_library_error:
     description: Delete Library error
     schema:
@@ -9080,7 +9096,6 @@ responses:
                 }
             ]
         }
-              
   forbidden:
     description: Forbidden response
     schema:
@@ -9088,16 +9103,15 @@ responses:
     examples:
       application/vnd.api+json:
         {
-            "errors": [
-                {
-                    "id": "d3f6d37c-a8d1-4dab-8beb-1462d06ef252",
-                    "status": "403",
-                    "code": "USER_NOT_AUTHENTICATED",
-                    "detail": "The user was not authenticated."
-                }
-            ]
+          "errors": [
+            {
+              "id": "d3f6d37c-a8d1-4dab-8beb-1462d06ef252",
+              "status": "403",
+              "code": "USER_NOT_AUTHENTICATED",
+              "detail": "The user was not authenticated."
+            }
+          ]
         }
-        
   library:
     description: Successful Library response
     schema:
@@ -9142,7 +9156,6 @@ responses:
             "included": [],
             "meta": {}
         }
-        
   subLibrary:
     description: Successful sub-library response
     schema:
@@ -9189,7 +9202,6 @@ responses:
             "self": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:b04aa8e8-ab6e-455f-9152-8d72c7974ecc"
           }
         }
-        
   libraries:
     description: Successful Libraries response
     schema:
@@ -9379,50 +9391,50 @@ responses:
     examples:
       application/vnd.api+json:
         {
-            "data": {
-                "type": "nodes",
-                "id": "urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ",
-                "attributes": {
-                    "totalChildrenCount": 1,
-                    "entityPaths": [
-                        "/urn:adsk.wipstg:fs.folder:co.RNco7Y6CSmm3IFzFR0FYHg/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ"
-                    ],
-                    "lastModifiedTime": "2017-01-11T23:31:19Z",
-                    "createTime": "2017-01-11T23:29:20Z",
-                    "createdBy": "ERB3Q463BYQW",
-                    "lastModifiedBy": "",
-                    "childNodesCount": 0,
-                    "description": "This is description for node NodeForGlobalMaterialRegistry",
-                    "title": "NodeForGlobalMaterialRegistry",
-                    "childContentsCount": 1,
-                    "tags": "a,b,c,d"
-                },
-                "relationships": {
-                    "libraries": {
-                        "links": {
-                            "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ/relationships/libraries",
-                            "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ/libraries"
-                        }
-                    },
-                    "contents": {
-                        "links": {
-                            "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ/relationships/contents",
-                            "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ/contents"
-                        },
-                        "data": []
-                    },
-                    "nodes": {
-                        "links": {
-                            "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ/relationships/nodes",
-                            "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ/nodes"
-                        },
-                        "data": []
+          "data": {
+            "type": "nodes",
+            "id": "urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ",
+            "attributes": {
+                "totalChildrenCount": 1,
+                "entityPaths": [
+                    "/urn:adsk.wipstg:fs.folder:co.RNco7Y6CSmm3IFzFR0FYHg/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ"
+                ],
+                "lastModifiedTime": "2017-01-11T23:31:19Z",
+                "createTime": "2017-01-11T23:29:20Z",
+                "createdBy": "ERB3Q463BYQW",
+                "lastModifiedBy": "",
+                "childNodesCount": 0,
+                "description": "This is description for node NodeForGlobalMaterialRegistry",
+                "title": "NodeForGlobalMaterialRegistry",
+                "childContentsCount": 1,
+                "tags": "a,b,c,d"
+            },
+            "relationships": {
+                "libraries": {
+                    "links": {
+                        "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ/relationships/libraries",
+                        "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ/libraries"
                     }
                 },
-                "links": {
-                    "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ"
+                "contents": {
+                    "links": {
+                        "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ/relationships/contents",
+                        "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ/contents"
+                    },
+                    "data": []
+                },
+                "nodes": {
+                    "links": {
+                        "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ/relationships/nodes",
+                        "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ/nodes"
+                    },
+                    "data": []
                 }
+            },
+            "links": {
+                "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ"
             }
+          }
         }
   nodes:
     description: Successful Node response
@@ -9431,51 +9443,51 @@ responses:
     examples:
       application/vnd.api+json:
         {
-            "data": [
-                {
-                    "type": "nodes",
-                    "id": "urn:adsk.content:node:67b2fb58-dca4-4363-848c-c73098566c25",
-                    "attributes": {
-                        "totalChildrenCount": 0,
-                        "entityPaths": [
-                            "/urn:adsk.content:library:690ab1b4-22a9-4b86-b8cc-c78e5a8399b9/urn:adsk.content:node:67b2fb58-dca4-4363-848c-c73098566c25"
-                        ],
-                        "lastModifiedTime": "2017-02-27T20:43:15Z",
-                        "createTime": "2017-02-27T20:43:15Z",
-                        "createdBy": "ERB3Q463BYQW",
-                        "lastModifiedBy": "ERB3Q463BYQW",
-                        "childNodesCount": 0,
-                        "description": "Creating a node to save our materials in",
-                        "schemaFamily": "contents:autodesk.mdb.alpha:materialAM-1.0.0",
-                        "title": "NodeLeft1",
-                        "childContentsCount": 0,
-                        "tags": "a,b,c,d"
+          "data": [
+              {
+                "type": "nodes",
+                "id": "urn:adsk.content:node:67b2fb58-dca4-4363-848c-c73098566c25",
+                "attributes": {
+                    "totalChildrenCount": 0,
+                    "entityPaths": [
+                        "/urn:adsk.content:library:690ab1b4-22a9-4b86-b8cc-c78e5a8399b9/urn:adsk.content:node:67b2fb58-dca4-4363-848c-c73098566c25"
+                    ],
+                    "lastModifiedTime": "2017-02-27T20:43:15Z",
+                    "createTime": "2017-02-27T20:43:15Z",
+                    "createdBy": "ERB3Q463BYQW",
+                    "lastModifiedBy": "ERB3Q463BYQW",
+                    "childNodesCount": 0,
+                    "description": "Creating a node to save our materials in",
+                    "schemaFamily": "contents:autodesk.mdb.alpha:materialAM-1.0.0",
+                    "title": "NodeLeft1",
+                    "childContentsCount": 0,
+                    "tags": "a,b,c,d"
+                },
+                "relationships": {
+                    "contents": {
+                        "links": {
+                            "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:67b2fb58-dca4-4363-848c-c73098566c25/relationships/contents",
+                            "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:67b2fb58-dca4-4363-848c-c73098566c25/contents"
+                        },
+                        "data": []
                     },
-                    "relationships": {
-                        "contents": {
-                            "links": {
-                                "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:67b2fb58-dca4-4363-848c-c73098566c25/relationships/contents",
-                                "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:67b2fb58-dca4-4363-848c-c73098566c25/contents"
-                            },
-                            "data": []
-                        },
-                        "libraries": {
-                            "links": {
-                                "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:67b2fb58-dca4-4363-848c-c73098566c25/relationships/libraries",
-                                "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:67b2fb58-dca4-4363-848c-c73098566c25/libraries"
-                            }
-                        },
-                        "nodes": {
-                            "links": {
-                                "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:67b2fb58-dca4-4363-848c-c73098566c25/relationships/nodes",
-                                "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:67b2fb58-dca4-4363-848c-c73098566c25/nodes"
-                            }
+                    "libraries": {
+                        "links": {
+                            "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:67b2fb58-dca4-4363-848c-c73098566c25/relationships/libraries",
+                            "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:67b2fb58-dca4-4363-848c-c73098566c25/libraries"
                         }
                     },
-                    "links": {
-                        "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:67b2fb58-dca4-4363-848c-c73098566c25"
+                    "nodes": {
+                        "links": {
+                            "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:67b2fb58-dca4-4363-848c-c73098566c25/relationships/nodes",
+                            "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:67b2fb58-dca4-4363-848c-c73098566c25/nodes"
+                        }
                     }
+                },
+                "links": {
+                    "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:67b2fb58-dca4-4363-848c-c73098566c25"
                 }
+              }
             ],
             "included": [],
             "meta": {
@@ -9501,73 +9513,73 @@ responses:
       application/vnd.api+json:
        {
           "data": [
-              {
-                  "type": "contents",
-                  "id": "urn:adsk.content:content:b371797d-c881-4ffc-b28c-d3c4c625a0bc",
-                  "attributes": {
-                      "entityPaths": [
-                          "/urn:adsk.content:library:b820f488-8d36-4ed4-a01d-358363e1b1e0/urn:adsk.content:node:a62a09d5-5135-42df-8ae4-156e4edd1ce5/urn:adsk.content:content:b371797d-c881-4ffc-b28c-d3c4c625a0bc"
-                      ],
-                      "extension": {
-                          "data": {
-                              "amTech": "SLA",
-                              "bedSize": {
-                                  "height": {
-                                      "units": "cm",
-                                      "value": 175
-                                  },
-                                  "length": {
-                                      "units": "cm",
-                                      "value": 75
-                                  },
-                                  "breadth": {
-                                      "units": "cm",
-                                      "value": 50
-                                  }
-                              },
-                              "facetId": "additiveManufacturing",
-                              "modelName": "Form 2",
-                              "displayName": "FormLabs-Form 2",
-                              "machinePrice": {
-                                  "units": "$",
-                                  "value": 1500
-                              },
-                              "maxBuildHeight": {
+            {
+              "type": "contents",
+              "id": "urn:adsk.content:content:b371797d-c881-4ffc-b28c-d3c4c625a0bc",
+              "attributes": {
+                  "entityPaths": [
+                      "/urn:adsk.content:library:b820f488-8d36-4ed4-a01d-358363e1b1e0/urn:adsk.content:node:a62a09d5-5135-42df-8ae4-156e4edd1ce5/urn:adsk.content:content:b371797d-c881-4ffc-b28c-d3c4c625a0bc"
+                  ],
+                  "extension": {
+                      "data": {
+                          "amTech": "SLA",
+                          "bedSize": {
+                              "height": {
                                   "units": "cm",
                                   "value": 175
                               },
-                              "firmwareVersion": "PreForm",
-                              "hardwareVersion": "1.0",
-                              "manufacturerName": "FormLabs"
+                              "length": {
+                                  "units": "cm",
+                                  "value": 75
+                              },
+                              "breadth": {
+                                  "units": "cm",
+                                  "value": 50
+                              }
                           },
-                          "type": "contents:autodesk.mdb.alpha:machineAM",
-                          "version": "2.0.0"
+                          "facetId": "additiveManufacturing",
+                          "modelName": "Form 2",
+                          "displayName": "FormLabs-Form 2",
+                          "machinePrice": {
+                              "units": "$",
+                              "value": 1500
+                          },
+                          "maxBuildHeight": {
+                              "units": "cm",
+                              "value": 175
+                          },
+                          "firmwareVersion": "PreForm",
+                          "hardwareVersion": "1.0",
+                          "manufacturerName": "FormLabs"
                       },
-                      "lastModifiedTime": "2017-02-18T04:15:24Z",
-                      "lastModifiedBy": "ERB3Q463BYQW",
-                      "description": "contents",
-                      "language": "EN",
-                      "title": "FormLabs Form 2 PreForm",
-                      "version": "2",
-                      "tags": "tags",
-                      "createTime": "2017-02-18T04:15:24Z",
-                      "createdBy": "ERB3Q463BYQW",
-                      "lock": false,
-                      "region": "US",
-                      "status": "published"
+                      "type": "contents:autodesk.mdb.alpha:machineAM",
+                      "version": "2.0.0"
                   },
-                  "relationships": {
-                      "nodes": {
-                          "links": {
-                              "self": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.content:content:b371797d-c881-4ffc-b28c-d3c4c625a0bc/relationships/nodes",
-                              "related": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.content:content:b371797d-c881-4ffc-b28c-d3c4c625a0bc/nodes"
-                          }
+                  "lastModifiedTime": "2017-02-18T04:15:24Z",
+                  "lastModifiedBy": "ERB3Q463BYQW",
+                  "description": "contents",
+                  "language": "EN",
+                  "title": "FormLabs Form 2 PreForm",
+                  "version": "2",
+                  "tags": "tags",
+                  "createTime": "2017-02-18T04:15:24Z",
+                  "createdBy": "ERB3Q463BYQW",
+                  "lock": false,
+                  "region": "US",
+                  "status": "published"
+              },
+              "relationships": {
+                  "nodes": {
+                      "links": {
+                          "self": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.content:content:b371797d-c881-4ffc-b28c-d3c4c625a0bc/relationships/nodes",
+                          "related": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.content:content:b371797d-c881-4ffc-b28c-d3c4c625a0bc/nodes"
                       }
-                  },
-                  "links": {
-                      "self": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.content:content:b371797d-c881-4ffc-b28c-d3c4c625a0bc"
                   }
+              },
+              "links": {
+                  "self": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.content:content:b371797d-c881-4ffc-b28c-d3c4c625a0bc"
               }
+            }
           ],
           "included": [],
           "meta": {
@@ -9592,115 +9604,115 @@ responses:
     examples:
       application/vnd.api+json:
         {
-            "data": {
-                "nodes": [
-                    {
-                        "type": "nodes",
-                        "id": "urn:adsk.wipstg:dm.lineage:ldrA_V5lTGmLpbwj74ikzw",
-                        "attributes": {
-                            "title": "MachineLibraryNodeForMDB2",
-                            "description": "MachineLibraryNodeForMDB2",
-                            "createTime": "2017-01-06T13:34:48Z",
-                            "lastModifiedTime": "2017-01-06T13:34:52Z",
-                            "createdBy": "ERB3Q463BYQW",
-                            "lastModifiedBy": ""
-                        },
-                        "relationships": {
-                            "parent": {
-                                "links": {
-                                    "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:ldrA_V5lTGmLpbwj74ikzw/relationships/parents",
-                                    "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:ldrA_V5lTGmLpbwj74ikzw/parents"
+          "data": {
+              "nodes": [
+                  {
+                      "type": "nodes",
+                      "id": "urn:adsk.wipstg:dm.lineage:ldrA_V5lTGmLpbwj74ikzw",
+                      "attributes": {
+                          "title": "MachineLibraryNodeForMDB2",
+                          "description": "MachineLibraryNodeForMDB2",
+                          "createTime": "2017-01-06T13:34:48Z",
+                          "lastModifiedTime": "2017-01-06T13:34:52Z",
+                          "createdBy": "ERB3Q463BYQW",
+                          "lastModifiedBy": ""
+                      },
+                      "relationships": {
+                          "parent": {
+                              "links": {
+                                  "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:ldrA_V5lTGmLpbwj74ikzw/relationships/parents",
+                                  "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:ldrA_V5lTGmLpbwj74ikzw/parents"
+                              }
+                          },
+                          "refs": {
+                              "children": {
+                                  "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:ldrA_V5lTGmLpbwj74ikzw/relationships/children",
+                                  "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:ldrA_V5lTGmLpbwj74ikzw/children"
+                              }
+                          }
+                      },
+                      "links": {
+                          "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:ldrA_V5lTGmLpbwj74ikzw"
+                      }
+                  }
+              ],
+              "contents": [
+                  {
+                    "type": "contents",
+                    "id": "urn:adsk.wipstg:dm.lineage:yLuhkkB2RdCtCoDzop-1Ng",
+                    "attributes": {
+                        "title": "FortusMachine",
+                        "description": "Fortus Machine",
+                        "tags": "MDB",
+                        "language": "EN",
+                        "region": "US",
+                        "extension": {
+                          "type": "contents:autodesk.mdb.alpha:machineAM",
+                          "version": "2.0.0",
+                          "data": {
+                              "facetId": "mechanical",
+                              "displayName": "Fortus",
+                              "description": "Filament or pellets melted through a print head that travels over a toolpath",
+                              "amTechAstmCategory": "Material Extrusion",
+                              "amTech": "FDM",
+                              "modelName": "Fortus",
+                              "manufacturerName": "Stratasys",
+                              "hardwareVersion": "1.0",
+                              "maxBedTemperature": {
+                                  "value": 100,
+                                  "units": "c"
+                              },
+                              "maxOperatingTemperature": {
+                                  "value": 260,
+                                  "units": "c"
+                              },
+                              "feedHeadOpeningDiameter": {
+                                  "value": 1.75,
+                                  "units": "mm"
+                              },
+                              "maxBuildHeight": {
+                                  "value": 305,
+                                  "units": "mm"
+                              },
+                              "machinePrice": {
+                                  "value": 45000,
+                                  "units": "$"
+                              },
+                              "bedSize": {
+                                "length": {
+                                    "value": 355,
+                                    "units": "mm"
+                                },
+                                "breadth": {
+                                    "value": 305,
+                                    "units": "mm"
+                                },
+                                "height": {
+                                    "value": 305,
+                                    "units": "mm"
                                 }
-                            },
-                            "refs": {
-                                "children": {
-                                    "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:ldrA_V5lTGmLpbwj74ikzw/relationships/children",
-                                    "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:ldrA_V5lTGmLpbwj74ikzw/children"
-                                }
+                              }
                             }
                         },
-                        "links": {
-                            "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:ldrA_V5lTGmLpbwj74ikzw"
-                        }
-                    }
-                ],
-                "contents": [
-                    {
-                        "type": "contents",
-                        "id": "urn:adsk.wipstg:dm.lineage:yLuhkkB2RdCtCoDzop-1Ng",
-                        "attributes": {
-                            "title": "FortusMachine",
-                            "description": "Fortus Machine",
-                            "tags": "MDB",
-                            "language": "EN",
-                            "region": "US",
-                            "extension": {
-                                "type": "contents:autodesk.mdb.alpha:machineAM",
-                                "version": "2.0.0",
-                                "data": {
-                                    "facetId": "mechanical",
-                                    "displayName": "Fortus",
-                                    "description": "Filament or pellets melted through a print head that travels over a toolpath",
-                                    "amTechAstmCategory": "Material Extrusion",
-                                    "amTech": "FDM",
-                                    "modelName": "Fortus",
-                                    "manufacturerName": "Stratasys",
-                                    "hardwareVersion": "1.0",
-                                    "maxBedTemperature": {
-                                        "value": 100,
-                                        "units": "c"
-                                    },
-                                    "maxOperatingTemperature": {
-                                        "value": 260,
-                                        "units": "c"
-                                    },
-                                    "feedHeadOpeningDiameter": {
-                                        "value": 1.75,
-                                        "units": "mm"
-                                    },
-                                    "maxBuildHeight": {
-                                        "value": 305,
-                                        "units": "mm"
-                                    },
-                                    "machinePrice": {
-                                        "value": 45000,
-                                        "units": "$"
-                                    },
-                                    "bedSize": {
-                                        "length": {
-                                            "value": 355,
-                                            "units": "mm"
-                                        },
-                                        "breadth": {
-                                            "value": 305,
-                                            "units": "mm"
-                                        },
-                                        "height": {
-                                            "value": 305,
-                                            "units": "mm"
-                                        }
-                                    }
-                                }
-                            },
-                            "createTime": "2017-01-04T16:41:35Z",
-                            "lastModifiedTime": "2017-01-04T16:41:35Z",
-                            "createdBy": "ERB3Q463BYQW",
-                            "lastModifiedBy": "ERB3Q463BYQW"
-                        },
-                        "relationships": {
-                            "parent": {
-                                "links": {
-                                    "self": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.wipstg:dm.lineage:yLuhkkB2RdCtCoDzop-1Ng/relationships/parents",
-                                    "related": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.wipstg:dm.lineage:yLuhkkB2RdCtCoDzop-1Ng/parents"
-                                }
+                        "createTime": "2017-01-04T16:41:35Z",
+                        "lastModifiedTime": "2017-01-04T16:41:35Z",
+                        "createdBy": "ERB3Q463BYQW",
+                        "lastModifiedBy": "ERB3Q463BYQW"
+                    },
+                    "relationships": {
+                        "parent": {
+                            "links": {
+                                "self": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.wipstg:dm.lineage:yLuhkkB2RdCtCoDzop-1Ng/relationships/parents",
+                                "related": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.wipstg:dm.lineage:yLuhkkB2RdCtCoDzop-1Ng/parents"
                             }
-                        },
-                        "links": {
-                            "self": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.wipstg:dm.lineage:yLuhkkB2RdCtCoDzop-1Ng"
                         }
+                    },
+                    "links": {
+                        "self": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.wipstg:dm.lineage:yLuhkkB2RdCtCoDzop-1Ng"
                     }
-                ]
-            }
+                }
+            ]
+          }
         }
   nodesallparents:
     description: Successful Contents response
@@ -9709,55 +9721,55 @@ responses:
     examples:
       application/vnd.api+json:
         {
-            "data": {
-                "nodes": [
-                    {
-                        "type": "nodes",
-                        "id": "urn:adsk.wipstg:dm.lineage:FfNVwArBTECHUczacfgn3w",
-                        "title": "Node1",
-                        "description": "description",
-                        "lastModifiedTime": "2016-08-25T10:57:36Z",
-                        "createTime": "2016-08-25T10:57:36Z",
-                        "relationships": {
-                            "parent": {
-                                "links": {
-                                    "self": "http://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:FfNVwArBTECHUczacfgn3w/relationships/parents",
-                                    "related": "http://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:FfNVwArBTECHUczacfgn3w/parents"
-                                }
-                            },
-                            "refs": {
-                                "children": {
-                                    "self": "http://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:FfNVwArBTECHUczacfgn3w/relationships/children",
-                                    "related": "http://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:FfNVwArBTECHUczacfgn3w/children"
-                                }
-                            }
-                        },
+          "data": {
+            "nodes": [
+              {
+                "type": "nodes",
+                "id": "urn:adsk.wipstg:dm.lineage:FfNVwArBTECHUczacfgn3w",
+                "title": "Node1",
+                "description": "description",
+                "lastModifiedTime": "2016-08-25T10:57:36Z",
+                "createTime": "2016-08-25T10:57:36Z",
+                "relationships": {
+                    "parent": {
                         "links": {
-                            "self": "http://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:FfNVwArBTECHUczacfgn3w"
+                            "self": "http://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:FfNVwArBTECHUczacfgn3w/relationships/parents",
+                            "related": "http://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:FfNVwArBTECHUczacfgn3w/parents"
+                        }
+                    },
+                    "refs": {
+                        "children": {
+                            "self": "http://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:FfNVwArBTECHUczacfgn3w/relationships/children",
+                            "related": "http://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:FfNVwArBTECHUczacfgn3w/children"
                         }
                     }
-                ],
-                "libraries": [
-                    {
-                        "type": "libraries",
-                        "id": "a.cGVyc29uYWw6cGUyOWNjNTVhIzIwMTYwODEwMTUxODg3Ng",
-                        "lastModifiedTime": "2016-08-25T10:57:36Z",
-                        "createTime": "2016-08-25T10:57:36Z",
-                        "name": "Library1",
-                        "relationships": {
-                            "refs": {
-                                "children": {
-                                    "self": "http://developer.api.autodesk.com/content/v1/libraries/a.cGVyc29uYWw6cGUyOWNjNTVhIzIwMTYwODEwMTUxODg3Ng/relationships/children",
-                                    "related": "http://developer.api.autodesk.com/content/v1/libraries/a.cGVyc29uYWw6cGUyOWNjNTVhIzIwMTYwODEwMTUxODg3Ng/children"
-                                }
-                            }
-                        },
-                        "links": {
-                            "self": "http://developer.api.autodesk.com/content/v1/libraries/a.cGVyc29uYWw6cGUyOWNjNTVhIzIwMTYwODEwMTUxODg3Ng"
+                },
+                "links": {
+                    "self": "http://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:FfNVwArBTECHUczacfgn3w"
+                }
+              }
+            ],
+            "libraries": [
+              {
+                "type": "libraries",
+                "id": "a.cGVyc29uYWw6cGUyOWNjNTVhIzIwMTYwODEwMTUxODg3Ng",
+                "lastModifiedTime": "2016-08-25T10:57:36Z",
+                "createTime": "2016-08-25T10:57:36Z",
+                "name": "Library1",
+                "relationships": {
+                    "refs": {
+                        "children": {
+                            "self": "http://developer.api.autodesk.com/content/v1/libraries/a.cGVyc29uYWw6cGUyOWNjNTVhIzIwMTYwODEwMTUxODg3Ng/relationships/children",
+                            "related": "http://developer.api.autodesk.com/content/v1/libraries/a.cGVyc29uYWw6cGUyOWNjNTVhIzIwMTYwODEwMTUxODg3Ng/children"
                         }
                     }
-                ]
-            }
+                },
+                "links": {
+                    "self": "http://developer.api.autodesk.com/content/v1/libraries/a.cGVyc29uYWw6cGUyOWNjNTVhIzIwMTYwODEwMTUxODg3Ng"
+                }
+              }
+            ]
+          }
         }
   content:
     description: Successful Content response
