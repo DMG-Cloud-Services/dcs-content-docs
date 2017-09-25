@@ -5269,8 +5269,8 @@ paths:
       tags: ["Admin"]
       
   /members:
-      x-summary: Members
-      x-description: Member Search
+      x-summary: Search members
+      x-description: Search all the members within a library. In community, each member can be associated to different libraries and can perform activities within that library. 
       get:
         tags: [ "Community" ]
         operationId: getCommunityContentComment
@@ -5313,7 +5313,7 @@ paths:
 
   /contents/v1/contents/{contentId}/likes:
       x-summary: Content Likes
-      x-description: APIs for Content Likes
+      x-description: APIs for Content Likes.
       get:
         tags: [ "Community" ]
         operationId: getCommunityContentLikes
@@ -5366,14 +5366,14 @@ paths:
   
   /libraries/{libraryId}/features:
       x-summary: Feature Contents or Comments
-      x-description: Feature APIs for Contents and comments.
+      x-description: APIs to feature Contents and comments.
       post:
         tags: [ "Community" ]
         operationId: createFeature
         consumes:
           - application/json
         description: |
-          Features a content or comment. To feature a content, set featureItemType as content. To feature a comment, set featureItemType to comment.
+          Features a content or comment. To feature a content, set ***featureItemType*** as ***content***. To feature a comment, set ***featureItemType*** to ***comment***.
         security:
           [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
         parameters:
@@ -5402,7 +5402,7 @@ paths:
         consumes:
           - application/json
         description: |
-          Unfeatures a content or comment. To unfeature a content, set featureItemType as content. To unfeature a comment, set featureItemType to comment.
+          Unfeatures a content or comment. To unfeature a content, set ***featureItemType*** as ***content***. To unfeature a comment, set ***featureItemType*** to ***comment***.
         security:
           [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
         parameters:
@@ -5443,7 +5443,7 @@ paths:
         
   /libraries/{libraryId}/badwords:
       x-summary: BadWords
-      x-description: Operations for BadWords
+      x-description: Add or remove badwords within a library. These badwords are used by the system to flag the comments or contents as Quarantined.
       get:
         tags: [ "Community" ]
         operationId: getBadWords
@@ -5718,7 +5718,7 @@ paths:
             
   /libraries/{libraryId}/flags:
       x-summary: Content Flag
-      x-description: API to flag Content or Comment.
+      x-description: API to manually flag Content or Comment. Contents and comments are automatically flagged if they contain badwords. Users can also manually flag them.
       post:
         tags: [ "Community" ]
         operationId: createFlag
