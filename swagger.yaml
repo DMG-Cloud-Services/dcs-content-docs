@@ -7270,6 +7270,7 @@ definitions:
                           "tags": "a,b,c,d",
                           "region": "US",
                           "language": "en",
+                          "externalId": "abc",
                           "schemaFamily": "contents:autodesk.mdb.alpha:materialAM-1.0.0"
                       },
                       "type": "nodes"
@@ -7326,6 +7327,8 @@ definitions:
                     type: string  
                   schemaFamily:
                     type: string
+                  externalId:
+                    type: string
         example:
           {
               "data": {
@@ -7335,6 +7338,7 @@ definitions:
                       "tags": "a,b,c,d",
                       "region": "US",
                       "language": "en",
+                      "externalId": "abc",
                       "schemaFamily": "contents:autodesk.mdb.alpha:materialAM-1.0.0"
                   },
                   "type": "nodes"
@@ -7368,6 +7372,8 @@ definitions:
                   region:
                     type: string
                   license:
+                    type: string
+                  externalId:
                     type: string
                     description: Standard license for the content. Please refer to the allowed license list here - https://spdx.org/licenses/
                   thumbnails:
@@ -7433,6 +7439,7 @@ definitions:
                       "language": "EN",
                       "license": "Apache License 1.0",
                       "status": "draft",
+                      "externalId": "abc",
                       "extension": {
                           "type": "contents:autodesk.mdb.alpha:machineAM",
                           "version": "2.0.0",
@@ -7510,6 +7517,8 @@ definitions:
                     type: string
                   license:
                     type: string
+                  externalId:
+                    type: string
                     description: Standard license for the content. Please refer to the allowed license list here - https://spdx.org/licenses/
                   lock:
                     type: boolean
@@ -7557,6 +7566,7 @@ definitions:
                       "language": "EN",
                       "license": "Apache License 2.0",
                       "status": "published",
+                      "externalId": "abc",
                       "extension": {
                           "type": "contents:autodesk.mdb.alpha:machineAM",
                           "version": "2.0.0",
@@ -7806,6 +7816,7 @@ definitions:
           createTime: { type: string, description: 'createTime' }
           createdBy: { type: string, description: 'createdBy' }
           lastModifiedBy: { type: string, description: 'lastModifiedBy' }
+          externalId: { type: string, description: 'externalId' }
       relationships: { $ref: '#/definitions/library_realtionship_definitions' }
       links: { $ref: '#/definitions/json_link_self' }      
       
@@ -7855,6 +7866,7 @@ definitions:
           totalChildrenCount: { type: integer, description: 'totalChildrenCount' }
           childNodesCount: { type: integer, description: 'childNodesCount' }
           childContentsCount: { type: integer, description: 'childContentsCount' }
+          externalId: { type: string, description: 'externalId' }
       relationships: { $ref: '#/definitions/node_realtionship_definitions' }
       links: { $ref: '#/definitions/json_link_self' }
       
@@ -7890,6 +7902,7 @@ definitions:
           version: { type: string, description: 'version' }
           tags: { type: string, description: 'tags' }
           status: { type: string, description: 'status' }
+          externalId: { type: string, description: 'externalId' }
           lastModifiedTime: { type: string, description: 'lastModifiedTime' }
           createTime: { type: string, description: 'createTime' }
           thumbnails: { type: array, items: { $ref: '#/definitions/file_object_definition' } }
@@ -7935,6 +7948,7 @@ definitions:
       title: { type: string, description: 'title' }
       description: { type: string, description: 'description' }
       version: { type: string, description: 'version' }
+      externalId: { type: string, description: 'externalId' }
       language: { type: string, description: 'language' }
       createTime: { type: string, description: 'createTime' }
       lastModifiedTime: { type: string, description: 'lastModifiedTime' }
@@ -9069,6 +9083,7 @@ responses:
               "title": "test.content 6",
               "version": "3",
               "tags": "test, library",
+              "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
               "createdBy": "YUT9M5AU27KN",
               "lock": false,
               "communityData": {
@@ -9281,6 +9296,7 @@ responses:
             "lastModifiedBy": "ERB3Q463BYQW",
             "description": "Creating a node to save our materials in",
             "title": "Sub-Library 1",
+            "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
             "status": "private",
             "tags": "a,b,c,d"
           },
@@ -9412,6 +9428,7 @@ responses:
                 "lastModifiedBy": "ERB3Q463BYQW",
                 "description": "Creating a node to save our materials in",
                 "title": "Sub-Library 1",
+                "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
                 "status": "private",
                 "tags": "a,b,c,d"
               },
@@ -9447,6 +9464,7 @@ responses:
                 "lastModifiedBy": "ERB3Q463BYQW",
                 "description": "Creating a node to save our materials in",
                 "title": "Sub-Library 2",
+                "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
                 "status": "private",
                 "tags": "a,b,c,d"
               },
@@ -9504,6 +9522,7 @@ responses:
                 "createdBy": "ERB3Q463BYQW",
                 "lastModifiedBy": "",
                 "childNodesCount": 0,
+                "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
                 "description": "This is description for node NodeForGlobalMaterialRegistry",
                 "title": "NodeForGlobalMaterialRegistry",
                 "childContentsCount": 1,
@@ -9557,6 +9576,7 @@ responses:
                     "createdBy": "ERB3Q463BYQW",
                     "lastModifiedBy": "ERB3Q463BYQW",
                     "childNodesCount": 0,
+                    "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
                     "description": "Creating a node to save our materials in",
                     "schemaFamily": "contents:autodesk.mdb.alpha:materialAM-1.0.0",
                     "title": "NodeLeft1",
@@ -9662,6 +9682,7 @@ responses:
                   "title": "FormLabs Form 2 PreForm",
                   "version": "2",
                   "tags": "tags",
+                  "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
                   "createTime": "2017-02-18T04:15:24Z",
                   "createdBy": "ERB3Q463BYQW",
                   "lock": false,
@@ -9715,6 +9736,7 @@ responses:
                           "createTime": "2017-01-06T13:34:48Z",
                           "lastModifiedTime": "2017-01-06T13:34:52Z",
                           "createdBy": "ERB3Q463BYQW",
+                          "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
                           "lastModifiedBy": ""
                       },
                       "relationships": {
@@ -9745,6 +9767,7 @@ responses:
                         "description": "Fortus Machine",
                         "tags": "MDB",
                         "language": "EN",
+                        "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
                         "region": "US",
                         "extension": {
                           "type": "contents:autodesk.mdb.alpha:machineAM",
@@ -9830,6 +9853,7 @@ responses:
                 "description": "description",
                 "lastModifiedTime": "2016-08-25T10:57:36Z",
                 "createTime": "2016-08-25T10:57:36Z",
+                "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
                 "relationships": {
                     "parent": {
                         "links": {
@@ -9887,6 +9911,7 @@ responses:
                     "description": "ContentRight1",
                     "language": "en",
                     "title": "ContentRight1",
+                    "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
                     "region": "US",
                     "version": "draft",
                     "tags": "x,y,z",
@@ -10190,7 +10215,8 @@ responses:
                         "lastModifiedTime": "2016-12-21T08:27:20Z",
                         "createTime": "2016-12-21T08:27:20Z",
                         "description": "MachineLibraryNodeForMDB",
-                        "title": "MachineLibraryNodeForMDB"
+                        "title": "MachineLibraryNodeForMDB",
+                        "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a"
                     },
                     "relationships": {
                         "contents": {
@@ -10280,6 +10306,7 @@ responses:
                         "title": "FortusMachine",
                         "region": "US",
                         "version": "2",
+                        "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
                         "tags": "MDB"
                     },
                     "relationships": {
@@ -10356,6 +10383,7 @@ responses:
                         "title": "FortusMachine",
                         "region": "US",
                         "version": "1",
+                        "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
                         "tags": "MDB"
                     },
                     "relationships": {
@@ -10431,6 +10459,7 @@ responses:
                         "language": "EN",
                         "title": "FortusMachine",
                         "region": "US",
+                        "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
                         "version": "3",
                         "tags": "MDB"
                     },
