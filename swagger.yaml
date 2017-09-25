@@ -4709,6 +4709,7 @@ paths:
         - $ref: '#/parameters/query_filter_content_license'
         - $ref: '#/parameters/query_filter_content_facet'
         - $ref: '#/parameters/query_filter_content_subLibrary'
+        - $ref: '#/parameters/query_filter_content_externalId'
         - $ref: '#/parameters/query_filter_content_skip_search_cache'
         - $ref: '#/parameters/query_filter_content_search_page_size'
         - $ref: '#/parameters/query_filter_content_search_page_number'
@@ -6394,6 +6395,12 @@ parameters:
     required: false
     type: boolean 
     default: false     
+  query_filter_content_externalId:
+    name: filter[contents][externalId]
+    in: query
+    description: External Id of Sub-library, Node & Content
+    required: false
+    type: string          
   query_filter_content_skip_search_cache:
     name: filter[contents][searchSkipCache]
     in: query
