@@ -5276,6 +5276,8 @@ paths:
         operationId: getCommunityContentComment
         consumes:
           - application/json
+        security:
+          [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
         description: |
           Search for members using sing query string, filters, sorting and pagination. Query string first contains search terms followed optionally by range queries. Maximum page size per query is 100 results. Currently, only single column sort is supported.
         parameters:
@@ -5298,6 +5300,8 @@ paths:
       operationId: likedCommunityContents
       description: |
           Search for member Liked Contents using filters, sorting and pagination.
+      security:
+        [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
       parameters:
         - $ref: '#/parameters/query_filter_content_search_page_size'
         - $ref: '#/parameters/query_filter_content_search_page_number'
@@ -5315,6 +5319,8 @@ paths:
         operationId: getCommunityContentLikes
         description: |
           Retrieve all likes for a given content.
+        security:
+          [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
         parameters:
           - $ref: '#/parameters/contentId'
         responses:
@@ -5326,6 +5332,8 @@ paths:
           - application/json
         description: |
           Like a Content
+        security:
+          [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
         parameters:
           - $ref: '#/parameters/contentId'
           - in: body
@@ -5349,6 +5357,8 @@ paths:
         operationId: deleteAnContentLike
         description: |
           Unlike a Content
+        security:
+          [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
         parameters:
           - $ref: '#/parameters/contentId'
         responses:
@@ -5364,6 +5374,8 @@ paths:
           - application/json
         description: |
           Features a content or comment. To feature a content, set featureItemType as content. To feature a comment, set featureItemType to comment.
+        security:
+          [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
         parameters:
         - $ref: '#/parameters/libraryId'
         - in: body
@@ -5391,6 +5403,8 @@ paths:
           - application/json
         description: |
           Unfeatures a content or comment. To unfeature a content, set featureItemType as content. To unfeature a comment, set featureItemType to comment.
+        security:
+          [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
         parameters:
         - $ref: '#/parameters/libraryId'
         - in: body
@@ -5418,6 +5432,8 @@ paths:
           - application/json
         description: |
           Get featured content or comment.
+        security:
+          [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
         parameters:
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/featureFilter'
@@ -5435,6 +5451,8 @@ paths:
           - application/json
         description: |
           Get the list of Badwords in a library.
+        security:
+          [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
         parameters:
         - $ref: '#/parameters/libraryId'
         responses:
@@ -5446,6 +5464,8 @@ paths:
           - application/json
         description: |
           Add bad word in the Badwords list.
+        security:
+          [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
         parameters:
         - $ref: '#/parameters/libraryId'
         - in: body
@@ -5470,6 +5490,8 @@ paths:
         operationId: deleteBadWord
         description: |
           Delete a bad word
+        security:
+          [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
         parameters:
         - $ref: '#/parameters/libraryId'
         - in: body
@@ -5498,6 +5520,8 @@ paths:
       operationId: getContentComments
       description: |
         Retrieve all the comments for a given content. By default it will return featured comments before non-featured comments and ordered by comment addedDate.
+      security:
+        [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
       parameters:
         - $ref: '#/parameters/contentId'
         - $ref: '#/parameters/query_filter_content_search_page_size'
@@ -5516,6 +5540,8 @@ paths:
         - application/json
       description: |
         Creates a comment for a given content. Operations for Content Comments, inReplyToCommentId param in the body is optional and passed only in the case replying an existing comment
+      security:
+        [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
       parameters:
         - $ref: '#/parameters/contentId'
         - in: body
@@ -5547,6 +5573,8 @@ paths:
         - application/json
       description: |
         Retrieve a comment for a given content
+      security:
+        [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
       parameters:
         - $ref: '#/parameters/contentId'
         - $ref: '#/parameters/commentId'
@@ -5559,6 +5587,8 @@ paths:
         - application/json
       description: |
         Updates a comment for a given content
+      security:
+        [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
       parameters:
         - $ref: '#/parameters/contentId'
         - $ref: '#/parameters/commentId'
@@ -5575,6 +5605,8 @@ paths:
       operationId: deleteContentComment
       description: |
         Removes a comment for a given content
+      security:
+        [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
       parameters:
         - $ref: '#/parameters/contentId'
         - $ref: '#/parameters/commentId'
@@ -5590,6 +5622,8 @@ paths:
         operationId: getfollowerUsers
         description: |
           Retrieve all the users who follow this member
+        security:
+          [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
         parameters:
           - $ref: '#/parameters/memberIdQuery'
           - $ref: '#/parameters/query_filter_content_search_page_size'
@@ -5603,6 +5637,8 @@ paths:
           - application/json
         description: |
           Follow a Member
+        security:
+          [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
         parameters:
           - in: body
             name: body
@@ -5627,6 +5663,8 @@ paths:
         operationId: deleteFollow
         description: |
           Unfollow member with id specified
+        security:
+          [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
         parameters:
           - $ref: '#/parameters/memberId'
         responses:
@@ -5640,6 +5678,8 @@ paths:
         operationId: getfollowingUsers
         description: |
           Retrive all the users whom the member is following
+        security:
+          [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
         parameters:
           - $ref: '#/parameters/memberIdQuery'
           - $ref: '#/parameters/query_filter_content_search_page_size'
@@ -5657,6 +5697,8 @@ paths:
           - application/json
         description: |
           An Admin can change another admin's role to admin. 
+        security:
+          [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
         parameters:
           - $ref: '#/parameters/memberId'
           - in: body
@@ -5684,6 +5726,8 @@ paths:
           - application/json
         description: |
           Flag a content or comment. To flag a content, set entryType as content. To feature a comment, set entryType to comment.
+        security:
+          [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
         parameters:
         - $ref: '#/parameters/libraryId'
         - in: body
@@ -5711,6 +5755,8 @@ paths:
           - application/json
         description: |
           Update Flag status for content or comment to either APPROVED or DELETED . Admin can either approve or delete the flag. If approved, relevant comment or content get quarantined. If flag is deleted, means Flag has not been approved and relevant comment or content will remain untouched.
+        security:
+          [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
         parameters:
         - $ref: '#/parameters/libraryId'
         - in: body
@@ -5737,6 +5783,8 @@ paths:
           - application/json
         description: |
           Search for all the flagged content or comment for the library. EntityType filter is mandatory and value for it is either content or comment.
+        security:
+          [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
         parameters:
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/flagEntityTypeFilter'
@@ -5755,6 +5803,8 @@ paths:
           - application/json
         description: |
           Quarantine a content or comment. To quarantine a content, set quarantineItemType as content. To quarantine a comment, set quarantineItemType to comment.
+        security:
+          [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
         parameters:
         - $ref: '#/parameters/libraryId'
         - in: body
@@ -5781,6 +5831,8 @@ paths:
           - application/json
         description: |
           Search for all the quarantined content or comment for the library. EntityType filter is mandatory and value for it is either content or comment.
+        security:
+          [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
         parameters:
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/quarantineEntityTypeFilter'
