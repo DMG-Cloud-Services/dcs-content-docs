@@ -412,6 +412,7 @@ info:
           "tags": "test, node",
           "language": "EN",
           "region": "US",
+          "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
           "schemaFamily": "contents:autodesk.mdb.alpha:materialAM-1.0.0"
         }
       }
@@ -444,6 +445,7 @@ info:
             "region": "US",
             "language": "EN",
             "license": "Apache License 2.0",
+            "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
             "status": "draft",
             "extension": {
                 "type": "contents:autodesk.mdb.alpha:machineAM",
@@ -748,6 +750,7 @@ info:
         "attributes": {
           "title": "MaterialSubLibrary",
           "description": "The Sub Library for the Material",
+          "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
           "status": "DRAFT",
           "language": "EN",
           "region": "US"
@@ -784,6 +787,7 @@ info:
             "language": "en",
             "title": "TestSubLibrary",
             "region": "US",
+            "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
             "status": "private",
             "tags": "test, sub library"
         },
@@ -836,6 +840,7 @@ info:
           "title": "MaterialNode",
           "description": "The node for storing material content",
           "language": "EN",
+          "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
           "tags": "material, content",
           "region": "US"
         },
@@ -884,6 +889,7 @@ info:
             "lastModifiedBy": "TGTBKCMEJFW5",
             "childNodesCount": 0,
             "description": "The node for demo creation of the node.",
+            "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
             "language": "EN",
             "title": "DemoNode",
             "tags": "demo, node, content",
@@ -964,6 +970,7 @@ info:
           "language": "EN",
           "region": "US",
           "status": "draft",
+          "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
           "extension": {
             "type": "contents:autodesk.mdb.alpha:machineAM",
             "version": "2.0.0",
@@ -1029,6 +1036,7 @@ info:
               "contentDownloadCount": 0,
               "lastModifiedBy": "TGTBKCMEJFW5",
               "description": "ContentDescription",
+              "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
               "language": "EN",
               "title": "ContentTitle",
               "version": "draft",
@@ -1080,6 +1088,7 @@ info:
             "title": "Material Library",
             "description": "The library of industrial material",
             "tags": "material, library, industry",
+            "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
             "language": "EN",
             "region": "US",
             "status": "published"
@@ -1110,6 +1119,7 @@ info:
             "createTime": "2016-11-22T11:03:17Z",
             "description": "The library of industrial material",
             "language": "EN",
+            "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
             "title": "Material Library",
             "region": "US",
             "version": "draft",
@@ -1236,6 +1246,7 @@ info:
         "attributes": {
           "title": "MaterialNode",
           "description": "The node for storing material content",
+          "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
           "language": "EN",
           "tags": "material, content",
           "region": "US"
@@ -1277,6 +1288,7 @@ info:
             "lastModifiedBy": "TGTBKCMEJFW5",
             "childNodesCount": 0,
             "description": "The node for demo creation of the node.",
+            "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
             "language": "EN",
             "title": "DemoNode",
             "tags": "demo, node, content",
@@ -1349,6 +1361,7 @@ info:
           "title": "ContentTitle",
           "description": "ContentDescription",
           "tags": "ContentTag",
+          "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
           "language": "EN",
           "region": "US",
           "status": "draft",
@@ -1414,6 +1427,7 @@ info:
                   "/urn:adsk.content:library:5e9aca82-4675-4542-8d21-bde10c1c2d71/urn:adsk.content:node:9c3762f6-c097-4be2-b314-94010c4d26ae/urn:adsk.content:content:f1179def-979e-4aad-b017-768c82360194"
               ],
               "lastModifiedTime": "2017-07-18T10:04:13Z",
+              "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
               "contentDownloadCount": 0,
               "lastModifiedBy": "TGTBKCMEJFW5",
               "description": "ContentDescription",
@@ -1468,6 +1482,7 @@ info:
           "title": "Material Library",
           "description": "The library of industrial material",
           "tags": "material, library, industry",
+          "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
           "language": "EN",
           "region": "US",
           "status": "published"
@@ -1497,6 +1512,7 @@ info:
             "createTime": "2016-11-22T11:03:17Z",
             "description": "The library of industrial material",
             "language": "EN",
+            "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
             "title": "Material Library",
             "region": "US",
             "version": "draft",
@@ -1822,6 +1838,7 @@ info:
             "lastModifiedBy": "TGTBKCMEJFW5",
             "childNodesCount": 0,
             "description": "Creating a test node",
+            "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
             "language": "en",
             "title": "TestNode1",
             "tags": "test, node",
@@ -2065,6 +2082,7 @@ info:
           "title": "ContentTitle",
           "description": "ContentDescription",
           "tags": "ContentTag",
+          "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
           "language": "EN",
           "region": "US",
           "status": "draft",
@@ -2135,6 +2153,7 @@ info:
               "description": "ContentDescription",
               "language": "EN",
               "title": "ContentTitle",
+              "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
               "version": "draft",
               "tags": "ContentTag",
               "createTime": "2017-07-18T10:04:13Z",
@@ -2185,6 +2204,7 @@ info:
           "description": "The library of industrial material",
           "tags": "material, library, industry",
           "language": "EN",
+          "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
           "region": "US",
           "status": "published"
         },
@@ -2214,6 +2234,7 @@ info:
             "createTime": "2016-11-22T11:03:17Z",
             "description": "The library of industrial material",
             "language": "EN",
+            "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
             "title": "Material Library",
             "region": "US",
             "version": "draft",
@@ -2535,6 +2556,7 @@ info:
               "description": "Content directly added in the Library",
               "language": "en",
               "title": "Library Content",
+              "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
               "version": "draft",
               "tags": "content, library",
               "createTime": "2017-06-13T12:26:43Z",
@@ -4690,6 +4712,8 @@ paths:
         - $ref: '#/parameters/query_filter_content_skip_search_cache'
         - $ref: '#/parameters/query_filter_content_search_page_size'
         - $ref: '#/parameters/query_filter_content_search_page_number'
+        - $ref: '#/parameters/query_sort_content_search'
+
       responses:
         '200': { $ref: '#/responses/contentSearch' }
         '400': { $ref: '#/responses/bad_input' }
@@ -6391,6 +6415,15 @@ parameters:
     required: false
     type: number
     default: 1
+  query_sort_content_search:
+    name: sort[contents][extension.{key_name}]
+    in: query
+    description: This param can be used to sort entities
+    required: false
+    type: array
+    format: string
+    items: 
+      type: string
     
 definitions:
   json_api_input_new_follow:
@@ -7060,6 +7093,8 @@ definitions:
                     type: string  
                   status:
                     type: string
+                  externalId:
+                    type: string
               relationships:
                 type: object
                 required: [libraries]
@@ -7099,7 +7134,8 @@ definitions:
                           "tags": "a,b,c,d",
                           "region": "US",
                           "language": "en",
-                          "status": "private"
+                          "status": "private",
+                          "externalId": "abc"
                       },
                       "type": "subLibraries"
                   }
@@ -7132,6 +7168,8 @@ definitions:
                     type: string  
                   status:
                     type: string
+                  externalId:
+                    type: string
         example :
           [
               {
@@ -7142,7 +7180,8 @@ definitions:
                           "tags": "a,b,c,d",
                           "region": "US",
                           "language": "en",
-                          "status": "private"
+                          "status": "private",
+                          "externalId": "abc"
                       },
                       "type": "subLibraries"
                   }
@@ -7174,6 +7213,8 @@ definitions:
                   region:
                     type: string  
                   schemaFamily:
+                    type: string
+                  externalId:
                     type: string
               relationships:
                 type: object
