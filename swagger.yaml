@@ -6334,7 +6334,7 @@ parameters:
     required: false
     type: string      
   query_filter_content_extension_data:
-    name: filter[contents][extension.{key_name}]
+    name: filter[contents][extension.*]
     in: query
     description: This param can be used to search entities based on the extension data set on the content or node. Eg - filter[contents][extension.contentLocation]
     required: false
@@ -6423,7 +6423,7 @@ parameters:
     type: number
     default: 1
   query_sort_content_search:
-    name: sort[contents][extension.{key_name}]
+    name: sort[contents][*]
     in: query
     description: This param can be used to sort entities
     required: false
@@ -7915,6 +7915,12 @@ definitions:
           thumbnails: { type: array, items: { $ref: '#/definitions/file_object_definition' } }
           files: { type: array, items: { $ref: '#/definitions/file_object_definition' } }
           extension: { $ref: '#/definitions/extension_object' }
+          referenceContents : { type: array, items: { $ref: '#/definitions/content_definition' } }
+          communityData : { $ref: '#/definitions/community_data_definition' }
+          lock : { type: boolean, description: 'lock' }
+          lastModifiedBy: { type: string, description: 'lastModifiedBy' }
+          contentDownloadCount : { type: integer, description: 'contentDownloadCount' }
+          entityPaths: { type: array,items: { type: object },description: 'entityPaths' }
       relationships: { $ref: '#/definitions/node_realtionship_definitions' }
       links: { $ref: '#/definitions/json_link_self' }
       
@@ -8101,6 +8107,26 @@ definitions:
       checksum: { type: string, description: 'checksum' }
       objectKey: { type: string, description: 'objectKey' }
       fileUrl: { type: string, description: 'fileUrl' }
+  
+  community_data_definition:
+    type: object
+    description: 'Community Data object definition'
+    properties:      
+      commentCount: { type: integer, description: 'commentCount' }
+      likeCount: { type: integer, description: 'likeCount' }
+      totalHits: { type: integer, description: 'totalHits' }
+      featured: { type: boolean, description: 'featured' }
+      wasLimbo: { type: boolean, description: 'wasLimbo' }
+      status: { type: string, description: 'status' }
+      featureddate: { type: string, description: 'featureddate' }
+      lastCommentId: { type: string, description: 'lastCommentId' }
+      lastCommentdate: { type: string, description: 'lastCommentdate' }
+      lastQuarantinedate: { type: string, description: 'lastQuarantinedate' }
+      lastActivitydate: { type: string, description: 'lastActivitydate' }
+      memberLikes: { type: boolean, description: 'memberLikes' }
+      memberAddsComment: { type: boolean, description: 'memberAddsComment' }
+      likeOxygenIdList: { type: array, items: { type: string} ,description: 'likeOxygenIdList' }
+      commentOxygenIdList: { type: array, items: { type: string} ,description: 'commentOxygenIdList' }
   
   file_details_definition:
     type: object
