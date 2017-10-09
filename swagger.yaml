@@ -649,7 +649,7 @@ info:
         
       HTTP `POST` requests to the Forge Schema require the `data:create` scope, but can also be called with the `data:write` scope.
     
-      [@tutorials/create-content-in-new-library-with-sublibrary]: <>
+    [@tutorials/create-content-in-new-library-with-sublibrary]: <>
     # Create Content in a New Library with Sub Library
     
     This tutorial explains how to create content in a new library that contains a sub library. This tutorial provides the steps based on the following content model:
