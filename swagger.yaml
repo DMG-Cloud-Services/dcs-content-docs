@@ -3902,6 +3902,58 @@ paths:
         [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] }, { oauth2_application: [ 'data:read' ] } ]
       x-ads-docs-cli-example: 'curl -X GET -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" "https://developer.api.autodesk.com/content/v1/libraries/libraryId/nodes"'
       tags: ["Sub-Library"]
+    post:
+      description: |
+        Add a new node to the sub-library. A node can be added directly under a sub-library or under another node.
+        
+        *Special Rules:*
+        
+        1. Length of node title should be between 5 and 128 characters.
+        2. The title of the node must be unique under its parent.
+        
+        ***Note:*** Please see the example payload, Node under subLibrary in the [wiki][1].
+        
+        [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-CreateNode
+      operationId: create_subLibrary_node
+      parameters:
+        - $ref: '#/parameters/subLibraryId'
+        - $ref: '#/parameters/body_create_subLibrary_node'
+      responses:
+        '201': { $ref: '#/responses/node' }
+        '400': { $ref: '#/responses/bad_input' }
+        '403': { $ref: '#/responses/forbidden' }
+      security:
+        [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] }, { oauth2_application: [ 'data:create' ] } ]
+      x-ads-docs-cli-example: 'curl -X POST -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" -H "Content-Type: application/vnd.api+json" -d
+          ''{
+              "data": {
+                "type": "nodes",
+                "attributes":{
+                "title": "in in voluptate nulla proident"
+                "description": "labore cillum nisi",
+                "tags": "mollit ullamco dolore"
+                "relationships": {
+                  "libraries": {
+                    "data": [
+                      {
+                        "type": "subLibraries",
+                        "id": "ad dolore fugiat aliqua sunt"
+                      }]
+                  },
+                  "nodes": {
+                    "data": [
+                      {
+                        "type": "nodes",
+                        "id": "ex ut est"
+                      }
+                      ]
+                  }
+                }
+                }
+              }
+          }
+          }'' "https://developer.api.autodesk.com/content/v1/libraries/libraryId/subLibrary/subLibraryId/nodes"'
+      tags: ["Sub-Library"]
         
   /libraries/{libraryId}/nodes:
     post:
@@ -4136,6 +4188,7 @@ paths:
                 "type": "contents",
                 "attributes": {
                   "title": "dolor nulla",
+                  "status": "draft",
                   "description": "elit officia sed",
                   "tags": "labore laborum",
                   "language": "est incididunt dolore",
@@ -4372,7 +4425,7 @@ paths:
         1. The files are always added to the draft version of the content.
         2. This API can be used to add files data in to locations. 
             * If the API is called like /libraries/{libraryId}/contents/{contentId}/***files***, then the data is added to the core files attribute.
-            * If the API is called like /libraries/{libraryId}/contents/{contentId}/***files***, then the data is added to the core thumbnails attribute.
+            * If the API is called like /libraries/{libraryId}/contents/{contentId}/***thumbnails***, then the data is added to the core thumbnails attribute. ***Note*** Attributes ***width*** and ***height*** are required when adding thumbnails. ***Note*** Attributes ***width*** and ***height*** are required when adding thumbnails.
             * This API can also add the files data directly to the attribute defined inside extension.data by calling is as /libraries/{libraryId}/contents/{contentId}/{***extension.data file attribute***}. 
               * Only first level file attribute present inside extension.data is supported
               * The attribute has to be of custom type *customTypes:autodesk.core:file*.
@@ -5981,6 +6034,14 @@ parameters:
     schema: { 
       $ref: '#/definitions/create_library_node'
     }
+  body_create_subLibrary_node:
+    name: body
+    in: body
+    description: describe the node to be created
+    required: true
+    schema: { 
+      $ref: '#/definitions/create_subLibrary_node'
+    }    
   body_update_library_node:
     name: body
     in: body
@@ -7194,7 +7255,118 @@ definitions:
                   }
               }
           ]
-          
+  create_subLibrary_node:
+    allOf:
+      - type: object
+        required: [ data ]
+        properties:
+          data:
+            type: object
+            required: [ type, attributes, relationships ]
+            properties:
+              type: { type: string, enum: [ 'nodes' ] }
+              attributes:
+                type: object
+                required: [title, description]
+                properties:
+                  title:
+                    type: string
+                  description:
+                    type: string
+                  tags:
+                    type: string  
+                  language:
+                    type: string  
+                  region:
+                    type: string  
+                  schemaFamily:
+                    type: string
+                  externalId:
+                    type: string
+              relationships:
+                type: object
+                required: [subLibraries, nodes]
+                properties:
+                  subLibraries:
+                    type: object
+                    required: [data]
+                    properties:
+                      data:
+                        type: array
+                        maxItems: 1
+                        items:
+                          type: object
+                          required: [type, id]
+                          properties:
+                            type:
+                              { type: string, enum: [ 'libraries' ] }
+                            id:
+                              type: string
+                  nodes:
+                    type: object
+                    required: [data]
+                    properties:
+                      data:
+                        type: array
+                        maxItems: 1
+                        items:
+                          type: object
+                          required: [type, id]
+                          properties:
+                            type:
+                              { type: string, enum: [ 'nodes' ] }
+                            id:
+                              type: string
+        example :
+          [
+              {
+                  "data": {
+                      "relationships": {
+                          "subLibraries": {
+                              "data": [
+                                  {
+                                      "type": "subLibraries",
+                                      "id": "urn:adsk.content:library:690ab1b4-22a9-4b86-b8cc-c78e5a8399b9"
+                                  }
+                              ]
+                          }
+                      },
+                      "attributes": {
+                          "description": "Creating a node to save our materials in",
+                          "title": "NodeRight1",
+                          "tags": "a,b,c,d",
+                          "region": "US",
+                          "language": "en",
+                          "externalId": "abc",
+                          "schemaFamily": "contents:autodesk.mdb.alpha:materialAM-1.0.0"
+                      },
+                      "type": "nodes"
+                  }
+              },
+              {
+                  "data": {
+                      "relationships": {
+                          "nodes": {
+                              "data": [
+                                  {
+                                      "type": "nodes",
+                                      "id": "urn:adsk.content:node:690ab1b4-22a9-4b86-b8cc-c78e5a8399b9"
+                                  }
+                              ]
+                          }
+                      },
+                      "attributes": {
+                          "description": "Creating a node to save our materials in",
+                          "title": "NodeLeft2",
+                          "tags": "a,b,c,d",
+                          "region": "US",
+                          "language": "en",
+                          "schemaFamily": "contents:autodesk.mdb.alpha:materialAM-1.0.0"
+                      },
+                      "type": "nodes"
+                  }
+              }
+          ]          
   create_library_node:
     allOf:
       - type: object
@@ -7364,7 +7536,7 @@ definitions:
               type: { type: string, enum: [ 'contents' ] }
               attributes:
                 type: object
-                required: [title, description, tags, language, region]
+                required: [title, description, tags, status, language, region]
                 properties:
                   title:
                     type: string
