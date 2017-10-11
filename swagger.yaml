@@ -2,6 +2,7 @@ swagger: "2.0"
 info:
   version: 1.0.0
   title: Forge Content API
+  
   description: |
     
     [@overview]: <> (title)
@@ -6168,7 +6169,7 @@ parameters:
     description: Content version to be deleted.
     required: false
     type: string
-    enum: [tip, 1, 4, 6 ...]
+    enum: ["tip", "1", "4", "6", "etc..."]
   loadReferencedContents:
     name: filters[contents][loadReferencedContents] 
     in: query
