@@ -8087,7 +8087,6 @@ definitions:
           thumbnails: { type: array, items: { $ref: '#/definitions/file_object_definition' } }
           files: { type: array, items: { $ref: '#/definitions/file_object_definition' } }
           extension: { $ref: '#/definitions/extension_object' }
-          referenceContents : { type: array, items: { $ref: '#/definitions/content_definition' } }
           communityData : { $ref: '#/definitions/community_data_definition' }
           lock : { type: boolean, description: 'lock' }
           lastModifiedBy: { type: string, description: 'lastModifiedBy' }
