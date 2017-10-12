@@ -679,7 +679,7 @@ info:
         "attributes": {
           "title": "MaterialLibrary",
           "description": "The Library for the Material",
-          "status": "DRAFT",
+          "status": "PRIVATE",
           "language": "EN",
           "region": "US"
         }
@@ -710,7 +710,7 @@ info:
             "createTime": "2017-07-10T13:24:11Z",
             "createdBy": "TGTBKCMEJFW5",
             "region": "US",
-            "status": "draft"
+            "status": "PRIVATE"
         },
         "relationships": {
             "nodes": {
@@ -752,7 +752,7 @@ info:
           "title": "MaterialSubLibrary",
           "description": "The Sub Library for the Material",
           "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
-          "status": "DRAFT",
+          "status": "PRIVATE",
           "language": "EN",
           "region": "US"
         }
@@ -1201,7 +1201,7 @@ info:
               "createTime": "2017-07-10T13:24:11Z",
               "createdBy": "TGTBKCMEJFW5",
               "region": "US",
-              "status": "draft"
+              "status": "private"
           },
           "relationships": {
               "nodes": {
