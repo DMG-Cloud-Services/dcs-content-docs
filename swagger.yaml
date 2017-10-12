@@ -347,7 +347,7 @@ info:
     
     | Attribute   | AUTO/ MANUAL  |  Description
     | ----------- |:-------------:|----------------------------------------------------------------------------
-    | **status**  | MANUAL        |  The status of the library. The status can be **draft** or **published**.
+    | **status**  | MANUAL        |  The status of the library. The status can be **private** or **published**.
     
     ### Sample
     
@@ -361,7 +361,7 @@ info:
             "tags": "test, library",
             "language": "EN",
             "region": "US",
-            "status": "DRAFT/PUBLISHED"
+            "status": "PRIVATE/PUBLISHED"
         }
       }
     }
@@ -373,7 +373,7 @@ info:
     
     | Attribute   | AUTO/ MANUAL  |  Description
     | ----------- |:-------------:|--------------------------------------------------------------------------------
-    | **status**  | MANUAL        |  The status of the sub library. The status can be **draft** or **published**.
+    | **status**  | MANUAL        |  The status of the sub library. The status can be **private** or **published**.
     
     ### Sample
     
@@ -387,7 +387,7 @@ info:
           "tags": "test, sub library",
           "language": "EN",
           "region": "US",
-          "status": "DRAFT/PUBLISHED"
+          "status": "PRIVATE/PUBLISHED"
         }
       }
     }
@@ -789,7 +789,7 @@ info:
             "title": "TestSubLibrary",
             "region": "US",
             "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
-            "status": "draft",
+            "status": "private",
             "tags": "test, sub library"
         },
         "relationships": {
@@ -1709,7 +1709,7 @@ info:
     | **filter[contents][role]**              | Displays the sub libraries for which the user        |
     |                                         | is LIBRARY MANAGER. The list includes the libraries  |
     |                                         | that are published and the libraries that are        |
-    |                                         | draft to the respective user.                        |
+    |                                         | private to the respective user.                      |
     +-----------------------------------------+------------------------------------------------------+
     | **filter[contents][publicLibrary]**     | Displays the sub libraries that are published.       |
     +-----------------------------------------+------------------------------------------------------+
@@ -1763,7 +1763,7 @@ info:
                   "language": "en",
                   "title": "TestSubLibrary",
                   "region": "US",
-                  "status": "draft",
+                  "status": "private",
                   "tags": "test, sub library"
               },
               "relationships": {
@@ -2826,7 +2826,7 @@ info:
             "language": "en",
             "title": "TestSubLibrary",
             "region": "US",
-            "status": "draft",
+            "status": "private",
             "tags": "test, sub library"
           },
           "relationships": {
@@ -3589,7 +3589,7 @@ paths:
                 "attributes":{
                 "title": "ut Duis incididunt et sint",
                 "description": "nostrud mol",
-                "status": "DRAFT",
+                "status": "PRIVATE",
                 "language": "",
                 "tags": "mollit incididunt ipsum tempor sint",
                 "region": "dolor mollit Excepteur",
@@ -3677,7 +3677,7 @@ paths:
               "data": {
                 "type": "libraries",
                 "attributes":{
-                "status": "DRAFT",
+                "status": "PRIVATE",
                 "subjects": {
                   "o2Users":["oxygenId1","oxygenId2"]
                 }
@@ -5441,7 +5441,7 @@ paths:
         parameters:
           - $ref: '#/parameters/contentId'
         responses:
-          '204': { $ref: '' }        
+          '204':  { "description": "No content"  }
   
   /libraries/{libraryId}/features:
       x-summary: Feature Contents or Comments
@@ -5563,7 +5563,7 @@ paths:
                 }
               }
         responses:
-          '201': { $ref: '' }
+          '201': {"description": "Created"}
       delete:
         tags: [ "Community" ]
         operationId: deleteBadWord
@@ -5589,7 +5589,7 @@ paths:
                 }
               }
         responses:
-          '204': { $ref: '' }
+          '204':  { "description": "No content"  }
 
   /contents/{contentId}/comments:
     x-summary: GET/POST Content comments
@@ -5747,7 +5747,7 @@ paths:
         parameters:
           - $ref: '#/parameters/memberId'
         responses:
-          '204': { $ref: '' }
+          '204':  { "description": "No content"  }
           
   /followings:
       x-summary: GET Members Following
@@ -5793,7 +5793,7 @@ paths:
                          }]
                        }
         responses:
-            '204': { $ref: '' }
+          '204':  { "description": "No content"  }
             
   /libraries/{libraryId}/flags:
       x-summary: Content Flag
@@ -5854,7 +5854,7 @@ paths:
               }
             }
         responses:
-          '204': { $ref: '' } 
+            '204':  { "description": "No content"  }
       get:
         tags: [ "Community" ]
         operationId: getFlaggedContentOrComment
@@ -5902,7 +5902,7 @@ paths:
               }
             }
         responses:
-          '201': { $ref: '' }
+          '201': {"description": "Created"}
       get:
         tags: [ "Community" ]
         operationId: getQuarantinedContentOrComment
@@ -7037,8 +7037,8 @@ definitions:
                     type: string
                   status:
                     type: string
-                    enum: ['DRAFT', 'PUBLISHED']
-                    description: optional status indicating if library should be released, default is draft. If status is public release_permissions is required.
+                    enum: ['PRIVATE', 'PUBLISHED']
+                    description: optional status indicating if library should be released, default is private. If status is public release_permissions is required.
                   license:
                     type: string
                     description: Standard license for the library. Please refer to the allowed license list here - https://spdx.org/licenses/
@@ -7060,7 +7060,7 @@ definitions:
                       "language": "en",
                       "region": "US",
                       "license": "Apache License 2.0",
-                      "status": "DRAFT",
+                      "status": "PRIVATE",
                       "registerContentVersionInCommunity": false,
                       "searchCacheExpiryInSeconds": 600
                   }
@@ -7083,8 +7083,8 @@ definitions:
                 properties:
                   status:
                     type: string
-                    enum: ['DRAFT', 'PUBLISHED']
-                    description: optional status indicating if library should be released, default is draft. If status is public release_permissions is required.
+                    enum: ['PRIVATE', 'PUBLISHED']
+                    description: optional status indicating if library should be released, default is private. If status is public release_permissions is required.
                   license:
                     type: string
                     description: Standard license for the library. Please refer to the allowed license list here - https://spdx.org/licenses/
@@ -7203,7 +7203,7 @@ definitions:
                           "tags": "a,b,c,d",
                           "region": "US",
                           "language": "en",
-                          "status": "draft",
+                          "status": "private",
                           "externalId": "abc"
                       },
                       "type": "subLibraries"
@@ -7249,7 +7249,7 @@ definitions:
                           "tags": "a,b,c,d",
                           "region": "US",
                           "language": "en",
-                          "status": "draft",
+                          "status": "private",
                           "externalId": "abc"
                       },
                       "type": "subLibraries"
@@ -9458,7 +9458,7 @@ responses:
                     "childNodesCount": 0,
                     "description": "description",
                     "title": "alpha_Library_1",
-                    "status": "DRAFT"
+                    "status": "PRIVATE"
                 },
                 "relationships": {
                     "nodes": {
@@ -9502,7 +9502,7 @@ responses:
             "description": "Creating a node to save our materials in",
             "title": "Sub-Library 1",
             "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
-            "status": "draft",
+            "status": "private",
             "tags": "a,b,c,d"
           },
           "relationships": {
@@ -9579,7 +9579,7 @@ responses:
                         "childNodesCount": 0,
                         "description": "description",
                         "title": "alpha_Library_1",
-                        "status": "DRAFT"
+                        "status": "PRIVATE"
                     },
                     "relationships": {
                         "nodes": {
@@ -9634,7 +9634,7 @@ responses:
                 "description": "Creating a node to save our materials in",
                 "title": "Sub-Library 1",
                 "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
-                "status": "draft",
+                "status": "private",
                 "tags": "a,b,c,d"
               },
               "relationships": {
@@ -9670,7 +9670,7 @@ responses:
                 "description": "Creating a node to save our materials in",
                 "title": "Sub-Library 2",
                 "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
-                "status": "draft",
+                "status": "private",
                 "tags": "a,b,c,d"
               },
               "relationships": {
@@ -10395,7 +10395,7 @@ responses:
                         "createTime": "2016-12-20T14:07:35Z",
                         "description": "MachineLibraryOnAlpha",
                         "title": "MachineLibraryForMDB",
-                        "status": "DRAFT"
+                        "status": "PRIVATE"
                     },
                     "relationships": {
                         "nodes": {
