@@ -27,7 +27,7 @@ info:
     | **Accept**        |  application/vnd.api+json.
     | **Authorization** |  Bearer < 2-legged or 3-leggedToken >.
     
-    ## Getting Started
+    ## Getting Started for Forge Content
 
     The [API Basics](/en/docs/content/v1/overview/basics) section guides you through the process of getting started with the API and explains the main concepts and functionality.
     
