@@ -1170,7 +1170,7 @@ info:
         "attributes": {
           "title": "MaterialLibrary",
           "description": "The Library for the Material",
-          "status": "DRAFT",
+          "status": "PRIVATE",
           "language": "EN",
           "region": "US"
         }
