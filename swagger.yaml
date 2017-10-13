@@ -691,39 +691,47 @@ info:
     ```json
     {
       "data": {
-        "type": "libraries",
-        "id": "urn:adsk.content:library:5e9aca82-4675-4542-8d21-bde10c1c2d71",
-        "attributes": {
-            "entityPaths": [
-                "/urn:adsk.content:library:5e9aca82-4675-4542-8d21-bde10c1c2d71"
-            ],
-            "lastModifiedTime": "2017-07-10T13:24:11Z",
-            "lastModifiedBy": "TGTBKCMEJFW5",
-            "childNodesCount": 0,
-            "description": "The library of the material",
-            "language": "EN",
-            "createdByAppId": "NdlQsCnWddpRB5Os6t0gV5lufz16SMQ2",
-            "title": "MaterialLibrary",
-            "interestedAppIds": [
-                "NdlQsCnWddpRB5Os6t0gV5lufz16SMQ2"
-            ],
-            "createTime": "2017-07-10T13:24:11Z",
-            "createdBy": "TGTBKCMEJFW5",
-            "region": "US",
-            "status": "PRIVATE"
-        },
-        "relationships": {
-            "nodes": {
-                "links": {
-                    "self": "https://developer-stg.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:5e9aca82-4675-4542-8d21-bde10c1c2d71/relationships/nodes",
-                    "related": "https://developer-stg.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:5e9aca82-4675-4542-8d21-bde10c1c2d71/nodes"
-                },
-                "data": []
-            }
-        },
-        "links": {
-            "self": "https://developer-stg.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:5e9aca82-4675-4542-8d21-bde10c1c2d71"
-        }
+          "type": "libraries",
+          "id": "urn:adsk.content:library:fe88b3ed-a8b4-4215-b528-f4aac12e231d",
+          "attributes": {
+              "entityPaths": [
+                  "/urn:adsk.content:library:fe88b3ed-a8b4-4215-b528-f4aac12e231d"
+              ],
+              "lastModifiedTime": "2017-10-13T06:15:05Z",
+              "lastModifiedBy": "AYK2Q7S52XRU",
+              "childNodesCount": 0,
+              "description": "The Library for the Material",
+              "language": "en",
+              "createdByAppId": "NdlQsCnWddpRB5Os6t0gV5lufz16SMQ2",
+              "title": "MaterialLibrary",
+              "tags": "test, library",
+              "interestedAppIds": [
+                  "NdlQsCnWddpRB5Os6t0gV5lufz16SMQ2"
+              ],
+              "createTime": "2017-10-13T06:15:05Z",
+              "createdBy": "AYK2Q7S52XRU",
+              "region": "US",
+              "status": ""
+          },
+          "relationships": {
+              "nodes": {
+                  "links": {
+                      "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/libraries/urn:adsk.content:library:fe88b3ed-a8b4-4215-b528-f4aac12e231d/relationships/nodes",
+                      "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/libraries/urn:adsk.content:library:fe88b3ed-a8b4-4215-b528-f4aac12e231d/nodes"
+                  },
+                  "data": []
+              },
+              "subLibraries": {
+                  "links": {
+                      "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/libraries/urn:adsk.content:library:fe88b3ed-a8b4-4215-b528-f4aac12e231d/relationships/subLibraries",
+                      "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/libraries/urn:adsk.content:library:fe88b3ed-a8b4-4215-b528-f4aac12e231d/subLibraries"
+                  },
+                  "data": []
+              }
+          },
+          "links": {
+              "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/libraries/urn:adsk.content:library:fe88b3ed-a8b4-4215-b528-f4aac12e231d"
+          }
       },
       "included": [],
       "meta": {}
@@ -774,41 +782,40 @@ info:
     ```json
     {
       "data": {
-        "type": "subLibraries",
-        "id": "urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01",
-        "attributes": {
-            "entityPaths": [
-                "/urn:adsk.content:library:5f5c7b29-4b9c-4f6d-9326-e7074b34badd/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01"
-            ],
-            "lastModifiedTime": "2017-08-10T08:14:14Z",
-            "createTime": "2017-08-10T08:14:14Z",
-            "createdBy": "TGTBKCMEJFW5",
-            "lastModifiedBy": "TGTBKCMEJFW5",
-            "description": "Test Sub Library",
-            "language": "en",
-            "title": "TestSubLibrary",
-            "region": "US",
-            "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
-            "status": "private",
-            "tags": "test, sub library"
-        },
-        "relationships": {
-            "libraries": {
-                "links": {
-                    "self": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01/relationships/libraries",
-                    "related": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01/libraries"
-                }
-            },
-            "nodes": {
-                "links": {
-                    "self": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01/relationships/nodes",
-                    "related": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01/nodes"
-                }
-            }
-        },
-        "links": {
-            "self": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01"
-        }
+          "type": "subLibraries",
+          "id": "urn:adsk.content:node:5a071edd-b066-4038-ac26-38cdd566bc1d",
+          "attributes": {
+              "entityPaths": [
+                  "/urn:adsk.content:library:3a62a6d5-2765-4846-9f82-3771f08877dd/urn:adsk.content:node:5a071edd-b066-4038-ac26-38cdd566bc1d"
+              ],
+              "lastModifiedTime": "2017-10-13T07:32:02Z",
+              "createTime": "2017-10-13T07:32:02Z",
+              "createdBy": "AYK2Q7S52XRU",
+              "lastModifiedBy": "AYK2Q7S52XRU",
+              "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
+              "description": "The Sub Library for the Material",
+              "language": "EN",
+              "title": "MaterialSubLibrary",
+              "region": "US",
+              "status": "private"
+          },
+          "relationships": {
+              "nodes": {
+                  "links": {
+                      "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/subLibraries/urn:adsk.content:node:5a071edd-b066-4038-ac26-38cdd566bc1d/relationships/nodes",
+                      "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/subLibraries/urn:adsk.content:node:5a071edd-b066-4038-ac26-38cdd566bc1d/nodes"
+                  }
+              },
+              "libraries": {
+                  "links": {
+                      "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/subLibraries/urn:adsk.content:node:5a071edd-b066-4038-ac26-38cdd566bc1d/relationships/libraries",
+                      "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/subLibraries/urn:adsk.content:node:5a071edd-b066-4038-ac26-38cdd566bc1d/libraries"
+                  }
+              }
+          },
+          "links": {
+              "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/subLibraries/urn:adsk.content:node:5a071edd-b066-4038-ac26-38cdd566bc1d"
+          }
       },
       "included": [],
       "meta": {}
@@ -880,56 +887,56 @@ info:
     ```json
     {
       "data": {
-        "type": "nodes",
-        "id": "urn:adsk.content:node:fe9bcf2f-9872-4b89-b228-6b6bc47e999d",
-        "attributes": {
-            "entityPaths": [
-                "/urn:adsk.content:library:e5108ad7-1051-4293-b50f-73958019f779/urn:adsk.content:node:fe9bcf2f-9872-4b89-b228-6b6bc47e999d"
-            ],
-            "lastModifiedTime": "2017-07-31T09:05:45Z",
-            "lastModifiedBy": "TGTBKCMEJFW5",
-            "childNodesCount": 0,
-            "description": "The node for demo creation of the node.",
-            "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
-            "language": "EN",
-            "title": "DemoNode",
-            "tags": "demo, node, content",
-            "totalChildrenCount": 0,
-            "createTime": "2017-07-31T09:05:45Z",
-            "createdBy": "TGTBKCMEJFW5",
-            "region": "US",
-            "childContentsCount": 0
-        },
-        "relationships": {
-            "libraries": {
-                "links": {
-                    "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6/relationships/libraries",
-                    "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6/libraries"
-                }
-            },
-            "contents": {
-                "links": {
-                    "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6/relationships/contents",
-                    "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6/contents"
-                },
-                "data": []
-            },
-            "nodes": {
-                "links": {
-                    "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6/relationships/nodes",
-                    "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6/nodes"
-                }
-            },
-            "subLibraries": {
-                "links": {
-                    "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6/relationships/subLibraries",
-                    "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6/subLibraries"
-                }
-            }
-        },
-        "links": {
-            "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6"
-        }
+          "type": "nodes",
+          "id": "urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1",
+          "attributes": {
+              "entityPaths": [
+                  "/urn:adsk.content:library:3a62a6d5-2765-4846-9f82-3771f08877dd/urn:adsk.content:node:5a071edd-b066-4038-ac26-38cdd566bc1d/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1"
+              ],
+              "lastModifiedTime": "2017-10-13T07:33:23Z",
+              "lastModifiedBy": "AYK2Q7S52XRU",
+              "childNodesCount": 0,
+              "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
+              "description": "The node for storing material content",
+              "language": "EN",
+              "title": "MaterialNode",
+              "tags": "material, content",
+              "totalChildrenCount": 0,
+              "createTime": "2017-10-13T07:33:23Z",
+              "createdBy": "AYK2Q7S52XRU",
+              "region": "US",
+              "childContentsCount": 0
+          },
+          "relationships": {
+              "nodes": {
+                  "links": {
+                      "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1/relationships/nodes",
+                      "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1/nodes"
+                  }
+              },
+              "contents": {
+                  "links": {
+                      "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1/relationships/contents",
+                      "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1/contents"
+                  },
+                  "data": []
+              },
+              "subLibraries": {
+                  "links": {
+                      "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1/relationships/subLibraries",
+                      "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1/subLibraries"
+                  }
+              },
+              "libraries": {
+                  "links": {
+                      "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1/relationships/libraries",
+                      "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1/libraries"
+                  }
+              }
+          },
+          "links": {
+              "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1"
+          }
       },
       "included": []
     }
@@ -970,50 +977,20 @@ info:
           "tags": "ContentTag",
           "language": "EN",
           "region": "US",
-          "status": "draft",
+          "status" : "draft",
           "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
-          "extension": {
-            "type": "contents:autodesk.mdb.alpha:machineAM",
-            "version": "2.0.0",
-            "data": {
-              "facetId": "additiveManufacturing",
-              "displayName": "FormLabs-Form 2",
-              "amTech": "SLA",
-              "manufacturerName": "FormLabs",
-              "modelName": "Form 2",
-              "firmwareVersion": "PreForm",
-              "maxBuildHeight": {
-                  "value": 175,
-                  "units": "cm"
-              },
-              "bedSize": {
-                "breadth": {
-                  "value": 50,
-                  "units": "cm"
-                },
-                "height": {
-                  "value": 175,
-                  "units": "cm"
-                },
-                "length": {
-                  "value": 75,
-                  "units": "cm"
-                }
-              },
-              "machinePrice": {
-                "value": 1500,
-                "units": "$"
-              },
-              "hardwareVersion": "1.0"
-            }
+    	    "extension": {
+            "type": "contents:autodesk.core:content",
+            "version": "1.0.0",
+            "namespace": "autodesk.core"
           }
         },
-        "relationships": {
+        "relationships": {	
           "nodes": {
             "data": [
               {
                 "type": "nodes",
-                "id": "NodeId"
+                "id": "urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1"
               }
             ]
           }
@@ -1028,22 +1005,28 @@ info:
     {
       "data": {
           "type": "contents",
-          "id": "urn:adsk.content:content:f1179def-979e-4aad-b017-768c82360194",
+          "id": "urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3",
           "attributes": {
               "entityPaths": [
-                  "/urn:adsk.content:library:5e9aca82-4675-4542-8d21-bde10c1c2d71/urn:adsk.content:node:9c3762f6-c097-4be2-b314-94010c4d26ae/urn:adsk.content:content:f1179def-979e-4aad-b017-768c82360194"
+                  "/urn:adsk.content:library:3a62a6d5-2765-4846-9f82-3771f08877dd/urn:adsk.content:node:5a071edd-b066-4038-ac26-38cdd566bc1d/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1/urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3"
               ],
-              "lastModifiedTime": "2017-07-18T10:04:13Z",
+              "extension": {
+                  "type": "contents:autodesk.core:content",
+                  "version": "1.0.0",
+                  "namespace": "autodesk.core"
+              },
+              "lastModifiedTime": "2017-10-13T07:37:34Z",
               "contentDownloadCount": 0,
-              "lastModifiedBy": "TGTBKCMEJFW5",
-              "description": "ContentDescription",
+              "lastModifiedBy": "AYK2Q7S52XRU",
+              "deprecated": false,
               "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
+              "description": "ContentDescription",
               "language": "EN",
               "title": "ContentTitle",
               "version": "draft",
               "tags": "ContentTag",
-              "createTime": "2017-07-18T10:04:13Z",
-              "createdBy": "TGTBKCMEJFW5",
+              "createTime": "2017-10-13T07:37:34Z",
+              "createdBy": "AYK2Q7S52XRU",
               "lock": false,
               "region": "US",
               "status": "draft"
@@ -1051,13 +1034,13 @@ info:
           "relationships": {
               "nodes": {
                   "links": {
-                      "self": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.content:content:f1179def-979e-4aad-b017-768c82360194/relationships/nodes",
-                      "related": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.content:content:f1179def-979e-4aad-b017-768c82360194/nodes"
+                      "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/contents/urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3/relationships/nodes",
+                      "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/contents/urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3/nodes"
                   }
               }
           },
           "links": {
-              "self": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.content:content:f1179def-979e-4aad-b017-768c82360194"
+              "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/contents/urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3"
           }
       },
       "included": []
@@ -1114,31 +1097,45 @@ info:
     {
       "data": {
           "type": "contents",
-          "id": "urn:adsk.wipstg:dm.lineage:PP_zlFyQSAa8GkbiZ55b1w",
+          "id": "urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3",
           "attributes": {
-            "lastModifiedTime": "2016-11-22T11:03:17Z",
-            "createTime": "2016-11-22T11:03:17Z",
-            "description": "The library of industrial material",
-            "language": "EN",
-            "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
-            "title": "Material Library",
-            "region": "US",
-            "version": "draft",
-            "tags": "material, library, industry",
-            "status": "published",
+              "entityPaths": [
+                  "/urn:adsk.content:library:3a62a6d5-2765-4846-9f82-3771f08877dd/urn:adsk.content:node:5a071edd-b066-4038-ac26-38cdd566bc1d/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1/urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3"
+              ],
+              "extension": {
+                  "type": "contents:autodesk.core:content",
+                  "version": "1.0.0",
+                  "namespace": "autodesk.core"
+              },
+              "lastModifiedTime": "2017-10-13T07:39:52Z",
+              "contentDownloadCount": 0,
+              "lastModifiedBy": "AYK2Q7S52XRU",
+              "deprecated": false,
+              "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
+              "description": "ContentDescription",
+              "language": "EN",
+              "title": "ContentTitle",
+              "version": "1",
+              "tags": "ContentTag",
+              "createTime": "2017-10-13T07:39:52Z",
+              "createdBy": "AYK2Q7S52XRU",
+              "lock": false,
+              "region": "US",
+              "status": "published"
           },
           "relationships": {
-            "nodes": {
-              "links": {
-                "self": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.wipstg:dm.lineage:PP_zlFyQSAa8GkbiZ55b1w/relationships/nodes",
-                "related": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.wipstg:dm.lineage:PP_zlFyQSAa8GkbiZ55b1w/nodes"
+              "nodes": {
+                  "links": {
+                      "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/contents/urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3/relationships/nodes",
+                      "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/contents/urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3/nodes"
+                  }
               }
-            }
           },
           "links": {
-            "self": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.wipstg:dm.lineage:PP_zlFyQSAa8GkbiZ55b1w"
+              "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/contents/urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3"
           }
-        }
+      },
+      "included": []
     }
     ```
     [@tutorials/create-content-in-new-library-without-sublibrary]: <>
@@ -1183,37 +1180,45 @@ info:
     {
       "data": {
           "type": "libraries",
-          "id": "urn:adsk.content:library:5e9aca82-4675-4542-8d21-bde10c1c2d71",
+          "id": "urn:adsk.content:library:fe88b3ed-a8b4-4215-b528-f4aac12e231d",
           "attributes": {
               "entityPaths": [
-                  "/urn:adsk.content:library:5e9aca82-4675-4542-8d21-bde10c1c2d71"
+                  "/urn:adsk.content:library:fe88b3ed-a8b4-4215-b528-f4aac12e231d"
               ],
-              "lastModifiedTime": "2017-07-10T13:24:11Z",
-              "lastModifiedBy": "TGTBKCMEJFW5",
+              "lastModifiedTime": "2017-10-13T06:15:05Z",
+              "lastModifiedBy": "AYK2Q7S52XRU",
               "childNodesCount": 0,
-              "description": "The library of the material",
-              "language": "EN",
+              "description": "The Library for the Material",
+              "language": "en",
               "createdByAppId": "NdlQsCnWddpRB5Os6t0gV5lufz16SMQ2",
               "title": "MaterialLibrary",
+              "tags": "test, library",
               "interestedAppIds": [
                   "NdlQsCnWddpRB5Os6t0gV5lufz16SMQ2"
               ],
-              "createTime": "2017-07-10T13:24:11Z",
-              "createdBy": "TGTBKCMEJFW5",
+              "createTime": "2017-10-13T06:15:05Z",
+              "createdBy": "AYK2Q7S52XRU",
               "region": "US",
-              "status": "private"
+              "status": ""
           },
           "relationships": {
               "nodes": {
                   "links": {
-                      "self": "https://developer-stg.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:5e9aca82-4675-4542-8d21-bde10c1c2d71/relationships/nodes",
-                      "related": "https://developer-stg.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:5e9aca82-4675-4542-8d21-bde10c1c2d71/nodes"
+                      "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/libraries/urn:adsk.content:library:fe88b3ed-a8b4-4215-b528-f4aac12e231d/relationships/nodes",
+                      "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/libraries/urn:adsk.content:library:fe88b3ed-a8b4-4215-b528-f4aac12e231d/nodes"
+                  },
+                  "data": []
+              },
+              "subLibraries": {
+                  "links": {
+                      "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/libraries/urn:adsk.content:library:fe88b3ed-a8b4-4215-b528-f4aac12e231d/relationships/subLibraries",
+                      "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/libraries/urn:adsk.content:library:fe88b3ed-a8b4-4215-b528-f4aac12e231d/subLibraries"
                   },
                   "data": []
               }
           },
           "links": {
-              "self": "https://developer-stg.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:5e9aca82-4675-4542-8d21-bde10c1c2d71"
+              "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/libraries/urn:adsk.content:library:fe88b3ed-a8b4-4215-b528-f4aac12e231d"
           }
       },
       "included": [],
@@ -1279,50 +1284,56 @@ info:
     ```json
     {
       "data": {
-        "type": "nodes",
-        "id": "urn:adsk.content:node:fe9bcf2f-9872-4b89-b228-6b6bc47e999d",
-        "attributes": {
-            "entityPaths": [
-                "/urn:adsk.content:library:e5108ad7-1051-4293-b50f-73958019f779/urn:adsk.content:node:fe9bcf2f-9872-4b89-b228-6b6bc47e999d"
-            ],
-            "lastModifiedTime": "2017-07-31T09:05:45Z",
-            "lastModifiedBy": "TGTBKCMEJFW5",
-            "childNodesCount": 0,
-            "description": "The node for demo creation of the node.",
-            "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
-            "language": "EN",
-            "title": "DemoNode",
-            "tags": "demo, node, content",
-            "totalChildrenCount": 0,
-            "createTime": "2017-07-31T09:05:45Z",
-            "createdBy": "TGTBKCMEJFW5",
-            "region": "US",
-            "childContentsCount": 0
-        },
-        "relationships": {
-            "nodes": {
-                "links": {
-                    "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:fe9bcf2f-9872-4b89-b228-6b6bc47e999d/relationships/nodes",
-                    "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:fe9bcf2f-9872-4b89-b228-6b6bc47e999d/nodes"
-                }
-            },
-            "contents": {
-                "links": {
-                    "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:fe9bcf2f-9872-4b89-b228-6b6bc47e999d/relationships/contents",
-                    "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:fe9bcf2f-9872-4b89-b228-6b6bc47e999d/contents"
-                },
-                "data": []
-            },
-            "libraries": {
-                "links": {
-                    "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:fe9bcf2f-9872-4b89-b228-6b6bc47e999d/relationships/libraries",
-                    "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:fe9bcf2f-9872-4b89-b228-6b6bc47e999d/libraries"
-                }
-            }
-        },
-        "links": {
-            "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:fe9bcf2f-9872-4b89-b228-6b6bc47e999d"
-        }
+          "type": "nodes",
+          "id": "urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1",
+          "attributes": {
+              "entityPaths": [
+                  "/urn:adsk.content:library:3a62a6d5-2765-4846-9f82-3771f08877dd/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1"
+              ],
+              "lastModifiedTime": "2017-10-13T07:33:23Z",
+              "lastModifiedBy": "AYK2Q7S52XRU",
+              "childNodesCount": 0,
+              "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
+              "description": "The node for storing material content",
+              "language": "EN",
+              "title": "MaterialNode",
+              "tags": "material, content",
+              "totalChildrenCount": 0,
+              "createTime": "2017-10-13T07:33:23Z",
+              "createdBy": "AYK2Q7S52XRU",
+              "region": "US",
+              "childContentsCount": 0
+          },
+          "relationships": {
+              "nodes": {
+                  "links": {
+                      "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1/relationships/nodes",
+                      "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1/nodes"
+                  }
+              },
+              "contents": {
+                  "links": {
+                      "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1/relationships/contents",
+                      "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1/contents"
+                  },
+                  "data": []
+              },
+              "subLibraries": {
+                  "links": {
+                      "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1/relationships/subLibraries",
+                      "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1/subLibraries"
+                  }
+              },
+              "libraries": {
+                  "links": {
+                      "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1/relationships/libraries",
+                      "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1/libraries"
+                  }
+              }
+          },
+          "links": {
+              "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1"
+          }
       },
       "included": []
     }
@@ -1362,52 +1373,22 @@ info:
           "title": "ContentTitle",
           "description": "ContentDescription",
           "tags": "ContentTag",
-          "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
           "language": "EN",
           "region": "US",
-          "status": "draft",
-          "extension": {
-            "type": "contents:autodesk.mdb.alpha:machineAM",
-            "version": "2.0.0",
-            "data": {
-              "facetId": "additiveManufacturing",
-              "displayName": "FormLabs-Form 2",
-              "amTech": "SLA",
-              "manufacturerName": "FormLabs",
-              "modelName": "Form 2",
-              "firmwareVersion": "PreForm",
-              "maxBuildHeight": {
-                  "value": 175,
-                  "units": "cm"
-              },
-              "bedSize": {
-                "breadth": {
-                  "value": 50,
-                  "units": "cm"
-                },
-                "height": {
-                  "value": 175,
-                  "units": "cm"
-                },
-                "length": {
-                  "value": 75,
-                  "units": "cm"
-                }
-              },
-              "machinePrice": {
-                "value": 1500,
-                "units": "$"
-              },
-              "hardwareVersion": "1.0"
-            }
+          "status" : "draft",
+          "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
+    	    "extension": {
+            "type": "contents:autodesk.core:content",
+            "version": "1.0.0",
+            "namespace": "autodesk.core"
           }
         },
-        "relationships": {
+        "relationships": {	
           "nodes": {
             "data": [
               {
                 "type": "nodes",
-                "id": "NodeId"
+                "id": "urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1"
               }
             ]
           }
@@ -1422,36 +1403,42 @@ info:
     {
       "data": {
           "type": "contents",
-          "id": "urn:adsk.content:content:f1179def-979e-4aad-b017-768c82360194",
+          "id": "urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3",
           "attributes": {
               "entityPaths": [
-                  "/urn:adsk.content:library:5e9aca82-4675-4542-8d21-bde10c1c2d71/urn:adsk.content:node:9c3762f6-c097-4be2-b314-94010c4d26ae/urn:adsk.content:content:f1179def-979e-4aad-b017-768c82360194"
+                  "/urn:adsk.content:library:3a62a6d5-2765-4846-9f82-3771f08877dd/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1/urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3"
               ],
-              "lastModifiedTime": "2017-07-18T10:04:13Z",
-              "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
+              "extension": {
+                  "type": "contents:autodesk.core:content",
+                  "version": "1.0.0",
+                  "namespace": "autodesk.core"
+              },
+              "lastModifiedTime": "2017-10-13T07:39:52Z",
               "contentDownloadCount": 0,
-              "lastModifiedBy": "TGTBKCMEJFW5",
+              "lastModifiedBy": "AYK2Q7S52XRU",
+              "deprecated": false,
+              "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
               "description": "ContentDescription",
               "language": "EN",
               "title": "ContentTitle",
-              "version": "draft",
+              "version": "1",
               "tags": "ContentTag",
-              "createTime": "2017-07-18T10:04:13Z",
-              "createdBy": "TGTBKCMEJFW5",
+              "createTime": "2017-10-13T07:39:52Z",
+              "createdBy": "AYK2Q7S52XRU",
               "lock": false,
               "region": "US",
-              "status": "draft"
+              "status": "published"
           },
           "relationships": {
               "nodes": {
                   "links": {
-                      "self": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.content:content:f1179def-979e-4aad-b017-768c82360194/relationships/nodes",
-                      "related": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.content:content:f1179def-979e-4aad-b017-768c82360194/nodes"
+                      "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/contents/urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3/relationships/nodes",
+                      "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/contents/urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3/nodes"
                   }
               }
           },
           "links": {
-              "self": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.content:content:f1179def-979e-4aad-b017-768c82360194"
+              "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/contents/urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3"
           }
       },
       "included": []
@@ -1507,31 +1494,45 @@ info:
     {
       "data": {
           "type": "contents",
-          "id": "urn:adsk.wipstg:dm.lineage:PP_zlFyQSAa8GkbiZ55b1w",
+          "id": "urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3",
           "attributes": {
-            "lastModifiedTime": "2016-11-22T11:03:17Z",
-            "createTime": "2016-11-22T11:03:17Z",
-            "description": "The library of industrial material",
-            "language": "EN",
-            "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
-            "title": "Material Library",
-            "region": "US",
-            "version": "draft",
-            "tags": "material, library, industry",
-            "status": "published",
+              "entityPaths": [
+                  "/urn:adsk.content:library:3a62a6d5-2765-4846-9f82-3771f08877dd/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1/urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3"
+              ],
+              "extension": {
+                  "type": "contents:autodesk.core:content",
+                  "version": "1.0.0",
+                  "namespace": "autodesk.core"
+              },
+              "lastModifiedTime": "2017-10-13T07:39:52Z",
+              "contentDownloadCount": 0,
+              "lastModifiedBy": "AYK2Q7S52XRU",
+              "deprecated": false,
+              "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
+              "description": "ContentDescription",
+              "language": "EN",
+              "title": "ContentTitle",
+              "version": "1",
+              "tags": "ContentTag",
+              "createTime": "2017-10-13T07:39:52Z",
+              "createdBy": "AYK2Q7S52XRU",
+              "lock": false,
+              "region": "US",
+              "status": "published"
           },
           "relationships": {
-            "nodes": {
-              "links": {
-                "self": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.wipstg:dm.lineage:PP_zlFyQSAa8GkbiZ55b1w/relationships/nodes",
-                "related": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.wipstg:dm.lineage:PP_zlFyQSAa8GkbiZ55b1w/nodes"
+              "nodes": {
+                  "links": {
+                      "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/contents/urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3/relationships/nodes",
+                      "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/contents/urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3/nodes"
+                  }
               }
-            }
           },
           "links": {
-            "self": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.wipstg:dm.lineage:PP_zlFyQSAa8GkbiZ55b1w"
+              "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/contents/urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3"
           }
-        }
+      },
+      "included": []
     }
     ```
     
@@ -3192,7 +3193,24 @@ info:
                             "fileUrl": "https://developer-stg.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:e5108ad7-1051-4293-b50f-73958019f779/contents/urn:adsk.content:content:99a477ca-8f41-4c0b-bf3e-2823327d6e65/48326614-d07e-4e90-8db0-ba76ffa96fab.links.doc?nonce=MucwXTNGUJMzeBY6k2VWA7KO6jxeWUIL4jo5iQWt0bu3CyL0i6Y1TVmj_EwIOG1V-kiy8yrtqD2vintVy2KCLu_yDbnTUbrlIfkuAiWkcFLUmZ0Jw6e5m14gV9SE2MFkt07twKjFDLPpa6ckpO0RhKDxsc8IhJE0niDqJIDh6Pre4C8h8N99oXJs5_LZKGyXVXr0Ub4EKoeOc0K0dV1SPnbpuiwFwwinl3y6nIiGB6qQf33knWb3gWvfRVclUnQoGinrRyW3QFKe4oSZk6gPJrKmAM2Cmaobc8FMoxJCHAzPs5imxziyzDolDs8PcD4KoLyInVAMswM7Z5IbMzruO-uJOgWUs3PNI5DQJaNEkK34YqAU0Ouph5BNpOnpGJ79zBSdkASRmbl9IG5Mh8fe6DJneHx44YR5dFncf49rZj2Eoztk5vfG9-5eL3bU5xgdRN6sQftzFqqdDIIEmSjyik_oiAQe0NbjVbVgk5invwn3Gf4azs8TCwKohdxBwiQQhXxHNO13MX5wWXSkuTCsjQ&seed=AAABXaM--wAAAAFdowgMgA"
                         }
                     ],
-                    "lock": true,
+                    "communityData": {
+                      "commentCount": "",
+                      "likeCount": "",
+                      "totalHits": "",
+                      "featured": "",
+                      "status": "published",
+                      "featuredDate": "",
+                      "lastCommentId": "",
+                      "lastCommentDate": "",
+                      "lastQuarantineDate": "",
+                      "lastActivityDate": "",
+                      "limboed": "",
+                      "liked": "",
+                      "commented": "",
+                      "likeOxygenIds": [],
+                      "commentOxygenIds": []
+    		            },
+    		            "lock": true,
                     "region": "US",
                     "status": "published"
                 },
@@ -3259,6 +3277,23 @@ info:
                             "fileUrl": "https://developer-stg.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:e5108ad7-1051-4293-b50f-73958019f779/contents/urn:adsk.content:content:99a477ca-8f41-4c0b-bf3e-2823327d6e65/48326614-d07e-4e90-8db0-ba76ffa96fab.links.doc?nonce=MucwXTNGUJMzeBY6k2VWA7KO6jxeWUIL4jo5iQWt0bu3CyL0i6Y1TVmj_EwIOG1V-kiy8yrtqD2vintVy2KCLu_yDbnTUbrlIfkuAiWkcFLUmZ0Jw6e5m14gV9SE2MFkt07twKjFDLPpa6ckpO0RhKDxsc8IhJE0niDqJIDh6Pre4C8h8N99oXJs5_LZKGyXVXr0Ub4EKoeOc0K0dV1SPnbpuiwFwwinl3y6nIiGB6qQf33knWb3gWvfRVclUnQoGinrRyW3QFKe4oSZk6gPJrKmAM2Cmaobc8FMoxJCHAzPs5imxziyzDolDs8PcD4KoLyInVAMswM7Z5IbMzruO-uJOgWUs3PNI5DQJaNEkK34YqAU0Ouph5BNpOnpGJ79zBSdkASRmbl9IG5Mh8fe6DJneHx44YR5dFncf49rZj2Eoztk5vfG9-5eL3bU5xgdRN6sQftzFqqdDIIEmSjyik_oiAQe0NbjVbVgk5invwmWs4kz2_Tx9TU3NMYJX4Lki2N2Hhat3hcIJKYUFKln3A&seed=AAABXaM--wAAAAFdowgMgA"
                         }
                     ],
+                    "communityData": {
+                      "commentCount": "",
+                      "likeCount": "",
+                      "totalHits": "",
+                      "featured": "",
+                      "status": "published",
+                      "featuredDate": "",
+                      "lastCommentId": "",
+                      "lastCommentDate": "",
+                      "lastQuarantineDate": "",
+                      "lastActivityDate": "",
+                      "limboed": "",
+                      "liked": "",
+                      "commented": "",
+                      "likeOxygenIds": [],
+                      "commentOxygenIds": []
+    		            },
                     "lock": true,
                     "region": "US",
                     "status": "published"
@@ -9446,31 +9481,45 @@ responses:
         {
             "data": {
                 "type": "libraries",
-                "id": "urn:adsk.content:library:690ab1b4-22a9-4b86-b8cc-c78e5a8399b9",
+                "id": "urn:adsk.content:library:592d9e66-c963-4975-ac59-75864e68410c",
                 "attributes": {
                     "entityPaths": [
-                        "/urn:adsk.content:library:690ab1b4-22a9-4b86-b8cc-c78e5a8399b9"
+                        "/urn:adsk.content:library:592d9e66-c963-4975-ac59-75864e68410c"
                     ],
-                    "lastModifiedTime": "2017-02-27T20:37:48Z",
-                    "createTime": "2017-02-27T20:37:48Z",
-                    "createdBy": "ERB3Q463BYQW",
-                    "lastModifiedBy": "ERB3Q463BYQW",
+                    "lastModifiedTime": "2017-10-13T07:41:40Z",
+                    "lastModifiedBy": "AYK2Q7S52XRU",
                     "childNodesCount": 0,
-                    "description": "description",
-                    "title": "alpha_Library_1",
-                    "status": "PRIVATE"
+                    "description": "test libraries",
+                    "language": "en",
+                    "createdByAppId": "NdlQsCnWddpRB5Os6t0gV5lufz16SMQ2",
+                    "title": "test.library.sng101303",
+                    "tags": "test, library",
+                    "interestedAppIds": [
+                        "NdlQsCnWddpRB5Os6t0gV5lufz16SMQ2"
+                    ],
+                    "createTime": "2017-10-13T07:41:40Z",
+                    "createdBy": "AYK2Q7S52XRU",
+                    "region": "US",
+                    "status": ""
                 },
                 "relationships": {
                     "nodes": {
                         "links": {
-                            "self": "https://developer-stg.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:690ab1b4-22a9-4b86-b8cc-c78e5a8399b9/relationships/nodes",
-                            "related": "https://developer-stg.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:690ab1b4-22a9-4b86-b8cc-c78e5a8399b9/nodes"
+                            "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/libraries/urn:adsk.content:library:592d9e66-c963-4975-ac59-75864e68410c/relationships/nodes",
+                            "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/libraries/urn:adsk.content:library:592d9e66-c963-4975-ac59-75864e68410c/nodes"
+                        },
+                        "data": []
+                    },
+                    "subLibraries": {
+                        "links": {
+                            "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/libraries/urn:adsk.content:library:592d9e66-c963-4975-ac59-75864e68410c/relationships/subLibraries",
+                            "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/libraries/urn:adsk.content:library:592d9e66-c963-4975-ac59-75864e68410c/subLibraries"
                         },
                         "data": []
                     }
                 },
                 "links": {
-                    "self": "https://developer-stg.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:690ab1b4-22a9-4b86-b8cc-c78e5a8399b9"
+                    "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/libraries/urn:adsk.content:library:592d9e66-c963-4975-ac59-75864e68410c"
                 }
             },
             "included": [],
@@ -9488,40 +9537,44 @@ responses:
     examples:
       application/vnd.api+json:
         {
-          "type": "subLibraries",
-          "id": "urn:adsk.content:node:b04aa8e8-ab6e-455f-9152-8d72c7974ecc",
-          "attributes": {
-            "entityPaths": [
-              "/urn:adsk.content:library:5ace48a2-d4e2-472b-a2c2-51a3e361c8f5/urn:adsk.content:node:b04aa8e8-ab6e-455f-9152-8d72c7974ecc"
-            ],
-            "role": "LIBRARY_MANAGER",
-            "lastModifiedTime": "2017-08-07T21:24:47Z",
-            "createTime": "2017-08-07T21:24:47Z",
-            "createdBy": "ERB3Q463BYQW",
-            "lastModifiedBy": "ERB3Q463BYQW",
-            "description": "Creating a node to save our materials in",
-            "title": "Sub-Library 1",
-            "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
-            "status": "private",
-            "tags": "a,b,c,d"
-          },
-          "relationships": {
-            "libraries": {
-              "links": {
-                "self": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:b04aa8e8-ab6e-455f-9152-8d72c7974ecc/relationships/libraries",
-                "related": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:b04aa8e8-ab6e-455f-9152-8d72c7974ecc/libraries"
-              }
+            "data": {
+                "type": "subLibraries",
+                "id": "urn:adsk.content:node:5a071edd-b066-4038-ac26-38cdd566bc1d",
+                "attributes": {
+                    "entityPaths": [
+                        "/urn:adsk.content:library:3a62a6d5-2765-4846-9f82-3771f08877dd/urn:adsk.content:node:5a071edd-b066-4038-ac26-38cdd566bc1d"
+                    ],
+                    "lastModifiedTime": "2017-10-13T07:32:02Z",
+                    "createTime": "2017-10-13T07:32:02Z",
+                    "createdBy": "AYK2Q7S52XRU",
+                    "lastModifiedBy": "AYK2Q7S52XRU",
+                    "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
+                    "description": "The Sub Library for the Material",
+                    "language": "EN",
+                    "title": "MaterialSubLibrary",
+                    "region": "US",
+                    "status": "private"
+                },
+                "relationships": {
+                    "nodes": {
+                        "links": {
+                            "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/subLibraries/urn:adsk.content:node:5a071edd-b066-4038-ac26-38cdd566bc1d/relationships/nodes",
+                            "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/subLibraries/urn:adsk.content:node:5a071edd-b066-4038-ac26-38cdd566bc1d/nodes"
+                        }
+                    },
+                    "libraries": {
+                        "links": {
+                            "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/subLibraries/urn:adsk.content:node:5a071edd-b066-4038-ac26-38cdd566bc1d/relationships/libraries",
+                            "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/subLibraries/urn:adsk.content:node:5a071edd-b066-4038-ac26-38cdd566bc1d/libraries"
+                        }
+                    }
+                },
+                "links": {
+                    "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/subLibraries/urn:adsk.content:node:5a071edd-b066-4038-ac26-38cdd566bc1d"
+                }
             },
-            "nodes": {
-              "links": {
-                "self": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:b04aa8e8-ab6e-455f-9152-8d72c7974ecc/relationships/nodes",
-                "related": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:b04aa8e8-ab6e-455f-9152-8d72c7974ecc/nodes"
-              }
-            }
-          },
-          "links": {
-            "self": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:b04aa8e8-ab6e-455f-9152-8d72c7974ecc"
-          }
+            "included": [],
+            "meta": {}
         }
   libraries:
     description: Successful Libraries response
@@ -9531,69 +9584,96 @@ responses:
       application/vnd.api+json:
         {
             "data": [
-                {
-                    "type": "libraries",
-                    "id": "urn:adsk.content:library:8cade02d-ae51-4279-b358-a2b8aae29feb",
-                    "attributes": {
-                        "entityPaths": [
-                            "/urn:adsk.content:library:8cade02d-ae51-4279-b358-a2b8aae29feb"
-                        ],
-                        "role": "SUPER_USER",
-                        "lastModifiedTime": "2017-02-27T20:38:24Z",
-                        "lastModifiedBy": "C6PEMWHVPJ6F",
-                        "childNodesCount": 1,
-                        "description": "Libraries created ussing runscope",
-                        "language": "EN",
-                        "title": "Runscope_Library_1488227898",
-                        "tags": "runscope",
-                        "createTime": "2017-02-27T20:38:20Z",
-                        "createdBy": "C6PEMWHVPJ6F",
-                        "region": "US",
-                        "status": "PUBLISHED"
-                    },
-                    "relationships": {
-                        "nodes": {
-                            "links": {
-                                "self": "https://developer-stg.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:8cade02d-ae51-4279-b358-a2b8aae29feb/relationships/nodes",
-                                "related": "https://developer-stg.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:8cade02d-ae51-4279-b358-a2b8aae29feb/nodes"
-                            },
-                            "data": []
-                        }
-                    },
-                    "links": {
-                        "self": "https://developer-stg.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:8cade02d-ae51-4279-b358-a2b8aae29feb"
-                    }
-                },
-                {
-                    "type": "libraries",
-                    "id": "urn:adsk.content:library:690ab1b4-22a9-4b86-b8cc-c78e5a8399b9",
-                    "attributes": {
-                        "entityPaths": [
-                            "/urn:adsk.content:library:690ab1b4-22a9-4b86-b8cc-c78e5a8399b9"
-                        ],
-                        "role": "SUPER_USER",
-                        "lastModifiedTime": "2017-02-27T20:37:48Z",
-                        "createTime": "2017-02-27T20:37:48Z",
-                        "createdBy": "ERB3Q463BYQW",
-                        "lastModifiedBy": "ERB3Q463BYQW",
-                        "childNodesCount": 0,
-                        "description": "description",
-                        "title": "alpha_Library_1",
-                        "status": "PRIVATE"
-                    },
-                    "relationships": {
-                        "nodes": {
-                            "links": {
-                                "self": "https://developer-stg.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:690ab1b4-22a9-4b86-b8cc-c78e5a8399b9/relationships/nodes",
-                                "related": "https://developer-stg.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:690ab1b4-22a9-4b86-b8cc-c78e5a8399b9/nodes"
-                            },
-                            "data": []
-                        }
-                    },
-                    "links": {
-                        "self": "https://developer-stg.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:690ab1b4-22a9-4b86-b8cc-c78e5a8399b9"
-                    }
-                }
+              {
+                  "type": "libraries",
+                  "id": "urn:adsk.content:library:d3337abe-272d-454c-b3b7-166764b86663",
+                  "attributes": {
+                      "entityPaths": [
+                          "/urn:adsk.content:library:d3337abe-272d-454c-b3b7-166764b86663"
+                      ],
+                      "role": "LIBRARY_MANAGER",
+                      "lastModifiedTime": "2017-10-13T08:22:15Z",
+                      "lastModifiedBy": "AYK2Q7S52XRU",
+                      "childNodesCount": 0,
+                      "description": "Test Library",
+                      "language": "en",
+                      "createdByAppId": "jk4eWCAWPAjnnVGucYvR3x4pdu9bmmv9",
+                      "title": "test.library.a7466875-17a1-4c5b-bcca-38c11686125f",
+                      "tags": "test, library",
+                      "license": "Apache-2.0",
+                      "interestedAppIds": [
+                          "jk4eWCAWPAjnnVGucYvR3x4pdu9bmmv9"
+                      ],
+                      "createTime": "2017-10-13T08:22:11Z",
+                      "createdBy": "AYK2Q7S52XRU",
+                      "region": "US",
+                      "status": "published"
+                  },
+                  "relationships": {
+                      "nodes": {
+                          "links": {
+                              "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/libraries/urn:adsk.content:library:d3337abe-272d-454c-b3b7-166764b86663/relationships/nodes",
+                              "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/libraries/urn:adsk.content:library:d3337abe-272d-454c-b3b7-166764b86663/nodes"
+                          },
+                          "data": []
+                      },
+                      "subLibraries": {
+                          "links": {
+                              "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/libraries/urn:adsk.content:library:d3337abe-272d-454c-b3b7-166764b86663/relationships/subLibraries",
+                              "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/libraries/urn:adsk.content:library:d3337abe-272d-454c-b3b7-166764b86663/subLibraries"
+                          },
+                          "data": []
+                      }
+                  },
+                  "links": {
+                      "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/libraries/urn:adsk.content:library:d3337abe-272d-454c-b3b7-166764b86663"
+                  }
+              },
+              {
+                  "type": "libraries",
+                  "id": "urn:adsk.content:library:d7541d85-feb1-4798-b901-934124098e76",
+                  "attributes": {
+                      "entityPaths": [
+                          "/urn:adsk.content:library:d7541d85-feb1-4798-b901-934124098e76"
+                      ],
+                      "role": "LIBRARY_MANAGER",
+                      "lastModifiedTime": "2017-10-13T08:21:53Z",
+                      "lastModifiedBy": "AYK2Q7S52XRU",
+                      "childNodesCount": 0,
+                      "description": "Test Library",
+                      "language": "en",
+                      "createdByAppId": "jk4eWCAWPAjnnVGucYvR3x4pdu9bmmv9",
+                      "title": "test.library.58719d00-f5f9-4ff0-b1e8-50a7d544e29e",
+                      "tags": "test, library",
+                      "license": "Apache-2.0",
+                      "interestedAppIds": [
+                          "jk4eWCAWPAjnnVGucYvR3x4pdu9bmmv9"
+                      ],
+                      "createTime": "2017-10-13T08:21:46Z",
+                      "createdBy": "AYK2Q7S52XRU",
+                      "region": "US",
+                      "status": "published"
+                  },
+                  "relationships": {
+                      "nodes": {
+                          "links": {
+                              "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/libraries/urn:adsk.content:library:d7541d85-feb1-4798-b901-934124098e76/relationships/nodes",
+                              "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/libraries/urn:adsk.content:library:d7541d85-feb1-4798-b901-934124098e76/nodes"
+                          },
+                          "data": []
+                      },
+                      "subLibraries": {
+                          "links": {
+                              "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/libraries/urn:adsk.content:library:d7541d85-feb1-4798-b901-934124098e76/relationships/subLibraries",
+                              "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/libraries/urn:adsk.content:library:d7541d85-feb1-4798-b901-934124098e76/subLibraries"
+                          },
+                          "data": []
+                      }
+                  },
+                  "links": {
+                      "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/libraries/urn:adsk.content:library:d7541d85-feb1-4798-b901-934124098e76"
+                  }
+              }
             ],
             "included": [],
             "meta": {
@@ -9619,94 +9699,95 @@ responses:
       application/vnd.api+json:
         {
           "data": [
-            {
-              "type": "subLibraries",
-              "id": "urn:adsk.content:node:b04aa8e8-ab6e-455f-9152-8d72c7974ecc",
-              "attributes": {
-                "entityPaths": [
-                  "/urn:adsk.content:library:5ace48a2-d4e2-472b-a2c2-51a3e361c8f5/urn:adsk.content:node:b04aa8e8-ab6e-455f-9152-8d72c7974ecc"
-                ],
-                "role": "LIBRARY_MANAGER",
-                "lastModifiedTime": "2017-08-07T21:24:47Z",
-                "createTime": "2017-08-07T21:24:47Z",
-                "createdBy": "ERB3Q463BYQW",
-                "lastModifiedBy": "ERB3Q463BYQW",
-                "description": "Creating a node to save our materials in",
-                "title": "Sub-Library 1",
-                "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
-                "status": "private",
-                "tags": "a,b,c,d"
-              },
-              "relationships": {
-                "libraries": {
+              {
+                  "type": "subLibraries",
+                  "id": "urn:adsk.content:node:5a071edd-b066-4038-ac26-38cdd566bc1d",
+                  "attributes": {
+                      "entityPaths": [
+                          "/urn:adsk.content:library:3a62a6d5-2765-4846-9f82-3771f08877dd/urn:adsk.content:node:5a071edd-b066-4038-ac26-38cdd566bc1d"
+                      ],
+                      "role": "LIBRARY_MANAGER",
+                      "createTime": "2017-10-13T07:32:02Z",
+                      "createdBy": "AYK2Q7S52XRU",
+                      "lastModifiedBy": "AYK2Q7S52XRU",
+                      "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
+                      "description": "The Sub Library for the Material",
+                      "language": "EN",
+                      "title": "MaterialSubLibrary",
+                      "region": "US",
+                      "status": "private"
+                  },
+                  "relationships": {
+                      "libraries": {
+                          "links": {
+                              "self": "http://localhost:8080/content-alpha/v1/subLibraries/urn:adsk.content:node:5a071edd-b066-4038-ac26-38cdd566bc1d/relationships/libraries",
+                              "related": "http://localhost:8080/content-alpha/v1/subLibraries/urn:adsk.content:node:5a071edd-b066-4038-ac26-38cdd566bc1d/libraries"
+                          }
+                      },
+                      "nodes": {
+                          "links": {
+                              "self": "http://localhost:8080/content-alpha/v1/subLibraries/urn:adsk.content:node:5a071edd-b066-4038-ac26-38cdd566bc1d/relationships/nodes",
+                              "related": "http://localhost:8080/content-alpha/v1/subLibraries/urn:adsk.content:node:5a071edd-b066-4038-ac26-38cdd566bc1d/nodes"
+                          }
+                      }
+                  },
                   "links": {
-                    "self": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:b04aa8e8-ab6e-455f-9152-8d72c7974ecc/relationships/libraries",
-                    "related": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:b04aa8e8-ab6e-455f-9152-8d72c7974ecc/libraries"
+                      "self": "http://localhost:8080/content-alpha/v1/subLibraries/urn:adsk.content:node:5a071edd-b066-4038-ac26-38cdd566bc1d"
                   }
-                },
-                "nodes": {
-                  "links": {
-                    "self": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:b04aa8e8-ab6e-455f-9152-8d72c7974ecc/relationships/nodes",
-                    "related": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:b04aa8e8-ab6e-455f-9152-8d72c7974ecc/nodes"
-                  }
-                }
               },
-              "links": {
-                "self": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:b04aa8e8-ab6e-455f-9152-8d72c7974ecc"
+              {
+                  "type": "subLibraries",
+                  "id": "urn:adsk.content:node:53a30b21-8d0d-4c59-b241-c19d6f866869",
+                  "attributes": {
+                      "entityPaths": [
+                          "/urn:adsk.content:library:3a62a6d5-2765-4846-9f82-3771f08877dd/urn:adsk.content:node:53a30b21-8d0d-4c59-b241-c19d6f866869"
+                      ],
+                      "role": "LIBRARY_MANAGER",
+                      "createTime": "2017-10-13T07:32:02Z",
+                      "createdBy": "AYK2Q7S52XRU",
+                      "lastModifiedBy": "AYK2Q7S52XRU",
+                      "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50b",
+                      "description": "The Sub Library for the Material2",
+                      "language": "EN",
+                      "title": "MaterialSubLibrary2",
+                      "region": "US",
+                      "status": "private"
+                  },
+                  "relationships": {
+                      "libraries": {
+                          "links": {
+                              "self": "http://localhost:8080/content-alpha/v1/subLibraries/urn:adsk.content:node:53a30b21-8d0d-4c59-b241-c19d6f866869/relationships/libraries",
+                              "related": "http://localhost:8080/content-alpha/v1/subLibraries/urn:adsk.content:node:53a30b21-8d0d-4c59-b241-c19d6f866869/libraries"
+                          }
+                      },
+                      "nodes": {
+                          "links": {
+                              "self": "http://localhost:8080/content-alpha/v1/subLibraries/urn:adsk.content:node:53a30b21-8d0d-4c59-b241-c19d6f866869/relationships/nodes",
+                              "related": "http://localhost:8080/content-alpha/v1/subLibraries/urn:adsk.content:node:53a30b21-8d0d-4c59-b241-c19d6f866869/nodes"
+                          }
+                      }
+                  },
+                  "links": {
+                      "self": "http://localhost:8080/content-alpha/v1/subLibraries/urn:adsk.content:node:53a30b21-8d0d-4c59-b241-c19d6f866869"
+                  }
               }
-            },
-            {
-              "type": "subLibraries",
-              "id": "urn:adsk.content:node:c112f1bf-09a0-4721-9ecc-a11b2610d04b",
-              "attributes": {
-                "entityPaths": [
-                  "/urn:adsk.content:library:5ace48a2-d4e2-472b-a2c2-51a3e361c8f5/urn:adsk.content:node:c112f1bf-09a0-4721-9ecc-a11b2610d04b"
-                ],
-                "role": "LIBRARY_MANAGER",
-                "lastModifiedTime": "2017-08-07T21:25:16Z",
-                "createTime": "2017-08-07T21:25:16Z",
-                "createdBy": "ERB3Q463BYQW",
-                "lastModifiedBy": "ERB3Q463BYQW",
-                "description": "Creating a node to save our materials in",
-                "title": "Sub-Library 2",
-                "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
-                "status": "private",
-                "tags": "a,b,c,d"
-              },
-              "relationships": {
-                "libraries": {
-                  "links": {
-                    "self": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:c112f1bf-09a0-4721-9ecc-a11b2610d04b/relationships/libraries",
-                    "related": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:c112f1bf-09a0-4721-9ecc-a11b2610d04b/libraries"
-                  }
-                },
-                "nodes": {
-                  "links": {
-                    "self": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:c112f1bf-09a0-4721-9ecc-a11b2610d04b/relationships/nodes",
-                    "related": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:c112f1bf-09a0-4721-9ecc-a11b2610d04b/nodes"
-                  }
-                }
-              },
-              "links": {
-                "self": "https://developer-stg.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:c112f1bf-09a0-4721-9ecc-a11b2610d04b"
-              }
-            }
           ],
+          "included": [],
           "meta": {
-            "paginationInfo": {
-              "totalResults": 2,
-              "pageNumber": 1,
-              "totalPages": 1,
-              "pageSize": 20
-            }
+              "paginationInfo": {
+                  "totalResults": 2,
+                  "pageNumber": 1,
+                  "totalPages": 1,
+                  "pageSize": 20
+              }
           },
           "links": {
-            "prev": "",
-            "next": "",
-            "first": "https://developer-stg.api.autodesk.com/content/v1/subLibraries?filter[contents][libraryId]=urn:adsk.content:library:5ace48a2-d4e2-472b-a2c2-51a3e361c8f5&page[number]=1&page[size]=16",
-            "last": "https://developer-stg.api.autodesk.com/content/v1/subLibraries?filter[contents][libraryId]=urn:adsk.content:library:5ace48a2-d4e2-472b-a2c2-51a3e361c8f5&page[number]=1&page[size]=16"
+              "prev": "",
+              "next": "",
+              "first": "http://localhost:8080/content-alpha/v1/subLibraries?filter[contents][libraryId]=urn:adsk.content:library:3a62a6d5-2765-4846-9f82-3771f08877dd&page[number]=1&page[size]=16",
+              "last": "http://localhost:8080/content-alpha/v1/subLibraries?filter[contents][libraryId]=urn:adsk.content:library:3a62a6d5-2765-4846-9f82-3771f08877dd&page[number]=1&page[size]=16"
           }
-        }
+      }
   node:
     description: Successful Node response
     schema:
@@ -9767,164 +9848,107 @@ responses:
     examples:
       application/vnd.api+json:
         {
-          "data": [
-              {
-                "type": "nodes",
-                "id": "urn:adsk.content:node:67b2fb58-dca4-4363-848c-c73098566c25",
-                "attributes": {
-                    "totalChildrenCount": 0,
-                    "entityPaths": [
-                        "/urn:adsk.content:library:690ab1b4-22a9-4b86-b8cc-c78e5a8399b9/urn:adsk.content:node:67b2fb58-dca4-4363-848c-c73098566c25"
-                    ],
-                    "lastModifiedTime": "2017-02-27T20:43:15Z",
-                    "createTime": "2017-02-27T20:43:15Z",
-                    "createdBy": "ERB3Q463BYQW",
-                    "lastModifiedBy": "ERB3Q463BYQW",
-                    "childNodesCount": 0,
-                    "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
-                    "description": "Creating a node to save our materials in",
-                    "schemaFamily": "contents:autodesk.mdb.alpha:materialAM-1.0.0",
-                    "title": "NodeLeft1",
-                    "childContentsCount": 0,
-                    "tags": "a,b,c,d"
-                },
-                "relationships": {
-                    "contents": {
-                        "links": {
-                            "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:67b2fb58-dca4-4363-848c-c73098566c25/relationships/contents",
-                            "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:67b2fb58-dca4-4363-848c-c73098566c25/contents"
-                        },
-                        "data": []
-                    },
-                    "libraries": {
-                        "links": {
-                            "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:67b2fb58-dca4-4363-848c-c73098566c25/relationships/libraries",
-                            "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:67b2fb58-dca4-4363-848c-c73098566c25/libraries"
-                        }
-                    },
-                    "nodes": {
-                        "links": {
-                            "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:67b2fb58-dca4-4363-848c-c73098566c25/relationships/nodes",
-                            "related": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:67b2fb58-dca4-4363-848c-c73098566c25/nodes"
-                        }
-                    }
-                },
-                "links": {
-                    "self": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:67b2fb58-dca4-4363-848c-c73098566c25"
-                }
-              }
-            ],
-            "included": [],
-            "meta": {
-                "paginationInfo": {
-                    "totalResults": 4,
-                    "pageNumber": 1,
-                    "totalPages": 4,
-                    "pageSize": 1
-                }
-            },
-            "links": {
-                "prev": "",
-                "next": "https://developer-stg.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:690ab1b4-22a9-4b86-b8cc-c78e5a8399b9/nodes?page[number]=2&page[size]=1",
-                "first": "https://developer-stg.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:690ab1b4-22a9-4b86-b8cc-c78e5a8399b9/nodes?page[number]=1&page[size]=1",
-                "last": "https://developer-stg.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:690ab1b4-22a9-4b86-b8cc-c78e5a8399b9/nodes?page[number]=4&page[size]=1"
-            }
-        }
-  nodescontents:
-    description: Successful Contents response
-    schema:
-      $ref: '#/definitions/content_collection_definition'
-    examples:
-      application/vnd.api+json:
-       {
-          "data": [
-            {
-              "type": "contents",
-              "id": "urn:adsk.content:content:b371797d-c881-4ffc-b28c-d3c4c625a0bc",
+          "data": {
+              "type": "nodes",
+              "id": "urn:adsk.content:node:686fdb70-965b-4df1-8b27-9a1aaa0c493e",
               "attributes": {
+                  "totalChildrenCount": 0,
                   "entityPaths": [
-                      "/urn:adsk.content:library:b820f488-8d36-4ed4-a01d-358363e1b1e0/urn:adsk.content:node:a62a09d5-5135-42df-8ae4-156e4edd1ce5/urn:adsk.content:content:b371797d-c881-4ffc-b28c-d3c4c625a0bc"
+                      "/urn:adsk.content:library:592d9e66-c963-4975-ac59-75864e68410c/urn:adsk.content:node:686fdb70-965b-4df1-8b27-9a1aaa0c493e"
                   ],
-                  "extension": {
-                      "data": {
-                          "amTech": "SLA",
-                          "bedSize": {
-                              "height": {
-                                  "units": "cm",
-                                  "value": 175
-                              },
-                              "length": {
-                                  "units": "cm",
-                                  "value": 75
-                              },
-                              "breadth": {
-                                  "units": "cm",
-                                  "value": 50
-                              }
-                          },
-                          "facetId": "additiveManufacturing",
-                          "modelName": "Form 2",
-                          "displayName": "FormLabs-Form 2",
-                          "machinePrice": {
-                              "units": "$",
-                              "value": 1500
-                          },
-                          "maxBuildHeight": {
-                              "units": "cm",
-                              "value": 175
-                          },
-                          "firmwareVersion": "PreForm",
-                          "hardwareVersion": "1.0",
-                          "manufacturerName": "FormLabs"
-                      },
-                      "type": "contents:autodesk.mdb.alpha:machineAM",
-                      "version": "2.0.0"
-                  },
-                  "lastModifiedTime": "2017-02-18T04:15:24Z",
-                  "lastModifiedBy": "ERB3Q463BYQW",
-                  "description": "contents",
-                  "language": "EN",
-                  "title": "FormLabs Form 2 PreForm",
-                  "version": "2",
-                  "tags": "tags",
-                  "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
-                  "createTime": "2017-02-18T04:15:24Z",
-                  "createdBy": "ERB3Q463BYQW",
-                  "lock": false,
-                  "region": "US",
-                  "status": "published"
+                  "lastModifiedTime": "2017-10-13T07:41:55Z",
+                  "createTime": "2017-10-13T07:41:55Z",
+                  "createdBy": "AYK2Q7S52XRU",
+                  "lastModifiedBy": "AYK2Q7S52XRU",
+                  "childNodesCount": 0,
+                  "description": "this is a test node",
+                  "title": "Library node number 1",
+                  "childContentsCount": 0
               },
               "relationships": {
                   "nodes": {
                       "links": {
-                          "self": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.content:content:b371797d-c881-4ffc-b28c-d3c4c625a0bc/relationships/nodes",
-                          "related": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.content:content:b371797d-c881-4ffc-b28c-d3c4c625a0bc/nodes"
+                          "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:686fdb70-965b-4df1-8b27-9a1aaa0c493e/relationships/nodes",
+                          "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:686fdb70-965b-4df1-8b27-9a1aaa0c493e/nodes"
+                      }
+                  },
+                  "contents": {
+                      "links": {
+                          "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:686fdb70-965b-4df1-8b27-9a1aaa0c493e/relationships/contents",
+                          "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:686fdb70-965b-4df1-8b27-9a1aaa0c493e/contents"
+                      },
+                      "data": []
+                  },
+                  "subLibraries": {
+                      "links": {
+                          "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:686fdb70-965b-4df1-8b27-9a1aaa0c493e/relationships/subLibraries",
+                          "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:686fdb70-965b-4df1-8b27-9a1aaa0c493e/subLibraries"
+                      }
+                  },
+                  "libraries": {
+                      "links": {
+                          "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:686fdb70-965b-4df1-8b27-9a1aaa0c493e/relationships/libraries",
+                          "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:686fdb70-965b-4df1-8b27-9a1aaa0c493e/libraries"
                       }
                   }
               },
               "links": {
-                  "self": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.content:content:b371797d-c881-4ffc-b28c-d3c4c625a0bc"
-              }
-            }
-          ],
-          "included": [],
-          "meta": {
-              "paginationInfo": {
-                  "totalResults": 7,
-                  "pageNumber": 1,
-                  "totalPages": 7,
-                  "pageSize": 1
+                  "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:686fdb70-965b-4df1-8b27-9a1aaa0c493e"
               }
           },
-          "links": {
-              "prev": "",
-              "next": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:a62a09d5-5135-42df-8ae4-156e4edd1ce5/contents?page[number]=2&page[size]=1",
-              "first": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:a62a09d5-5135-42df-8ae4-156e4edd1ce5/contents?page[number]=1&page[size]=1",
-              "last": "https://developer-stg.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:a62a09d5-5135-42df-8ae4-156e4edd1ce5/contents?page[number]=7&page[size]=1"
-          }
-      }
+          "included": []
+       }
+  nodescontents:
+    description: Successful Node child Contents response
+    schema:
+      $ref: '#/definitions/content_collection_definition'
+    examples:
+      application/vnd.api+json:
+        {
+            "data": {
+                "type": "contents",
+                "id": "urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3",
+                "attributes": {
+                    "entityPaths": [
+                        "/urn:adsk.content:library:3a62a6d5-2765-4846-9f82-3771f08877dd/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1/urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3"
+                    ],
+                    "extension": {
+                        "type": "contents:autodesk.core:content",
+                        "version": "1.0.0",
+                        "namespace": "autodesk.core"
+                    },
+                    "lastModifiedTime": "2017-10-13T07:37:34Z",
+                    "contentDownloadCount": 0,
+                    "lastModifiedBy": "AYK2Q7S52XRU",
+                    "deprecated": false,
+                    "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
+                    "description": "ContentDescription",
+                    "language": "EN",
+                    "title": "ContentTitle",
+                    "version": "draft",
+                    "tags": "ContentTag",
+                    "createTime": "2017-10-13T07:37:34Z",
+                    "createdBy": "AYK2Q7S52XRU",
+                    "lock": false,
+                    "region": "US",
+                    "status": "draft"
+                },
+                "relationships": {
+                    "nodes": {
+                        "links": {
+                            "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/contents/urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3/relationships/nodes",
+                            "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/contents/urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3/nodes"
+                        }
+                    }
+                },
+                "links": {
+                    "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/contents/urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3"
+                }
+            },
+            "included": []
+        }
   nodesallcontents:
-    description: Successful Contents response
+    description: Successful Node child Contents and nodes response
     schema:
       $ref: '#/definitions/nodes_contents_definition'
     examples:
@@ -10043,7 +10067,7 @@ responses:
           }
         }
   nodesallparents:
-    description: Successful Contents response
+    description: Successful node parents response
     schema:
       $ref: '#/definitions/nodes_parent_definition'
     examples:
@@ -10261,7 +10285,7 @@ responses:
             }
         }
   contentVersions:
-    description: Successful Library response
+    description: Successful content version response
     schema:
       $ref: '#/definitions/content_version_definition'
     examples:
