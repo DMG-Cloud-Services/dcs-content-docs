@@ -619,23 +619,23 @@ info:
     
     In this section, we provide the step-by-step tutorials demonstrating how the Forge Content API works:
     
-    ## Create Content in a New Library with Sub Library
-      This tutorial explains how to create content in a new library.
-      
-    ## Create Content in a New Library without Sub Library
+    ## [Create Content in a New Library with Sub Library](/en/docs/content/v1/tutorials/create-content-in-new-library-with-sublibrary)
       This tutorial explains how to create content in a new library with sub library.
       
-    ## Create Content in an Existing Library
+    ## [Create Content in a New Library without Sub Library](/en/docs/content/v1/tutorials/create-content-in-new-library-without-sublibrary)
+      This tutorial explains how to create content in a new library without sub library.
+      
+    ## [Create Content in an Existing Library](/en/docs/content/v1/tutorials/create-content-in-existing-library)
       This tutorial explains how to create content in an existing library.
       
-    ## Attach Files to the Content
+    ## [Attach Files to the Content](/en/docs/content/v1/tutorials/attach-files-to-content)
       This tutorial explains how to attach files to the content.
       
-    ## Add Thumbnails to the Content
+    ## [Add Thumbnails to the Content](/en/docs/content/v1/tutorials/add-thumbnails-to-content)
       This tutorial explains how to add thumbnails to the content.
       
-    ## Add Relationship among Library, Sub Library, Nodes, and Contents
-      This tutorial explains how to add relationships among library, nodes, and contents.       
+    ## [Add Relationship among Library, Sub Library, Nodes, and Contents](/en/docs/content/v1/tutorials/add-relationships)
+      This tutorial explains how to create and update the relationships of nodes and contents with sub library and library.
       
     [@tutorials/before-you-begin]: <>
     # Before you begin
