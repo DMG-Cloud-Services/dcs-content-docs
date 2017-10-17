@@ -3625,7 +3625,7 @@ paths:
                 "title": "ut Duis incididunt et sint",
                 "description": "nostrud mol",
                 "status": "PRIVATE",
-                "language": "",
+                "language": "EN",
                 "tags": "mollit incididunt ipsum tempor sint",
                 "region": "dolor mollit Excepteur",
                 "registerContentVersionInCommunity": false,
@@ -3969,7 +3969,7 @@ paths:
                 "description": "labore cillum nisi",
                 "tags": "mollit ullamco dolore"
                 "relationships": {
-                  "libraries": {
+                  "subLibraries": {
                     "data": [
                       {
                         "type": "subLibraries",
@@ -4227,8 +4227,8 @@ paths:
                   "status": "draft",
                   "description": "elit officia sed",
                   "tags": "labore laborum",
-                  "language": "est incididunt dolore",
-                  "region": "laborum aute"
+                  "language": "EN",
+                  "region": "US"
                 },
                 "relationships": {
                   "nodes": {
@@ -4272,8 +4272,8 @@ paths:
                   "title": "minim labore eiusmod",
                   "description": "aliquip sed pariatur ipsum fugiat",
                   "tags": "nisi cillum",
-                  "language": "cillum Lorem eiusmod",
-                  "region": "amet occae",
+                  "language": "EN",
+                  "region": "US",
                   "lock": false
                 }
               }
@@ -7335,7 +7335,7 @@ definitions:
                           required: [type, id]
                           properties:
                             type:
-                              { type: string, enum: [ 'libraries' ] }
+                              { type: string, enum: [ 'subLibraries' ] }
                             id:
                               type: string
                   nodes:
