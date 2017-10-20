@@ -615,9 +615,7 @@ info:
     [@tutorials]: <>
     # Step-by-Step Tutorials
     
-    The Forge Content API service provides a set of APIs for developers to create and manage the content for the resources.
-    
-    In this section, we provide the step-by-step tutorials demonstrating how the Forge Content API works:
+    The Forge Content service provides a set or APIs for developers to create and manage the content for the Autodesk products. In this section, we provide some step-by-step tutorials demonstrating how the Forge Content service APIs work.
     
     ## [Create Content in a New Library with Sub Library](/en/docs/content/v1/tutorials/create-content-in-new-library-with-sublibrary)
       This tutorial explains how to create content in a new library with sub library.
