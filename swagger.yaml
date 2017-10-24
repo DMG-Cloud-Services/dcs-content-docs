@@ -4324,6 +4324,30 @@ paths:
         [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] } ,{ oauth2_application: [ 'data:write' ] }]
       tags: ["Library Content"]      
       
+  /libraries/{libraryId}/contents/{contentId1},{contentId2}:
+    get:
+      description: |
+        Get multiple library contents by Ids. Here, the content can be present anywhere under the library tree.
+        
+        ***Note:*** Please see the example payload in the [wiki][1].
+        
+        [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-GetMultipleContentsByIds
+      operationId: get_contents_by_ids
+      parameters:
+        - $ref: '#/parameters/libraryId'
+        - $ref: '#/parameters/contentId1'
+        - $ref: '#/parameters/contentId2'
+        - $ref: '#/parameters/version'
+        - $ref: '#/parameters/loadReferencedContents'
+      responses:
+        '200': { $ref: '#/responses/contents' }
+        '400': { $ref: '#/responses/bad_input' }
+        '403': { $ref: '#/responses/forbidden' }
+      x-ads-docs-cli-example: 'curl -X GET -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" "https://developer.api.autodesk.com/content/v1/libraries/{libraryId}/contents/{contentId1}{contentId2}{?filters[contents][version],filters[contents][loadReferencedContents]}"'
+      security:
+        [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] } ,{ oauth2_application: [ 'data:read' ] }]
+      tags: ["Library Content"]
+  
   /libraries/{libraryId}/contents/{contentId}/versions:
     get:
       description: Get all the versions available for a content.
@@ -6173,6 +6197,18 @@ parameters:
     type: string
   contentId:
     name: contentId
+    in: path
+    description: Content Id 
+    required: true
+    type: string
+  contentId1:
+    name: contentId1
+    in: path
+    description: Content Id 
+    required: true
+    type: string
+  contentId2:
+    name: contentId2
     in: path
     description: Content Id 
     required: true
@@ -8098,7 +8134,16 @@ definitions:
           included: { type: array, items: { type: object }  }
           meta: { $ref: '#/definitions/json_api_meta' }
           links: { $ref: '#/definitions/json_api_links_paging_definitions' }
-          
+  
+  content_collection_definition:
+    allOf:
+      - type: object
+        properties:
+          data: { type: array, items: { $ref: '#/definitions/content_definition' } }
+          included: { type: array, items: { type: object }  }
+          meta: { $ref: '#/definitions/json_api_meta' }
+          links: { $ref: '#/definitions/json_api_links_paging_definitions' }
+  
   content_definition:
     type: object
     description: Response definition for content
@@ -8135,15 +8180,13 @@ definitions:
     properties:
       data:
         $ref: '#/definitions/content_definition'
-        
-  content_collection_definition:
-    allOf:
-      - type: object
-        properties:
-          data: { type: array, items: { $ref: '#/definitions/content_definition' } }
-          included: { type: array, items: { type: object } }
-          meta: { $ref: '#/definitions/json_api_meta' }
-          links: { $ref: '#/definitions/json_api_links_paging_definitions' }
+  
+  content_collection_data_definition:
+    type: object
+    description: MainResponse definition for content collection
+    properties:
+      data:
+        $ref: '#/definitions/content_collection_definition'
           
   content_version_definition:
     allOf:
@@ -10282,6 +10325,97 @@ responses:
                 }
             }
         }
+  contents:
+    description: Successful Contents response
+    schema:
+      $ref: '#/definitions/content_collection_data_definition'
+    examples:
+      application/vnd.api+json:
+        {
+    "data": [
+        {
+            "type": "contents",
+            "id": "urn:adsk.content:content:ef9f51d5-6431-4958-acfc-74cee6953ff4",
+            "attributes": {
+                "entityPaths": [
+                    "/urn:adsk.content:library:2618afeb-8800-4981-9059-659fa9af647a/urn:adsk.content:node:b79736ba-2679-496c-8339-fbc8061d190d/urn:adsk.content:content:ef9f51d5-6431-4958-acfc-74cee6953ff4"
+                ],
+                "extension": {
+                    "type": "contents:autodesk.core:content",
+                    "version": "1.0.0",
+                    "namespace": "autodesk.core"
+                },
+                "lastModifiedTime": "2017-10-24T05:36:18Z",
+                "contentDownloadCount": 0,
+                "lastModifiedBy": "AYK2Q7S52XRU",
+                "deprecated": false,
+                "description": "ContentRight1",
+                "language": "en",
+                "title": "ContentRight1.96319533-9200-457e-b403-b39bdb1c142f",
+                "version": "draft",
+                "tags": "x,y,z",
+                "license": "Apache-2.0",
+                "createTime": "2017-10-24T05:36:18Z",
+                "createdBy": "AYK2Q7S52XRU",
+                "lock": false,
+                "region": "US",
+                "status": "draft"
+            },
+            "relationships": {
+                "nodes": {
+                    "links": {
+                        "self": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.content:content:ef9f51d5-6431-4958-acfc-74cee6953ff4/relationships/nodes",
+                        "related": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.content:content:ef9f51d5-6431-4958-acfc-74cee6953ff4/nodes"
+                    }
+                }
+            },
+            "links": {
+                "self": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.content:content:ef9f51d5-6431-4958-acfc-74cee6953ff4"
+            }
+        },
+        {
+            "type": "contents",
+            "id": "urn:adsk.content:content:3a88ea6e-9a29-4641-ac26-d6debe822259",
+            "attributes": {
+                "entityPaths": [
+                    "/urn:adsk.content:library:2618afeb-8800-4981-9059-659fa9af647a/urn:adsk.content:node:b79736ba-2679-496c-8339-fbc8061d190d/urn:adsk.content:content:3a88ea6e-9a29-4641-ac26-d6debe822259"
+                ],
+                "extension": {
+                    "type": "contents:autodesk.core:content",
+                    "version": "1.0.0",
+                    "namespace": "autodesk.core"
+                },
+                "lastModifiedTime": "2017-10-24T05:36:48Z",
+                "contentDownloadCount": 0,
+                "lastModifiedBy": "AYK2Q7S52XRU",
+                "deprecated": false,
+                "description": "ContentRight1",
+                "language": "en",
+                "title": "ContentRight1.3b148c98-4014-4872-8aae-ad2a1a5adae7",
+                "version": "draft",
+                "tags": "x,y,z",
+                "license": "Apache-2.0",
+                "createTime": "2017-10-24T05:36:48Z",
+                "createdBy": "AYK2Q7S52XRU",
+                "lock": false,
+                "region": "US",
+                "status": "draft"
+            },
+            "relationships": {
+                "nodes": {
+                    "links": {
+                        "self": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.content:content:3a88ea6e-9a29-4641-ac26-d6debe822259/relationships/nodes",
+                        "related": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.content:content:3a88ea6e-9a29-4641-ac26-d6debe822259/nodes"
+                    }
+                }
+            },
+            "links": {
+                "self": "https://developer-stg.api.autodesk.com/content/v1/contents/urn:adsk.content:content:3a88ea6e-9a29-4641-ac26-d6debe822259"
+            }
+        }
+    ],
+    "included": []
+}
   contentVersions:
     description: Successful content version response
     schema:
