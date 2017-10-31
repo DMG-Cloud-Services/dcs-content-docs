@@ -135,12 +135,12 @@ info:
     - **Library** > **Node** > **Content**
       This is the default content model where you create library, nodes, and contents in the given hierarchy. This content model is a flat model. You create one library and one or multiple nodes in the library. After that, you create content inside nodes. 
     
-    ![Forge Content Structure](https://git.autodesk.com/ACG-Cloud-Services/dmg-documentation/blob/master/content_structure.png?raw=true "Content Model without Sub Library")
+    ![Forge Content Structure](https://raw.git.autodesk.com/ACG-Cloud-Services/dmg-documentation/master/content_structure.png?token=AAAf_v7M6NVD5rB1wVIs-QZimX_sVgBhks5aAZb6wA%3D%3D "Content Model without Sub Library")
     
     - **Library** > **Sub Library** > **Node** > **Content**
       This is another content model with sub library as one more entity in the hierarchy. In this model, one time you create a base library for the application and then create one or more sub libraries in the base library. In these sub libraries, you further create one or more nodes and add the content inside the nodes.
     
-    ![Forge Content Structure](https://git.autodesk.com/ACG-Cloud-Services/dmg-documentation/blob/master/new_content_structure.png?raw=true "Content Model with Sub Library")
+    ![Forge Content Structure](https://raw.git.autodesk.com/ACG-Cloud-Services/dmg-documentation/master/new_content_structure.png?token=AAAf_q8OnLHJ7Nxmzgm4ysS2lj6EwNbfks5aAZo3wA%3D%3D "Content Model with Sub Library")
     
     The content models consists of the following entities that you need to create:
     
@@ -3550,6 +3550,53 @@ info:
     }' "https://developer-stg.api.autodesk.com/content/v1/relationships/contents/{contentId}"
     ```
     On successful updation of the relationship, the resource provides a 204 response without any content.
+    
+    [@]
+    
+    # HTTP Specification
+    
+    ## Library
+    
+    The following are the supported endpoints and methods related to Libraries.
+    
+    .. include:: ../../_snippets/v1/reference/libraries.rst
+    
+    ## Library Nodes
+    
+    The following are the supported endpoints and methods related to Nodes.
+    
+    include: ../../_snippets/v1/reference/nodes.rst
+    
+    ## Library Content
+    
+    The following are the supported endpoints and methods related to Contents.
+    
+    include: ../../_snippets/v1/reference/contents.rst
+    
+    ## Library Content Files
+    
+    The following are the supported endpoints and methods related to Content Files.
+    
+    include: ../../_snippets/v1/reference/contentfiles.rst
+    
+    ## Relationships
+    
+    The following are the supported endpoints and methods related to Relationships API.
+    
+    .. include:: ../../_snippets/v1/reference/relationships.rst
+    
+    ## Library Search
+    
+    The following are the supported endpoints and methods related to Library Search.
+    
+    include: ../../_snippets/v1/reference/librarysearch.rst
+    
+    ## Admin
+    
+    The following are the supported endpoints and methods related to Admin apis.
+    
+    include: ../../_snippets/v1/reference/admin.rst
+    
   
   contact:
     url: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+V1+Proposal
