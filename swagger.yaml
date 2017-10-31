@@ -3551,8 +3551,6 @@ info:
     ```
     On successful updation of the relationship, the resource provides a 204 response without any content.
     
-    [@]
-    
     # HTTP Specification
     
     ## Library
@@ -3596,7 +3594,6 @@ info:
     The following are the supported endpoints and methods related to Admin apis.
     
     include: ../../_snippets/v1/reference/admin.rst
-    
   
   contact:
     url: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+V1+Proposal
