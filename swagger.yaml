@@ -3551,7 +3551,7 @@ info:
     ```
     On successful updation of the relationship, the resource provides a 204 response without any content.
     
-    [@tutorials/http]: <>
+    [%http]: <>
     # HTTP Specification
     
     ## Library
