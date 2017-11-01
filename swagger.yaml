@@ -5460,7 +5460,7 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
         description: |
-          Search for members using sing query string, filters, sorting and pagination. Query string first contains search terms followed optionally by range queries. Maximum page size per query is 100 results. Currently, only single column sort is supported.
+          Search for members using query string, filters, sorting and pagination. Query string first contains search terms followed optionally by range queries. Maximum page size per query is 100 results. Currently, only single column sort is supported.
         parameters:
           - $ref: '#/parameters/libraryFilter'
           - $ref: '#/parameters/oxygenIdFilter'
