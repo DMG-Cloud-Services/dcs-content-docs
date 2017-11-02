@@ -3564,19 +3564,19 @@ info:
     
     The following are the supported endpoints and methods related to Nodes.
     
-    include: ../../_snippets/v1/reference/nodes.rst
+    .. include: ../../_snippets/v1/reference/nodes.rst
     
     ## Library Content
     
     The following are the supported endpoints and methods related to Contents.
     
-    include: ../../_snippets/v1/reference/contents.rst
+    .. include: ../../_snippets/v1/reference/contents.rst
     
     ## Library Content Files
     
     The following are the supported endpoints and methods related to Content Files.
     
-    include: ../../_snippets/v1/reference/contentfiles.rst
+    .. include: ../../_snippets/v1/reference/contentfiles.rst
     
     ## Relationships
     
@@ -3588,13 +3588,13 @@ info:
     
     The following are the supported endpoints and methods related to Library Search.
     
-    include: ../../_snippets/v1/reference/librarysearch.rst
+    .. include: ../../_snippets/v1/reference/librarysearch.rst
     
     ## Admin
     
     The following are the supported endpoints and methods related to Admin apis.
     
-    include: ../../_snippets/v1/reference/admin.rst
+    .. include: ../../_snippets/v1/reference/admin.rst
   
   contact:
     url: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+V1+Proposal
