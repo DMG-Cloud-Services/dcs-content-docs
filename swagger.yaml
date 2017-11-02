@@ -9,7 +9,7 @@ info:
     
     In Autodesk, various products manage their own metadata, components data, parts data, materials data, or assets data through libraries or catalogs. Deploying and managing data separately for every product is expensive and non-standardized without any platform to share the content across the team or across the product families.
 
-    Forge Content API provides an extensible platform for users to use the cloud services to create, organize, access, search, and even share the contents of the various Autodesk products with internal teams and with customers.
+    Forge Content API provides an extensible platform for users to use the cloud services to create, organize, access, search, and even share the contents of various Autodesk products with internal teams and external customers.
     
     Forge Content also provides the permission based model using which specific group of users, projects, and organizations can create and access the content.
     
@@ -292,7 +292,7 @@ info:
     [@overview/content-attributes]: <>
     # Content Attributes
     
-    Forge Content API provides various types of attributes that you can use for creating entities, like Library, Sub Library, Node, and Content.
+    Forge Content API provides various types of attributes that you can use for creating entities, like Library, Sub Library, Nodes, and Contents.
     
     There are certain attributes that are common for all entities, and there are some attributes that are specific to the entity.  
     
