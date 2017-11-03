@@ -7,7 +7,7 @@ info:
     
     [@overview]: <> (title)
     
-    In Autodesk, various products manage their own metadata, components data, parts data, materials data, or assets data through libraries or catalogs. Deploying and managing data separately for every product is expensive and non-standardized without any platform to share the content across the team or across the product families.
+    In Autodesk, various products manage their own metadata, components data, parts data, materials data, or assets data through libraries and catalogs. Deploying and managing data separately for every product is expensive and non-standardized without any platform to share the content across the team or across the product families.
 
     Forge Content API provides an extensible platform for users to use the cloud services to create, organize, access, search, and even share the contents of various Autodesk products with internal teams and external customers.
     
