@@ -6057,7 +6057,7 @@ parameters:
     description: Member Id
     required: false
     type: string
-    x-example: ZXJDE3KD4IUW
+    x-example: "ZXJDE3KD4IUW"
   memberId:
     name: memberId
     in: path
@@ -6277,26 +6277,28 @@ parameters:
     description: Type of the file
     required: true
     type: string
+    enum: [ "thumbnails", "files" ]
   fileId:
     name: fileId
     in: path
     description: File Id
     required: true
-    type: string    
+    type: string
+    x-example: "02420595-491B-4850-BA3C-C6B9ABB5D412"
   version:
     name: filters[contents][version] 
     in: query
     description: Content version
     required: false
     type: string
-    default: draft
+    default: "draft"
   deleteVersion:
     name: filters[contents][version] 
     in: query
-    description: Content version to be deleted.
+    description: Content version to be deleted, can be a number or tip
     required: false
     type: string
-    enum: ["tip", "1", "4", "6", "etc..."]
+    x-example: "3"
   loadReferencedContents:
     name: filters[contents][loadReferencedContents] 
     in: query
@@ -6313,7 +6315,8 @@ parameters:
     format: string
     items: 
       type: string
-      enum: [LIBRARY_MANAGER, CONTENT_CREATOR, CONTENT_READER, ANONYMOUS]  
+      enum: [LIBRARY_MANAGER, CONTENT_CREATOR, CONTENT_READER, ANONYMOUS] 
+    x-example: [ "CONTENT_CREATOR", "CONTENT_READER" ]
   tags:
     name: filter[contents][tags]
     in: query
@@ -6323,24 +6326,28 @@ parameters:
     format: string
     items: 
       type: string
+    x-example: [ "material", "materials" ]
   createdBy:
     name: filter[contents][createdBy]
     in: query
     description: Created by Member
     required: false
     type: string
+    x-example: "YUVHM4PE5UFG"
   publicLibrary:
     name: filter[contents][publicLibrary]
     in: query
     description: Public library
     required: false
     type: boolean
+    x-example: true
   createdByAppId:
     name: filter[contents][createdByAppId]
     in: query
     description: Created by Client Application Id
     required: false
     type: string
+    x-example: "1z1jrkfPPZacTkFid1V889lHfDuQzhKf"
   interestedAppIds:
     name: filter[contents][interestedAppIds]
     in: query
@@ -6350,71 +6357,81 @@ parameters:
     format: string
     items: 
       type: string
+    x-example: [ "2e2jkjfJJHAcErLya0D224lHfDuQzhFk" ]
   objectKey:
     name: objectKey
     in: path
     description: Object Key obtained from the GET /libraries/{libraryId}/contents/{contentId}  
     required: true
     type: string
-   
+    x-example: "c8092690-ce61-46db-826d-cdbcbf4c898b_red.png"
   quarantineEntityTypeFilter:
     name: filter[contents][entityType]
     in: query
     description: Filter for entityType which value should be either content or comment. If value is content then all quarantined contents within the library are returned and if value is comment then all quarantined comments for library are returned. This filter is mandatory.
     required: true
     type: string
+    enum: [ "content", "comment" ]
   flagEntityTypeFilter:
     name: filter[contents][entityType]
     in: query
     description: Filter for entityType which value should be either content or comment. If value is content then all flagged contents within the library are returned and if value is comment then all flagged comments for library are returned. This filter is mandatory.
     required: true
     type: string   
+    enum: [ "content", "comment" ]
   libraryFilter:
     name: filter[members][libraryId]
     in: query
     description: Filter for ID of the library within which the member is to be searched. This filter is mandatory.
     required: true
     type: string
+    x-example: "urn:adsk.content:library:b3064be4-bfa1-4135-a59d-3850bd85c431"
   oxygenIdFilter:
     name: filter[members][oxygenId]
     in: query
     description: Filter for oxygenId
     required: false
     type: string
+    x-example: "YUVHM4PE5UFG"
   emailFilter:
     name: filter[members][email]
     in: query
     description: Filter email.
     required: false
     type: string
+    x-example: "frederic.loranger@autodesk.com"
   accountStatusFilter:
     name: filter[members][accountStatus]
     in: query
     description: Filter for accountStatus OK/LIMBO/QUARANTINED.
     required: false
     type: string
+    enum: ["OK", "LIMBO", "QUARANTINED"]
   adminFilter:
     name: filter[members][admin]
     in: query
     description: Filter for role. true/false
     required: false
-    type: string
+    type: boolean
+    x-example: true
   membersQuery:
     name: filters[members][query]
     in: query
     description: list of keywords to search against as well as range expressions.
     required: false
     type: string
+    x-example: "netfabb"
   memberNameQuery:
     name: filters[members][query]
     in: query
     description: list of keywords (firstName and LastName) to search against as well as range expressions. eg.. filter[members][query]=(firstName:"Scott" OR lastName:"Davis")
     required: false
-    type: string      
+    type: string
+    x-example: "(firstName:\"Scott\" OR lastName:\"Davis\")"
   query_filter_library_id:
     name: filter[contents][libraryId]
     in: query
-    description: Library Id
+    description: Array of library Ids
     required: true
     type: array
     format: string
