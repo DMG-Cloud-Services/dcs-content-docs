@@ -6480,22 +6480,23 @@ parameters:
     description: Content or Node hierarchical ***from*** Ids path. <br/> Possible values - /urn:adsk.content:library:8fe18812-f724-4f1e-91c6-ae93658b13c0/urn:adsk.content:node:75886e3d-6155-4735-a7f2-aad587ad927b/*
     required: false
     type: string
+    x-example: "/urn:adsk.content:library:b3064be4-bfa1-4135-a59d-3850bd85c431/urn:adsk.content:node:d41b30ee-6efd-409b-bfb9-6c7970fb9f56/urn:adsk.content:node:b957e1d4-1ae4-4498-9cf9-864ef437f19c/urn:adsk.content:node:4c6ad448-4da4-46c6-a738-8b590dbc3627/urn:adsk.content:node:d1c093de-d55c-4c5a-bd36-c146dd6680af/urn:adsk.content:content:dab9f5e1-bea0-4aba-a395-f61718616e24"
   query_filter_content_toEntityPath:
     name: filter[contents][toEntityPath]
     in: query
     description: Content or Node hierarchical ***to*** Ids path. <br/> Possible values - /urn:adsk.content:library:8fe18812-f724-4f1e-91c6-ae93658b13c0/urn:adsk.content:node:75886e3d-6155-4735-a7f2-aad587ad927b/urn:adsk.content:content:000b5023-1c11-4f01-a3c9-7bfa298a8334*
     required: false
     type: string
+    x-example: "/urn:adsk.content:library:b3064be4-bfa1-4135-a59d-3850bd85c431/urn:adsk.content:node:d41b30ee-6efd-409b-bfb9-6c7970fb9f56/urn:adsk.content:node:b957e1d4-1ae4-4498-9cf9-864ef437f19c/urn:adsk.content:node:4c6ad448-4da4-46c6-a738-8b590dbc3627/urn:adsk.content:node:d1c093de-d55c-4c5a-bd36-c146dd6680af/urn:adsk.content:content:dab9f5e1-bea0-4aba-a395-f61718616e24"
   query_filter_content_version:
     name: filter[contents][version]
     in: query
     description: Content version. <br/> ***Note:*** When *tip* is passed, the search is performed only on the tip (latest) version of the contents and all the other versions are ignored.
     required: false
-    type: integer
-    format: integer
+    type: array
     items: 
-      type: integer
-      enum: [1, 4, 5, tip ...]
+      type: string
+    x-example: [ "3", "5", "tip" ]
   query_filter_content_entityType:
     name: filter[contents][entityType]
     in: query
