@@ -6029,42 +6029,49 @@ parameters:
     description: sort comments asc/desc on time, default is desc
     required: false
     type: string
+    enum: [ "desc", "asc" ]
   commentActivityTimeSort:
     name: sort[comments][lastActivityDate]
     in: query
     description: sort comments on lastActivityDate. It's either the addedDate for comment or the added date for its first reply. Value is asc/desc on time
     required: false
     type: string
+    enum: [ "desc", "asc" ]
   commentReplyCountSort:
     name: sort[comments][replyCount]
     in: query
     description: sort comments by its number of replies. asc/desc
     required: false
     type: string
+    enum: [ "desc", "asc" ]
   commentFeaturedFilter:
     name: filter[comments][featured]
     in: query
     description: filter featured comments or non-featured comments. If filter[comments][featured]=true, only return featured comments. If filter[comments][featured]=false, only return non-featured comments. If parameter is not passed, return all comments.
     required: false
     type: boolean
+    x-example: false
   memberIdQuery:
     name: filter[member][id]
     in: query
     description: Member Id
     required: false
     type: string
+    x-example: ZXJDE3KD4IUW
   memberId:
     name: memberId
     in: path
     description: Member Id
     required: true
     type: string
+    x-example: ZXJDE3KD4IUW
   sort:
     name: sort[contents][targetFieldName]
     in: query
     description: field to sort by, specified by asc or desc.  Available sort fields:title, creatorId, mediaType, likeCount, commentCount, createDate, modifiedDate. Example:`asc`
     required: false
     type: string
+    enum: [ "desc", "asc" ]
   body_update_library_members:
     name: body
     in: body
