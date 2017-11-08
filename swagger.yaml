@@ -3048,7 +3048,7 @@ info:
     | **filter[contents][lock]**  | Searches the content based on whether the content is locked on not. You can specify the value as `true` or `false`.
     | **filter[contents][parents.entityType]**  | Searches the content based on the entity type of the parent node.
     | **filter[contents][parents.id]**  | Searches the content for the specified parent Id.
-    | **filter[contents][extension.{key_name}]**  | Searches the content based on the extension data set on the content or node. For example, filter[contents][extension.contentLocation].
+    | **filter[contents][extension.key_name]**  | Searches the content based on the extension data set on the content or node. For example, filter[contents][extension.contentLocation].
     | **filter[contents][query]**  | Searches the content based on the specified query. You can specify the query in the `key1:value1&key2>value2` format.
     | **filter[contents][meta]**  | Searches the content based the meta data of the content. Default is `facets`.
     | **filter[contents][mode]**  | Searches the content based on the following search modes. **quick** - This mode returns the basic core attributes data of the entities. The search is performed only for the core attributes for the entities. **light** - This mode returns the basic core attributes data of the entities. The search is performed for core attributes and extension data of the entities.
@@ -4875,7 +4875,7 @@ paths:
         '200': { $ref: '#/responses/contentSearch' }
         '400': { $ref: '#/responses/bad_input' }
         '403': { $ref: '#/responses/forbidden' }
-      x-ads-docs-cli-example: 'curl -X GET -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" "https://developer.api.autodesk.com/content/v1/contentsSearch{?filter[contents][libraryId],filter[contents][title],filter[contents][description],filter[contents][tags],filter[contents][language],filter[contents][region],filter[contents][fromEntityPath],filter[contents][toEntityPath],filter[contents][entityType],filter[contents][version],filter[contents][lock],filter[contents][parents.entityType],filter[contents][parents.id],filter[contents][extension.{key_name}],filter[contents][query],filter[contents][searchSkipCache]=true,page[size],page[number]}"'
+      x-ads-docs-cli-example: 'curl -X GET -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" "https://developer.api.autodesk.com/content/v1/contentsSearch{?filter[contents][libraryId],filter[contents][title],filter[contents][description],filter[contents][tags],filter[contents][language],filter[contents][region],filter[contents][fromEntityPath],filter[contents][toEntityPath],filter[contents][entityType],filter[contents][version],filter[contents][lock],filter[contents][parents.entityType],filter[contents][parents.id],filter[contents][extension.key_name],filter[contents][query],filter[contents][searchSkipCache]=true,page[size],page[number]}"'
       security:
         [ { oauth2_access_code: [ 'data:read','data:search' ] }, { oauth2_implicit: [ 'data:read','data:search' ] },{ oauth2_application: [ 'data:read','data:search' ] } ]
       tags: ["Library Search"]
@@ -6519,7 +6519,7 @@ parameters:
     items: 
       type: string
   query_filter_content_community_data:
-    name: filter[contents][community.{key_name}]
+    name: filter[contents][community.*]
     in: query
     description: This param can be used to search entities based on the community data set on the content or library or sublibrary. It can be included in query params as well. Eg - filter[contents][community.liked]=true, filter[contents][community.commented]=true, filter[contents][community.totalHits]=100, filter[contents][community.featured]=true, filter[contents][community.commentOxygenIds]=ZWWMLJ5FWLNM, filter[contents][community.likeOxygenIds]=YUVHM4PE5UFG, filter[contents][community.status]=QUARANTINED
     required: false
