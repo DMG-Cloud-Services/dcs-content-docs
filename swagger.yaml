@@ -6431,49 +6431,49 @@ parameters:
   query_filter_library_id:
     name: filter[contents][libraryId]
     in: query
-    description: Array of library Ids
+    description: Array of library Ids, a max of 10
     required: true
     type: array
-    format: string
     items: 
       type: string 
-      enum: [List of library ids. Maximum 10 libraries ids are allowed.]
+    x-example: [ "urn:adsk.content:library:9e131f9b-d857-461f-a70c-618d94fa3c97", "urn:adsk.content:library:b506aab2-3fd4-4979-b3d5-2c760a0f5e89" ]
   query_filter_content_title:
     name: filter[contents][title]
     in: query
     description: Title of the library, node or content
     required: false
     type: string
+    x-example: "Toner PLA Ultimaker 2 0.2 mm"
   query_filter_content_description:
     name: filter[contents][description]
     in: query
     description: Description of the content or node
     required: false
     type: string
+    x-example: "Global material registry for the manufacturing data service"
   query_filter_content_tags:
     name: filter[contents][tags]
     in: query
     description: Content, Node and Library tags
     required: false
     type: array
-    format: string
     items: 
       type: string
-      enum: [List of Tags specified on Library, Node or Content]
+    x-examples: ["metal", "alloy"]
   query_filter_content_language:
     name: filter[contents][language]
     in: query
-    description: Library, Node or Content locale language
+    description: Library, Node or Content locale language, e.g. en, fr, cn, etc.
     required: false
     type: string
-    enum: [Standard locale language code like en, fr, cn etc.]
+    x-example: "en"
   query_filter_content_region:
     name: filter[contents][region]
     in: query
-    description: Library, Node or Content locale region
+    description: Library, Node or Content locale region code such as US, CA, FR, etc.
     required: false
     type: string
-    enum: [Standard locale region code like US, CA, FR etc.]
+    x-examples: "FR"
   query_filter_content_fromEntityPath:
     name: filter[contents][fromEntityPath]
     in: query
