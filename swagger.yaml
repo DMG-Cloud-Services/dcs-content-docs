@@ -6228,43 +6228,49 @@ parameters:
     description: Type of feature entry. comment or content
     required: true
     type: string
-
+    enum: [ "comment", "content" ]
   libraryId:
     name: libraryId
     in: path
     description: Library Id 
     required: true
     type: string
+    x-example: "urn:adsk.content:library:320eba64-4590-4872-b77f-aec3abee2a60"
   subLibraryId:
     name: subLibraryId
     in: path
     description: Sub-Library Id 
     required: true
     type: string
+    x-example: "urn:adsk.content:node:2d75849a-bba2-477b-8867-05c654c53faf"
   nodeId:
     name: nodeId
     in: path
     description: Node Id 
     required: true
     type: string
+    x-example: "urn:adsk.content:node:b04aa8e8-ab6e-455f-9152-8d72c7974ecc"
   contentId:
     name: contentId
     in: path
     description: Content Id 
     required: true
     type: string
+    x-example: "urn:adsk.content:content:72ce8ed1-b9fe-46e0-b0fe-901947f2304f"
   contentId1:
     name: contentId1
     in: path
     description: Content Id 
     required: true
     type: string
+    x-example: "urn:adsk.content:content:72ce8ed1-a9fe-46e0-b0fe-847737f2304e"
   contentId2:
     name: contentId2
     in: path
     description: Content Id 
     required: true
     type: string
+    x-example: "urn:adsk.content:content:36ce8ed1-c5fe-46f0-e0fe-552437f1234e"
   fileType:
     name: fileType
     in: path
