@@ -6503,10 +6503,10 @@ parameters:
     description: Entity type.
     required: false
     type: array
-    format: string
     items: 
       type: string
       enum: [library, node, content]
+    x-example: [ "node", "content" ]
   query_filter_content_lock:
     name: filter[contents][lock]
     in: query
@@ -6514,59 +6514,59 @@ parameters:
     required: false
     type: boolean
     default: false
-    enum: [true, false]
   query_filter_content_parents_entityType:
     name: filter[contents][parents.entityType]
     in: query
     description: Parent Entity type.
     required: false
-    type: string
-    format: string
+    type: array
     items: 
       type: string
       enum: [library, node, content]
+    x-example: [ "node", "content" ]
   query_filter_content_parents_id:
     name: filter[contents][parents.id]
     in: query
     description: Parent Id
     required: false
     type: array
-    format: string
     items: 
       type: string         
+    x-example: [ "urn:adsk.content:node:d1c093de-d55c-4c5a-bd36-c146dd6680af", "urn:adsk.content:node:4c6ad448-4da4-46c6-a738-8b590dbc3627" ]
   query_filter_content_license:
     name: filter[contents][license]
     in: query
     description: License mentioned for library & contents
     required: false
-    type: string      
+    type: string   
+    x-example: "MIT"
   query_filter_content_extension_data:
     name: filter[contents][extension.*]
     in: query
     description: This param can be used to search entities based on the extension data set on the content or node. Eg - filter[contents][extension.contentLocation]
     required: false
     type: array
-    format: string
     items: 
       type: string
+    x-example: ["Tungsten 234"]
   query_filter_content_community_data:
     name: filter[contents][community.*]
     in: query
     description: This param can be used to search entities based on the community data set on the content or library or sublibrary. It can be included in query params as well. Eg - filter[contents][community.liked]=true, filter[contents][community.commented]=true, filter[contents][community.totalHits]=100, filter[contents][community.featured]=true, filter[contents][community.commentOxygenIds]=ZWWMLJ5FWLNM, filter[contents][community.likeOxygenIds]=YUVHM4PE5UFG, filter[contents][community.status]=QUARANTINED
     required: false
     type: array
-    format: string
     items: 
       type: string 
+    x-example: ["Contributor"]
   query_filter_content_search_query:
     name: filter[contents][query]
     in: query
     description: Random search string
     required: false
     type: array
-    format: string
     items: 
       type: string
+    x-example: ["extension.data.glassTransition.value>59.0"]
   query_filter_content_search_meta_facets:
     name: filters[contents][meta]
     in: query
@@ -6582,9 +6582,9 @@ parameters:
         *filters[contents][meta]=facets* must be passed for this param to take effect. The faceting results contains only fields specified in this param.
     required: false
     type: array
-    format: string
     items: 
-      type: string    
+      type: string
+    x-example: ["extension.data.displayName"]
   query_filter_content_search_mode:
     name: filters[contents][mode]
     in: query
@@ -6594,7 +6594,7 @@ parameters:
       ***light*** - mode will return basic core attributes data of the entities. The search is performed against core attributes and extension data for the entities.
     required: false
     type: string
-    enum: [quick,light]
+    enum: ["quick","light"]
   query_filter_content_subLibrary:
     name: filter[contents][subLibrary]
     in: query
@@ -6607,14 +6607,15 @@ parameters:
     in: query
     description: External Id of Sub-library, Node & Content
     required: false
-    type: string          
+    type: string
+    x-example: "urn:adsk.content:node:857d8da0-4ef3-4df7-9f16-8a67ab0f5f70"
   query_filter_content_skip_search_cache:
     name: filter[contents][searchSkipCache]
     in: query
     description: Skip the cache for /contentSearch
     required: false
     type: string 
-    default: facets          
+    default: false
   query_filter_content_search_page_size:
     name: page[size]
     in: query
@@ -6635,9 +6636,9 @@ parameters:
     description: This param can be used to sort entities
     required: false
     type: array
-    format: string
     items: 
       type: string
+    x-example: ["desc", "asc"]
     
 definitions:
   json_api_input_new_follow:
