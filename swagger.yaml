@@ -611,7 +611,59 @@ info:
       }
     }
     ```
+    [@overivew/content-community]: <>
+    # Forge Content Community
     
+    Forge Content Community is an authentic social structure where people with common interest collaborates with each other for their content. This content can be for the products or services that they offer to their customers. 
+    
+    In the Community, people can share their work, like or unlike other people’s work, get the comments from other people, follow other members, and thereby make the branding of their products and services.
+    
+    ## Benefits of Community
+    
+    With Forge Content Community, members can showcase their work and get the feedback from other members in the community. This feedback can help members to spread the awareness of their work across all members, and even improve their products or services.
+    
+    ## Community features
+    
+    Forge Content Community provides a list of features that you can use to collaborate with community members, listen from the members about your content, engage people to your content, and advertise your products and services within the community. 
+    
+    Forge Content Community provides the following features that you can use to collaborate withing your community.
+    
+    ### Like/Unlike
+    
+    In your content community, you can like or unlike the content of any other users. Similarly, you can view the likes and unlikes for your content given by other users.
+    
+    ### Comment/Uncomment
+    
+    With this feature, you can add a comment to the content of other users or remove the given comments. Similarly, you can view the comments given to your contents by other users.
+    You can also reply to any existing comment.
+    
+    ### Featured content/ comment
+    
+    With this feature, you can mark your comment or content as Featured, or you can remove the featured status from your content or comment.
+    Featured comments or contents are the ways to highlight pieces of the conversation. With Featured comments or contents, you can draw reader’s attention to the specific discussion of your comment or content. The Featured comment or content can be something that is timely and relevant to the topic, or a comment from a senior business executive that you would like to draw more attention to.
+    You can mark any of your content or comment in the discussion as Featured. When you mark your content or comment as Featured, Forge Community prominently displays that comment at the top of the thread.
+    
+    ### Badwords
+    
+    With this feature, you can add a list of bad words in your library. Forge Community uses these bad words to mark the comments or contents as quarantined. For more information about quarantined, see Quarantined.
+    
+    ### Members follow/ unfollow
+    
+    With this feature, you can follow any particular member or even retrieve the list of users who are following you or any specific user.
+    Additionally, you can unfollow any user by specifying the Id of that user.
+    When you follow any user, you get the online notifications when that user posts any content in the community.
+    
+    ### Content flag
+    
+    With this feature, you can flag your content or comment in the community. Forge Community can also automatically flag the contents or comments if they contain the bad words listed in the library.
+    The flag is a mechanism to report the offensive content to an online platform. It is widely used by most popular social media web sites. 
+    The administrator can either approve or delete the flag. If the flag is approved, the relevant comment or content gets quarantined. However, if the flag is deleted, which indicates that the flag is not approved, the relevant comment or content remains unchanged.
+    
+    ### Content Quarantine
+    
+    With this feature, you can separate the content or comment from the community based on the flags set. If any content or comment contains bad words that are not allowed in the community, such contents or comments are automatically flagged and then quarantined from the community.
+    You can search all quarantined contents or comments for a library. In the search request, you must set the EntityType filter with a value as content or comment.
+
     [@tutorials]: <>
     # Step-by-Step Tutorials
     
@@ -1702,30 +1754,16 @@ info:
     
     ### Filters
 
-    +-----------------------------------------+------------------------------------------------------+
-    | Attribute                               | Description                                          |
-    +=========================================+======================================================+
-    | **filter[contents][role]**              | Displays the sub libraries for which the user        |
-    |                                         | is LIBRARY MANAGER. The list includes the libraries  |
-    |                                         | that are published and the libraries that are        |
-    |                                         | private to the respective user.                      |
-    +-----------------------------------------+------------------------------------------------------+
-    | **filter[contents][publicLibrary]**     | Displays the sub libraries that are published.       |
-    +-----------------------------------------+------------------------------------------------------+
-    | **filter[contents][tags]**              | Displays the sub libraries that contains the         |
-    |                                         | specified tags. You can specify multiple tags        |
-    |                                         | separate by comma.                                   |
-    +-----------------------------------------+------------------------------------------------------+
-    | **filter[contents][createdBy]**         | Displays the sub libraries that the specified user   |
-    |                                         | has created.                                         |
-    +-----------------------------------------+------------------------------------------------------+
-    | **page[size]**                          | The total number of pages that you want to display   |
-    |                                         | for the content.                                     |
-    +-----------------------------------------+------------------------------------------------------+
-    | **page[number]**                        | The page number of the content that you want to      |
-    |                                         | display.                                             |
-    +-----------------------------------------+------------------------------------------------------+
-
+    
+    | Attribute                               | Description                                          
+    |-----------------------------------------| -----------------------------------------------------
+    | **filter[contents][role]**              | Displays the sub libraries for which the user is LIBRARY MANAGER. The list includes the libraries that are published and the libraries that are private to the respective user.    
+    | **filter[contents][publicLibrary]**     | Displays the sub libraries that are published.       
+    | **filter[contents][tags]**              | Displays the sub libraries that contains the specified tags. You can specify multiple tags separate by comma.          
+    | **filter[contents][createdBy]**         | Displays the sub libraries that the specified user has created.  
+    | **page[size]**                          | The total number of pages that you want to display for the content.   
+    | **page[number]**                        | The page number of the content that you want to display.     
+   
     **Notes**:
 
     -  In the API request if you do not specify a valid token, the API applies the filter criteria only on the libraries with the status as published.
