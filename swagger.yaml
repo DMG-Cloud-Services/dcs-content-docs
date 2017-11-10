@@ -6352,7 +6352,7 @@ parameters:
     required: false
     type: string
     enum: [ "LIBRARY_MANAGER", "CONTENT_CREATOR", "CONTENT_READER", "ANONYMOUS" ] 
-    x-example: "FILTER_CONTENTS_ROLE"
+    x-example: "ANONYMOUS"
   tags:
     name: filter[contents][tags]
     in: query
@@ -6528,7 +6528,7 @@ parameters:
     required: false
     type: string
     enum: [library, node, content]
-    x-example: "FILTER_CONTENTS_ENTITY_TYPE"
+    x-example: "content"
   query_filter_content_lock:
     name: filter[contents][lock]
     in: query
@@ -6543,7 +6543,7 @@ parameters:
     required: false
     type: string
     enum: [library, node, content]
-    x-example: "FILTER_CONTENTS_PARENTS_ENTITY_TYPE"
+    x-example: "library"
   query_filter_content_parents_id:
     name: filter[contents][parents.id]
     in: query
