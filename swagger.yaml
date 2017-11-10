@@ -8594,11 +8594,6 @@ responses:
       allOf:
       - type: object
     headers:
-        etag:
-          description: |
-            `etag` for the resource which can be used for cache optimization
-            and must be used for mutating operations on this resource
-          type: string
         authorization:
           description: Bearer Token
           type: integer
@@ -8672,11 +8667,6 @@ responses:
       allOf:
       - type: object
     headers:
-        etag:
-          description: |
-            `etag` for the resource which can be used for cache optimization
-            and must be used for mutating operations on this resource
-          type: string
         authorization:
           description: Bearer Token
           type: integer
@@ -8770,11 +8760,6 @@ responses:
       allOf:
       - type: object
     headers:
-        etag:
-          description: |
-            `etag` for the resource which can be used for cache optimization
-            and must be used for mutating operations on this resource
-          type: string
         authorization:
           description: Bearer Token
           type: integer
@@ -8851,11 +8836,6 @@ responses:
       allOf:
       - type: object
     headers:
-        etag:
-          description: |
-            `etag` for the resource which can be used for cache optimization
-            and must be used for mutating operations on this resource
-          type: string
         authorization:
           description: Bearer Token
           type: integer
@@ -8889,11 +8869,6 @@ responses:
       allOf:
       - type: object
     headers:
-        etag:
-          description: |
-            `etag` for the resource which can be used for cache optimization
-            and must be used for mutating operations on this resource
-          type: string
         authorization:
           description: Bearer Token
           type: integer
@@ -8945,11 +8920,6 @@ responses:
       allOf:
       - type: object
     headers:
-        etag:
-          description: |
-            `etag` for the resource which can be used for cache optimization
-            and must be used for mutating operations on this resource
-          type: string
         authorization:
           description: Bearer Token
           type: integer
@@ -8994,11 +8964,6 @@ responses:
       allOf:
       - type: object
     headers:
-        etag:
-          description: |
-            `etag` for the resource which can be used for cache optimization
-            and must be used for mutating operations on this resource
-          type: string
         authorization:
           description: Bearer Token
           type: integer
@@ -9033,11 +8998,6 @@ responses:
       allOf:
       - type: object
     headers:
-        etag:
-          description: |
-            `etag` for the resource which can be used for cache optimization
-            and must be used for mutating operations on this resource
-          type: string
         authorization:
           description: Bearer Token
           type: integer
@@ -9069,11 +9029,6 @@ responses:
       allOf:
       - type: object
     headers:
-        etag:
-          description: |
-            `etag` for the resource which can be used for cache optimization
-            and must be used for mutating operations on this resource
-          type: string
         authorization:
           description: Bearer Token
           type: integer
@@ -9136,11 +9091,6 @@ responses:
       allOf:
       - type: object
     headers:
-        etag:
-          description: |
-            `etag` for the resource which can be used for cache optimization
-            and must be used for mutating operations on this resource
-          type: string
         authorization:
           description: Bearer Token
           type: integer
@@ -9171,11 +9121,6 @@ responses:
       allOf:
       - type: object
     headers:
-        etag:
-          description: |
-            `etag` for the resource which can be used for cache optimization
-            and must be used for mutating operations on this resource
-          type: string
         authorization:
           description: Bearer Token
           type: integer
@@ -9223,11 +9168,6 @@ responses:
       allOf:
       - type: object
     headers:
-        etag:
-          description: |
-            `etag` for the resource which can be used for cache optimization
-            and must be used for mutating operations on this resource
-          type: string
         authorization:
           description: Bearer Token
           type: integer
@@ -9301,11 +9241,6 @@ responses:
       allOf:
       - type: object
     headers:
-        etag:
-          description: |
-            `etag` for the resource which can be used for cache optimization
-            and must be used for mutating operations on this resource
-          type: string
         authorization:
           description: Bearer Token
           type: integer
@@ -9333,11 +9268,6 @@ responses:
       allOf:
       - type: object
     headers:
-        etag:
-          description: |
-            `etag` for the resource which can be used for cache optimization
-            and must be used for mutating operations on this resource
-          type: string
         authorization:
           description: Bearer Token
           type: integer
