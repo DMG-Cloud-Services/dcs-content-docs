@@ -6352,7 +6352,7 @@ parameters:
     required: false
     type: string
     enum: [ "LIBRARY_MANAGER", "CONTENT_CREATOR", "CONTENT_READER", "ANONYMOUS" ] 
-    x-example: "ANONYMOUS"
+    x-example: "LIBRARY_MANAGER"
   tags:
     name: filter[contents][tags]
     in: query
@@ -6443,7 +6443,7 @@ parameters:
     description: Filter for role. true/false
     required: false
     type: boolean
-    x-example: "FILTER_MEMBERS_ADMIN"
+    x-example: false
   membersQuery:
     name: filters[members][query]
     in: query
