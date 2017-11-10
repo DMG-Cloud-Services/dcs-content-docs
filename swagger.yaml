@@ -6350,22 +6350,16 @@ parameters:
     in: query
     description: Member Role
     required: false
-    type: array
-    format: string
-    items: 
-      type: string
-      enum: [LIBRARY_MANAGER, CONTENT_CREATOR, CONTENT_READER, ANONYMOUS] 
-    x-example: [ "CONTENT_CREATOR", "CONTENT_READER" ]
+    type: string
+    enum: [ "LIBRARY_MANAGER", "CONTENT_CREATOR", "CONTENT_READER", "ANONYMOUS" ] 
+    x-example: "CONTENT_READER"
   tags:
     name: filter[contents][tags]
     in: query
     description: Tags
     required: false
-    type: array
-    format: string
-    items: 
-      type: string
-    x-example: [ "material", "materials" ]
+    type: string
+    x-example: "material"
   createdBy:
     name: filter[contents][createdBy]
     in: query
@@ -6392,11 +6386,8 @@ parameters:
     in: query
     description: Interested Client Application Id
     required: false
-    type: array
-    format: string
-    items: 
-      type: string
-    x-example: [ "2e2jkjfJJHAcErLya0D224lHfDuQzhFk" ]
+    type: string
+    x-example: "2e2jkjfJJHAcErLya0D224lHfDuQzhFk"
   objectKey:
     name: objectKey
     in: path
@@ -6470,12 +6461,10 @@ parameters:
   query_filter_library_id:
     name: filter[contents][libraryId]
     in: query
-    description: Array of library Ids, a max of 10
+    description: Library Id (support up to 10 ids)
     required: true
-    type: array
-    items: 
-      type: string 
-    x-example: [ "urn:adsk.content:library:9e131f9b-d857-461f-a70c-618d94fa3c97", "urn:adsk.content:library:b506aab2-3fd4-4979-b3d5-2c760a0f5e89" ]
+    type: string 
+    x-example: "urn:adsk.content:library:9e131f9b-d857-461f-a70c-618d94fa3c97"
   query_filter_content_title:
     name: filter[contents][title]
     in: query
@@ -6495,10 +6484,8 @@ parameters:
     in: query
     description: Content, Node and Library tags
     required: false
-    type: array
-    items: 
-      type: string
-    x-examples: ["metal", "alloy"]
+    type: string
+    x-example: "metal"
   query_filter_content_language:
     name: filter[contents][language]
     in: query
@@ -6512,7 +6499,7 @@ parameters:
     description: Library, Node or Content locale region code such as US, CA, FR, etc.
     required: false
     type: string
-    x-examples: "FR"
+    x-example: "FR"
   query_filter_content_fromEntityPath:
     name: filter[contents][fromEntityPath]
     in: query
@@ -6532,20 +6519,16 @@ parameters:
     in: query
     description: Content version. <br/> ***Note:*** When *tip* is passed, the search is performed only on the tip (latest) version of the contents and all the other versions are ignored.
     required: false
-    type: array
-    items: 
-      type: string
-    x-example: [ "3", "5", "tip" ]
+    type: string
+    x-example: "tip"
   query_filter_content_entityType:
     name: filter[contents][entityType]
     in: query
     description: Entity type.
     required: false
-    type: array
-    items: 
-      type: string
-      enum: [library, node, content]
-    x-example: [ "node", "content" ]
+    type: string
+    enum: [library, node, content]
+    x-example: "content"
   query_filter_content_lock:
     name: filter[contents][lock]
     in: query
@@ -6558,20 +6541,16 @@ parameters:
     in: query
     description: Parent Entity type.
     required: false
-    type: array
-    items: 
-      type: string
-      enum: [library, node, content]
-    x-example: [ "node", "content" ]
+    type: string
+    enum: [library, node, content]
+    x-example: "content"
   query_filter_content_parents_id:
     name: filter[contents][parents.id]
     in: query
     description: Parent Id
     required: false
-    type: array
-    items: 
-      type: string         
-    x-example: [ "urn:adsk.content:node:d1c093de-d55c-4c5a-bd36-c146dd6680af", "urn:adsk.content:node:4c6ad448-4da4-46c6-a738-8b590dbc3627" ]
+    type: string         
+    x-example: "urn:adsk.content:node:4c6ad448-4da4-46c6-a738-8b590dbc3627"
   query_filter_content_license:
     name: filter[contents][license]
     in: query
@@ -6584,28 +6563,22 @@ parameters:
     in: query
     description: This param can be used to search entities based on the extension data set on the content or node. Eg - filter[contents][extension.contentLocation]
     required: false
-    type: array
-    items: 
-      type: string
-    x-example: ["Tungsten 234"]
+    type: string
+    x-example: "Tungsten 234"
   query_filter_content_community_data:
     name: filter[contents][community.*]
     in: query
     description: This param can be used to search entities based on the community data set on the content or library or sublibrary. It can be included in query params as well. Eg - filter[contents][community.liked]=true, filter[contents][community.commented]=true, filter[contents][community.totalHits]=100, filter[contents][community.featured]=true, filter[contents][community.commentOxygenIds]=ZWWMLJ5FWLNM, filter[contents][community.likeOxygenIds]=YUVHM4PE5UFG, filter[contents][community.status]=QUARANTINED
     required: false
-    type: array
-    items: 
-      type: string 
-    x-example: ["Contributor"]
+    type: string 
+    x-example: "Contributor"
   query_filter_content_search_query:
     name: filter[contents][query]
     in: query
     description: Random search string
     required: false
-    type: array
-    items: 
-      type: string
-    x-example: ["extension.data.glassTransition.value>59.0"]
+    type: string
+    x-example: "extension.data.glassTransition.value>59.0"
   query_filter_content_search_meta_facets:
     name: filters[contents][meta]
     in: query
@@ -6620,10 +6593,8 @@ parameters:
         List of fields on which facets are required. <br>
         *filters[contents][meta]=facets* must be passed for this param to take effect. The faceting results contains only fields specified in this param.
     required: false
-    type: array
-    items: 
-      type: string
-    x-example: ["extension.data.displayName"]
+    type: string
+    x-example: "extension.data.displayName"
   query_filter_content_search_mode:
     name: filters[contents][mode]
     in: query
@@ -6674,10 +6645,8 @@ parameters:
     in: query
     description: This param can be used to sort entities
     required: false
-    type: array
-    items: 
-      type: string
-    x-example: ["desc", "asc"]
+    type: string
+    enum: ["desc", "asc"]
     
 definitions:
   json_api_input_new_follow:
