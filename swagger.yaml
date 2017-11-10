@@ -6095,14 +6095,14 @@ parameters:
     description: Member Id
     required: false
     type: string
-    x-example: "ZXJDE3KD4IUW"
+    x-example: "FILTER_MEMBER_ID"
   memberId:
     name: memberId
     in: path
     description: Member Id
     required: true
     type: string
-    x-example: ZXJDE3KD4IUW
+    x-example: "MEMBER_ID"
   sort:
     name: sort[contents][targetFieldName]
     in: query
@@ -6253,14 +6253,14 @@ parameters:
     description: Comment Id
     required: true
     type: string
-    x-example: "CXXAZKWJ6ZZO981"
+    x-example: "COMMENT_ID"
   policy_id:
     name: policy_id
     in: path
     description: library policy id
     required: true
     type: string
-    x-example: "netfabb-power-admin"
+    x-example: "POLICY_ID"
   featureFilter:
     name: filter[contents][entryType]
     in: query
@@ -6274,42 +6274,42 @@ parameters:
     description: Library Id 
     required: true
     type: string
-    x-example: "urn:adsk.content:library:320eba64-4590-4872-b77f-aec3abee2a60"
+    x-example: "LIBRARY_ID"
   subLibraryId:
     name: subLibraryId
     in: path
     description: Sub-Library Id 
     required: true
     type: string
-    x-example: "urn:adsk.content:node:2d75849a-bba2-477b-8867-05c654c53faf"
+    x-example: "SUB_LIBRARY_ID"
   nodeId:
     name: nodeId
     in: path
     description: Node Id 
     required: true
     type: string
-    x-example: "urn:adsk.content:node:b04aa8e8-ab6e-455f-9152-8d72c7974ecc"
+    x-example: "NODE_ID"
   contentId:
     name: contentId
     in: path
     description: Content Id 
     required: true
     type: string
-    x-example: "urn:adsk.content:content:72ce8ed1-b9fe-46e0-b0fe-901947f2304f"
+    x-example: "CONTENT_ID"
   contentId1:
     name: contentId1
     in: path
     description: Content Id 
     required: true
     type: string
-    x-example: "urn:adsk.content:content:72ce8ed1-a9fe-46e0-b0fe-847737f2304e"
+    x-example: "CONTENT_ID1"
   contentId2:
     name: contentId2
     in: path
     description: Content Id 
     required: true
     type: string
-    x-example: "urn:adsk.content:content:36ce8ed1-c5fe-46f0-e0fe-552437f1234e"
+    x-example: "CONTENT_ID2"
   fileType:
     name: fileType
     in: path
@@ -6323,21 +6323,21 @@ parameters:
     description: File Id
     required: true
     type: string
-    x-example: "02420595-491B-4850-BA3C-C6B9ABB5D412"
+    x-example: "FILE_ID"
   version:
-    name: filters[contents][version] 
+    name: filter[contents][version] 
     in: query
     description: Content version
     required: false
     type: string
-    default: "draft"
+    default: "FILTER_CONTENTS_VERSION"
   deleteVersion:
-    name: filters[contents][version] 
+    name: filter[contents][version] 
     in: query
     description: Content version to be deleted, can be a number or tip
     required: false
     type: string
-    x-example: "3"
+    x-example: "FILTER_CONTENTS_VERSION"
   loadReferencedContents:
     name: filters[contents][loadReferencedContents] 
     in: query
@@ -6352,21 +6352,21 @@ parameters:
     required: false
     type: string
     enum: [ "LIBRARY_MANAGER", "CONTENT_CREATOR", "CONTENT_READER", "ANONYMOUS" ] 
-    x-example: "CONTENT_READER"
+    x-example: "FILTER_CONTENTS_ROLE"
   tags:
     name: filter[contents][tags]
     in: query
     description: Tags
     required: false
     type: string
-    x-example: "material"
+    x-example: "FILTER_CONTENTS_TAGS"
   createdBy:
     name: filter[contents][createdBy]
     in: query
     description: Created by Member
     required: false
     type: string
-    x-example: "YUVHM4PE5UFG"
+    x-example: "FILTER_CONTENTS_CREATEDBY"
   publicLibrary:
     name: filter[contents][publicLibrary]
     in: query
@@ -6380,21 +6380,21 @@ parameters:
     description: Created by Client Application Id
     required: false
     type: string
-    x-example: "1z1jrkfPPZacTkFid1V889lHfDuQzhKf"
+    x-example: "FILTER_CONTENTS_CREATED_BY_APP_ID"
   interestedAppIds:
     name: filter[contents][interestedAppIds]
     in: query
     description: Interested Client Application Id
     required: false
     type: string
-    x-example: "2e2jkjfJJHAcErLya0D224lHfDuQzhFk"
+    x-example: "FILTER_CONTENTS_INTERESTED_APP_IDS"
   objectKey:
     name: objectKey
     in: path
     description: Object Key obtained from the GET /libraries/{libraryId}/contents/{contentId}  
     required: true
     type: string
-    x-example: "c8092690-ce61-46db-826d-cdbcbf4c898b_red.png"
+    x-example: "OBJECT_KEY"
   quarantineEntityTypeFilter:
     name: filter[contents][entityType]
     in: query
@@ -6415,21 +6415,21 @@ parameters:
     description: Filter for ID of the library within which the member is to be searched. This filter is mandatory.
     required: true
     type: string
-    x-example: "urn:adsk.content:library:b3064be4-bfa1-4135-a59d-3850bd85c431"
+    x-example: "FILTER_MEMBERS_LIBRARY_ID"
   oxygenIdFilter:
     name: filter[members][oxygenId]
     in: query
     description: Filter for oxygenId
     required: false
     type: string
-    x-example: "YUVHM4PE5UFG"
+    x-example: "FILTER_MEMBERS_OXYGEN_ID"
   emailFilter:
     name: filter[members][email]
     in: query
     description: Filter email.
     required: false
     type: string
-    x-example: "frederic.loranger@autodesk.com"
+    x-example: "FILTER_MEMBERS_EMAIL"
   accountStatusFilter:
     name: filter[members][accountStatus]
     in: query
@@ -6443,84 +6443,84 @@ parameters:
     description: Filter for role. true/false
     required: false
     type: boolean
-    x-example: true
+    x-example: "FILTER_MEMBERS_ADMIN"
   membersQuery:
     name: filters[members][query]
     in: query
     description: list of keywords to search against as well as range expressions.
     required: false
     type: string
-    x-example: "netfabb"
+    x-example: "FILTER_MEMBERS_QUERY"
   memberNameQuery:
     name: filters[members][query]
     in: query
     description: list of keywords (firstName and LastName) to search against as well as range expressions. eg.. filter[members][query]=(firstName:"Scott" OR lastName:"Davis")
     required: false
     type: string
-    x-example: "(firstName:\"Scott\" OR lastName:\"Davis\")"
+    x-example: "FILTER_MEMBER_NAMES_QUERY"
   query_filter_library_id:
     name: filter[contents][libraryId]
     in: query
     description: Library Id (support up to 10 ids)
     required: true
     type: string 
-    x-example: "urn:adsk.content:library:9e131f9b-d857-461f-a70c-618d94fa3c97"
+    x-example: "FILTER_CONTENTS_LIBRARY_ID"
   query_filter_content_title:
     name: filter[contents][title]
     in: query
     description: Title of the library, node or content
     required: false
     type: string
-    x-example: "Toner PLA Ultimaker 2 0.2 mm"
+    x-example: "FILTER_CONTENTS_TITLE"
   query_filter_content_description:
     name: filter[contents][description]
     in: query
     description: Description of the content or node
     required: false
     type: string
-    x-example: "Global material registry for the manufacturing data service"
+    x-example: "FILTER_CONTENTS_DESCRIPTION"
   query_filter_content_tags:
     name: filter[contents][tags]
     in: query
     description: Content, Node and Library tags
     required: false
     type: string
-    x-example: "metal"
+    x-example: "FILTER_CONTENTS_TAGS"
   query_filter_content_language:
     name: filter[contents][language]
     in: query
     description: Library, Node or Content locale language, e.g. en, fr, cn, etc.
     required: false
     type: string
-    x-example: "en"
+    x-example: "FILTER_CONTENTS_LANGUAGE"
   query_filter_content_region:
     name: filter[contents][region]
     in: query
     description: Library, Node or Content locale region code such as US, CA, FR, etc.
     required: false
     type: string
-    x-example: "FR"
+    x-example: "FILTER_CONTENTS_REGION"
   query_filter_content_fromEntityPath:
     name: filter[contents][fromEntityPath]
     in: query
     description: Content or Node hierarchical ***from*** Ids path. <br/> Possible values - /urn:adsk.content:library:8fe18812-f724-4f1e-91c6-ae93658b13c0/urn:adsk.content:node:75886e3d-6155-4735-a7f2-aad587ad927b/*
     required: false
     type: string
-    x-example: "/urn:adsk.content:library:b3064be4-bfa1-4135-a59d-3850bd85c431/urn:adsk.content:node:d41b30ee-6efd-409b-bfb9-6c7970fb9f56/urn:adsk.content:node:b957e1d4-1ae4-4498-9cf9-864ef437f19c/urn:adsk.content:node:4c6ad448-4da4-46c6-a738-8b590dbc3627/urn:adsk.content:node:d1c093de-d55c-4c5a-bd36-c146dd6680af/urn:adsk.content:content:dab9f5e1-bea0-4aba-a395-f61718616e24"
+    x-example: "FILTER_CONTENTS_FROM_ENTITY_PATH"
   query_filter_content_toEntityPath:
     name: filter[contents][toEntityPath]
     in: query
     description: Content or Node hierarchical ***to*** Ids path. <br/> Possible values - /urn:adsk.content:library:8fe18812-f724-4f1e-91c6-ae93658b13c0/urn:adsk.content:node:75886e3d-6155-4735-a7f2-aad587ad927b/urn:adsk.content:content:000b5023-1c11-4f01-a3c9-7bfa298a8334*
     required: false
     type: string
-    x-example: "/urn:adsk.content:library:b3064be4-bfa1-4135-a59d-3850bd85c431/urn:adsk.content:node:d41b30ee-6efd-409b-bfb9-6c7970fb9f56/urn:adsk.content:node:b957e1d4-1ae4-4498-9cf9-864ef437f19c/urn:adsk.content:node:4c6ad448-4da4-46c6-a738-8b590dbc3627/urn:adsk.content:node:d1c093de-d55c-4c5a-bd36-c146dd6680af/urn:adsk.content:content:dab9f5e1-bea0-4aba-a395-f61718616e24"
+    x-example: "FILTER_CONTENTS_TO_ENTITY_PATH"
   query_filter_content_version:
     name: filter[contents][version]
     in: query
     description: Content version. <br/> ***Note:*** When *tip* is passed, the search is performed only on the tip (latest) version of the contents and all the other versions are ignored.
     required: false
     type: string
-    x-example: "tip"
+    x-example: "FILTER_CONTENTS_VERSION"
   query_filter_content_entityType:
     name: filter[contents][entityType]
     in: query
@@ -6528,7 +6528,7 @@ parameters:
     required: false
     type: string
     enum: [library, node, content]
-    x-example: "content"
+    x-example: "FILTER_CONTENTS_ENTITY_TYPE"
   query_filter_content_lock:
     name: filter[contents][lock]
     in: query
@@ -6543,42 +6543,42 @@ parameters:
     required: false
     type: string
     enum: [library, node, content]
-    x-example: "content"
+    x-example: "FILTER_CONTENTS_PARENTS_ENTITY_TYPE"
   query_filter_content_parents_id:
     name: filter[contents][parents.id]
     in: query
     description: Parent Id
     required: false
     type: string         
-    x-example: "urn:adsk.content:node:4c6ad448-4da4-46c6-a738-8b590dbc3627"
+    x-example: "FILTER_CONTENTS_PARENTS_ID"
   query_filter_content_license:
     name: filter[contents][license]
     in: query
     description: License mentioned for library & contents
     required: false
     type: string   
-    x-example: "MIT"
+    x-example: "FILTER_CONTENTS_LICENSE"
   query_filter_content_extension_data:
     name: filter[contents][extension.*]
     in: query
     description: This param can be used to search entities based on the extension data set on the content or node. Eg - filter[contents][extension.contentLocation]
     required: false
     type: string
-    x-example: "Tungsten 234"
+    x-example: "FILTER_CONTENTS_EXTENSION_DATA"
   query_filter_content_community_data:
     name: filter[contents][community.*]
     in: query
     description: This param can be used to search entities based on the community data set on the content or library or sublibrary. It can be included in query params as well. Eg - filter[contents][community.liked]=true, filter[contents][community.commented]=true, filter[contents][community.totalHits]=100, filter[contents][community.featured]=true, filter[contents][community.commentOxygenIds]=ZWWMLJ5FWLNM, filter[contents][community.likeOxygenIds]=YUVHM4PE5UFG, filter[contents][community.status]=QUARANTINED
     required: false
     type: string 
-    x-example: "Contributor"
+    x-example: "FILTER_CONTENTS_COMMUNITY_DATA"
   query_filter_content_search_query:
     name: filter[contents][query]
     in: query
-    description: Random search string
+    description: Random search string, e.g. "extension.data.glassTransition.value>59.0"
     required: false
     type: string
-    x-example: "extension.data.glassTransition.value>59.0"
+    x-example: "FILTER_CONTENTS_QUERY"
   query_filter_content_search_meta_facets:
     name: filters[contents][meta]
     in: query
@@ -6594,7 +6594,7 @@ parameters:
         *filters[contents][meta]=facets* must be passed for this param to take effect. The faceting results contains only fields specified in this param.
     required: false
     type: string
-    x-example: "extension.data.displayName"
+    x-example: "FILTER_CONTENTS_FACET"
   query_filter_content_search_mode:
     name: filters[contents][mode]
     in: query
@@ -6618,7 +6618,7 @@ parameters:
     description: External Id of Sub-library, Node & Content
     required: false
     type: string
-    x-example: "urn:adsk.content:node:857d8da0-4ef3-4df7-9f16-8a67ab0f5f70"
+    x-example: "FILTER_CONTENTS_EXTERNAL_ID"
   query_filter_content_skip_search_cache:
     name: filter[contents][searchSkipCache]
     in: query
