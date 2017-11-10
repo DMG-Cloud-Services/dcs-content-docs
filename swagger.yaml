@@ -9546,7 +9546,7 @@ responses:
     schema:
       $ref: '#/definitions/json_api_error'
     examples:
-      application/vnd.api+json:
+      application/json:
         {
             "errors": [
                 {
@@ -9563,7 +9563,7 @@ responses:
     schema:
       $ref: '#/definitions/json_api_error'
     examples:
-      application/vnd.api+json:
+      application/json:
         {
             "errors": [
                 {
@@ -9582,7 +9582,7 @@ responses:
     schema:
       $ref: '#/definitions/json_api_error'
     examples:
-      application/vnd.api+json:
+      application/json:
         {
           "errors": [
             {
