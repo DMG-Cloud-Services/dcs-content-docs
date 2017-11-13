@@ -3620,14 +3620,45 @@ info:
     ### Example
     
     ```
-    
+    curl -X POST 
+    -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
+    -H "Accept: application/vnd.api+json"
+    -H "Content-Type: application/vnd.api+json" 
+    -d
+      '{
+        "data": [
+          {
+            "type": "roles",
+            "id": "1"
+          }
+        ]
+      }' "https://developer-stg.api.autodesk.com/content/v1/members/{memberId}/relationships/roles"
     ```
     
     The resource provides the following response:
     
     ```
-    
+    {
+        "data": [
+          {
+            "type": "roles",
+            "id": "1"
+          }
+        ]
+      }
     ```
+    
+    ## Step 4: Perform the Community Operations
+    
+    In this step, you perform various operations on the content from various members of the community. Also, other members can perform community operations on your content. For more information about community features, see [Content Community](/en/docs/content/v1/overview/content-community).
+    
+    The Content API provides the following endpoints to perfom the required operations:
+    
+    | Operation | Endpoint |
+    |-----------|----------|
+    | Like Content | `POST contents/contentId/likes`|
+    | Unline Content | `DELETE contents/contentId/likes` |
+    
     
     [%http]: <>
     # HTTP Specification
