@@ -618,6 +618,8 @@ info:
     
     In the Community, people can share their work, like or unlike other people’s work, get the comments from other people, follow other members, and thereby make the branding of their products and services.
     
+    Note: In Forge Content, community is the tenent Id of your company. Each tenent ID is a separate community in which members can collaborate with each other. Members across the communities cannot collaborate with each other.
+    
     ## Benefits of Community
     
     With Forge Content Community, members can showcase their work and get the feedback from other members in the community. This feedback can help members to spread the awareness of their work across all members, and even improve their products or services.
@@ -686,6 +688,9 @@ info:
       
     ## [Add Relationship among Library, Sub Library, Nodes, and Contents](/en/docs/content/v1/tutorials/add-relationships)
       This tutorial explains how to create and update the relationships of nodes and contents with sub library and library.
+      
+    ## [Create Content Community](/en/docs/content/v1/tutorials/collaborate-within-community)
+      This tutorial explains how you can collaborate within content community.
       
     [@tutorials/before-you-begin]: <>
     # Before you begin
@@ -3588,6 +3593,41 @@ info:
     }' "https://developer-stg.api.autodesk.com/content/v1/relationships/contents/{contentId}"
     ```
     On successful updation of the relationship, the resource provides a 204 response without any content.
+    
+    [@tutorials/collaborate-within-community]: <>
+    # Collaborate within Community
+    
+    This tutorial explains how to collaborate within the community. For more information about Community, see [Content Community](/en/docs/content/v1/overview/content-community).
+    
+    ## Step 1: Create a Library
+    
+    In this step, you create a library that you want to collaborate within the community. The process of creating a library is same as creating your content library. 
+    
+    For more information about creating a library, see the **Step 1** in the [Create Content in a New Library with Sub Library](/en/docs/content/v1/tutorials/create-content-in-new-library-with-sublibrary) tutorial.
+
+    ## Step 2: Create and Publish the Content in the Library
+    
+    In this step, you create content in the library and publish the content. Once you publish your content, you can collaborate that content with other members in the community. The members can like your content, add comments to the content, follow you, and perform many such community operation. For more information about community features, see [Content Community](/en/docs/content/v1/overview/content-community).
+    
+    Before creating the content, ensure that you have sub library or nodes created in your library. For more information about creating content and publishing the content, follow the steps given in the [Create Content in a New Library with Sub Library](/en/docs/content/v1/tutorials/create-content-in-new-library-with-sublibrary) tutorial.
+    
+    ## Step 3: Add Members as Admin to the Library
+    
+    In this step, you add members as admin to your library. Once the members are admin to your library, they can perform all community operations.
+    
+    The Content API provides the `POST roles` endpoint to add members as admin to your library. In the API request, you need to sepcify Id of the member and the role.
+    
+    ### Example
+    
+    ```
+    
+    ```
+    
+    The resource provides the following response:
+    
+    ```
+    
+    ```
     
     [%http]: <>
     # HTTP Specification
