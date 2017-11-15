@@ -648,7 +648,6 @@ info:
     | Quarantine            | Separates the content or comment from the community based on the flags set. If any content or comment contains bad words that are not allowed in the content or comment, such contents or comments are automatically flagged and then quarantined from the library.
     |                       | You can search all quarantined contents or comments for a library. In the search request, you must set the EntityType filter with a value as content or comment.
     
-
     [@tutorials]: <>
     # Step-by-Step Tutorials
     
@@ -3641,6 +3640,7 @@ info:
     |-----------|----------|
     | Like Content | `POST contents/contentId/likes`|
     | Unline Content | `DELETE contents/contentId/likes` |
+    |                 |                                 |
     
     
     [%http]: <>
@@ -8179,7 +8179,7 @@ definitions:
           title: { type: string, description: 'title' }
           description: { type: string, description: 'description' }
           status: { type: string, description: 'status' }
-          entityPaths: { type: array,items: { type: object } ,description: 'entityPaths' }
+          entityPaths: { type: array, items: { type: string }, description: 'entityPaths' }
           lastModifiedTime: { type: string, description: 'lastModifiedTime' }
           createTime: { type: string, description: 'createTime' }
           createdBy: { type: string, description: 'createdBy' }
@@ -8199,7 +8199,7 @@ definitions:
           title: { type: string, description: 'title' }
           description: { type: string, description: 'description' }
           status: { type: string, description: 'status' }
-          entityPaths: { type: array,items: { type: object } ,description: 'entityPaths' }
+          entityPaths: { type: array, items: { type: string }, description: 'entityPaths' }
           lastModifiedTime: { type: string, description: 'lastModifiedTime' }
           createTime: { type: string, description: 'createTime' }
           createdBy: { type: string, description: 'createdBy' }
@@ -8245,7 +8245,7 @@ definitions:
           title: { type: string, description: 'title' }
           description: { type: string, description: 'description' }
           tags: { type: string, description: 'tags' }
-          entityPaths: { type: array,items: { type: object },description: 'entityPaths' }
+          entityPaths: { type: array, items: { type: string }, description: 'entityPaths' }
           lastModifiedTime: { type: string, description: 'lastModifiedTime' }
           createTime: { type: string, description: 'createTime' }
           createdBy: { type: string, description: 'createdBy' }
@@ -8309,7 +8309,7 @@ definitions:
           lock : { type: boolean, description: 'lock' }
           lastModifiedBy: { type: string, description: 'lastModifiedBy' }
           contentDownloadCount : { type: integer, description: 'contentDownloadCount' }
-          entityPaths: { type: array,items: { type: object },description: 'entityPaths' }
+          entityPaths: { type: array, items: { type: string }, description: 'entityPaths' }
       relationships: { $ref: '#/definitions/node_realtionship_definitions' }
       links: { $ref: '#/definitions/json_link_self' }
       
