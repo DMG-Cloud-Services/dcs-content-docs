@@ -5601,12 +5601,12 @@ paths:
       responses:
         '200': { $ref: '#/responses/getCommunityContentSearchResults' }
 
-  /contents/v1/contents/{contentId}/likes:
+  /contents/{contentId}/likes:
       x-summary: Content Likes
       x-description: APIs for Content Likes.
       get:
         tags: [ "Community" ]
-        operationId: getCommunityContentLikes
+        operationId: getCommunityContentLikesm
         description: |
           Retrieve all likes for a given content.
         security:
