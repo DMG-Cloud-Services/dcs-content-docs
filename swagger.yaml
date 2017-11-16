@@ -3579,7 +3579,7 @@ info:
     [@tutorials/collaborate-within-community]: <>
     # Collaborate within Community
     
-    This tutorial explains how to collaborate within the community. For more information about Community, see [Content Community](/en/docs/content/v1/overview/content-community).
+    This tutorial explains how to collaborate Forge Content members within the community. For more information about Community, see [Content Community](/en/docs/content/v1/overview/content-community).
     
     ## Step 1: Create a Library
     
@@ -3593,11 +3593,11 @@ info:
     
     Before creating the content, ensure that you have sub library or nodes created in your library. For more information about creating content and publishing the content, follow the steps given in the [Create Content in a New Library with Sub Library](/en/docs/content/v1/tutorials/create-content-in-new-library-with-sublibrary) tutorial.
     
-    ## Step 3: Add Members as Admin to the Library
+    ## Step 3: Provide Access to Forge Content Members for your Library
     
-    In this step, you add members as admin to your library. Once the members are admin to your library, they can perform all community operations.
+    In this step, you provide access to other Forge Content members for your Library. The access can be LIBRARY MANAGER, CONTENT READER, CONTENT CREATOR. Once you provide the necessary access to Forge Content members for your Library, they can perform all community operations on your library.
     
-    The Content API provides the `POST roles` endpoint to add members as admin to your library. In the API request, you need to sepcify Id of the member and the role.
+    The Library Management Admin API provides the `PUT libraries/libraryId/members` endpoint to provide the correct role for which you want to add or remove members. In the API request, you need to sepcify the library Id and the Forge Content member Id. You can include multiple members in one request.
     
     ### Example
     
@@ -3608,26 +3608,107 @@ info:
     -H "Content-Type: application/vnd.api+json" 
     -d
       '{
-        "data": [
-          {
-            "type": "roles",
-            "id": "1"
-          }
-        ]
-      }' "https://developer-stg.api.autodesk.com/content/v1/members/{memberId}/relationships/roles"
+        "data": {
+          "type": "libraries",
+          "attributes": [
+            {
+              "role": "CONTENT_CREATOR",
+              "subjects": {
+                "o2Users": [
+                  "aute Duis magna aliqua",
+                  "ea qui adipisicing"
+                ]
+              },
+              "deletedSubjects": {
+                "o2Users": [
+                  "ex"
+                ]
+              }
+            },
+            {
+              "role": "LIBRARY_MANAGER",
+              "subjects": {
+                "o2Users": [
+                  "officia aute elit",
+                  "fugiat exercitation sed",
+                  "enim"
+                ]
+              },
+              "deletedSubjects": {
+                "o2Users": [
+                  "voluptate dolor Lorem incididunt culpa"
+                ]
+              }
+            },
+            {
+              "role": "CONTENT_READER",
+              "subjects": {
+                "o2Users": [
+                  "amet nisi adipisicing veniam cillum",
+                  "labore fugiat",
+                  "Duis",
+                  "culpa nulla eiusmod cupidatat laborum",
+                  "pariatur nu"
+                ]
+              },
+              "deletedSubjects": {
+                "o2Users": [
+                  "qui nisi",
+                  "eu aliquip exercitation tempor pariatur",
+                  "in mollit",
+                  "do sit tempor dolore ut"
+                ]
+              }
+            }
+          ]
+        }
+      }' "https://developer-stg.api.autodesk.com/content/v1/libraries/{libraryId}/members"
     ```
     
     The resource provides the following response:
     
     ```
     {
-        "data": [
+      "data": {
+        "type": "libraries",
+        "id": "urn:adsk.content:library:34c4b87b-76f6-4b88-adf6-0438c7dbe4b0",
+        "memberAccessInfos": [
           {
-            "type": "roles",
-            "id": "1"
+            "role": "LIBRARY_MANAGER",
+            "members": [
+              {
+                "userId": "1z1jrkfPPZacTkFid1V889lHfDuQzhKf"
+              },
+              {
+                "userId": "S8MNRK2XZXCK"
+              }
+            ]
+          },
+          {
+            "role": "CONTENT_CREATOR",
+            "members": [
+              {
+                "userId": "1z1jrkfPPZacTkFid1V889lHfDuQzhKf"
+              },
+              {
+                "userId": "S8MNRK2XZXCK2"
+              }
+            ]
+          },
+          {
+            "role": "CONTENT_READER",
+            "members": [
+              {
+                "userId": "1z1jrkfPPZacTkFid1V889lHfDuQzhKf"
+              },
+              {
+                "userId": "S8MNRK2XZXCK2"
+              }
+            ]
           }
         ]
       }
+    }
     ```
     
     ## Step 4: Perform the Community Operations
@@ -3644,8 +3725,8 @@ info:
     | Update Comment              | [`PATCH contents/{contentId}/comments/{commentId}`](/en/docs/content/v1/reference/http/contents-contentId-comments-commentId-PATCH)
     | Remove Comment              | [`DELETE contents/{contentId}/comments/{commentId}`](/en/docs/content/v1/reference/http/contents-contentId-comments-commentId-DELETE)
     | Set Flag                    | [`POST libraries/{libraryId}/flags`](/en/docs/content/v1/reference/http/libraries-libraryId-flags-POST)             
-    | Update Flag Status          | [`PUT libraries/{libraryId}/flags`] (/en/docs/content/v1/reference/http/libraries-libraryId-flags-PUT)            
-    | Featured Comment or Content | [`POST libraries/{libraryId}/features`] (/en/docs/content/v1/reference/http/libraries-libraryId-features-POST)          
+    | Update Flag Status          | [`PUT libraries/{libraryId}/flags`](/en/docs/content/v1/reference/http/libraries-libraryId-flags-PUT)            
+    | Featured Comment or Content | [`POST libraries/{libraryId}/features`](/en/docs/content/v1/reference/http/libraries-libraryId-features-POST)          
     | Unfeatured Comment          | [`DELETE libraries/{libraryId}/features`](/en/docs/content/v1/reference/http/libraries-libraryId-features-DELETE)          
     | Add Badwords                | [`POST libraries/{libraryId}/badwords`](/en/docs/content/v1/reference/http/libraries-libraryId-badwords-POST)          
     | Remove Badwords             | [`DELETE libraries/{libraryId}/badwords`](/en/docs/content/v1/reference/http/libraries-libraryId-badwords-DELETE)          
