@@ -634,18 +634,18 @@ info:
     
     | Features              | Description
     |---------------------- | --------------------------
-    | Like/Unlike           | Likes or unlikes the content to which the user level access is given.
-    | Comment/ Uncomment    | Adds a comment to the content or remove the given comments from the content. You can also view the comments given by other members. In addition, members can also rely to the comments given by members.
-    | Flag/ UnFlag          | Adds a flag to the content or comment. The flag is a mechanism to report the offensive content to an online platform. It is widely used by most popular social media web sites. The administrator can either approve or delete the flag.
-    |                       | If the flag is approved, the relevant comment or content gets quarantined. However, if the flag is deleted, which indicates that the flag is not approved, the relevant comment or content remains unchanged. 
+    | Like/Unlike           | You can like or unlike the content of other members to which you have the user level access. You can also view the likes and unlikes given by other members to your content.
+    | Comment/ Uncomment    | You can add a comment to the content or remove the given comments from the content. You can also view the comments given by other members. In addition, members can also rely to the comments given by the members.
+    | Flag/ UnFlag          | You can add a flag to the content or comment. The flag is a mechanism to report the offensive content to an online platform. It is widely used by most popular social media web sites. 
+    |                       | The administrator can either approve or delete the flag. If the flag is approved, the relevant comment or content gets quarantined. However, if the flag is deleted, which indicates that the flag is not approved, the relevant comment or content remains unchanged.
     |                       | **Note**: Forge Community automatically set the flags to the contents or comments that contain the bad words listed in the library.
-    | Featured/ Unfeatured  | Marks the comment or content as Featured or remove the featured status. Featured comments or contents are the ways to highlight pieces of the conversation. With Featured comments or contents, you can draw reader’s attention to the specific discussion of your comment or content. 
-    |                       | The Featured comment or content can be something that is timely and relevant to the topic, or a comment from a senior business executive that you would like to draw more attention to.
+    | Featured/ Unfeatured  | You can mark the comment or content as Featured or remove the featured status. Featured comments or contents are the ways to highlight pieces of the conversation. 
+    |                       | With Featured comments or contents, you can draw reader’s attention to the specific discussion of your comment or content. The Featured comment or content can be something that is timely and relevant to the topic, or a comment from a senior business executive that you would like to draw more attention to.
     |                       | You can mark any of your content or comment in the discussion as Featured. When you mark your content or comment as Featured, Forge Community prominently displays that comment at the top of the thread.
-    | Badwords              | Adds a list of bad words in the library. Forge Community uses these bad words to mark the comments or contents as quarantined.
-    | Follow/ UnFollow      | Follows or unfollow any Forge Content members. You can even retrieve the list of users who are following you or any specific user.
+    | Badwords              | You can add a list of bad words in the library. Forge Community uses these bad words to mark the comments or contents as quarantined.
+    | Follow/ UnFollow      | You can follow or unfollow any Forge Content members. You can even retrieve the list of users who are following you or any specific user.
     |                       | When you follow any user, you get the online notifications when that user posts any content in the community.
-    | Quarantine            | Separates the content or comment from the community based on the flags set. If any content or comment contains bad words that are not allowed in the content or comment, such contents or comments are automatically flagged and then quarantined from the library.
+    | Quarantine            | The contents or comments are quarantined from the community based on the flags set. If any content or comment contains bad words that are not allowed in the content or comment, such contents or comments are automatically flagged and then quarantined from the library.
     |                       | You can search all quarantined contents or comments for a library. In the search request, you must set the EntityType filter with a value as content or comment.
     
     [@tutorials]: <>
