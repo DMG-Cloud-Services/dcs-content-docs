@@ -3632,16 +3632,26 @@ info:
     
     ## Step 4: Perform the Community Operations
     
-    In this step, you perform various operations on the content from various members of the community. Also, other members can perform community operations on your content. For more information about community features, see [Content Community](/en/docs/content/v1/overview/content-community).
+    In this step, you perform various operations on the content from various members of the community. Also, other members can perform various social media operations on your content. For more information about community features, see [Content Community](/en/docs/content/v1/overview/content-community).
     
     The Content API provides the following endpoints to perfom the required operations:
     
-    | Operation | Endpoint |
-    |-----------|----------|
-    | Like Content | `POST contents/contentId/likes`|
-    | Unline Content | `DELETE contents/contentId/likes` |
-    |                 |                                 |
-    
+    | Operation                   | Endpoint     
+    |-----------------------------|-----------------------------------------------------                        
+    | Like Content                | [`POST contents/{contentId}/likes`](/en/docs/content/v1/reference/http/contents-contentId-likes-POST)
+    | Unlike Content              | [`DELETE contents/{contentId}/likes`](/en/docs/content/v1/reference/http/contents-contentId-likes-DELETE)      
+    | Add Comment to Content      | [`POST contents/{contentId}/comments`](/en/docs/content/v1/reference/http/contents-contentId-comments-POST)        
+    | Update Comment              | [`PATCH contents/{contentId}/comments/{commentId}`](/en/docs/content/v1/reference/http/contents-contentId-comments-commentId-PATCH)
+    | Remove Comment              | [`DELETE contents/{contentId}/comments/{commentId}`](/en/docs/content/v1/reference/http/contents-contentId-comments-commentId-DELETE)
+    | Set Flag                    | [`POST libraries/{libraryId}/flags`](/en/docs/content/v1/reference/http/libraries-libraryId-flags-POST)             
+    | Update Flag Status          | [`PUT libraries/{libraryId}/flags`] (/en/docs/content/v1/reference/http/libraries-libraryId-flags-PUT)            
+    | Featured Comment or Content | [`POST libraries/{libraryId}/features`] (/en/docs/content/v1/reference/http/libraries-libraryId-features-POST)          
+    | Unfeatured Comment          | [`DELETE libraries/{libraryId}/features`](/en/docs/content/v1/reference/http/libraries-libraryId-features-DELETE)          
+    | Add Badwords                | [`POST libraries/{libraryId}/badwords`](/en/docs/content/v1/reference/http/libraries-libraryId-badwords-POST)          
+    | Remove Badwords             | [`DELETE libraries/{libraryId}/badwords`](/en/docs/content/v1/reference/http/libraries-libraryId-badwords-DELETE)          
+    | Follow member               | [`POST follows`](/en/docs/content/v1/reference/http/follows-POST)                                        
+    | Unfollow member             | [`DELETE follows/memberId`](/en/docs/content/v1/reference/http/follows-memberId-DELETE)                     
+    | Quarantine content          | [`POST libraries/{libraryId}/quarantines`](/en/docs/content/v1/reference/http/libraries-libraryId-quarantines-POST)
     
     [%http]: <>
     # HTTP Specification
