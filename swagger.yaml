@@ -7322,7 +7322,7 @@ definitions:
               type: { type: string, enum: [ 'libraries' ] }
               attributes:
                 type: object
-                required: [title, description, status]
+                required: [title, description, language, region, status]
                 properties:
                   title:
                     type: string
@@ -7331,9 +7331,11 @@ definitions:
                   tags:
                     type: string  
                   language:
-                    type: string  
+                    type: string
+                    x-example: "en"
                   region:
                     type: string
+                    x-example: "US"
                   status:
                     type: string
                     enum: ['PRIVATE', 'PUBLISHED']
