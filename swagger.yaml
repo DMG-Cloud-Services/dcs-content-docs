@@ -3787,10 +3787,8 @@ schemes:
   - https
 consumes:
   - application/vnd.api+json
-  - application/json
 produces:
   - application/vnd.api+json
-  - application/json
 
 securityDefinitions:
   oauth2_access_code:
