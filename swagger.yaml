@@ -3953,6 +3953,8 @@ paths:
     delete:
       description: Delete an existing library. A library can be deleted only if it has no child nodes.
       operationId: delete_library
+      produces:
+        - text/plain
       parameters:
         - $ref: '#/parameters/libraryId'
       responses:
