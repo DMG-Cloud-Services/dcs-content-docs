@@ -3928,7 +3928,7 @@ paths:
         - $ref: '#/parameters/libraryId'   
         - $ref: '#/parameters/body_update_library'
       responses:
-        '201': { $ref: '#/responses/library' }
+        '200': { $ref: '#/responses/library' }
         '400': { $ref: '#/responses/bad_input' }
         '403': { $ref: '#/responses/forbidden' }
       security:
