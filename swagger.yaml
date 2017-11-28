@@ -5050,6 +5050,7 @@ paths:
         - $ref: '#/parameters/query_filter_content_facet'
         - $ref: '#/parameters/query_filter_content_subLibrary'
         - $ref: '#/parameters/query_filter_content_externalId'
+        - $ref: '#/parameters/query_filter_content_locale'
         - $ref: '#/parameters/query_filter_content_skip_search_cache'
         - $ref: '#/parameters/query_filter_content_search_page_size'
         - $ref: '#/parameters/query_filter_content_search_page_number'
@@ -6765,6 +6766,14 @@ parameters:
     required: false
     type: string
     x-example: "urn:adsk.content:library:319eba64-9045-4872-b76f-aec3abff3b70"
+  query_filter_content_locale:
+    name: filter[contents][locale]
+    in: query
+    description: Locale of the entities
+    required: false
+    type: string
+    default: "en_US"
+    x-example: "es_MX"
   query_filter_content_skip_search_cache:
     name: filter[contents][searchSkipCache]
     in: query
