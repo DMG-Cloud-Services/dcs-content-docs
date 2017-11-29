@@ -673,7 +673,7 @@ info:
       This tutorial explains how to create and update the relationships of nodes and contents with sub library and library.
       
     ## [Create Content Community](/en/docs/content/v1/tutorials/collaborate-within-community)
-      This tutorial explains how you can collaborate within content community.
+      This tutorial explains how you can collaborate within the content community.
       
     [@tutorials/before-you-begin]: <>
     # Before you begin
@@ -3764,19 +3764,19 @@ info:
     
     ## Relationships
     
-    The following are the supported endpoints and methods related to Relationships APIs.
+    The following are the supported endpoints and methods related to Relationship of Library, Nodes, and Content.
     
     .. include:: ../../_snippets/v1/reference/relationships.rst
     
     ## Members
     
-    The following are the supported endpoints and methods related to Members.
+    The following are the supported endpoints and methods related to searching the members.
     
     .. include: ../../_snippets/v1/reference/members.rst
     
     ## Follow Community Members
     
-    The following are the supported endpoints and methods related to following community members.
+    The following are the supported endpoints and methods related to following the community members.
     
     .. include: ../../_snippets/v1/reference/follows.rst
     
