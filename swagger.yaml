@@ -47,6 +47,7 @@ info:
       - ``Libraries`` -> ``Sub Library`` -> ``Nodes``... -> ``Contents``
     4. Element names are camelCase e.g. ``rootFolder``
     5. Most operations work with both 2 and 3 legged oauth keys. In case a 2 legged oauth key is used - some fields like userId may be empty (or use application name)
+    6. You need to specify the Schema inside the "data":"attributes":"schema" attribute of the POST request body. For more information, see JSON schema examples for extension types [here](/en/docs/content/_snippets/v1/examples).
 
     ## Content API JSON Structure
 
@@ -135,12 +136,12 @@ info:
     - **Library** > **Node** > **Content**
       This is the default content model where you create library, nodes, and contents in the given hierarchy. This content model is a flat model. You create one library and one or multiple nodes in the library. After that, you create content inside nodes. 
     
-    ![Forge Content Structure](https://raw.git.autodesk.com/ACG-Cloud-Services/dmg-documentation/master/content_structure.png?token=AAAf_v7M6NVD5rB1wVIs-QZimX_sVgBhks5aAZb6wA%3D%3D "Content Model without Sub Library")
+    ![Forge Content Structure](https://raw.git.autodesk.com/ACG-Cloud-Services/dmg-documentation/master/content_structure.png?token=AAAf_kB2BkAFMURj3iyLGIfqupRTXl9bks5aJ-Q9wA%3D%3D "Content Model without Sub Library")
     
     - **Library** > **Sub Library** > **Node** > **Content**
       This is another content model with sub library as one more entity in the hierarchy. In this model, one time you create a base library for the application and then create one or more sub libraries in the base library. In these sub libraries, you further create one or more nodes and add the content inside the nodes.
     
-    ![Forge Content Structure](https://raw.git.autodesk.com/ACG-Cloud-Services/dmg-documentation/master/new_content_structure.png?token=AAAf_q8OnLHJ7Nxmzgm4ysS2lj6EwNbfks5aAZo3wA%3D%3D "Content Model with Sub Library")
+    ![Forge Content Structure](https://raw.git.autodesk.com/ACG-Cloud-Services/dmg-documentation/master/new_content_structure.png?token=AAAf_q7mqAenflDCJv3ejDc7jQ0fPrMzks5aJ-RYwA%3D%3D "Content Model with Sub Library")
     
     The content models consists of the following entities that you need to create:
     
@@ -576,7 +577,7 @@ info:
     The following table lists the attributes specifically for a Reference entity:
     
     | Attribute       | AUTO/ MANUAL  | Description
-    | --------------- |:-------------:| ---------------------------------------------------------------------------
+    | --------------- | ------------- | ---------------------------------------------------------------------------
     | **id**          | AUTO          | The id of a reference.
     | **title**       | MANUAL        | The title of a reference.
     | **description** | MANUAL        | The long description of a reference.
@@ -3719,65 +3720,71 @@ info:
     
     | Operation                   | Endpoint     
     |-----------------------------|-----------------------------------------------------                        
-    | Like Content                | [`POST contents/{contentId}/likes`](/en/docs/content/v1/reference/http/contents-contentId-likes-POST)
-    | Unlike Content              | [`DELETE contents/{contentId}/likes`](/en/docs/content/v1/reference/http/contents-contentId-likes-DELETE)      
-    | Add Comment to Content      | [`POST contents/{contentId}/comments`](/en/docs/content/v1/reference/http/contents-contentId-comments-POST)        
-    | Update Comment              | [`PATCH contents/{contentId}/comments/{commentId}`](/en/docs/content/v1/reference/http/contents-contentId-comments-commentId-PATCH)
-    | Remove Comment              | [`DELETE contents/{contentId}/comments/{commentId}`](/en/docs/content/v1/reference/http/contents-contentId-comments-commentId-DELETE)
-    | Set Flag                    | [`POST libraries/{libraryId}/flags`](/en/docs/content/v1/reference/http/libraries-libraryId-flags-POST)             
-    | Update Flag Status          | [`PUT libraries/{libraryId}/flags`](/en/docs/content/v1/reference/http/libraries-libraryId-flags-PUT)            
-    | Featured Comment or Content | [`POST libraries/{libraryId}/features`](/en/docs/content/v1/reference/http/libraries-libraryId-features-POST)          
-    | Unfeatured Comment          | [`DELETE libraries/{libraryId}/features`](/en/docs/content/v1/reference/http/libraries-libraryId-features-DELETE)          
-    | Add Badwords                | [`POST libraries/{libraryId}/badwords`](/en/docs/content/v1/reference/http/libraries-libraryId-badwords-POST)          
-    | Remove Badwords             | [`DELETE libraries/{libraryId}/badwords`](/en/docs/content/v1/reference/http/libraries-libraryId-badwords-DELETE)          
-    | Follow member               | [`POST follows`](/en/docs/content/v1/reference/http/follows-POST)                                        
-    | Unfollow member             | [`DELETE follows/memberId`](/en/docs/content/v1/reference/http/follows-memberId-DELETE)                     
-    | Quarantine content          | [`POST libraries/{libraryId}/quarantines`](/en/docs/content/v1/reference/http/libraries-libraryId-quarantines-POST)
+    | Like Content                | [POST contents/{contentId}/likes](/en/docs/content/v1/reference/http/contents-contentId-likes-POST)
+    | Unlike Content              | [DELETE contents/{contentId}/likes](/en/docs/content/v1/reference/http/contents-contentId-likes-DELETE)      
+    | Add Comment to Content      | [POST contents/{contentId}/comments](/en/docs/content/v1/reference/http/contents-contentId-comments-POST)        
+    | Update Comment              | [PATCH contents/{contentId}/comments/{commentId}](/en/docs/content/v1/reference/http/contents-contentId-comments-commentId-PATCH)
+    | Remove Comment              | [DELETE contents/{contentId}/comments/{commentId}](/en/docs/content/v1/reference/http/contents-contentId-comments-commentId-DELETE)
+    | Set Flag                    | [POST libraries/{libraryId}/flags](/en/docs/content/v1/reference/http/libraries-libraryId-flags-POST)             
+    | Update Flag Status          | [PUT libraries/{libraryId}/flags](/en/docs/content/v1/reference/http/libraries-libraryId-flags-PUT)            
+    | Featured Comment or Content | [POST libraries/{libraryId}/features](/en/docs/content/v1/reference/http/libraries-libraryId-features-POST)          
+    | Unfeatured Comment          | [DELETE libraries/{libraryId}/features](/en/docs/content/v1/reference/http/libraries-libraryId-features-DELETE)          
+    | Add Badwords                | [POST libraries/{libraryId}/badwords](/en/docs/content/v1/reference/http/libraries-libraryId-badwords-POST)          
+    | Remove Badwords             | [DELETE libraries/{libraryId}/badwords](/en/docs/content/v1/reference/http/libraries-libraryId-badwords-DELETE)          
+    | Follow member               | [POST follows](/en/docs/content/v1/reference/http/follows-POST)                                        
+    | Unfollow member             | [DELETE follows/memberId](/en/docs/content/v1/reference/http/follows-memberId-DELETE)                     
+    | Quarantine content          | [POST libraries/{libraryId}/quarantines](/en/docs/content/v1/reference/http/libraries-libraryId-quarantines-POST)
     
     [%http]: <>
     # HTTP Specification
     
     ## Library
     
-    The following are the supported endpoints and methods related to Libraries.
+    The following are the supported endpoints and methods related to Library and Community.
     
     .. include:: ../../_snippets/v1/reference/libraries.rst
     
+     ## Sub Library
+    
+    The following are the supported endpoints and methods related to Sub Library.
+    
+    .. include:: ../../_snippets/v1/reference/subLibraries.rst
+    
     ## Library Nodes
     
-    The following are the supported endpoints and methods related to Nodes.
+    The following are the supported endpoints and methods related to Node.
     
     .. include: ../../_snippets/v1/reference/nodes.rst
     
     ## Library Content
     
-    The following are the supported endpoints and methods related to Contents.
+    The following are the supported endpoints and methods related to Content and Community.
     
     .. include: ../../_snippets/v1/reference/contents.rst
     
-    ## Library Content Files
-    
-    The following are the supported endpoints and methods related to Content Files.
-    
-    .. include: ../../_snippets/v1/reference/contentfiles.rst
-    
     ## Relationships
     
-    The following are the supported endpoints and methods related to Relationships API.
+    The following are the supported endpoints and methods related to Relationships APIs.
     
     .. include:: ../../_snippets/v1/reference/relationships.rst
     
-    ## Library Search
+    ## Members
     
-    The following are the supported endpoints and methods related to Library Search.
+    The following are the supported endpoints and methods related to Members.
     
-    .. include: ../../_snippets/v1/reference/librarysearch.rst
+    .. include: ../../_snippets/v1/reference/members.rst
     
-    ## Admin
+    ## Follow Community Members
     
-    The following are the supported endpoints and methods related to Admin apis.
+    The following are the supported endpoints and methods related to following community members.
     
-    .. include: ../../_snippets/v1/reference/admin.rst
+    .. include: ../../_snippets/v1/reference/follows.rst
+    
+    ## Policies
+    
+    The following are the supported endpoints and methods related to User Policy.
+    
+    .. include: ../../_snippets/v1/reference/policies.rst
   
   contact:
     url: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+V1+Proposal
