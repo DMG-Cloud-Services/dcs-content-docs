@@ -3744,7 +3744,7 @@ info:
     
     .. include:: ../../_snippets/v1/reference/libraries.rst
     
-     ## Sub Library
+    ## Sub Library
     
     The following are the supported endpoints and methods related to Sub Library.
     
@@ -3764,13 +3764,13 @@ info:
     
     ## Content Search
     
-    The following are the supported endpoints and methods related to searching content in a library.
+    The following are the supported endpoints and methods related to searching Content in a Library.
     
     .. include: ../../_snippets/v1/reference/contents.rst
     
     ## File Type
     
-    The following are the supported endpoints and methods related managing files in the content.
+    The following are the supported endpoints and methods related to managing files in the Content.
     
     .. include: ../../_snippets/v1/reference/fileType.rst
     
@@ -3782,15 +3782,9 @@ info:
     
     ## Members
     
-    The following are the supported endpoints and methods related to searching the members.
+    The following are the supported endpoints and methods related to searching the Members.
     
     .. include: ../../_snippets/v1/reference/members.rst
-    
-    ## Follow Community Members
-    
-    The following are the supported endpoints and methods related to following the community members.
-    
-    .. include: ../../_snippets/v1/reference/follows.rst
     
     ## Policies
     
@@ -3804,43 +3798,43 @@ info:
     
     ### Likes
     
-    The following are the supported endpoints and methods related to likes.
+    The following are the supported endpoints and methods related to Likes.
     
     .. include: ../../_snippets/v1/reference/likes.rst
     
     ### Comments
     
-    The following are the supported endpoints and methods related to comments.
+    The following are the supported endpoints and methods related to Comments.
     
     .. include: ../../_snippets/v1/reference/comments.rst
     
     ### Featured Comments
     
-    The following are the supported endpoints and methods related to featured comments.
+    The following are the supported endpoints and methods related to Featured Comments.
     
     .. include: ../../_snippets/v1/reference/features.rst
     
-    ### Follow Members
+    ### Follow and Unfollow
     
-    The following are the supported endpoints and methods related to following members.
+    The following are the supported endpoints and methods related to following and unfollowing the Community Members.
     
     .. include: ../../_snippets/v1/reference/follows.rst
     
     ### Badwords
     
-    The following are the supported endpoints and methods related to badwords for contents and comments.
+    The following are the supported endpoints and methods related to Badwords for Contents and Comments.
     
     .. include: ../../_snippets/v1/reference/badwords.rst
     
     ### Quarantine
     
-    The following are the supported endpoints and methods related to quarantine contents and comments.
+    The following are the supported endpoints and methods related to Quarantine Contents and Comments.
     
     .. include: ../../_snippets/v1/reference/quarantines.rst
     
     ### Flags
     
-    The following are the supported endpoints and methods related to flags set to contents and comments.
+    The following are the supported endpoints and methods related to Flags set to Contents and Comments.
     
     .. include: ../../_snippets/v1/reference/flags.rst
   
