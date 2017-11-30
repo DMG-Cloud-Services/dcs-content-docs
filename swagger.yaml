@@ -3740,7 +3740,7 @@ info:
     
     ## Library
     
-    The following are the supported endpoints and methods related to Library and Community.
+    The following are the supported endpoints and methods related to Library.
     
     .. include:: ../../_snippets/v1/reference/libraries.rst
     
@@ -3758,9 +3758,21 @@ info:
     
     ## Library Content
     
-    The following are the supported endpoints and methods related to Content and Community.
+    The following are the supported endpoints and methods related to Content.
     
     .. include: ../../_snippets/v1/reference/contents.rst
+    
+    ## Content Search
+    
+    The following are the supported endpoints and methods related to searching content in a library.
+    
+    .. include: ../../_snippets/v1/reference/contents.rst
+    
+    ## File Type
+    
+    The following are the supported endpoints and methods related managing files in the content.
+    
+    .. include: ../../_snippets/v1/reference/fileType.rst
     
     ## Relationships
     
@@ -3785,6 +3797,52 @@ info:
     The following are the supported endpoints and methods related to User Policy.
     
     .. include: ../../_snippets/v1/reference/policies.rst
+    
+    ## Forge Community
+    
+    The following are the supported endpoints and methods related to features in Forge Community.
+    
+    ### Likes
+    
+    The following are the supported endpoints and methods related to likes.
+    
+    .. include: ../../_snippets/v1/reference/likes.rst
+    
+    ### Comments
+    
+    The following are the supported endpoints and methods related to comments.
+    
+    .. include: ../../_snippets/v1/reference/comments.rst
+    
+    ### Featured Comments
+    
+    The following are the supported endpoints and methods related to featured comments.
+    
+    .. include: ../../_snippets/v1/reference/features.rst
+    
+    ### Follow Members
+    
+    The following are the supported endpoints and methods related to following members.
+    
+    .. include: ../../_snippets/v1/reference/follows.rst
+    
+    ### Badwords
+    
+    The following are the supported endpoints and methods related to badwords for contents and comments.
+    
+    .. include: ../../_snippets/v1/reference/badwords.rst
+    
+    ### Quarantine
+    
+    The following are the supported endpoints and methods related to quarantine contents and comments.
+    
+    .. include: ../../_snippets/v1/reference/quarantines.rst
+    
+    ### Flags
+    
+    The following are the supported endpoints and methods related to flags set to contents and comments.
+    
+    .. include: ../../_snippets/v1/reference/flags.rst
   
   contact:
     url: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+V1+Proposal
