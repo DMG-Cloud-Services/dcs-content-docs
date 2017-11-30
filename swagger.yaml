@@ -136,12 +136,12 @@ info:
     - **Library** > **Node** > **Content**
       This is the default content model where you create library, nodes, and contents in the given hierarchy. This content model is a flat model. You create one library and one or multiple nodes in the library. After that, you create content inside nodes. 
     
-    ![Forge Content Structure](https://raw.git.autodesk.com/ACG-Cloud-Services/dmg-documentation/master/content_structure.png?token=AAAf_kB2BkAFMURj3iyLGIfqupRTXl9bks5aJ-Q9wA%3D%3D "Content Model without Sub Library")
+    ![Forge Content Structure](https://raw.githubusercontent.com/DMG-Cloud-Services/dcs_doc_images/master/content/content_structure.png "Content Model without Sub Library")
     
     - **Library** > **Sub Library** > **Node** > **Content**
       This is another content model with sub library as one more entity in the hierarchy. In this model, one time you create a base library for the application and then create one or more sub libraries in the base library. In these sub libraries, you further create one or more nodes and add the content inside the nodes.
     
-    ![Forge Content Structure](https://raw.git.autodesk.com/ACG-Cloud-Services/dmg-documentation/master/new_content_structure.png?token=AAAf_q7mqAenflDCJv3ejDc7jQ0fPrMzks5aJ-RYwA%3D%3D "Content Model with Sub Library")
+    ![Forge Content Structure](https://raw.githubusercontent.com/DMG-Cloud-Services/dcs_doc_images/master/content/new_content_structure.png "Content Model with Sub Library")
     
     The content models consists of the following entities that you need to create:
     
