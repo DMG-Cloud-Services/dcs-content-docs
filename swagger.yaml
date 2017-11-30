@@ -2632,7 +2632,7 @@ info:
       "included": []
     }
     ```
-    [@tutorials/add-renationships]: <>
+    [@tutorials/add-relationships]: <>
     # Add Relationship of Nodes and Contents with Sub Library and Library
     
     This tutorial explains how to create and update the relationships of [Nodes](/en/docs/content/v1/overview/content-model), and [Contents](/en/docs/content/v1/overview/content-model) with [Sub Library](/en/docs/content/v1/overview/content-model) and [Library](/en/docs/content/v1/overview/content-model).
