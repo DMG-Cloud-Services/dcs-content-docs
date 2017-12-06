@@ -123,6 +123,7 @@ info:
     | ``302``  | Redirect  to another Resource.
     | ``400``  | Bad Request - Your request could not be parsed.
     | ``401``  | Unauthorized - User is not logged in, cannot access resource.
+    | ``403``  | Forbidden - Request is not allowed for this member's role.
     | ``404``  | Not Found - Resource does not exist.
     | ``500``  | Server error. There is nothing the app or user can do to recover from this. The correct response is to contact Forge Schema support team for 500 errors.
     
@@ -9732,10 +9733,9 @@ responses:
         {
           "errors": [
             {
-              "id": "d3f6d37c-a8d1-4dab-8beb-1462d06ef252",
-              "status": "403",
-              "code": "USER_NOT_AUTHENTICATED",
-              "detail": "The user was not authenticated."
+              "id": "c4f0c7da-dbb7-4b53-9403-93344d3c9966",
+              "code": "123",
+              "detail": "Request is not allowed for this member's role, please login using a valid role."
             }
           ]
         }
