@@ -3890,7 +3890,7 @@ paths:
         
          *Special Rules:*
         
-        1. Length of library title should be between 5 and 128 characters.
+        1. Length of library title should be between 3 and 128 characters.
         2. The title of the library must be unique
         
         
@@ -4071,7 +4071,7 @@ paths:
         
          *Special Rules:*
         
-        1. Length of sub-library title should be between 5 and 128 characters.
+        1. Length of sub-library title should be between 3 and 128 characters.
         2. The title of the sub-library must be unique under the library.
         
         ***Note:*** Please see the example payload in the [wiki][1].
@@ -4230,7 +4230,7 @@ paths:
         
         *Special Rules:*
         
-        1. Length of node title should be between 5 and 128 characters.
+        1. Length of node title should be between 3 and 128 characters.
         2. The title of the node must be unique under its parent.
         
         ***Note:*** Please see the example payload, Node under subLibrary in the [wiki][1].
@@ -4284,7 +4284,7 @@ paths:
         
         *Special Rules:*
         
-        1. Length of node title should be between 5 and 128 characters.
+        1. Length of node title should be between 3 and 128 characters.
         2. The title of the node must be unique under its parent.
         
         ***Note:*** Please see the example payload in the [wiki][1].
@@ -4490,7 +4490,7 @@ paths:
         
         *Special Rules:*
         
-        1. Length of content title should be between 5 and 128 characters.
+        1. Length of content title should be between 3 and 128 characters.
         2. The title of the content must be unique under its parent.
         
         ***Note:*** Please see the example payload in the [wiki][1].
