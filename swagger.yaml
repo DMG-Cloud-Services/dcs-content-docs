@@ -30,9 +30,9 @@ info:
     Forge Content API Environments:
     
     | Environment       | Value                                   | Purpose
-    | ----------------- | -------------------------------------------------------------------------------------------------------
-    | Production        |  https://developer.api.autodesk.com     | Real production data
-    | Staging           |  https://developer-stg.api.autodesk.com | Development & testing
+    | ----------------- | --------------------------------------- | -------------------------------------------------------------
+    | Production        |  https://developer.api.autodesk.com     |  Real production standard data
+    | Staging           |  https://developer-stg.api.autodesk.com |  Development & Testing
 
     ## Getting Started
 
