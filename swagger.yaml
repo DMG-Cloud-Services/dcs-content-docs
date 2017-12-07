@@ -7,17 +7,17 @@ info:
     
     [@overview]: <> (title)
     
-    In Autodesk, various products manage their own metadata, components data, parts data, materials data, or assets data through libraries and catalogs. Deploying and managing data separately for every product is expensive and non-standardized without any platform to share the content across the team or across the product families.
+    In Autodesk, various products manage their own metadata, components data, parts data, materials data, or assets data through libraries and catalogs. Deploying & managing data separately for individual products are expensive and non-standardized without having a common platform to share the content across teams or across product families.
 
-    Forge Content API provides an extensible platform for users to use the cloud services to create, organize, access, search, and even share the contents of various Autodesk products with internal teams and external customers.
+    Forge Content API provides an extensible platform for products and users to use the cloud services to create, organize, access, search, and even share the contents of various Autodesk products within internal teams and external customers.
     
-    Forge Content also provides the permission based model using which specific group of users, projects, and organizations can create and access the content.
+    Forge Content also provides the permission-based model using which specific group of users, projects, and organizations can create and access the content.
     
-    As content being a core part of any design activities, and customers want to share their project specific content with designers, engineers, and organization, Forge Content provide APIs for customers to build applications around the content for the Autodesk product suite.
+    As content is a core part of any design activities, and customers want to share their project-specific content with designers, engineers, and organization, Forge Content provide APIs for customers to build applications around the content for the Autodesk product suite.
     
-    The Forge Content API provides a hierarchical structure with Library, Sub Library, Nodes, and Contents as entities in the given sequence. This hierarchical structure helps you in creating the content, which can be easily organized, searched, shared, and maintained with different versions.
+    The Forge Content API provides a hierarchical structure with Library, Sub Library, Nodes, and Contents as entities in the aforementioned sequence. This hierarchical structure helps you in creating the content, which can be easily organized, searched, shared, and maintained with different versions.
 
-    Forge Content API follows the JSON API specification 1.0. For more information, see [JSON API specification](http://jsonapi.org/format/).
+    Forge Content API follows the JSON API Specification 1.0. For more information, see [JSON API specification](http://jsonapi.org/format/).
 
     For all Forge Content API requests, you must set the following headers:
     
