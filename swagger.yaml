@@ -27,6 +27,13 @@ info:
     | **Accept**        |  application/vnd.api+json.
     | **Authorization** |  Bearer < 2-legged or 3-leggedToken >.
     
+    Forge Content API Environments:
+    
+    | Environment       | Value                                   | Purpose
+    | ----------------- | -------------------------------------------------------------------------------------------------------
+    | Production        |  https://developer.api.autodesk.com     | Real production data
+    | Staging           |  https://developer-stg.api.autodesk.com | Development & testing
+
     ## Getting Started
 
     The [API Basics](/en/docs/content/v1/overview/basics) section guides you through the process of getting started with the API and explains the main concepts and functionality.
