@@ -2334,13 +2334,24 @@ info:
     
     **Note**: You must perform this step for each file that you want to upload to the content.
 
-    ### Example
+    ### Example 1
     
     ```shell
     curl -X PUT 
     -H "Content-Type: application/application/x-www-form-urlencoded" 
     -d "{uploadUrl Received in the Step 1}&objectKey={filename}"
     ```
+    
+    ### Example 2 - with real values
+    
+    ```shell
+    curl -X PUT 
+    --data-binary @sfo.jpg 
+    --header "Authorization:Bearer 0omL7yQwXrok4LgjiU26CoGJ89As" 
+    --header "Content-Type:application/octet-stream" 
+    "https://alpha-upload.dmg.autodesk.com/uploadFile?service=forge-content&bucketKey=urn-forge.content-lib.bucket-awesome_library_10&salt=GRkX0IQB8pkFiZ1zPUq2hg%3D%3D&timestamp=coQiFQNh20sGS4gBlnLA1IwnIprRFWjf39iCi%2Fnblz4%3D&objectKey=sfo.jpg"
+    ```
+    
     
     The resource provides the following response:
     
