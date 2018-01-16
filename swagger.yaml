@@ -994,7 +994,8 @@ info:
 
     >**Notes**: Before you start creating the content, ensure the following:
     >* You have successfully created a library and a node.
-    >* A valid schema that you want to use for your content exists. Using schema is optional. However, you can ignore the schema only when you want to store the common attributes. If you want to store actual data, you must specify the schema.
+    >* A valid custom schema that you want to use for your content exists.
+    >* If a custom schema is not present, then the core contents:autodesk.core:content-1.0.0 schema type must be specified. This is when content is created using the core attributes only.
   
     While creating the content, specify the following:
     
@@ -1392,7 +1393,8 @@ info:
     Before you start creating the content, ensure the following: 
     
     - You have successfully created a library and a node.
-    - A valid schema that you want to use for your content exists. Using schema is optional. However, you can ignore the schema only when you want to store the common attributes. If you want to store actual data, you have to specify a schema.
+    - A valid custom schema that you want to use for your content exists.
+    - If a custom schema is not present, then the core contents:autodesk.core:content-1.0.0 schema type must be specified. This is when content is created using the core attributes only.
     
     In the API request, specify the appropriate information in the following sections:
     
@@ -2089,7 +2091,8 @@ info:
     Before you start creating the content, ensure the following: 
     
     - You have selected a library and a node. 
-    - A valid schema that you want to use for your content exists. Using schema is optional. However, you can ignore the schema only when you want to store the common attributes. If you want to store actual data, you must specify the schema.
+    - A valid custom schema that you want to use for your content exists.
+    - If a custom schema is not present, then the core contents:autodesk.core:content-1.0.0 schema type must be specified. This is when content is created using the core attributes only.
     
     In the API request, specify the appropriate information in the following sections:
     
