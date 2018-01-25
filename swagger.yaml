@@ -5973,7 +5973,6 @@ paths:
         - $ref: '#/parameters/query_filter_content_search_page_number'
         - $ref: '#/parameters/commentFeaturedFilter'
         - $ref: '#/parameters/commentTimeSort'
-        - $ref: '#/parameters/commentActivityTimeSort'
         - $ref: '#/parameters/commentReplyCountSort'
 
       responses:
@@ -6073,6 +6072,8 @@ paths:
         [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
       parameters:
         - $ref: '#/parameters/commentId'
+        - $ref: '#/parameters/commentTimeSort'
+
       responses:
         '201': {$ref: '#/responses/getCommentReplies'}
         
