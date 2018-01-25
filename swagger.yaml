@@ -6058,7 +6058,24 @@ paths:
       responses:
         '204':
           description: Content Comment deleted
-          
+ 
+  /comments/{commentId}/replies:
+    x-summary: Content Comment Replies
+    x-description: Retrive replies of a comment
+    get:
+      tags: [ "Community" ]
+      operationId: getCommentReplies
+      consumes:
+        - application/vnd.api+json
+      description: |
+        Retrieve replies of a given comment
+      security:
+        [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
+      parameters:
+        - $ref: '#/parameters/commentId'
+      responses:
+        '201': {$ref: '#/responses/getCommentReplies'}
+        
   /follows:
       x-summary: Follow members
       x-description: APIs to follow Members
@@ -9257,6 +9274,73 @@ responses:
           },
           "included": []
         }
+  getCommentReplies:
+    description: Successful response
+    schema:
+      title: communityContent comment's replies
+      type: object
+      allOf:
+      - type: object
+    headers:
+        authorization:
+          description: Bearer Token
+          type: integer
+    examples:
+      application/vnd.api+json:
+        {
+          "data": [
+              {
+                  "type": "comments",
+                  "id": "C2QPAOTJCTUX2SF",
+                  "attributes": {
+                      "featuredBy": "",
+                      "inReplyToCommentId": "CGXWY61JCTUWP08",
+                      "featured": false,
+                      "addedDate": "2018-01-25T02:05:57Z",
+                      "totalReplies": 0,
+                      "author": {
+                          "id": "AYK2Q7S52XRU-urn:adsk.content:library:6b8235a5-d6ad-4594-a18a-3ddaee8b269c",
+                          "oxygenId": "AYK2Q7S52XRU",
+                          "userName": "hiteshkumar.prajapati@autodesk.com",
+                          "email": "hiteshkumar.prajapati@autodesk.com",
+                          "firstName": "hiteshkumar",
+                          "lastName": "prajapati",
+                          "accountStatus": "OK",
+                          "imageUrl": "https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-512.png",
+                          "libraryId": "urn:adsk.content:library:6b8235a5-d6ad-4594-a18a-3ddaee8b269c",
+                          "admin": ""
+                      },
+                      "contentId": "urn:adsk.content:content:873704a7-1418-4c98-ad67-709b633a4488",
+                      "modifiedDate": "",
+                      "modifierId": "",
+                      "body": "this is regression reply 1",
+                      "authorId": "AYK2Q7S52XRU",
+                      "status": "PUBLISHED"
+                  },
+                  "relationships": {
+                      "replies": {
+                          "links": {
+                              "self": "http://localhost:8080/comments/C2QPAOTJCTUX2SF/relationships/replies",
+                              "related": "http://localhost:8080/comments/C2QPAOTJCTUX2SF/replies"
+                          },
+                          "data": [
+                              
+                          ]
+                      }
+                  },
+                  "links": {
+                      "self": "http://localhost:8080/comments/C2QPAOTJCTUX2SF"
+                  }
+              }
+          ],
+          "included": [
+              
+          ],
+          "links": {
+              "first": "http://localhost:8080/comments/CGXWY61JCTUWP08/replies?page[number]=1&page[size]=20",
+              "last": "http://localhost:8080/comments/CGXWY61JCTUWP08/replies?page[number]=1&page[size]=20"
+          }
+      }
   getCommunityContentComments:
     description: Successful response
     schema:
