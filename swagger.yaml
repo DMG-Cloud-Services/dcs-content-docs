@@ -4462,7 +4462,7 @@ paths:
       parameters:
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
-        - $ref: '#/parameters/query_filter_content_title'
+        - $ref: '#/parameters/content_title'
         - $ref: '#/parameters/query_filter_content_search_page_size'
         - $ref: '#/parameters/query_filter_content_search_page_number'
       responses:
@@ -6605,6 +6605,13 @@ parameters:
     required: false
     type: string
     x-example: "materials"
+  content_title:
+    name: filter[contents][title]
+    in: query
+    description: Title of the content
+    required: false
+    type: string
+    x-example: "materials"    
   createdBy:
     name: filter[contents][createdBy]
     in: query
