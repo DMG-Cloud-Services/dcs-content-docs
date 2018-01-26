@@ -4073,6 +4073,8 @@ paths:
         
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-RemoveapplicationidinLibrary'sinterestedAppIdslist
       operationId: delete_library_interest
+      produces:
+        - text/plain
       parameters:
         - $ref: '#/parameters/libraryId'   
       responses:
@@ -4212,6 +4214,8 @@ paths:
     delete:
       description: Delete an existing sub-library. A sub-library can be deleted only if it has no child nodes.
       operationId: deleteSubLibrary
+      produces:
+        - text/plain
       parameters:
         - $ref: '#/parameters/libraryId'   
         - $ref: '#/parameters/subLibraryId'
@@ -4862,7 +4866,8 @@ paths:
     delete:
       description: |
         API to delete all files of a particular type within a content.
-        
+      produces:
+        - text/plain  
       parameters:
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/contentId'
@@ -4882,7 +4887,8 @@ paths:
     delete:
       description: |
         API to delete a file from the content.
-        
+      produces:
+        - text/plain  
       parameters:
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/contentId'
@@ -4971,6 +4977,8 @@ paths:
         ***Note:*** Please see the example payload in the [wiki][1].
         
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-Deleterelationship
+      produces:
+        - text/plain
       parameters:
         - $ref: '#/parameters/body_delete_relationships'  
       responses:
