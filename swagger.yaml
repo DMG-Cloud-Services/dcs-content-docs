@@ -5805,6 +5805,8 @@ paths:
         operationId: deleteAnContentLike
         description: |
           Unlike a Content
+        produces:
+          - text/plain
         security:
           [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
         parameters:
@@ -5853,6 +5855,8 @@ paths:
           Unfeatures a content or comment. To unfeature a content, set ***featureItemType*** as ***content***. To unfeature a comment, set ***featureItemType*** to ***comment***.
         security:
           [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
+        produces:
+          - text/plain
         parameters:
         - $ref: '#/parameters/libraryId'
         - in: body
@@ -5940,6 +5944,8 @@ paths:
           Delete a bad word
         security:
           [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
+        produces:
+          - text/plain
         parameters:
         - $ref: '#/parameters/libraryId'
         - in: body
@@ -5961,7 +5967,7 @@ paths:
           '204':  { "description": "No content"  }
 
   /contents/{contentId}/comments:
-    x-summary: GET/POST Content comments
+    x-summary: Content comments
     x-description: Content comment APIs.
     get:
       tags: [ "Community" ]
@@ -6054,6 +6060,8 @@ paths:
         Removes a comment for a given content
       security:
         [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
+      produces:
+       - text/plain
       parameters:
         - $ref: '#/parameters/contentId'
         - $ref: '#/parameters/commentId'
@@ -6131,6 +6139,8 @@ paths:
           Unfollow member with id specified
         security:
           [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
+        produces:
+          - text/plain
         parameters:
           - $ref: '#/parameters/memberId'
         responses:
@@ -6153,34 +6163,34 @@ paths:
         responses:
           '200': { $ref: '#/responses/getFollowing' }
           
-  /members/{memberId}/relationships/roles: 
-      x-summary: POST Admin Role
-      x-description: Member Role API
-      post:
-        tags: [ "Community" ]
-        operationId: addAdmin
-        consumes:
-          - application/json
-        description: |
-          An Admin can change another admin's role to admin. 
-        security:
-          [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
-        parameters:
-          - $ref: '#/parameters/memberId'
-          - in: body
-            name: body
-            description: Input schema
-            required: true
-            schema:
-              $ref: '#/definitions/json_api_input_new_member_role'
-              example: {
-                        "data": [{
-                            "type": "roles",
-                            "id": "1"
-                         }]
-                       }
-        responses:
-          '204':  { "description": "No content"  }
+  # /members/{memberId}/relationships/roles: 
+  #     x-summary: POST Admin Role
+  #     x-description: Member Role API
+  #     post:
+  #       tags: [ "Community" ]
+  #       operationId: addAdmin
+  #       consumes:
+  #         - application/json
+  #       description: |
+  #         An Admin can change another admin's role to admin. 
+  #       security:
+  #         [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
+  #       parameters:
+  #         - $ref: '#/parameters/memberId'
+  #         - in: body
+  #           name: body
+  #           description: Input schema
+  #           required: true
+  #           schema:
+  #             $ref: '#/definitions/json_api_input_new_member_role'
+  #             example: {
+  #                       "data": [{
+  #                           "type": "roles",
+  #                           "id": "1"
+  #                       }]
+  #                     }
+  #       responses:
+  #         '204':  { "description": "No content"  }
             
   /libraries/{libraryId}/flags:
       x-summary: Content Flag
@@ -6208,7 +6218,7 @@ paths:
                 "attributes": {
                     "flag": "spam",
                     "entryId": "ExtCommunityContentId0242",
-                    "entryType": "communityContent"
+                    "entryType": "content"
                 }
               }
             }
