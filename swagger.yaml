@@ -4537,7 +4537,12 @@ paths:
                   "description": "elit officia sed",
                   "tags": "labore laborum",
                   "language": "EN",
-                  "region": "US"
+                  "region": "US",
+                  "extension": {
+                    "type": "contents:autodesk.core:content",
+                    "version": "1.0.0",
+                    "namespace": "autodesk.core"
+                  }
                 },
                 "relationships": {
                   "nodes": {
@@ -7965,7 +7970,7 @@ definitions:
               type: { type: string, enum: [ 'contents' ] }
               attributes:
                 type: object
-                required: [title, description, tags, status, language, region]
+                required: [title, description, tags, status, language, region,extension]
                 properties:
                   title:
                     type: string
@@ -8008,10 +8013,13 @@ definitions:
                           type: integer
                   extension:
                     type: object
+                    required: [type,version]
                     properties:
                       type:
                         type: string
                       version:
+                        type: string
+                      namespace:
                         type: string
                       data:
                         type: object
