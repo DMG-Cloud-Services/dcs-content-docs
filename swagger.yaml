@@ -8013,7 +8013,7 @@ definitions:
                           type: integer
                   extension:
                     type: object
-                    required: [type,version]
+                    required: [type,version,namespace]
                     properties:
                       type:
                         type: string
