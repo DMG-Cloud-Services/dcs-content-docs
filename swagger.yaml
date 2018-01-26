@@ -4422,6 +4422,8 @@ paths:
     delete:
       description: |
         Delete a node.
+      produces:
+        - text/plain
       parameters:
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
