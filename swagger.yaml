@@ -6997,7 +6997,6 @@ definitions:
     required: [ id, type, attributes ]
     description: 'json data'
     properties:
-      id: { type: string, description: 'id' }
       type: { type: string, description: 'resource type' }
       attributes: { $ref: '#/definitions/json_api_input_update_attributes_flag' }
   json_api_input_update_attributes_flag:
