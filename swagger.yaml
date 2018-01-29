@@ -6256,7 +6256,7 @@ paths:
           description: Input Flag
           required: true
           schema:
-            $ref: '#/definitions/json_api_input_new_flag'
+            $ref: '#/definitions/json_api_input_update_flag'
             example: {
               "data": {
                 "type": "flags",
@@ -6972,7 +6972,6 @@ definitions:
     required: [ data ]
     properties:
       data: { $ref: '#/definitions/json_api_input_data_flag' }
-
   json_api_input_data_flag:
     type: object
     required: [ id, type, attributes ]
@@ -6988,7 +6987,25 @@ definitions:
       entryType: { type: string, description: 'type of entry: communityContent|comment' }
       entryId: { type: string, description: 'id of (communityContent or comment)' }
       flag: { type: string, description: 'flag' }
-
+  json_api_input_update_flag:
+    type: object
+    required: [ data ]
+    properties:
+      data: { $ref: '#/definitions/json_api_input_update_flag_data' }
+  json_api_input_update_flag_data:
+    type: object
+    required: [ id, type, attributes ]
+    description: 'json data'
+    properties:
+      id: { type: string, description: 'id' }
+      type: { type: string, description: 'resource type' }
+      attributes: { $ref: '#/definitions/json_api_input_update_attributes_flag' }
+  json_api_input_update_attributes_flag:
+    type: object
+    required: [ entryType, entryId, flag ]
+    properties:
+      id: { type: string, description: 'id of flag' }
+      status: { type: string, description: 'APPROVED or DELETED' }
   json_api_input_new_member_role:
     type: object
     required: [ type, id ]
