@@ -6108,9 +6108,9 @@ paths:
       x-description: APIs to follow Members
       get:
         tags: [ "Community" ]
-        operationId: getfollowerUsers
+        operationId: getfollowedUsers
         description: |
-          Retrieve all the users who follow this member
+          Retrieve all the users who this member follows.
         security:
           [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
         parameters:
@@ -6149,7 +6149,7 @@ paths:
       x-description: APIs to unfollow Member
       delete:
         tags: [ "Community" ]
-        operationId: deleteFollow
+        operationId: unfollowMember
         description: |
           Unfollow member with id specified
         security:
@@ -6161,12 +6161,12 @@ paths:
         responses:
           '204':  { "description": "No content"  }
           
-  /followings:
-      x-summary: GET Members Following
-      x-description: GET Members following by this member
+  /followers:
+      x-summary: GET Member followers
+      x-description: GET the list of users following this member
       get:
         tags: [ "Community" ]
-        operationId: getfollowingUsers
+        operationId: getMemberFollowers
         description: |
           Retrive all the users whom the member is following
         security:
