@@ -6103,7 +6103,7 @@ paths:
       responses:
         '201': {$ref: '#/responses/getCommentReplies'}
         
-  /follows:
+  /followings:
       x-summary: Follow members
       x-description: APIs to follow Members
       get:
@@ -6138,13 +6138,13 @@ paths:
               example: {
                 "data": {
                   "id": "userOxygenId",
-                  "type": "follows"
+                  "type": "followings"
                 }
               }
         responses:
           '200': { $ref: '#/responses/followUser' }
           
-  /follows/{memberId}:
+  /followings/{memberId}:
       x-summary: Un-Follow members
       x-description: APIs to unfollow Member
       delete:
@@ -6176,7 +6176,7 @@ paths:
           - $ref: '#/parameters/query_filter_content_search_page_size'
           - $ref: '#/parameters/query_filter_content_search_page_number'
         responses:
-          '200': { $ref: '#/responses/getFollowing' }
+          '200': { $ref: '#/responses/getFollowers' }
           
   # /members/{memberId}/relationships/roles: 
   #     x-summary: POST Admin Role
@@ -9186,7 +9186,7 @@ responses:
         {
           "data": [
             {
-              "type": "follows",
+              "type": "followings",
               "id": "AYK2Q7S52XRU",
               "attributes": {
                 "firstName": "Foo",
@@ -9201,13 +9201,13 @@ responses:
               "relationships": {
                   "roles": {
                       "links": {
-                        "self": "https://developer.api.autodesk.com/content-alpha/v1/follows/AYK2Q7S52XRU/relationships/roles",
-                        "related": "https://developer.api.autodesk.com/content-alpha/v1/follows/AYK2Q7S52XRU/roles"
+                        "self": "https://developer.api.autodesk.com/content-alpha/v1/followings/AYK2Q7S52XRU/relationships/roles",
+                        "related": "https://developer.api.autodesk.com/content-alpha/v1/followings/AYK2Q7S52XRU/roles"
                       }
                   }
               },
               "links": {
-                "self": "https://developer.api.autodesk.com/content-alpha/v1/follows/AYK2Q7S52XRU"
+                "self": "https://developer.api.autodesk.com/content-alpha/v1/followings/AYK2Q7S52XRU"
               }
             } 
           ],
@@ -9217,11 +9217,11 @@ responses:
           "links": {
               "prev": "",
               "next": "",
-              "first": "https://developer.api.autodesk.com/content-alpha/v1/follows?filter[member][id]=GK6UJWUMUD73&page[number]=1&page[size]=20",
-              "last": "https://developer.api.autodesk.com/content-alpha/v1/follows?filter[member][id]=GK6UJWUMUD73&page[number]=1&page[size]=20"
+              "first": "https://developer.api.autodesk.com/content-alpha/v1/followings?filter[member][id]=GK6UJWUMUD73&page[number]=1&page[size]=20",
+              "last": "https://developer.api.autodesk.com/content-alpha/v1/followings?filter[member][id]=GK6UJWUMUD73&page[number]=1&page[size]=20"
           }
         }
-  getFollowing:
+  getFollowers:
     description: Successful response
     schema:
       title: schema versions
@@ -9235,7 +9235,7 @@ responses:
     examples:
       application/vnd.api+json: {
         "data": [{
-          "type": "followings",
+          "type": "followers",
           "id": "GK6UJWUMUD73",
           "attributes": {
             "firstName": "Dmg",
@@ -9248,21 +9248,21 @@ responses:
           "relationships": {
             "roles": {
               "links": {
-                "self": "https://developer.api.autodesk.com/content-alpha/v1/followings/GK6UJWUMUD73/relationships/roles",
-                "related": "https://developer.api.autodesk.com/content-alpha/v1/followings/GK6UJWUMUD73/roles"
+                "self": "https://developer.api.autodesk.com/content-alpha/v1/followers/GK6UJWUMUD73/relationships/roles",
+                "related": "https://developer.api.autodesk.com/content-alpha/v1/followers/GK6UJWUMUD73/roles"
               }
             }
           },
           "links": {
-            "self": "https://developer.api.autodesk.com/content-alpha/v1/followings/GK6UJWUMUD73"
+            "self": "https://developer.api.autodesk.com/content-alpha/v1/followers/GK6UJWUMUD73"
           }
         }],
         "included": [],
         "links": {
           "prev": "",
           "next": "",
-          "first": "https://developer.api.autodesk.com/content-alpha/v1/followings?page[number]=1&page[size]=20",
-          "last": "https://developer.api.autodesk.com/content-alpha/v1/followings?page[number]=1&page[size]=20"
+          "first": "https://developer.api.autodesk.com/content-alpha/v1/followers?page[number]=1&page[size]=20",
+          "last": "https://developer.api.autodesk.com/content-alpha/v1/followers?page[number]=1&page[size]=20"
         }
       }
   followUser:
@@ -9279,7 +9279,7 @@ responses:
     examples:
       {
         "data": {
-          "type": "follows",
+          "type": "followings",
           "id": "ABCSUUBNHC",
           "attributes": {
             "followersCount": 0,
@@ -9288,13 +9288,13 @@ responses:
           "relationships": {
             "roles": {
               "links": {
-                "self": "https://developer.api.autodesk.com/content-alpha/v1/follows/ABCSUUBNHC/relationships/roles",
-                "related": "https://developer.api.autodesk.com/content-alpha/v1/follows/ABCSUUBNHC/roles"
+                "self": "https://developer.api.autodesk.com/content-alpha/v1/followings/ABCSUUBNHC/relationships/roles",
+                "related": "https://developer.api.autodesk.com/content-alpha/v1/followings/ABCSUUBNHC/roles"
               }
             }
           },
           "links": {
-            "self": "https://developer.api.autodesk.com/content-alpha/v1/follows/ABCSUUBNHC"
+            "self": "https://developer.api.autodesk.com/content-alpha/v1/followings/ABCSUUBNHC"
           }
         },
         "included": []
