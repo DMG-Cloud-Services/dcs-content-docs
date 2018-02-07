@@ -307,6 +307,7 @@ info:
     
     * [Common Attributes](#common-attributes)
     * [Library Entity Attributes](#library-entity-attributes)
+    * [Sub-Library Entity Attributes](#sublibrary-entity-attributes)
     * [Node Entity Attributes](#node-entity-attributes)
     * [Content Entity Attributes](#content-entity-attributes)
     * [File Entity Attributes](#file-entity-attributes)
@@ -323,9 +324,9 @@ info:
     | **title**                 | MANUAL        | The title of an entity.
     | **description**           | MANUAL        | The description of an entity.
     | **tags**                  | MANUAL        | The tags assigned to an entity.
-    | **language**              | MANUAL        | The local language of an entity.
-    | **region**                | MANUAL        | The local region of an entity.
-    | **translations**          | MANUAL        | The translation object for different locale.  
+    | **language**              | MANUAL        | The locale language of an entity. Defaults to "en" if not passed.
+    | **region**                | MANUAL        | The locale region of an entity. Defaults to "US" if not passed.
+    | **translations**          | MANUAL        | The optional translations object for different locale.  
     | **createTime**            | AUTO          | The time when an entity is created.
     | **lastModifiedTime**      | AUTO          | The time when an entity is modified last time.
     | **entityPaths**           | AUTO          | The paths of an entity. This path gives the location where the entities are present in the hierarchy.
@@ -368,9 +369,11 @@ info:
     
     A library inherits all common attributes. Additionally, the following table lists the attributes specifically for the Library entity:
     
-    | Attribute   | AUTO/ MANUAL  |  Description
-    | ----------- |:-------------:|----------------------------------------------------------------------------
-    | **status**  | MANUAL        |  The status of the library. The status can be **private** or **published**.
+    | Attribute                             | AUTO / MANUAL |  Description
+    | --------------------------------------|:-------------:|----------------------------------------------------------------------------
+    | **status**                            | MANUAL        |  The status of the library. The status can be **private** or **published**. Defaults to **private** on create.
+    | **registerContentVersionInCommunity** | MANUAL        |  The status of the library. The status can be **private** or **published**. Defaults to **private** on create.
+    | **status**                            | MANUAL        |  The status of the library. The status can be **private** or **published**. Defaults to **private** on create.
     
     ### Sample
     
@@ -382,7 +385,7 @@ info:
             "title": "test.library",
             "description": "Test Library",
             "tags": "test, library",
-            "language": "EN",
+            "language": "en",
             "region": "US",
             "status": "private/published"
         }
@@ -396,7 +399,7 @@ info:
     
     | Attribute   | AUTO/ MANUAL  |  Description
     | ----------- |:-------------:|--------------------------------------------------------------------------------
-    | **status**  | MANUAL        |  The status of the sub library. The status can be **private** or **published**.
+    | **status**  | MANUAL        |  The status of the sub library. The status can be **private** or **published**. Defaults to **private** on create.
     
     ### Sample
     
@@ -408,7 +411,7 @@ info:
           "title": "test.subLibrary",
           "description": "Test Sub Library",
           "tags": "test, sub library",
-          "language": "EN",
+          "language": "en",
           "region": "US",
           "status": "private/published"
         }
