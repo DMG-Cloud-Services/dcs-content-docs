@@ -538,18 +538,18 @@ info:
     
     ##<a name="file-entity-attributes"></a>File Entity Attributes
     
-    The following table lists the attributes specifically for the File entity:
+    The following table lists the attributes specific for the File object in the array:
     
     | Attribute         | AUTO/ MANUAL  |  Description
     | ------------------|:-------------:|  ----------------------------------------------------------------------------------------
     | **id**            | AUTO          |  The id of the file.
     | **title**         | MANUAL        |  The title of the file.
     | **description**   | MANUAL        |  The long description of the file.
-    | **objectKey**     | MANUAL        |  Autodesk OSS URN obtained after uploading the file to the server.
-    | **size**          | MANUAL        |  The size of the file. You get this value after uploading the file to the server.
-    | **checksum**      | MANUAL        |  The checksum of the file. You get this value after uploading the file to the server.
-    | **url**           | MANUAL        |  The URL of the file where you upload the actual file.
-    | **mimeType**      | MANUAL        |  The mime type of the file.
+    | **objectKey**     | MANUAL        |  Object key obtained after uploading the file to the server.
+    | **size**          | MANUAL        |  Size of the file obtained after uploading the file to the server.
+    | **checksum**      | MANUAL        |  checksum of the file obtained after uploading the file to the server.
+    | **url**           | AUTO          |  The URL of the file where you upload the actual file.
+    | **mimeType**      | MANUAL        |  Mime type of the file obtained after uploading the file to the server.
     
     ### Sample
     
@@ -575,9 +575,9 @@ info:
   
     ##<a name="thumbnail-entity-attributes"></a>Thumbnail Entity Attributes
     
-    A Thumbnail entity inherits all file attributes. Additionally, there are following attributes specifically for the Thumbnail entity:
+    A Thumbnail entity inherits all file attributes. in addition, there are following attributes specific for the Thumbnail object:
     
-    | Attribute     | AUTO/ MANUAL  | Description
+    | Attribute     | AUTO / MANUAL | Description
     | --------------|:-------------:| ------------------------------------
     | **height**    | MANUAL        | The height of a thumbnail.
     | **width**     | MANUAL        | The width of a thumbnail.
@@ -607,7 +607,7 @@ info:
     
     ##<a name="reference-entity-attributes"></a>Reference Entity Attributes
     
-    The following table lists the attributes specifically for a Reference entity:
+    The following table lists the attributes specific for a Reference object array:
     
     | Attribute       | AUTO/ MANUAL  | Description
     | --------------- | ------------- | ---------------------------------------------------------------------------
@@ -645,6 +645,41 @@ info:
       }
     }
     ```
+    
+    ##<a name="translation-entity-attributes"></a>Translations Entity Attributes
+    
+    The following table lists the attributes specific for Translations object in the array:
+    
+    | Attribute       | AUTO/ MANUAL  | Description
+    | --------------- | ------------- | ---------------------------------------------------------------------------
+    | **title**       | MANUAL        | The translated title of the entity.
+    | **description** | MANUAL        | The translated description of the entity.
+    | **tags**        | MANUAL        | The translated tags of the entity.
+
+    ### Sample
+    
+    ```json
+      {
+        "translations": {
+          "fr_FR": {
+            "title": "Contenu du film",
+            "description": "Contenu d'un film",
+            "tags": "film de film"
+          },
+          "es_MX": {
+            "title": "Contenido de la película",
+            "description": "Contenido sobre una película",
+            "tags": "película"
+          },
+          "zh_CN": {
+            "title": "电影内容",
+            "description": "关于电影的内容",
+            "tags": "电影电影"
+          }
+        }
+      }    
+    ```
+    
     [@overivew/content-community]: <>
     # Forge Content Community
     
