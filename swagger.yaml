@@ -993,7 +993,7 @@ info:
     ```
     From the response, make note of **id** attribute, which is the id of the new sub-library.
     
-    ## Step 3: Crete a Node under a Sub-Library
+    ## Step 3: Create a Node under a Sub-Library
       
     In this step, create a node under the sub library that you created in Step 2. For more information about Library and Sub-Library, see [Content Model](/en/docs/content/v1/overview/content-model).
 
