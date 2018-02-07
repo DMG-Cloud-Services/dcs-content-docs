@@ -1073,7 +1073,7 @@ info:
               "lastModifiedBy": "AYK2Q7S52XRU",
               "childNodesCount": 0,
               "description": "The node for storing material content",
-              "language": "EN",
+              "language": "en",
               "title": "MaterialNode",
               "tags": "material, content",
               "totalChildrenCount": 0,
@@ -1119,20 +1119,20 @@ info:
       
     ## Step 4: Create Content under a Node
       
-    In this step, you create the actual content in the node that you created in the Step 2. For more information about content, see [Content Model](/en/docs/content/v1/overview/content-model).
+    In this step, you create the actual content in the node that you created in the Step 3. For more information about content, see [Content Model](/en/docs/content/v1/overview/content-model).
     
-    The Library Content API provides the `POST libraries/{libraryId}/content` endpoint that allows you to create your content.
+    The Forge Content provides the `POST libraries/{libraryId}/content` API endpoint that allows you to create your content.
 
     >**Notes**: Before you start creating the content, ensure the following:
-    >* You have successfully created a library and a node.
-    >* A valid custom schema that you want to use for your content exists.
-    >* If a custom schema is not present, then the core contents:autodesk.core:content-1.0.0 schema type must be specified. This is when content is created using the core attributes only.
+    >* You have successfully created a library (and Sub-library) and a node.
+    >* A valid custom extension schema that you want to use for your content exists. This is for the extension.data inside the content if present.
+    >* If a custom extension schema is not present, then the core **contents:autodesk.core:content-1.0.0** schema type must be specified. This is when content is created using the core attributes only.
   
     While creating the content, specify the following:
     
-    * **Attributes**: This sections contains the common attributes or metadata of your content.
-    * **Extension**: This section contains the schema that you want to use and the data that you want to store as actual content. 
-    * **Relationship**: This sections contains the name and id of the nodes where you want to store your content.
+    * **attributes**: This sections contains the common attributes or metadata of your content.
+    * **extension**: This section contains the schema that you want to use and the extension "data" that you want to store with the content. 
+    * **relationship**: This sections contains the id of the node where you want to add the content under.
     
     In the `POST` request, you need to specify the Id of the library in which you want to create contents.
       
@@ -1151,10 +1151,9 @@ info:
           "title": "ContentTitle",
           "description": "ContentDescription",
           "tags": "ContentTag",
-          "language": "EN",
+          "language": "en",
           "region": "US",
           "status" : "draft",
-          "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
           "extension": {
             "type": "contents:autodesk.core:content",
             "version": "1.0.0",
@@ -1195,9 +1194,8 @@ info:
               "contentDownloadCount": 0,
               "lastModifiedBy": "AYK2Q7S52XRU",
               "deprecated": false,
-              "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
               "description": "ContentDescription",
-              "language": "EN",
+              "language": "en",
               "title": "ContentTitle",
               "version": "draft",
               "tags": "ContentTag",
@@ -1227,9 +1225,9 @@ info:
       
     In this step, you publish your content. For more information about content, see [Content](#content).
     
-    By default, when you create your content, the status of the content is `draft`. You can publish the content by changing the status to `published`.
+    By default, when the content is created, the status of the content is set to `draft`. You can publish the content by changing the status to `published`.
   
-    The Library Content API provides the `PATCH libraries/{libraryId}/content/{contentId}` endpoint that allows you to update your content where you change the status. The PATCH request updates the draft first and then publish the updated content.
+    The Forge Content provides the `PATCH libraries/{libraryId}/content/{contentId}` API endpoint that allows you to update your content where you change the status. The PATCH request creates a copy of the latest draft version of the content and versions it. 
 
     In the `PATCH` request, you need to specify the Id of the content that you want to update and the Id of the library in which the content exists.
       
@@ -1249,7 +1247,7 @@ info:
             "description": "The library of industrial material",
             "tags": "material, library, industry",
             "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
-            "language": "EN",
+            "language": "en",
             "region": "US",
             "status": "published"
           },
