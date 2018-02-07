@@ -831,7 +831,7 @@ info:
     
     Perfrom the steps in the given sequence to successfully create the content.
   
-    ## Step 1: Create a New Library
+    ## Step 1: Create a Library
       
     In this step, create a new library where you store the contents. For more information about library, see [Content Model](/en/docs/content/v1/overview/content-model).
 
@@ -911,7 +911,7 @@ info:
     ```
     From the response, make note of the **id** attribute, which is the id of the new library.
       
-    ## Step 2: Create a New Sub Library
+    ## Step 2: Create a Sub-Library under a Library
       
     In this step, create a sub library. For more information about Sub library, see [Content Model](/en/docs/content/v1/overview/content-model).
 
@@ -993,7 +993,7 @@ info:
     ```
     From the response, make note of **id** attribute, which is the id of the new sub-library.
     
-    ## Step 3: Crete a new Node in a Sub-Library
+    ## Step 3: Crete a Node under a Sub-Library
       
     In this step, create a node under the sub library that you created in Step 2. For more information about Library and Sub-Library, see [Content Model](/en/docs/content/v1/overview/content-model).
 
@@ -1001,7 +1001,11 @@ info:
 
     In the ``POST`` request, you need to specify the id of the library in which you want to create a node. 
 
-    **Note**: If you want to create a node inside another node, you must include the ``nodes`` attribute in the request. In the nodes attribute, you need to specify the Id of the node in which you want to create a node.
+    **Note**: 
+    
+    The following example shows all 3 flavors of creating the node. 
+      * If the node is created under the library, please pass "libraries" 
+      * If the node is created under the sub-library, please pass the "subLibraries"
   
     ### Example
       
@@ -1018,7 +1022,6 @@ info:
           "title": "MaterialNode",
           "description": "The node for storing material content",
           "language": "EN",
-          "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
           "tags": "material, content",
           "region": "US"
         },
@@ -1066,7 +1069,6 @@ info:
               "lastModifiedTime": "2017-10-13T07:33:23Z",
               "lastModifiedBy": "AYK2Q7S52XRU",
               "childNodesCount": 0,
-              "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
               "description": "The node for storing material content",
               "language": "EN",
               "title": "MaterialNode",
@@ -1112,7 +1114,7 @@ info:
     }
     ```
       
-    ## Step 4: Create Content in a Node
+    ## Step 4: Create Content under a Node
       
     In this step, you create the actual content in the node that you created in the Step 2. For more information about content, see [Content Model](/en/docs/content/v1/overview/content-model).
     
