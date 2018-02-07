@@ -325,6 +325,7 @@ info:
     | **tags**                  | MANUAL        | The tags assigned to an entity.
     | **language**              | MANUAL        | The local language of an entity.
     | **region**                | MANUAL        | The local region of an entity.
+    | **translations**          | MANUAL        | The translation object for different locale.  
     | **createTime**            | AUTO          | The time when an entity is created.
     | **lastModifiedTime**      | AUTO          | The time when an entity is modified last time.
     | **entityPaths**           | AUTO          | The paths of an entity. This path gives the location where the entities are present in the hierarchy.
@@ -332,18 +333,35 @@ info:
     ### Sample
     
     ```java
-    {
-      "data": {
-        "type": "libraries/subLibraries/nodes/contents",
-        "attributes": {
-          "title": "TITLE",
-          "description": "DESCRIPTION",
-          "tags": "TAG1, TAG2",
-          "language": "EN",
-          "region": "US"
+      {
+        "data": {
+          "type": "libraries/subLibraries/nodes/contents",
+          "attributes": {
+            "title": "TITLE",
+            "description": "DESCRIPTION",
+            "tags": "TAG1, TAG2",
+            "language": "en",
+            "region": "US",
+            "translations": {
+              "fr_FR": {
+                "title": "Contenu du film",
+                "description": "Contenu d'un film",
+                "tags": "film de film"
+              },
+              "es_MX": {
+                "title": "Contenido de la película",
+                "description": "Contenido sobre una película",
+                "tags": "película"
+              },
+              "zh_CN": {
+                "title": "电影内容",
+                "description": "关于电影的内容",
+                "tags": "电影电影"
+              }
+            }
+          }
         }
-      }
-    }
+      }    
     ```
     
     ##<a name="library-entity-attributes"></a>Library Entity Attributes
