@@ -1003,8 +1003,7 @@ info:
 
     **Note**: 
     
-    The following example shows all 3 flavors of creating the node. 
-      * If the node is created under the library, please pass "libraries" object only in the relationships with the parent Library Id.
+    The following example shows 2 flavors of creating the node. 
       * If the node is created under the sub-library, please pass the "subLibraries" object only in the relationships with the parent Sub-Library Id.
       * If the node is created under another node, please pass the "nodes" object only in the relationships with the parent Node Id.
     
@@ -1029,14 +1028,6 @@ info:
           "region": "US"
         },
         "relationships": {
-          "libraries": {
-            "data": [
-              {
-                "type": "libraries",
-                "id": "[Library ID]"
-              }
-            ]
-          },
           "subLibraries": {
             "data": [
               {
@@ -1124,7 +1115,7 @@ info:
     The Forge Content provides the `POST libraries/{libraryId}/content` API endpoint that allows you to create your content.
 
     >**Notes**: Before you start creating the content, ensure the following:
-    >* You have successfully created a library (and Sub-library) and a node.
+    >* You have successfully created a library, Sub-library and a node.
     >* A valid custom extension schema that you want to use for your content exists. This is for the extension.data inside the content if present.
     >* If a custom extension schema is not present, then the core **contents:autodesk.core:content-1.0.0** schema type must be specified. This is when content is created using the core attributes only.
   
@@ -1313,7 +1304,7 @@ info:
     }
     ```
     [@tutorials/create-content-in-new-library-without-sublibrary]: <>
-    # Create Content in a New Library without Sub Library
+    # Create Content in a Library without Sub Library
     
     This tutorial explains how to create content in a new library that does not contain a sub library. This tutorial provides the steps based on the following content model:
 
@@ -1321,11 +1312,11 @@ info:
     
     Perfrom the steps in the given sequence to successfully create the content.
     
-    ## Step 1: Create a New Library
+    ## Step 1: Create a Library
     
-    In this step you create a new library where you store the contents. For more information about library, see [Content Model](/en/docs/content/v1/overview/content-model).
+    In this step, a new library is created where the contents are stored. For more information about library, see [Content Model](/en/docs/content/v1/overview/content-model).
 
-    The Library API provides the ``POST libraries`` endpoint that allows you to create a new library.
+    The Forge Content provides the ``POST libraries`` endpoint that allows you to create a new library.
     
     ### Example
     
@@ -1342,7 +1333,7 @@ info:
           "title": "MaterialLibrary",
           "description": "The Library for the Material",
           "status": "private",
-          "language": "EN",
+          "language": "en",
           "region": "US"
         }
       }
@@ -1402,15 +1393,21 @@ info:
     
     From the response, make note of **id** attribute, which is the id of the new library.
     
-    ## Step 2: Create a new Node in the Library
+    ## Step 2: Create a Node under the Library
 
-    In this step you create a node inside the library that you created in Step 1. For more information about Node, see [Content Model](/en/docs/content/v1/overview/content-model).
+    In this step, the node is created under the library that you created in Step 1. For more information about Node, see [Content Model](/en/docs/content/v1/overview/content-model).
     
-    The Library Node API provides the ``POST libraries/{libraryId}/nodes`` endpoint to create a node in the specified library.
+    The Forge Content provides the ``POST libraries/{libraryId}/nodes`` API endpoint to create a node under the specified library.
     
     In the ``POST`` request, you need to specify the id of the library which you want to create a node. 
 
-    **Note**: If you want to create a node inside another node, you must include the ``nodes`` attribute in the request. In the nodes attribute, you need to specify the Id of the node in which you want to create a node.
+    **Note**: 
+    
+    The following example shows 2 flavors of creating the node. 
+      * If the node is created under the Library, please pass the "libraries" object only in the relationships with the parent Library Id.
+      * If the node is created under another node, please pass the "nodes" object only in the relationships with the parent Node Id.
+    
+    A node cannot be created directly under the Library if a Sub-library under the same Library is already created. The vice-versa is also true. This defines the data model automatically described above.
 
     ### Example
 
@@ -1426,8 +1423,7 @@ info:
         "attributes": {
           "title": "MaterialNode",
           "description": "The node for storing material content",
-          "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
-          "language": "EN",
+          "language": "en",
           "tags": "material, content",
           "region": "US"
         },
@@ -1467,9 +1463,8 @@ info:
               "lastModifiedTime": "2017-10-13T07:33:23Z",
               "lastModifiedBy": "AYK2Q7S52XRU",
               "childNodesCount": 0,
-              "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
               "description": "The node for storing material content",
-              "language": "EN",
+              "language": "en",
               "title": "MaterialNode",
               "tags": "material, content",
               "totalChildrenCount": 0,
@@ -1515,21 +1510,19 @@ info:
 
     ## Step 3: Create Content in a Node
 
-    In this step, you create the actual content in the node that you created in the `Step 2`_. For more information about Content, see [Content Model](/en/docs/content/v1/overview/content-model).
+    In this step, you create the actual content in the node that you created in the `Step 2`. For more information about Content, see [Content Model](/en/docs/content/v1/overview/content-model).
     
     The Library Content API provides the ``POST libraries/{libraryId}/content`` endpoint that allows you to create your content.
     
     Before you start creating the content, ensure the following: 
-    
-    - You have successfully created a library and a node.
-    - A valid custom schema that you want to use for your content exists.
-    - If a custom schema is not present, then the core contents:autodesk.core:content-1.0.0 schema type must be specified. This is when content is created using the core attributes only.
+    - You have successfully created the library and a node.
+    - A valid custom extension schema that you want to use for your content exists. This is for the extension.data inside the content if present.
+    - If a custom extension schema is not present, then the core **contents:autodesk.core:content-1.0.0** schema type must be specified. This is when content is created using the core attributes only.
     
     In the API request, specify the appropriate information in the following sections:
-    
-    -  **Attributes**: This section contains the common attributes or metadata of your content.
-    -  **Extension**: This section contains the schema that you want to use and the data that you want to store as actual content.
-    -  **Relationship**: This section contains the name and id of the nodes where you want to store your content.
+    - **attributes**: This sections contains the common attributes or metadata of your content.
+    - **extension**: This section contains the schema that you want to use and the extension "data" that you want to store with the content. 
+    - **relationship**: This sections contains the id of the node where you want to add the content under.
     
     In the ``POST`` request, you need to specify the Id of the library in which you want to create contents.
     
