@@ -139,7 +139,7 @@ info:
     [@overview/content-model]: <>
     # Content Model
   
-    Forge Content API provides two distinct content data models to create and organize the content data. Before selecting the content data model, you must analyze your content structure and then decide the content data model that suites your requirements.
+    Forge Content API provides two distinct content data models to create and organize the content data. Before selecting the content data model, you must analyze your content structure and then decide the content data model that suits your requirements.
 
     **Note**: Once you select one of these content data model and follow that model, you cannot change to the other content data model. You have to recreat everything again in the other content model.
 
@@ -240,30 +240,28 @@ info:
       
     ##<a name="content"></a>**Content**
       
-    Content is the bottom level entity in the hierarchy of the Forge Content API.
+    Content is the lowest level entity in the hierarchy of the Forge Content API. The hierarchy ends with the content.
     
-    **Note**: Creating content directly inside the library is not allowed. You must first create a node in the library and then add the required content in that node.
+    **Note**: Creating content directly inside the library/sub-library is not allowed. You must first create a node under the library/sub-library and then add the required content under that node.
     
     In the content, you can add the following information.
     
-    -  **metadata**: The basic information that represents your data. This includes title, description, tags, language, region, and status of the content.
-    -  **data**: The actual information that you want to store. This is the extended data in addition to the metadata.
+    -  **metadata**: The basic information that represents your data. This includes title, description, tags, language, region, status and translations of the content.
+    -  **extension.data**: The actual information that you want to store. This is the extended data in addition to the metadata.
     -  **files**: The files that you want to attach with the content.
     -  **thumbnails**: The thumbnail details that you want to attach to the content. This includes the thumbnail file details along with **height**, and **width** of the thumbnail.
-    You can also create reference to your content from different nodes in a library.
-    
-    Autodesk Search service keep indexing the content in the nodes.
+    You can also create reference to your content from different nodes in a library. This has to be defined in the schema and specified inside extension.data.
 
     [@overview/content-versioning]: <>
     # Content Versioning
     
     Forge Content API provides a mechanism by which you can first create a draft of your content and publish the content later.
 
-    When you create the content for the first time, you can set the status as **draft**. When you publish the content later, you can change the status to **published**. 
+    When content is created, the status is set as **draft** by default. When you want to publish the content, you can change the status to **published** and update the content. 
     
-    Whenever you publish the content, Forge Content API creates a new version of the content. The version numbers are in the format of ``1,2,3,...n``.
+    When the content is published, Forge Content creates a new version of the content. The version numbers are natural number sequence in the format of ``1,2,3,...n``.
     
-    Forge Content API also provide the following options to retrieve the content versions:
+    Forge Content also provide the following options to retrieve the content versions:
     
     -  **draft**: Retrieves the draft version of the content.
     -  **version number**: Retrives the specified version of the content.
@@ -274,12 +272,10 @@ info:
     [@overview/content-validation]: <>
     # Content Validation
         
-    Whenever you create content, Forge Content API validates the content for a valid JSON format and a valid schema.
+    When the content is created, Forge Content validates the content for a valid JSON format and against the schema if specified. Here, the schema is fetched from the Forge Schema Service.
     
-    A valid schema can be from the node in which you create the content or the schema that you directly use when creating the content.
+    A content can also be created using only the core attributes which are already defined by the Forge Content. This does not require the application teams to define a schema for the content in Forge Schema Service.
     
-    **Note**: You can create content without using schema. However, you can only store the metadata of the content. For storing the extended data, you have to use a schema while creating the content.
-      
     [@overview/content-roles]: <>
     # Content Roles
         
