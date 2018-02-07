@@ -2974,7 +2974,6 @@ info:
 
     -  Search the node tree structure starting from a root or a particular node upto some other node.
     -  Search content in a library or a subset of nodes starting from a top node to a particular at the bottom in the hirerarchy.
-    -  Search content with specific language. The language and regions fields can be present in the base node or content schema.
     -  Search content with specific language or a default base language if the language is not available.
     -  Search content across libraries.
     -  Search content for specific tags.
@@ -3005,6 +3004,7 @@ info:
     | **filter[contents][facet]**  | Searches the content based on the fields on which facets are required. To use this filter, you must also use the `filter[contents][meta]=facets` condition.
     | **filter[contents][searchSkipCache]** | If you set this condition to true, the Searche returns the fresh content from the database instead of the content in the primary cache.
     | **filter[contents][subLibrary]**      | If you set this condition to true, the search returns all entities, such as nodes and contents within the specified sub-library for which the calling user has access. |
+    | **filter[contents][locale]**      | The locale in which the search has to be performed. This is the data which was specified using the "translations" core attributes. The search is performed on "en_US" locale by default.
     | **page[size]**  | The total number of pages that you want to display for the search result.
     | **page[number]**  | The page number of the search result that you want to display.
     
