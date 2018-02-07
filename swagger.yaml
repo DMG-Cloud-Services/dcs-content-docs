@@ -788,14 +788,11 @@ info:
     
     The Forge Content service provides a set or APIs for developers to create and manage the content for the Autodesk products. In this section, we will provide some step-by-step tutorials demonstrating how the Forge Content APIs work.
     
-    ## [Create Content in a New Library with Sub Library](/en/docs/content/v1/tutorials/create-content-in-new-library-with-sublibrary)
+    ## [Create Content in the Library Data Model](/en/docs/content/v1/tutorials/create-content-in-new-library-with-sublibrary)
       This tutorial explains how to create a content in a new library with sub library.
       
-    ## [Create Content in a New Library without Sub Library](/en/docs/content/v1/tutorials/create-content-in-new-library-without-sublibrary)
+    ## [Create Content in the Sub-Library Data Model](/en/docs/content/v1/tutorials/create-content-in-new-library-without-sublibrary)
       This tutorial explains how to create a content in a new library without sub library.
-      
-    ## [Create Content in an Existing Library](/en/docs/content/v1/tutorials/create-content-in-existing-library)
-      This tutorial explains how to create a content in an existing library.
       
     ## [Attach Files to the Content](/en/docs/content/v1/tutorials/attach-files-to-content)
       This tutorial explains how to attach files to the content.
