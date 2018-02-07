@@ -9769,6 +9769,23 @@ responses:
               "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
               "createdBy": "YUT9M5AU27KN",
               "lock": false,
+              "translations": {
+                "fr_FR": {
+                  "title": "Contenu du film",
+                  "description": "Contenu d'un film",
+                  "tags": "film de film"
+                },
+                "es_MX": {
+                  "title": "Contenido de la película",
+                  "description": "Contenido sobre una película",
+                  "tags": "película"
+                },
+                "zh_CN": {
+                  "title": "电影内容",
+                  "description": "关于电影的内容",
+                  "tags": "电影电影"
+                }
+              },                      
               "communityData": {
                 "commentCount": 1,
                 "likeCount": 1,
@@ -9947,7 +9964,78 @@ responses:
                     "createTime": "2017-10-13T07:41:40Z",
                     "createdBy": "AYK2Q7S52XRU",
                     "region": "US",
-                    "status": ""
+                    "status": "published",
+                    "role": "LIBRARY_MANAGER",
+                    "translations": {
+                      "fr_FR": {
+                        "title": "Contenu du film",
+                        "description": "Contenu d'un film",
+                        "tags": "film de film"
+                      },
+                      "es_MX": {
+                        "title": "Contenido de la película",
+                        "description": "Contenido sobre una película",
+                        "tags": "película"
+                      },
+                      "zh_CN": {
+                        "title": "电影内容",
+                        "description": "关于电影的内容",
+                        "tags": "电影电影"
+                      }
+                    },
+                    "permissions": [
+                      {
+                        "role": "LIBRARY_MANAGER",
+                        "subjects": {
+                          "o2Users": [
+                            "ERB3Q463BYQW"
+                          ],
+                          "o2Groups": [
+                             
+                          ],
+                          "o2Tenants": [
+                             
+                          ],
+                          "services": [
+                            "hjcvwfvh6546jdfdfvjkik"
+                          ]
+                        }
+                      },
+                      {
+                        "role": "CONTENT_CREATOR",
+                        "subjects": {
+                          "o2Users": [
+                            "ERB3Q463BYQW"
+                          ],
+                          "o2Groups": [
+                             
+                          ],
+                          "o2Tenants": [
+                             
+                          ],
+                          "services": [
+                            "hjcvwfvh6546jdfdfvjkik"
+                          ]
+                        }
+                      },
+                      {
+                        "role": "CONTENT_READER",
+                        "subjects": {
+                          "o2Users": [
+                            "ERB3Q463BYQW"
+                          ],
+                          "o2Groups": [
+                             
+                          ],
+                          "o2Tenants": [
+                             
+                          ],
+                          "services": [
+                            "hjcvwfvh6546jdfdfvjkik"
+                          ]
+                        }
+                      }
+                    ]                    
                 },
                 "relationships": {
                     "nodes": {
@@ -10001,7 +10089,77 @@ responses:
                     "language": "EN",
                     "title": "MaterialSubLibrary",
                     "region": "US",
-                    "status": "private"
+                    "status": "private",
+                    "translations": {
+                      "fr_FR": {
+                        "title": "Contenu du film",
+                        "description": "Contenu d'un film",
+                        "tags": "film de film"
+                      },
+                      "es_MX": {
+                        "title": "Contenido de la película",
+                        "description": "Contenido sobre una película",
+                        "tags": "película"
+                      },
+                      "zh_CN": {
+                        "title": "电影内容",
+                        "description": "关于电影的内容",
+                        "tags": "电影电影"
+                      }
+                    },
+                    "permissions": [
+                      {
+                        "role": "LIBRARY_MANAGER",
+                        "subjects": {
+                          "o2Users": [
+                            "ERB3Q463BYQW"
+                          ],
+                          "o2Groups": [
+                             
+                          ],
+                          "o2Tenants": [
+                             
+                          ],
+                          "services": [
+                            "hjcvwfvh6546jdfdfvjkik"
+                          ]
+                        }
+                      },
+                      {
+                        "role": "CONTENT_CREATOR",
+                        "subjects": {
+                          "o2Users": [
+                            "ERB3Q463BYQW"
+                          ],
+                          "o2Groups": [
+                             
+                          ],
+                          "o2Tenants": [
+                             
+                          ],
+                          "services": [
+                            "hjcvwfvh6546jdfdfvjkik"
+                          ]
+                        }
+                      },
+                      {
+                        "role": "CONTENT_READER",
+                        "subjects": {
+                          "o2Users": [
+                            "ERB3Q463BYQW"
+                          ],
+                          "o2Groups": [
+                             
+                          ],
+                          "o2Tenants": [
+                             
+                          ],
+                          "services": [
+                            "hjcvwfvh6546jdfdfvjkik"
+                          ]
+                        }
+                      }
+                    ]                    
                 },
                 "relationships": {
                     "nodes": {
@@ -10056,7 +10214,24 @@ responses:
                       "createTime": "2017-10-13T08:22:11Z",
                       "createdBy": "AYK2Q7S52XRU",
                       "region": "US",
-                      "status": "published"
+                      "status": "published",
+                      "translations": {
+                        "fr_FR": {
+                          "title": "Contenu du film",
+                          "description": "Contenu d'un film",
+                          "tags": "film de film"
+                        },
+                        "es_MX": {
+                          "title": "Contenido de la película",
+                          "description": "Contenido sobre una película",
+                          "tags": "película"
+                        },
+                        "zh_CN": {
+                          "title": "电影内容",
+                          "description": "关于电影的内容",
+                          "tags": "电影电影"
+                        }
+                      }                      
                   },
                   "relationships": {
                       "nodes": {
@@ -10101,7 +10276,24 @@ responses:
                       "createTime": "2017-10-13T08:21:46Z",
                       "createdBy": "AYK2Q7S52XRU",
                       "region": "US",
-                      "status": "published"
+                      "status": "published",
+                      "translations": {
+                        "fr_FR": {
+                          "title": "Contenu du film",
+                          "description": "Contenu d'un film",
+                          "tags": "film de film"
+                        },
+                        "es_MX": {
+                          "title": "Contenido de la película",
+                          "description": "Contenido sobre una película",
+                          "tags": "película"
+                        },
+                        "zh_CN": {
+                          "title": "电影内容",
+                          "description": "关于电影的内容",
+                          "tags": "电影电影"
+                        }
+                      }                      
                   },
                   "relationships": {
                       "nodes": {
@@ -10165,7 +10357,24 @@ responses:
                       "language": "EN",
                       "title": "MaterialSubLibrary",
                       "region": "US",
-                      "status": "private"
+                      "status": "private",
+                      "translations": {
+                        "fr_FR": {
+                          "title": "Contenu du film",
+                          "description": "Contenu d'un film",
+                          "tags": "film de film"
+                        },
+                        "es_MX": {
+                          "title": "Contenido de la película",
+                          "description": "Contenido sobre una película",
+                          "tags": "película"
+                        },
+                        "zh_CN": {
+                          "title": "电影内容",
+                          "description": "关于电影的内容",
+                          "tags": "电影电影"
+                        }
+                      }                      
                   },
                   "relationships": {
                       "libraries": {
@@ -10263,7 +10472,24 @@ responses:
                 "description": "This is description for node NodeForGlobalMaterialRegistry",
                 "title": "NodeForGlobalMaterialRegistry",
                 "childContentsCount": 1,
-                "tags": "a,b,c,d"
+                "tags": "a,b,c,d",
+                "translations": {
+                  "fr_FR": {
+                    "title": "Contenu du film",
+                    "description": "Contenu d'un film",
+                    "tags": "film de film"
+                  },
+                  "es_MX": {
+                    "title": "Contenido de la película",
+                    "description": "Contenido sobre una película",
+                    "tags": "película"
+                  },
+                  "zh_CN": {
+                    "title": "电影内容",
+                    "description": "关于电影的内容",
+                    "tags": "电影电影"
+                  }
+                }                      
             },
             "relationships": {
                 "libraries": {
@@ -10315,7 +10541,24 @@ responses:
                   "childNodesCount": 0,
                   "description": "this is a test node",
                   "title": "Library node number 1",
-                  "childContentsCount": 0
+                  "childContentsCount": 0,
+                  "translations": {
+                    "fr_FR": {
+                      "title": "Contenu du film",
+                      "description": "Contenu d'un film",
+                      "tags": "film de film"
+                    },
+                    "es_MX": {
+                      "title": "Contenido de la película",
+                      "description": "Contenido sobre una película",
+                      "tags": "película"
+                    },
+                    "zh_CN": {
+                      "title": "电影内容",
+                      "description": "关于电影的内容",
+                      "tags": "电影电影"
+                    }
+                  }                      
               },
               "relationships": {
                   "nodes": {
@@ -10384,7 +10627,24 @@ responses:
                     "createdBy": "AYK2Q7S52XRU",
                     "lock": false,
                     "region": "US",
-                    "status": "draft"
+                    "status": "draft",
+                    "translations": {
+                      "fr_FR": {
+                        "title": "Contenu du film",
+                        "description": "Contenu d'un film",
+                        "tags": "film de film"
+                      },
+                      "es_MX": {
+                        "title": "Contenido de la película",
+                        "description": "Contenido sobre una película",
+                        "tags": "película"
+                      },
+                      "zh_CN": {
+                        "title": "电影内容",
+                        "description": "关于电影的内容",
+                        "tags": "电影电影"
+                      }
+                    }                      
                 },
                 "relationships": {
                     "nodes": {
