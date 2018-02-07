@@ -376,7 +376,7 @@ info:
     | **status**                            | MANUAL        |  The status of the library. The status can be **private** or **published**. Defaults to **private** on create.
     | **registerContentVersionInCommunity** | MANUAL        |  The attribute to indicate if the each version of the content under this library as to be registered as separate entity for community features.
     | **searchCacheExpiryInSeconds**        | MANUAL        |  The value in seconds to indicate the time to live for the search data in local cache. The data is removed from the cache after the time is lapsed.
-    | **permissions**                       | MANUAL        |  The permissions object array specifying all the members having access to this library. This is effective for PATCH API call.
+    | **permissions**                       | MANUAL        |  The optional permissions object array specifying all the members having access to this library. This is effective for PATCH API call.
     
     ### Sample
     
@@ -405,8 +405,8 @@ info:
     | Attribute       | AUTO / MANUAL |  Description
     | ----------------|:-------------:|--------------------------------------------------------------------------------
     | **status**      | MANUAL        |  The status of the sub library. The status can be **private** or **published**. Defaults to **private** on create.
-    | **externalId**  | MANUAL        |  An external Id attribute to hold the application/client's identifier for the entity. This must be unique under the library.
-    | **permissions** | MANUAL        |  The permissions object array specifying all the members having access to this library. This is effective for PATCH API call.
+    | **externalId**  | MANUAL        |  The optional external Id attribute to hold the application/client's identifier for the entity. This must be unique under the library.
+    | **permissions** | MANUAL        |  The optional permissions object array specifying all the members having access to this library. This is effective for PATCH API call.
     
     ### Sample
     
@@ -434,7 +434,7 @@ info:
     | Attribute           | AUTO / MANUAL|  Description
     | --------------------|:------------:|-----------------------------------------------------------------------------------------
     | **schemaFamily**    | MANUAL       | The schema family that you want to use for the sub nodes and contents under a node. This is optional attribute. If the schema family is specified, all the nodes and contents under this node should belong to the same schema or descendants of this schema.
-    | **externalId**      | MANUAL       |  An external Id attribute to hold the application/client's identifier for the entity. This must be unique under the library/sub-library.
+    | **externalId**      | MANUAL       | The optional external Id attribute to hold the application/client's identifier for the entity. This must be unique under the library/sub-library.
     
     ### Sample
     
@@ -463,7 +463,9 @@ info:
     | ------------------|:-------------:|------------------------------------------------------------------------------------------
     | **status**        | MANUAL        |  The status of the content. The status can be `draft` or `published`.
     | **version**       | MANUAL        |  The version of the content.
-    | **externalId**    | MANUAL        |  An external Id attribute to hold the application/client's identifier for the entity. This must be unique under the library/sub-library.
+    | **externalId**    | MANUAL        |  An optional external Id attribute to hold the application/client's identifier for the entity. This must be unique under the library/sub-library.
+    | **lock**          | MANUAL        |  An optional lock boolean attribute to lock the content from deletion.
+    | **deprecated**    | MANUAL        |  An optional deprecated boolean attribute to deprecate the content.
     | **files**         | MANUAL        |  A list of files attached to the content. Attaching files to the content is optional.
     | **thumbnails**    | MANUAL        |  A list of thumbnails attached to the content. Each thumbnail entity is same as the file entity with additional attributes, such as height and width.
     | **references**    | MANUAL        |  An external link to various other entities, such as other content, images, videos, and so on. 
@@ -484,6 +486,8 @@ info:
             "license": "Apache License 2.0",
             "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
             "status": "draft",
+            "lock": false,
+            "deprecated": false,
             "extension": {
                 "type": "contents:autodesk.mdb.alpha:machineAM",
                 "version": "2.0.0",
@@ -7429,7 +7433,24 @@ definitions:
                           "region": "US",
                           "language": "en",
                           "status": "private",
-                          "externalId": "abc"
+                          "externalId": "abc",
+                          "translations": {
+                            "fr_FR": {
+                              "title": "Contenu du film",
+                              "description": "Contenu d'un film",
+                              "tags": "film de film"
+                            },
+                            "es_MX": {
+                              "title": "Contenido de la película",
+                              "description": "Contenido sobre una película",
+                              "tags": "película"
+                            },
+                            "zh_CN": {
+                              "title": "电影内容",
+                              "description": "关于电影的内容",
+                              "tags": "电影电影"
+                            }
+                          }
                       },
                       "type": "subLibraries"
                   }
@@ -7464,6 +7485,10 @@ definitions:
                     type: string
                   externalId:
                     type: string
+                  permissions:
+                    type: array
+                    items:
+                      $ref: '#/definitions/permissions_definition'     
                   translations:
                     type: object
                     items:
@@ -7479,7 +7504,34 @@ definitions:
                           "region": "US",
                           "language": "en",
                           "status": "private",
-                          "externalId": "abc"
+                          "externalId": "abc",
+                          "permissions": [
+                            {
+                              "role": "CONTENT_CREATOR",
+                              "subjects": {
+                                "o2Users": [
+                                  "ERB3Q463BYQW"
+                                ]
+                              }
+                            }
+                          ],
+                          "translations": {
+                            "fr_FR": {
+                              "title": "Contenu du film",
+                              "description": "Contenu d'un film",
+                              "tags": "film de film"
+                            },
+                            "es_MX": {
+                              "title": "Contenido de la película",
+                              "description": "Contenido sobre una película",
+                              "tags": "película"
+                            },
+                            "zh_CN": {
+                              "title": "电影内容",
+                              "description": "关于电影的内容",
+                              "tags": "电影电影"
+                            }
+                          }
                       },
                       "type": "subLibraries"
                   }
@@ -7573,7 +7625,24 @@ definitions:
                           "region": "US",
                           "language": "en",
                           "externalId": "abc",
-                          "schemaFamily": "contents:autodesk.mdb.alpha:materialAM-1.0.0"
+                          "schemaFamily": "contents:autodesk.mdb.alpha:materialAM-1.0.0",
+                          "translations": {
+                            "fr_FR": {
+                              "title": "Contenu du film",
+                              "description": "Contenu d'un film",
+                              "tags": "film de film"
+                            },
+                            "es_MX": {
+                              "title": "Contenido de la película",
+                              "description": "Contenido sobre una película",
+                              "tags": "película"
+                            },
+                            "zh_CN": {
+                              "title": "电影内容",
+                              "description": "关于电影的内容",
+                              "tags": "电影电影"
+                            }
+                          }                          
                       },
                       "type": "nodes"
                   }
@@ -7596,7 +7665,24 @@ definitions:
                           "tags": "a,b,c,d",
                           "region": "US",
                           "language": "en",
-                          "schemaFamily": "contents:autodesk.mdb.alpha:materialAM-1.0.0"
+                          "schemaFamily": "contents:autodesk.mdb.alpha:materialAM-1.0.0",
+                          "translations": {
+                            "fr_FR": {
+                              "title": "Contenu du film",
+                              "description": "Contenu d'un film",
+                              "tags": "film de film"
+                            },
+                            "es_MX": {
+                              "title": "Contenido de la película",
+                              "description": "Contenido sobre una película",
+                              "tags": "película"
+                            },
+                            "zh_CN": {
+                              "title": "电影内容",
+                              "description": "关于电影的内容",
+                              "tags": "电影电影"
+                            }
+                          }                          
                       },
                       "type": "nodes"
                   }
@@ -7690,7 +7776,24 @@ definitions:
                           "region": "US",
                           "language": "en",
                           "externalId": "abc",
-                          "schemaFamily": "contents:autodesk.mdb.alpha:materialAM-1.0.0"
+                          "schemaFamily": "contents:autodesk.mdb.alpha:materialAM-1.0.0",
+                          "translations": {
+                            "fr_FR": {
+                              "title": "Contenu du film",
+                              "description": "Contenu d'un film",
+                              "tags": "film de film"
+                            },
+                            "es_MX": {
+                              "title": "Contenido de la película",
+                              "description": "Contenido sobre una película",
+                              "tags": "película"
+                            },
+                            "zh_CN": {
+                              "title": "电影内容",
+                              "description": "关于电影的内容",
+                              "tags": "电影电影"
+                            }
+                          }                          
                       },
                       "type": "nodes"
                   }
@@ -7713,7 +7816,24 @@ definitions:
                           "tags": "a,b,c,d",
                           "region": "US",
                           "language": "en",
-                          "schemaFamily": "contents:autodesk.mdb.alpha:materialAM-1.0.0"
+                          "schemaFamily": "contents:autodesk.mdb.alpha:materialAM-1.0.0",
+                          "translations": {
+                            "fr_FR": {
+                              "title": "Contenu du film",
+                              "description": "Contenu d'un film",
+                              "tags": "film de film"
+                            },
+                            "es_MX": {
+                              "title": "Contenido de la película",
+                              "description": "Contenido sobre una película",
+                              "tags": "película"
+                            },
+                            "zh_CN": {
+                              "title": "电影内容",
+                              "description": "关于电影的内容",
+                              "tags": "电影电影"
+                            }
+                          }                          
                       },
                       "type": "nodes"
                   }
@@ -7762,7 +7882,24 @@ definitions:
                       "region": "US",
                       "language": "en",
                       "externalId": "abc",
-                      "schemaFamily": "contents:autodesk.mdb.alpha:materialAM-1.0.0"
+                      "schemaFamily": "contents:autodesk.mdb.alpha:materialAM-1.0.0",
+                      "translations": {
+                        "fr_FR": {
+                          "title": "Contenu du film",
+                          "description": "Contenu d'un film",
+                          "tags": "film de film"
+                        },
+                        "es_MX": {
+                          "title": "Contenido de la película",
+                          "description": "Contenido sobre una película",
+                          "tags": "película"
+                        },
+                        "zh_CN": {
+                          "title": "电影内容",
+                          "description": "关于电影的内容",
+                          "tags": "电影电影"
+                        }
+                      }                      
                   },
                   "type": "nodes"
               }
@@ -7825,6 +7962,24 @@ definitions:
                           type: integer
                         width:
                           type: integer
+                  files:
+                    type: array
+                    items:
+                      type: object
+                      required: [title, description, objectKey, size, checksum, mimeType]
+                      properties:
+                        title:
+                          type: string
+                        description:
+                          type: string
+                        objectKey:
+                          type: string
+                        size:
+                          type: integer
+                        checksum:
+                          type: string
+                        mimeType:
+                          type: string
                   extension:
                     type: object
                     required: [type,version,namespace]
@@ -7870,6 +8025,23 @@ definitions:
                       "license": "Apache License 1.0",
                       "status": "draft",
                       "externalId": "abc",
+                      "translations": {
+                        "fr_FR": {
+                          "title": "Contenu du film",
+                          "description": "Contenu d'un film",
+                          "tags": "film de film"
+                        },
+                        "es_MX": {
+                          "title": "Contenido de la película",
+                          "description": "Contenido sobre una película",
+                          "tags": "película"
+                        },
+                        "zh_CN": {
+                          "title": "电影内容",
+                          "description": "关于电影的内容",
+                          "tags": "电影电影"
+                        }
+                      },                      
                       "extension": {
                           "type": "contents:autodesk.mdb.alpha:machineAM",
                           "version": "2.0.0",
@@ -7952,6 +8124,8 @@ definitions:
                     description: Standard license for the content. Please refer to the allowed license list here - https://spdx.org/licenses/
                   lock:
                     type: boolean
+                  deprecate:
+                    type: boolean
                   translations:
                     type: object
                     items:
@@ -8001,6 +8175,23 @@ definitions:
                       "license": "Apache License 2.0",
                       "status": "published",
                       "externalId": "abc",
+                      "translations": {
+                        "fr_FR": {
+                          "title": "Contenu du film",
+                          "description": "Contenu d'un film",
+                          "tags": "film de film"
+                        },
+                        "es_MX": {
+                          "title": "Contenido de la película",
+                          "description": "Contenido sobre una película",
+                          "tags": "película"
+                        },
+                        "zh_CN": {
+                          "title": "电影内容",
+                          "description": "关于电影的内容",
+                          "tags": "电影电影"
+                        }
+                      },
                       "extension": {
                           "type": "contents:autodesk.mdb.alpha:machineAM",
                           "version": "2.0.0",
@@ -8345,8 +8536,9 @@ definitions:
           files: { type: array, items: { $ref: '#/definitions/file_object_definition' } }
           extension: { $ref: '#/definitions/extension_object' }
           communityData : { $ref: '#/definitions/community_data_definition' }
-          lock : { type: boolean, description: 'lock' }
-          lastModifiedBy: { type: string, description: 'lastModifiedBy' }
+          lock: { type: boolean, description: 'lock' }
+          deprecated: { type: boolean, description: 'lock' }
+          lastModifiedBy: { type: string, description: 'deprecated' }
           contentDownloadCount : { type: integer, description: 'contentDownloadCount' }
           entityPaths: { type: array, items: { type: string }, description: 'entityPaths' }
       relationships: { $ref: '#/definitions/node_realtionship_definitions' }
@@ -10257,9 +10449,11 @@ responses:
                         "title": "FortusMachine",
                         "description": "Fortus Machine",
                         "tags": "MDB",
-                        "language": "EN",
+                        "language": "en",
                         "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
                         "region": "US",
+                        "deprecated": false,
+                        "lock": false,
                         "extension": {
                           "type": "contents:autodesk.mdb.alpha:machineAM",
                           "version": "2.0.0",
@@ -10408,6 +10602,8 @@ responses:
                     "region": "US",
                     "version": "draft",
                     "tags": "x,y,z",
+                    "deprecated": false,
+                    "lock": false,
                     "status": "draft",
                     "thumbnails": [
                         {
