@@ -3003,7 +3003,7 @@ info:
     | **filter[contents][license]**  | Searches the content based on the specified license, which is mentioned for library and content.
     | **filter[contents][facet]**  | Searches the content based on the fields on which facets are required. To use this filter, you must also use the `filter[contents][meta]=facets` condition.
     | **filter[contents][searchSkipCache]** | If you set this condition to true, the Searche returns the fresh content from the database instead of the content in the primary cache.
-    | **filter[contents][subLibrary]**      | If you set this condition to true, the search returns all entities, such as nodes and contents within the specified sub-library for which the calling user has access. |
+    | **filter[contents][subLibrary]**      | If you set this condition to true, the search returns all entities, such as sub-libraries, nodes and contents within the specified library for which the calling user has access. |
     | **filter[contents][locale]**      | The locale in which the search has to be performed. This is the data which was specified using the "translations" core attributes. The search is performed on "en_US" locale by default.
     | **page[size]**  | The total number of pages that you want to display for the search result.
     | **page[number]**  | The page number of the search result that you want to display.
@@ -3504,6 +3504,7 @@ info:
     # Collaborate within Community
     
     This tutorial explains how to collaborate Forge Content members within the community. For more information about Community, see [Content Community](/en/docs/content/v1/overview/content-community).
+    This can be managed using the PATCH Library and Sub-Library API endpoint using the permissions core attribute object array.
     
     ## Step 1: Create a Library
     
@@ -3517,16 +3518,16 @@ info:
     
     Before creating the content, ensure that you have sub library or nodes created in your library. For more information about creating content and publishing the content, follow the steps given in the [Create Content in a New Library with Sub Library](/en/docs/content/v1/tutorials/create-content-in-new-library-with-sublibrary) tutorial.
     
-    ## Step 3: Provide Access to Forge Content Members for your Library
+    ## Step 3: Provide Access to Forge Content Members for your Library and Sub-Library
     
-    In this step, you provide access to other Forge Content members for your Library. The access can be LIBRARY MANAGER, CONTENT READER, CONTENT CREATOR. Once you provide the necessary access to Forge Content members for your Library, they can perform all community operations on your library.
+    In this step, you provide access to other Forge Content members for your Library. The access can be LIBRARY_MANAGER, CONTENT_CREATOR, CONTENT_READER. Once you provide the necessary access to Forge Content members for your Library or Sub-library, they can perform all community operations on your library or sub-library.
     
-    The Library Management Admin API provides the `PUT libraries/libraryId/members` endpoint to provide the correct role for which you want to add or remove members. In the API request, you need to sepcify the library Id and the Forge Content member Id. You can include multiple members in one request.
+    The Forge Content provides the `PATCH libraries/libraryId` and `PATCH subLibraries/subLibraryId` endpoint to provide the correct role for which you want to add or remove members.
     
     ### Example
     
     ```
-    curl -X POST 
+    curl -X PATCH 
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json"
     -H "Content-Type: application/vnd.api+json" 
@@ -3534,106 +3535,192 @@ info:
       '{
         "data": {
           "type": "libraries",
-          "attributes": [
-            {
-              "role": "CONTENT_CREATOR",
-              "subjects": {
-                "o2Users": [
-                  "aute Duis magna aliqua",
-                  "ea qui adipisicing"
-                ]
+          "attributes": {
+            "status": "published",
+            "permissions": [
+              {
+                "role": "LIBRARY_MANAGER",
+                "subjects": {
+                  "o2Users": [
+                    "ERB3Q463BYQW"
+                  ],
+                  "o2Groups": [
+                    
+                  ],
+                  "o2Tenants": [
+                    
+                  ],
+                  "services": [
+                    "hjcvwfvh6546jdfdfvjkik"
+                  ]
+                },
+                "deletedSubjects": {
+                  "o2Users": [
+                    
+                  ],
+                  "o2Groups": [
+                    
+                  ],
+                  "o2Tenants": [
+                    
+                  ],
+                  "services": [
+                    
+                  ]
+                }
               },
-              "deletedSubjects": {
-                "o2Users": [
-                  "ex"
-                ]
-              }
-            },
-            {
-              "role": "LIBRARY_MANAGER",
-              "subjects": {
-                "o2Users": [
-                  "officia aute elit",
-                  "fugiat exercitation sed",
-                  "enim"
-                ]
+              {
+                "role": "CONTENT_CREATOR",
+                "subjects": {
+                  "o2Users": [
+                    "ERB3Q463BYQW"
+                  ],
+                  "o2Groups": [
+                    
+                  ],
+                  "o2Tenants": [
+                    
+                  ],
+                  "services": [
+                    "hjcvwfvh6546jdfdfvjkik"
+                  ]
+                }
               },
-              "deletedSubjects": {
-                "o2Users": [
-                  "voluptate dolor Lorem incididunt culpa"
-                ]
+              {
+                "role": "CONTENT_READER",
+                "subjects": {
+                  "o2Users": [
+                    "ERB3Q463BYQW"
+                  ],
+                  "o2Groups": [
+                    
+                  ],
+                  "o2Tenants": [
+                    
+                  ],
+                  "services": [
+                    "hjcvwfvh6546jdfdfvjkik"
+                  ]
+                }
               }
-            },
-            {
-              "role": "CONTENT_READER",
-              "subjects": {
-                "o2Users": [
-                  "amet nisi adipisicing veniam cillum",
-                  "labore fugiat",
-                  "Duis",
-                  "culpa nulla eiusmod cupidatat laborum",
-                  "pariatur nu"
-                ]
-              },
-              "deletedSubjects": {
-                "o2Users": [
-                  "qui nisi",
-                  "eu aliquip exercitation tempor pariatur",
-                  "in mollit",
-                  "do sit tempor dolore ut"
-                ]
-              }
-            }
-          ]
+            ]
+          }
         }
-      }' "https://developer.api.autodesk.com/content/v1/libraries/{libraryId}/members"
+      }' "https://developer.api.autodesk.com/content/v1/libraries/{libraryId}"
     ```
     
     The resource provides the following response:
     
     ```
-    {
-      "data": {
-        "type": "libraries",
-        "id": "urn:adsk.content:library:34c4b87b-76f6-4b88-adf6-0438c7dbe4b0",
-        "memberAccessInfos": [
-          {
-            "role": "LIBRARY_MANAGER",
-            "members": [
+      {
+        "data": {
+          "type": "libraries",
+          "id": "urn:adsk.content:library:e3013299-9d2a-4b9f-8f0d-d84cb6876273",
+          "attributes": {
+            "entityPaths": [
+              "/urn:adsk.content:library:e3013299-9d2a-4b9f-8f0d-d84cb6876273"
+            ],
+            "interestedAppIds": [
+              "NdlQsCnWddpRB5Os6t0gV5lufz16SMQ2"
+            ],
+            "lastModifiedTime": "2017-10-24T22:32:35Z",
+            "createTime": "2017-10-24T22:32:35Z",
+            "createdBy": "ERB3Q463BYQW",
+            "lastModifiedBy": "ERB3Q463BYQW",
+            "childNodesCount": 0,
+            "description": "First Awesome library",
+            "createdByAppId": "NdlQsCnWddpRB5Os6t0gV5lufz16SMQ2",
+            "title": "Awesome library 1",
+            "status": "private",
+            "tags": "First Awesome library",
+            "permissions": [
               {
-                "userId": "1z1jrkfPPZacTkFid1V889lHfDuQzhKf"
+                "role": "LIBRARY_MANAGER",
+                "subjects": {
+                  "o2Users": [
+                    "ERB3Q463BYQW"
+                  ],
+                  "o2Groups": [
+                     
+                  ],
+                  "o2Tenants": [
+                     
+                  ],
+                  "services": [
+                    "hjcvwfvh6546jdfdfvjkik"
+                  ]
+                }
               },
               {
-                "userId": "S8MNRK2XZXCK"
+                "role": "CONTENT_CREATOR",
+                "subjects": {
+                  "o2Users": [
+                    "ERB3Q463BYQW"
+                  ],
+                  "o2Groups": [
+                     
+                  ],
+                  "o2Tenants": [
+                     
+                  ],
+                  "services": [
+                    "hjcvwfvh6546jdfdfvjkik"
+                  ]
+                }
+              },
+              {
+                "role": "CONTENT_READER",
+                "subjects": {
+                  "o2Users": [
+                    "ERB3Q463BYQW"
+                  ],
+                  "o2Groups": [
+                     
+                  ],
+                  "o2Tenants": [
+                     
+                  ],
+                  "services": [
+                    "hjcvwfvh6546jdfdfvjkik"
+                  ]
+                }
               }
             ]
           },
-          {
-            "role": "CONTENT_CREATOR",
-            "members": [
-              {
-                "userId": "1z1jrkfPPZacTkFid1V889lHfDuQzhKf"
+          "relationships": {
+            "nodes": {
+              "links": {
+                "self": "https://developer-stg.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:e3013299-9d2a-4b9f-8f0d-d84cb6876273/relationships/nodes",
+                "related": "https://developer-stg.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:e3013299-9d2a-4b9f-8f0d-d84cb6876273/nodes"
               },
-              {
-                "userId": "S8MNRK2XZXCK2"
-              }
-            ]
+              "data": [
+                 
+              ]
+            },
+            "subLibraries": {
+              "links": {
+                "self": "https://developer-stg.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:e3013299-9d2a-4b9f-8f0d-d84cb6876273/relationships/subLibraries",
+                "related": "https://developer-stg.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:e3013299-9d2a-4b9f-8f0d-d84cb6876273/subLibraries"
+              },
+              "data": [
+                 
+              ]
+            }
           },
-          {
-            "role": "CONTENT_READER",
-            "members": [
-              {
-                "userId": "1z1jrkfPPZacTkFid1V889lHfDuQzhKf"
-              },
-              {
-                "userId": "S8MNRK2XZXCK2"
-              }
-            ]
+          "links": {
+            "self": "https://developer-stg.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:e3013299-9d2a-4b9f-8f0d-d84cb6876273"
           }
-        ]
+        },
+        "included": [
+           
+        ],
+        "meta": {
+           
+        }
       }
-    }
     ```
+    
+    The PATCH Sub-library API can be used in the same way to set member permissions on the sub-library.
     
     ## Step 4: Perform the Community Operations
     
