@@ -1541,10 +1541,9 @@ info:
           "title": "ContentTitle",
           "description": "ContentDescription",
           "tags": "ContentTag",
-          "language": "EN",
+          "language": "en",
           "region": "US",
           "status" : "draft",
-          "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
           "extension": {
             "type": "contents:autodesk.core:content",
             "version": "1.0.0",
@@ -1585,9 +1584,8 @@ info:
               "contentDownloadCount": 0,
               "lastModifiedBy": "AYK2Q7S52XRU",
               "deprecated": false,
-              "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
               "description": "ContentDescription",
-              "language": "EN",
+              "language": "en",
               "title": "ContentTitle",
               "version": "1",
               "tags": "ContentTag",
@@ -1617,9 +1615,9 @@ info:
 
     In this step, you publish your content. For more information about Content, see [Content Model](/en/docs/content/v1/overview/content-model).
     
-    By default, when you create the content, the status of the content is **draft**. You can publish the content by updating the status to **published**.
+    By default, when the content is created, the status of the content is set to **draft**. You can publish the content by updating the status to **published**.
     
-    The Library Content API provides the ``PATCH libraries/{libraryId}/content/{contentId}`` endpoint that allows you to update your content. The PATCH request updates the draft first and then publish the updated content.
+    The Forge Content provides the ``PATCH libraries/{libraryId}/content/{contentId}`` API endpoint that allows you to update your content. The PATCH request creates a copy of the latest draft version of the content and versions it.
     
     In the ``PATCH`` request, you need to specify the Id of the content that you want to update and the id of the library in which the content exists.
     
@@ -1638,8 +1636,7 @@ info:
           "title": "Material Library",
           "description": "The library of industrial material",
           "tags": "material, library, industry",
-          "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
-          "language": "EN",
+          "language": "en",
           "region": "US",
           "status": "published"
         },
@@ -1678,7 +1675,7 @@ info:
               "deprecated": false,
               "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
               "description": "ContentDescription",
-              "language": "EN",
+              "language": "en",
               "title": "ContentTitle",
               "version": "1",
               "tags": "ContentTag",
@@ -1713,7 +1710,7 @@ info:
     
     In this step you get a list of libraries. From the list, you select a library in which you want to create the content. For more information about library, see [Content Model](/en/docs/content/v1/overview/content-model).
 
-    The Library API provides the ``GET libraries`` endpoint that allows you to retrieve a list of all libraries. 
+    The Forge Content provides the ``GET libraries`` API endpoint that allows you to retrieve a list of all libraries. 
     
     In the ``GET`` request, you can also use different filters to retrieve the specific libraries. You can use multiple filters to retrive specific libraries.
     
@@ -1731,7 +1728,7 @@ info:
 
     **Notes**: 
     
-    * In the API request if you do not specify a valid token, the API applies the filter criteria only on the libraries with the status as published.
+    * In the API request if you do not specify a valid token, the API applies the filter criteria only on the libraries with the status as published and released to the public.
     * In the API request if you do not specify the role, the API retrieves all libraries that the user, who is sending the request, has created.   
     
     ### Example
@@ -1866,7 +1863,7 @@ info:
     
     In this step, you get a list of sub libraries. From the list, you select a sub library in which you want to create nodes and then create the content. For more information about Sub library, see [Content Model](/en/docs/content/v1/overview/content-model).
     
-    The Library API provides the ``GET libraries/{libraryid}/subLibraries`` endpoint that allows you to retrieve the sub libraries from the specified library Id. The list contains the sub libraries that are published and the libraries for which the user has access.
+    The Forge Content provides the ``GET libraries/{libraryid}/subLibraries`` API endpoint that allows you to retrieve the sub libraries from the specified library Id. The list contains the sub-libraries that are published and the libraries for which the user has access.
     
     In the ``GET`` request, you can also use different filters to retrieve the specific sub libraries. You can use multiple filters to retrive specific sub libraries.
     
@@ -1875,16 +1872,16 @@ info:
     
     | Attribute                               | Description                                          
     |-----------------------------------------| -----------------------------------------------------
-    | **filter[contents][role]**              | Displays the sub libraries for which the user is LIBRARY MANAGER. The list includes the libraries that are published and the libraries that are private to the respective user.    
-    | **filter[contents][publicLibrary]**     | Displays the sub libraries that are published.       
-    | **filter[contents][tags]**              | Displays the sub libraries that contains the specified tags. You can specify multiple tags separate by comma.          
-    | **filter[contents][createdBy]**         | Displays the sub libraries that the specified user has created.  
+    | **filter[contents][role]**              | Displays the sub-libraries for which the user is LIBRARY MANAGER. The list includes the libraries that are published and the libraries that are private to the respective user.    
+    | **filter[contents][publicLibrary]**     | Displays the sub-libraries that are published.       
+    | **filter[contents][tags]**              | Displays the sub-libraries that contains the specified tags. You can specify multiple tags separate by comma.          
+    | **filter[contents][createdBy]**         | Displays the sub-libraries that the specified user has created.  
     | **page[size]**                          | The total number of pages that you want to display for the content.   
     | **page[number]**                        | The page number of the content that you want to display.     
    
     **Notes**:
 
-    -  In the API request if you do not specify a valid token, the API applies the filter criteria only on the libraries with the status as published.
+    -  In the API request if you do not specify a valid token, the API applies the filter criteria only on the libraries with the status as published and release to the public.
     -  In the API request if you do not specify the role, the API retrieves all libraries that the user, who is sending the request, has access.
 
     Example
@@ -1960,11 +1957,11 @@ info:
 
     From the response, make a note of the **id** attribute, which is the id of the sub library in which you want to create the content.
     
-    ## Step 3: Get the List of Nodes from a Sub Library
+    ## Step 3: Get the List of Nodes for a Sub-Library
     
     In this step you get a list of nodes from the sub library that you selected in Step 2. From the list, you select a node in which you want to create the content. For more information about Library and Node, see [Content Model](/en/docs/content/v1/overview/content-model).
 
-    The Library Node API provides the ``GET subLibraries/{subLibraryid}/nodes`` endpoint that allows you to get the list of nodes from the specified sub library.
+    The Forge Content provides the ``GET subLibraries/{subLibraryid}/nodes`` API endpoint that allows you to get the list of nodes from the specified sub library.
     
     In the ``GET`` request, you need to specify the Id of the sub library from which you want the list of nodes.
     
@@ -2056,13 +2053,13 @@ info:
     
     From the response, make a note of the node id that you want to use for creating the content.
     
-    ## Step 4: Get the List of Nodes from a Library
+    ## Step 4: Get the List of Nodes from a Library or Sub-library
   
     **Note**: Perform this step only if your content model does not contain a sub library. Otherwise, go to the Step 3.
     
     In this step you get a list of nodes from the library that you selected in Step 1. From the list, you select a node in which you want to create the content. For more information about Library and Node, see [Content Model](/en/docs/content/v1/overview/content-model).
     
-    The Library Node API provides the ``GET libraries/{libraryid}/nodes`` endpoint that allows you to get the list of nodes from the specified library.
+    The Forge Content provides the ``GET libraries/{libraryid}/nodes`` API endpoint that allows you to get the list of nodes from the specified library.
     
     In the ``GET`` request, you need to specify the Id of the library from which you want the list of nodes.
     
@@ -2202,216 +2199,6 @@ info:
     }
     ```
     
-    From the response, make a note of the **id** attribute, which is the id of the node in which you want to create the content.
-    
-    ## Step 5: Create Content in the selected Node
-    
-    In this step, you create the actual content in the node that you selected in the Step 3 or Step 4. For more information about Content, see [Content Model](/en/docs/content/v1/overview/content-model).
-
-    The Library Content API provides the ``POST libraries/{libraryid}/content`` endpoint that allows you to create your content.
-    
-    Before you start creating the content, ensure the following: 
-    
-    - You have selected a library and a node. 
-    - A valid custom schema that you want to use for your content exists.
-    - If a custom schema is not present, then the core contents:autodesk.core:content-1.0.0 schema type must be specified. This is when content is created using the core attributes only.
-    
-    In the API request, specify the appropriate information in the following sections:
-    
-    -  **Attributes**: This sections contains the common attributes or metadata of your content.
-    -  **Extension**: This section contains the schema that you want to use and the data that you want to store as actual content.
-    -  **Relationship**: This sections contains the name and id of the nodes where you want to store your content.
-
-    In the ``POST`` request, you need to specify the selected library Id.
-    
-    ### Example
-    
-    ```shell
-    curl -X POST 
-    -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
-    -H "Accept: application/vnd.api+json" 
-    -H "Content-Type: application/vnd.api+json" 
-    -d 
-    '{
-      "data": {
-        "type": "contents",
-        "attributes": {
-          "title": "ContentTitle",
-          "description": "ContentDescription",
-          "tags": "ContentTag",
-          "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
-          "language": "EN",
-          "region": "US",
-          "status": "draft",
-          "extension": {
-            "type": "contents:autodesk.mdb.alpha:machineAM",
-            "version": "2.0.0",
-            "data": {
-              "facetId": "additiveManufacturing",
-              "displayName": "FormLabs-Form 2",
-              "amTech": "SLA",
-              "manufacturerName": "FormLabs",
-              "modelName": "Form 2",
-              "firmwareVersion": "PreForm",
-              "maxBuildHeight": {
-                  "value": 175,
-                  "units": "cm"
-              },
-              "bedSize": {
-                "breadth": {
-                  "value": 50,
-                  "units": "cm"
-                },
-                "height": {
-                  "value": 175,
-                  "units": "cm"
-                },
-                "length": {
-                  "value": 75,
-                  "units": "cm"
-                }
-              },
-              "machinePrice": {
-                "value": 1500,
-                "units": "$"
-              },
-              "hardwareVersion": "1.0"
-            }
-          }
-        },
-        "relationships": {
-          "nodes": {
-            "data": [
-              {
-                "type": "nodes",
-                "id": "NodeId"
-              }
-            ]
-          }
-        }
-      }
-    }' "https://developer.api.autodesk.com/content/v1/libraries/libraryId/contents"
-    ```
-    
-    The resource provides the following response:
-    
-    ```json
-    {
-      "data": {
-          "type": "contents",
-          "id": "urn:adsk.content:content:f1179def-979e-4aad-b017-768c82360194",
-          "attributes": {
-              "entityPaths": [
-                  "/urn:adsk.content:library:5e9aca82-4675-4542-8d21-bde10c1c2d71/urn:adsk.content:node:9c3762f6-c097-4be2-b314-94010c4d26ae/urn:adsk.content:content:f1179def-979e-4aad-b017-768c82360194"
-              ],
-              "lastModifiedTime": "2017-07-18T10:04:13Z",
-              "contentDownloadCount": 0,
-              "lastModifiedBy": "TGTBKCMEJFW5",
-              "description": "ContentDescription",
-              "language": "EN",
-              "title": "ContentTitle",
-              "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
-              "version": "draft",
-              "tags": "ContentTag",
-              "createTime": "2017-07-18T10:04:13Z",
-              "createdBy": "TGTBKCMEJFW5",
-              "lock": false,
-              "region": "US",
-              "status": "draft"
-          },
-          "relationships": {
-              "nodes": {
-                  "links": {
-                      "self": "https://developer.api.autodesk.com/content/v1/contents/urn:adsk.content:content:f1179def-979e-4aad-b017-768c82360194/relationships/nodes",
-                      "related": "https://developer.api.autodesk.com/content/v1/contents/urn:adsk.content:content:f1179def-979e-4aad-b017-768c82360194/nodes"
-                  }
-              }
-          },
-          "links": {
-              "self": "https://developer.api.autodesk.com/content/v1/contents/urn:adsk.content:content:f1179def-979e-4aad-b017-768c82360194"
-          }
-      },
-      "included": []
-    }
-    ```
-    
-    ## Step 6: Publish the Content
-    
-    In this step, you publish your content. For more information about content, see [Content Model](/en/docs/content/v1/overview/content-model).
-
-    By default, when you create your content, the status of the content is ``draft``. You can publish the content by changing the status to ``published``.
-    
-    The Library Content API provides the ``PATCH libraries/{libraryid}/content/{contentId}`` endpoint that allows you to update your content where you change the status. 
-    
-    The PATCH request updates the draft first and then publish the updated content. In the ``PATCH`` request, you need to specify the id of the content that you want to update and the id of the library in which the content exists.
-    
-    ### Example
-    
-    ```shell
-    curl -X PATCH 
-    -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
-    -H "Accept: application/vnd.api+json" 
-    -H "Content-Type: application/vnd.api+json" 
-    -d 
-    '{
-      "data": {
-        "type": "contents",
-        "attributes": {
-          "title": "Material Library",
-          "description": "The library of industrial material",
-          "tags": "material, library, industry",
-          "language": "EN",
-          "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
-          "region": "US",
-          "status": "published"
-        },
-        "relationships": {
-          "nodes": {
-            "data": [
-              {
-                "type": "nodes",
-                "id": "NodeId"
-              }
-            ]
-          }
-        }
-      }
-    }' "https://developer.api.autodesk.com/content/v1/libraries/{libraryId}/contents/{contentId}"
-    ```
-    
-    The resource provides the following response:
-    
-    ```json
-    {
-      "data": {
-          "type": "contents",
-          "id": "urn:adsk.wipstg:dm.lineage:PP_zlFyQSAa8GkbiZ55b1w",
-          "attributes": {
-            "lastModifiedTime": "2016-11-22T11:03:17Z",
-            "createTime": "2016-11-22T11:03:17Z",
-            "description": "The library of industrial material",
-            "language": "EN",
-            "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
-            "title": "Material Library",
-            "region": "US",
-            "version": "draft",
-            "tags": "material, library, industry",
-            "status": "published",
-          },
-          "relationships": {
-            "nodes": {
-              "links": {
-                "self": "https://developer.api.autodesk.com/content/v1/contents/urn:adsk.wipstg:dm.lineage:PP_zlFyQSAa8GkbiZ55b1w/relationships/nodes",
-                "related": "https://developer.api.autodesk.com/content/v1/contents/urn:adsk.wipstg:dm.lineage:PP_zlFyQSAa8GkbiZ55b1w/nodes"
-              }
-            }
-          },
-          "links": {
-            "self": "https://developer.api.autodesk.com/content/v1/contents/urn:adsk.wipstg:dm.lineage:PP_zlFyQSAa8GkbiZ55b1w"
-          }
-        }
-    }
-    ```
     [@tutorials/attach-files-to-content]: <>
     # Attach Files to the Content
     
@@ -2419,7 +2206,7 @@ info:
       
     ## Step 1: Get the URL to Upload the file
       
-    The Library Content API provides the `GET libraries/{libraryId}/uploadUrl` endpoint that allows you to generate the URL where you can upload your file. The API checks if the you have the required permissions to the library and returns the encrypted url to upload the files.
+    The Forge Content provides the `GET libraries/{libraryId}/uploadUrl` API endpoint that allows you to fetch the URL where you can upload your file. The API checks if the caller has the required permissions on the library and returns the url to upload the files.
     
     In the `GET` request, you need to specify the Id of the library.
     
@@ -2449,11 +2236,11 @@ info:
     
     ## Step 2: Upload Files to the uploadUrl
     
-    In this step, you actually upload your files to the URL that you received in Step 1.
+    In this step, the files are uploaded to the url that you received in Step 1.
 
     You need to use the ``PUT`` request along with the ``uploadUrl``. 
     
-    In the ``PUT`` request, you need to specify the parameter named `objectKey' and the value as the name of the file that you are uploading. This file name can be different from the actual file name. 
+    In the ``PUT`` request, you need to specify the parameter named `objectKey' as the name of the file that you are uploading. This file name can be different from the actual file name. 
     
     Along with the request, you also need to specify the actual file that you want to upload.
     
@@ -2482,36 +2269,34 @@ info:
     
     ```json
     {
-      "bucketKey": null,
       "objectKey": "927591e2-169b-4401-bb51-2ca273dbf9a9.abc.png",
       "size": 56473,
       "checksum": "b818822d9cca23b37be11ec425bf03fee2cc28b2",
-      "contentType": "application/x-www-form-urlencoded",
-      "storageType": null
+      "contentType": "application/x-www-form-urlencoded"
     }
     ```
     
-    After sending the request, the API uploads the file at the given URL location and provide a response with the following attributes.
+    After sending the request, the API uploads the file to the given URL location and provide a response with the following attributes.
     
     * objectKey
     * checksum
     * size
     
-    For each file that you upload, you get these attributes with respective values. You must appropriately store these values as you will need to use these attributes and values in the Step 3 for uploading the file details to the content.
+    For each file that you upload, you get these attributes with respective values. You must appropriately store these values as you will need to use these values in the Step 3 for updating the file details to the content.
     
-    ## Step 3: Upload File Details to the Content
+    ## Step 3: Update File Details to the Content
     
-    The Library Content API provides the `POST / PATCH libraries/{libraryId}/contents/{contentId}/files` endpoint that allows you to upload the file details to the content 
+    The Forge Content provides the `POST / PATCH libraries/{libraryId}/contents/{contentId}/files` API endpoint that allows you to update the file details to the content 
     
-    If the content already contain any files, the API deletes all the existing files and then add the new files. However, if you want to retain the existing files and add new files to it, then you must use the `PATCH` request instead of `POST`.
+    The POST operation replaces all the existing files on the content. The PATCH operation appends to the existing files on the content.
     
     **Notes**: 
     * The files are always added to the draft version of the content.
     * You can add the file's data to the different locations:
-    * If you use the `/libraries/{libraryId}/contents/{contentId}/files` endpoint, the API adds the file data to the core `files` attribute.
-    * If you use the `/libraries/{libraryId}/contents/{contentId}/thumbnails` endpoint, the API adds the file data to the core `thumbnails` attribute.
-    * If you use the `/libraries/{libraryId}/contents/{contentId}/{extension.data file attribute}` endpoint, the API adds the file data directly to the attribute defined inside extension.data.
-    * The API supports only the first level file attribute that is present inside extension.data.
+    * If you use the `/libraries/{libraryId}/contents/{contentId}/files` endpoint, the API adds the file data to the `files` core attribute.
+    * If you use the `/libraries/{libraryId}/contents/{contentId}/thumbnails` endpoint, the API adds the file data to the `thumbnails` core attribute.
+    * If you use the `/libraries/{libraryId}/contents/{contentId}/{extension.data file attribute}` endpoint, the API adds the file data directly to the attribute defined inside the extension.data.
+    * The API only supports the first level file attribute that is present inside extension.data. If the file attribute is present deep inside, then the client can use PATCH Content API enpoint to specify the file data inside extension.data.
     * The attribute must be of custom type, for example `customTypes:autodesk.core:file`.
     
     In the `POST` or `PATCH` request, you need to specify the Id of the content to which you want to upload the file and the Id of the library in which the content exists.
@@ -2549,20 +2334,20 @@ info:
     }' "https://developer.api.autodesk.com/content/v1/libraries/{libraryId}/contents/{contentId}/files"
     ```
     
-    On successful uploading of the file, the resource provides a 204 response without any content.
+    On successful updating of the file data, the resource provides a 204 response without any content.
     
     [@tutorials/add-thumbnails-to-content]: <>
     # Add thumbnails to the Content
     
     This tutorial explains how to add thumbnails to the content. For more information about thumbnail, see [Content Model](/en/docs/content/v1/overview/content-model).
 
-    The Library Content API provides the ``PATCH libraries/libraryId/contents/{contentId}`` endpoint to save the thumbnail details to the content. 
+    The Forge Content provides the ``PATCH libraries/libraryId/contents/{contentId}`` API endpoint to save the thumbnail details to the content. 
 
-    In the request, you need to specify the thumbnails list, with all rquired attributes in the core attributes section of the content.
+    In the request, you need to specify the thumbnails list, with all required attributes in the core attributes section of the content.
     
     ## Step 1: Get the URL to Upload the File
       
-    The Library Content API provides the ``GET libraries/{libraryId}/uploadUrl`` endpoint that allows you to generate the URL where you can upload your file. The API checks if the you have the required permissions to the library and returns the encrypted url to upload the files.
+    The Library Content API provides the ``GET libraries/{libraryId}/uploadUrl`` endpoint that allows you to fetch the URL where you can upload your file. The API checks if the caller has the required permissions to the library and returns the url to upload the files.
 
     In the ``GET`` request, you need to specify the Id of the library.
     
@@ -2592,7 +2377,7 @@ info:
     
     ## Step 2: Upload Thumbnail Files to the uploadUrl
     
-    In this step, you actually upload your thumbnail files to the URL that you received in Step 1.
+    In this step, thumbnail files are uploaded to the URL that you received in Step 1.
 
     You need to use the ``PUT`` request along with the ``uploadUrl``. In the ``PUT`` request, you need to specify the parameter named ``objectKey`` and the value as the name of the file that you are uploading. This file name can be different from the actual file name. Along with the request, you also need to specify the actual file that you want to upload.
 
@@ -2610,12 +2395,10 @@ info:
     
     ```json
     {
-      "bucketKey": null,
       "objectKey": "927591e2-169b-4401-bb51-2ca273dbf9a9.abc.png",
       "size": 56473,
       "checksum": "b818822d9cca23b37be11ec425bf03fee2cc28b2",
-      "contentType": "application/x-www-form-urlencoded",
-      "storageType": null
+      "contentType": "application/x-www-form-urlencoded"
     }
     ```
     After sending the request, the API uploads the file at the given URL location and provide a response with the following attributes.
@@ -2624,13 +2407,13 @@ info:
     * checksum
     * size
     
-    For each file that you upload, you get these attributes with respective values. You must appropriately store these values as you will need to use these attributes and values in the Step 3 for uploading the thumbnail details to the content.
+    For each file that you upload, you get these attributes with respective values. You must collect these values as you will need to use these values in the Step 3 for updating the thumbnail details to the content.
     
-    ## Step 3: Upload the Thumbnail Details to the Content
+    ## Step 3: Update the Thumbnail Details to the Content
     
-    The Library Content API provides the ``POST / PATCH libraries/{libraryId}/contents/{contentId}/thumbnails`` endpoint that allows you to upload the thumbnail details to the content
+    The Forge Content provides the ``POST / PATCH libraries/{libraryId}/contents/{contentId}/thumbnails`` API endpoint that allows you to upload the thumbnail details to the content
 
-    If the content already contain any files, the API deletes all the existing files and then add the new files. However, if you want to retain the existing files and add new files to it, then you must use the ``PATCH`` request instead of ``POST``.
+    The POST operation replaces all the existing files on the content. The PATCH operation appends to the existing files on the content.
 
     **Notes**: The files are always added to the draft version of the content.
     
@@ -2779,11 +2562,9 @@ info:
     
     This tutorial explains how to create and update the relationships of [Nodes](/en/docs/content/v1/overview/content-model), and [Contents](/en/docs/content/v1/overview/content-model) with [Sub Library](/en/docs/content/v1/overview/content-model) and [Library](/en/docs/content/v1/overview/content-model).
     
-    With the Relationship API, you can create the parent-child relationship of nodes and contents with a sub library and library.
+    With the Relationship API, you can create the parent-child relationships among library, sub-library, nodes and contents within the same sub-library and library.
 
-    The relationship of nodes and contents with sub library and library fully depends on the [Content Model](/en/docs/content/v1/overview/content-model) that you select. If your content model contains a sub library, you cannot create or update the relationship of nodes and contents with a library. You can only create relationship with different nodes in a sub library.
-    
-    **Note**: You can only create the relationship of nodes and contents in a single sub library or library. You cannot create relationship of nodes and contents from different sub libraries or different libraries.
+    The Library and Sub-Library acts as the boundry for the relationships. The relationships can be created with different entities within the Library or Sub-Library. Cross Library or Sub-library relationships are not allowed.
     
     ## Step 1: Get the List of Libraries
     
