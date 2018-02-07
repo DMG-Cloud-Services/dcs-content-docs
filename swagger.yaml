@@ -1007,6 +1007,7 @@ info:
       * If the node is created under the library, please pass "libraries" object only in the relationships with the parent Library Id.
       * If the node is created under the sub-library, please pass the "subLibraries" object only in the relationships with the parent Sub-Library Id.
       * If the node is created under another node, please pass the "nodes" object only in the relationships with the parent Node Id.
+    
     A node cannot be created directly under the Library if a Sub-library under the same Library is already created. The vice-versa is also true. This defines the data model automatically described above.
     
     ### Example
