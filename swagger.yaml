@@ -786,16 +786,16 @@ info:
     [@tutorials]: <>
     # Step-by-Step Tutorials
     
-    The Forge Content service provides a set or APIs for developers to create and manage the content for the Autodesk products. In this section, we provide some step-by-step tutorials demonstrating how the Forge Content service APIs work.
+    The Forge Content service provides a set or APIs for developers to create and manage the content for the Autodesk products. In this section, we will provide some step-by-step tutorials demonstrating how the Forge Content APIs work.
     
     ## [Create Content in a New Library with Sub Library](/en/docs/content/v1/tutorials/create-content-in-new-library-with-sublibrary)
-      This tutorial explains how to create content in a new library with sub library.
+      This tutorial explains how to create a content in a new library with sub library.
       
     ## [Create Content in a New Library without Sub Library](/en/docs/content/v1/tutorials/create-content-in-new-library-without-sublibrary)
-      This tutorial explains how to create content in a new library without sub library.
+      This tutorial explains how to create a content in a new library without sub library.
       
     ## [Create Content in an Existing Library](/en/docs/content/v1/tutorials/create-content-in-existing-library)
-      This tutorial explains how to create content in an existing library.
+      This tutorial explains how to create a content in an existing library.
       
     ## [Attach Files to the Content](/en/docs/content/v1/tutorials/attach-files-to-content)
       This tutorial explains how to attach files to the content.
@@ -804,7 +804,7 @@ info:
       This tutorial explains how to add thumbnails to the content.
       
     ## [Add Relationship among Library, Sub Library, Nodes, and Contents](/en/docs/content/v1/tutorials/add-relationships)
-      This tutorial explains how to create and update the relationships of nodes and contents with sub library and library.
+      This tutorial explains how to create and update the relationships of nodes and contents within a sub-library or library.
       
     ## [Create Content Community](/en/docs/content/v1/tutorials/collaborate-within-community)
       This tutorial explains how you can collaborate within the content community.
@@ -818,22 +818,22 @@ info:
       
       In general, access to BIM 360 Team, BIM 360 Docs, Fusion Team, and A360 Personal data requires the use of a [3-legged OAuth2 token](https://developer.autodesk.com/en/docs/oauth/v2/tutorials/get-3-legged-token).
         
-      HTTP `GET` requests to the Forge Schema services require the `data:read` scope.
+      HTTP `GET` requests to the Forge Schema Services require the `data:read` scope.
         
       HTTP `POST` requests to the Forge Schema require the `data:create` scope, but can also be called with the `data:write` scope.
     
     [@tutorials/create-content-in-new-library-with-sublibrary]: <>
     # Create Content in a New Library with Sub Library
     
-    This tutorial explains how to create content in a new library that contains a sub library. This tutorial provides the steps based on the following content model:
+    This tutorial explains how to create a content in a new library that contains a sub-library. This tutorial provides the steps based on the following content model:
 
-    **Library** -> **Sub Library** -> **Node** -> **Content**
+    **Library** -> **Sub-Library** -> **Node** -> **Content**
     
     Perfrom the steps in the given sequence to successfully create the content.
   
     ## Step 1: Create a New Library
       
-    In this step you create a new library where you store the contents. For more information about library, see [Content Model](/en/docs/content/v1/overview/content-model).
+    In this step, create a new library where you store the contents. For more information about library, see [Content Model](/en/docs/content/v1/overview/content-model).
 
     The Library API provides the ``POST libraries`` endpoint that allows you to create a new library.
       
@@ -852,7 +852,7 @@ info:
           "title": "MaterialLibrary",
           "description": "The Library for the Material",
           "status": "private",
-          "language": "EN",
+          "language": "en",
           "region": "US"
         }
       }
@@ -913,9 +913,9 @@ info:
       
     ## Step 2: Create a New Sub Library
       
-    In this step you create a sub library. For more information about Sub library, see [Content Model](/en/docs/content/v1/overview/content-model).
+    In this step, create a sub library. For more information about Sub library, see [Content Model](/en/docs/content/v1/overview/content-model).
 
-    The Library API provides the ``POST libraries/{libraryid}/subLibraries`` endpoint that allows you to create a new sub library.
+    The Forge Content provides the ``POST libraries/{libraryid}/subLibraries`` API endpoint that allows you to create a new sub library.
       
     ### Example
       
@@ -931,7 +931,6 @@ info:
         "attributes": {
           "title": "MaterialSubLibrary",
           "description": "The Sub Library for the Material",
-          "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
           "status": "private",
           "language": "EN",
           "region": "US"
@@ -964,7 +963,6 @@ info:
               "createTime": "2017-10-13T07:32:02Z",
               "createdBy": "AYK2Q7S52XRU",
               "lastModifiedBy": "AYK2Q7S52XRU",
-              "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
               "description": "The Sub Library for the Material",
               "language": "EN",
               "title": "MaterialSubLibrary",
@@ -993,17 +991,17 @@ info:
       "meta": {}
     }
     ```
-    From the response, make note of **id** attribute, which is the id of the new sub library.
+    From the response, make note of **id** attribute, which is the id of the new sub-library.
     
-    ## Step 3: Crete a new Node in a Sub Library
+    ## Step 3: Crete a new Node in a Sub-Library
       
-    In this step, you create a node inside the sub library that you created in Step 2. For more information about Library and Sub Library, see [Content Model](/en/docs/content/v1/overview/content-model).
+    In this step, create a node under the sub library that you created in Step 2. For more information about Library and Sub-Library, see [Content Model](/en/docs/content/v1/overview/content-model).
 
-    The Library Node API provides the ``POST libraries/{libraryId}/nodes`` endpoint to create a node in the specified sub library.
+    The Forge Content provides the ``POST libraries/{libraryId}/nodes`` API endpoint to create a node in the specified sub-library.
 
     In the ``POST`` request, you need to specify the id of the library in which you want to create a node. 
 
-    **Note**: If you want to create a node inside another node, you must include the ``nodes`` attribute in the request. In the nodes attribute, you need to specify the Id of the node in which you want to create a sub node.
+    **Note**: If you want to create a node inside another node, you must include the ``nodes`` attribute in the request. In the nodes attribute, you need to specify the Id of the node in which you want to create a node.
   
     ### Example
       
