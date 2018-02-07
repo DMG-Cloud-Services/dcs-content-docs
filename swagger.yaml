@@ -39,14 +39,14 @@ info:
     [@overview/basics]: <>
     # API Basics
     
-    Forge-Content provides a set of APIs that allows the internal and external people to publish the content for the Autodesk applications. Using Forge Content API, users can organize content in a hierarchical, searchable, shareable, version controlled manner. 
+    Forge-Content provides a set of APIs that allows the internal & external people to publish the content for the Autodesk applications. Using Forge Content API, users can organize content in a hierarchical, searchable, shareable, version controlled manner. 
 
     For additional information about entities related to contents, see the [Content Attributes](/en/docs/content/v1/overview/content-attributes).
 
     ## Standards
    
     1. This API follows the ``JSON API`` specs 1.0 documented at `JSON API Spec <http://jsonapi.org/format/>`_
-    2. Entity names are always plural e.g. ``Libraries``, ``Nodes``, ``Contents``
+    2. Entity names are always plural e.g. ``Libraries``, ``SubLibraries``, ``Nodes``, ``Contents``
     3. Entities are organised in the following hierarchy: 
       - ``Libraries`` -> ``Nodes``... -> ``Contents`` OR
       - ``Libraries`` -> ``Sub Library`` -> ``Nodes``... -> ``Contents``
@@ -69,18 +69,22 @@ info:
           "status": " "
         },
         "relationships": {
-          "contents": {
+            "libraries": {
               "links": {},
               "data": []
             },
-            "libraries": {
+            "subLibraries": {
               "links": {},
               "data": []
             },
             "nodes": {
               "links": {},
               "data": []
-            }
+            },
+            "contents": {
+              "links": {},
+              "data": []
+            }            
         },
         "links": {}
       }
@@ -135,21 +139,21 @@ info:
     [@overview/content-model]: <>
     # Content Model
   
-    Forge Content API provides two distinct content models to create and organize the content. Before selecting the content model, you must analyze your content structure and then decide the content model that suites to your requirements.
+    Forge Content API provides two distinct content data models to create and organize the content data. Before selecting the content data model, you must analyze your content structure and then decide the content data model that suites your requirements.
 
-    **Note**: Once you select any content model and add your content in that model, you cannot change the content model. You have to create a new content model and add the content again in that model.
+    **Note**: Once you select one of these content data model and follow that model, you cannot change to the other content data model. You have to recreat everything again in the other content model.
 
     - **Library** > **Node** > **Content**
-      This is the default content model where you create library, nodes, and contents in the given hierarchy. This content model is a flat model. You create one library and one or multiple nodes in the library. After that, you create content inside nodes. 
+      This is the default content model where you create library, nodes, and contents in the given hierarchy. This content model is a flat model. You create one library and one or multiple nodes in the library. Then, you create contents under the nodes. 
     
     ![Forge Content Structure](https://raw.githubusercontent.com/DMG-Cloud-Services/dcs_doc_images/master/content/content_structure.png "Content Model without Sub Library")
     
     - **Library** > **Sub Library** > **Node** > **Content**
-      This is another content model with sub library as one more entity in the hierarchy. In this model, one time you create a base library for the application and then create one or more sub libraries in the base library. In these sub libraries, you further create one or more nodes and add the content inside the nodes.
+      This is another content model with sub library as one more entity in the hierarchy. In this model, a base library is created for the application and then one or more sub libraries are created under the base library. Under these sub libraries, you further create one or more nodes and add the content under the nodes.
     
     ![Forge Content Structure](https://raw.githubusercontent.com/DMG-Cloud-Services/dcs_doc_images/master/content/new_content_structure.png "Content Model with Sub Library")
     
-    The content models consists of the following entities that you need to create:
+    The content data models consists of the following entities that you need to create:
     
     * [Library](#library)
     
@@ -175,13 +179,13 @@ info:
     
     When you create a Sub Library; by default, you get the ownership permissions to that Sub Library. You can create and manage your content inside the Sub Library independently from other users. You can also give permissions to other users to access or manage your Sub Library.
     
-    In this content model, Forge Content API indexes all data under the base library. This helps you in optimizing the search performance for your content.
+    In this content model, Forge Content API indexes all data under the base library context. This helps you in optimizing the search performance for your content and keeping the data together under one context.
     
     You can also set your Sub Library as a system library. System library acts as a public Sub Library where you can store application related content that can be shared by all users.
     
-    ### When you can use Sub Library?
+    ### When to use Sub Library?
     
-    Even when Sub Library is another entity level in the content model, there are specific advantages and benefits for which you can use Sub Library.
+    Even though Sub Library is another entity level in the content model, there are specific advantages and benefits for which you can use Sub Library.
     
     If your content structure requires that you organize your application content based on users, allow the users to create and manage their content, and create global content that all users can share, then it is recommended that you use the content model with Sub Library.
     
@@ -219,12 +223,12 @@ info:
       
     Node is the second level entity in the hierarchy of Forge Content API. A node resembles a folder on a computer.
     
-    After creating a library, you can create one or more nodes in the library. You can also create nodes inside a node upto any level.
+    After creating a library or sub-library, you can create one or more nodes in the library. You can also create nodes inside a node upto any level.
     
-    **Note**: Forge Content API does not have any limit on the number of nodes that you can create inside a library and inside any node.
+    **Note**: Forge Content API does not have any limit on the number of nodes that you can create inside a library or sub-library and inside any node.
     
     While creating a node, you can associate a schema family to that node. Associating a schema family to a node ensures that all nodes and
-    contents under that node follows the same schema or descendants of the schema.
+    contents under that node follow the same schema or descendants of the schema.
     
     For example, if you create a schema with the hierarchy as ``A -> B -> C`` and associate the schema family A to a node, then all nodes and contents under that node follows the schema type A, B, and C.
     
@@ -232,9 +236,7 @@ info:
     
     Forge Content API also provide options by which you can establish a relationship among the nodes in a library and connect them with each other. The relationship helps you to build a complex structure and hierarchy so that you can store your complex data in a more user-friendly way and reuse the content across the nodes inside a library.
     
-    **Note**: You can establish the relationship only among the nodes inside a library. Relationship among the nodes from different libraries is not supported.
-    
-    Autodesk Search service keep indexing the content in the nodes.
+    **Note**: You can establish the relationship only among the nodes under the same library or sub-library. The relationship among the nodes from different libraries or sub-libraries is not supported.
       
     ##<a name="content"></a>**Content**
       
@@ -11238,45 +11240,4 @@ responses:
                     }
                 ]
             }
-        }
-  library_policies:
-    description: returns the list of user , groups, or tenants which are added in item policies.
-    schema:
-      $ref: '#/definitions/entity_policy_object_definition'
-    examples:
-      application/vnd.api+json:
-        {
-          "data": {
-              "type": "policies",
-              "id": "ForgeContentAlphaDB:urn:adsk.content:library:34c4b87b-76f6-4b88-adf6-0438c7dbe4b0:CONTENT_READER",
-              "attributes": {
-                "new": false,
-                "Type": "Policy",
-                "Version": "ACM-1.0",
-                "Permissions": [
-                    {
-                        "Id": "1",
-                        "Effect": "Allow",
-                        "Subjects": {
-                            "O2User": [
-                                "1z1jrkfPPZacTkFid1V889lHfDuQzhKf",
-                                "S8MNRK2XZXCK"
-                            ],
-                            "O2Group": [],
-                            "O2Tenant": []
-                        },
-                        "Action": "CONTENT_READER"
-                    }
-                ],
-                "Resources": [
-                    "urn:adsk:dmg:content:library:urn:adsk.content:library:34c4b87b-76f6-4b88-adf6-0438c7dbe4b0:CONTENT_READER"
-                ],
-                "Namespace": "ForgeContentAlphaDB"
-              },
-              "relationships": {},
-              "links": {
-                  "self": "https://developer.api.autodesk.com/content/v1/policies/ForgeContentAlphaDB:urn:adsk.content:library:34c4b87b-76f6-4b88-adf6-0438c7dbe4b0:CONTENT_READER"
-              }
-          },
-          "included": []
         }
