@@ -297,13 +297,13 @@ info:
     [@overview/content-attributes]: <>
     # Content Attributes
     
-    Forge Content API provides various types of attributes that you can use for creating entities, like Library, Sub Library, Nodes, and Contents.
+    Forge Content provides a set of core attributes which can be used for creating entities such as Library, Sub Library, Nodes, and Contents.
     
-    There are certain attributes that are common for all entities, and there are some attributes that are specific to the entity.  
+    There are core attributes that are common to all entities, and there are few core attributes that are specific to an entity.  
     
-    While creating an entity, you need to specify the appropriate values to these attributes. However, there are certain attributes for which Forge Content automatically generate the values. 
+    While creating an entity, you need to specify the appropriate values for these attributes. However, there are certain core attributes for which Forge Content applies default values. 
     
-    In each attributes section, the table includes the **AUTO/MANUAL** column with **AUTO** indicating the attributes that Forge Content generates and **MANUAL** indicating the attributes that you need to specify. 
+    In each attributes section, the table includes the **AUTO/MANUAL** column with **AUTO** indicating the attributes that Forge Content defaults and **MANUAL** indicating the attributes that have to be specified by the calling application.
     
     * [Common Attributes](#common-attributes)
     * [Library Entity Attributes](#library-entity-attributes)
