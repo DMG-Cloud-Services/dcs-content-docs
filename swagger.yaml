@@ -5151,7 +5151,9 @@ paths:
       
   /libraries/{libraryId}/members:
    
-     x-description: Library Management Admin API to know who all has access to the library along with thier roles and add/remove particular member from any of library management role.
+     x-description: 
+        DEPRECATED - Please user PATCH Library Call to manage the member permissions on the library.
+        Library Management Admin API to know who all has access to the library along with thier roles and add/remove particular member from any of library management role.
      get: 
       description: |
         Get all the user, group, tenant who has access to this library along with their roles like LIBRARY MANAGER, CONTENT CREATOR OR CONTENT READER.
@@ -7324,6 +7326,10 @@ definitions:
                   searchCacheExpiryInSeconds:
                     type: integer
                     description: optional param to set the "time to live" duration of the library data in search results cache. Default is set to 300 secs.
+                  translations:
+                    type: object
+                    items:
+                      $ref: '#/definitions/translations_definition'                         
         example:
           {
               "data": {
@@ -7337,7 +7343,24 @@ definitions:
                       "license": "Apache License 2.0",
                       "status": "private",
                       "registerContentVersionInCommunity": false,
-                      "searchCacheExpiryInSeconds": 600
+                      "searchCacheExpiryInSeconds": 600,
+                      "translations": {
+                        "fr_FR": {
+                          "title": "Contenu du film",
+                          "description": "Contenu d'un film",
+                          "tags": "film de film"
+                        },
+                        "es_MX": {
+                          "title": "Contenido de la película",
+                          "description": "Contenido sobre una película",
+                          "tags": "película"
+                        },
+                        "zh_CN": {
+                          "title": "电影内容",
+                          "description": "关于电影的内容",
+                          "tags": "电影电影"
+                        }
+                      }                      
                   }
               }
           }
@@ -7387,29 +7410,50 @@ definitions:
                   permissions:
                     type: array
                     items:
-                      $ref: '#/definitions/permission_definition'                    
+                      $ref: '#/definitions/permissions_definition'     
+                  translations:
+                    type: object
+                    items:
+                      $ref: '#/definitions/translations_definition'                         
         example:
-            {
-              "data": {
-                "type": "libraries",
-                "attributes": {
-                  "status": "published",
-                  "license": "Apache License 2.0",
-                  "registerContentVersionInCommunity": false,
-                  "searchCacheExpiryInSeconds": 600,
-                  "permissions": [
-                    {
-                      "role": "CONTENT_CREATOR",
-                      "subjects": {
-                        "o2Users": [
-                          "ERB3Q463BYQW"
-                        ]
-                      }
+          {
+            "data": {
+              "type": "libraries",
+              "attributes": {
+                "status": "published",
+                "license": "Apache License 2.0",
+                "registerContentVersionInCommunity": false,
+                "searchCacheExpiryInSeconds": 600,
+                "permissions": [
+                  {
+                    "role": "CONTENT_CREATOR",
+                    "subjects": {
+                      "o2Users": [
+                        "ERB3Q463BYQW"
+                      ]
                     }
-                  ]
+                  }
+                ],
+                "translations": {
+                  "fr_FR": {
+                    "title": "Contenu du film",
+                    "description": "Contenu d'un film",
+                    "tags": "film de film"
+                  },
+                  "es_MX": {
+                    "title": "Contenido de la película",
+                    "description": "Contenido sobre una película",
+                    "tags": "película"
+                  },
+                  "zh_CN": {
+                    "title": "电影内容",
+                    "description": "关于电影的内容",
+                    "tags": "电影电影"
+                  }
                 }
               }
             }
+          }          
           
   create_sub_library:
     allOf:
@@ -7439,6 +7483,10 @@ definitions:
                     type: string
                   externalId:
                     type: string
+                  translations:
+                    type: object
+                    items:
+                      $ref: '#/definitions/translations_definition'                         
               relationships:
                 type: object
                 required: [libraries]
@@ -7514,6 +7562,10 @@ definitions:
                     type: string
                   externalId:
                     type: string
+                  translations:
+                    type: object
+                    items:
+                      $ref: '#/definitions/translations_definition'                         
         example :
           [
               {
@@ -7560,6 +7612,10 @@ definitions:
                     type: string
                   externalId:
                     type: string
+                  translations:
+                    type: object
+                    items:
+                      $ref: '#/definitions/translations_definition'                         
               relationships:
                 type: object
                 required: [subLibraries, nodes]
@@ -7673,6 +7729,10 @@ definitions:
                     type: string
                   externalId:
                     type: string
+                  translations:
+                    type: object
+                    items:
+                      $ref: '#/definitions/translations_definition'                         
               relationships:
                 type: object
                 required: [libraries, nodes]
@@ -7786,6 +7846,10 @@ definitions:
                     type: string
                   externalId:
                     type: string
+                  translations:
+                    type: object
+                    items:
+                      $ref: '#/definitions/translations_definition'                         
         example:
           {
               "data": {
@@ -7830,9 +7894,13 @@ definitions:
                     type: string
                   license:
                     type: string
+                    description: Standard license for the content. Please refer to the allowed license list here - https://spdx.org/licenses/
                   externalId:
                     type: string
-                    description: Standard license for the content. Please refer to the allowed license list here - https://spdx.org/licenses/
+                  translations:
+                    type: object
+                    items:
+                      $ref: '#/definitions/translations_definition'                         
                   thumbnails:
                     type: array
                     items:
@@ -7982,6 +8050,10 @@ definitions:
                     description: Standard license for the content. Please refer to the allowed license list here - https://spdx.org/licenses/
                   lock:
                     type: boolean
+                  translations:
+                    type: object
+                    items:
+                      $ref: '#/definitions/translations_definition'                         
                   thumbnails:
                     type: array
                     items:
@@ -8471,7 +8543,7 @@ definitions:
       relationships: { $ref: '#/definitions/ccontent_search_realtionship_definitions' }
       links: { $ref: '#/definitions/json_link_self' }
       
-  permission_definition:
+  permissions_definition:
     type: object
     description: Permission object
     properties:
@@ -8518,8 +8590,23 @@ definitions:
           services:
             type: array
             items:
-              type: string              
-      
+              type: string
+              
+  translations_definition:
+    type: object
+    description: Translation object
+    properties:
+      locale_key:
+        type: object
+        description: the locale key is the locale value such as fr_FR, es_MX
+        properties:
+          title:
+            type: string
+          description:
+            type: string
+          tags:
+            type: string
+    
   content_search_definition:
     allOf:
       - type: object
