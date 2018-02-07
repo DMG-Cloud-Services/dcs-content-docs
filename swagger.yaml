@@ -367,13 +367,14 @@ info:
     
     ##<a name="library-entity-attributes"></a>Library Entity Attributes
     
-    A library inherits all common attributes. Additionally, the following table lists the attributes specifically for the Library entity:
+    A library inherits all common attributes. In addition, the following table lists the attributes specific for the Library entity:
     
     | Attribute                             | AUTO / MANUAL |  Description
     | --------------------------------------|:-------------:|----------------------------------------------------------------------------
     | **status**                            | MANUAL        |  The status of the library. The status can be **private** or **published**. Defaults to **private** on create.
-    | **registerContentVersionInCommunity** | MANUAL        |  The status of the library. The status can be **private** or **published**. Defaults to **private** on create.
-    | **status**                            | MANUAL        |  The status of the library. The status can be **private** or **published**. Defaults to **private** on create.
+    | **registerContentVersionInCommunity** | MANUAL        |  The attribute to indicate if the each version of the content under this library as to be registered as separate entity for community features.
+    | **searchCacheExpiryInSeconds**        | MANUAL        |  The value in seconds to indicate the time to live for the search data in local cache. The data is removed from the cache after the time is lapsed.
+    | **permissions**                       | MANUAL        |  The permissions object array specifying all the members having access to this library. This is effective for PATCH API call.
     
     ### Sample
     
@@ -387,7 +388,9 @@ info:
             "tags": "test, library",
             "language": "en",
             "region": "US",
-            "status": "private/published"
+            "status": "private/published",
+            "registerContentVersionInCommunity": true,
+            "searchCacheExpiryInSeconds": 600
         }
       }
     }
@@ -395,11 +398,13 @@ info:
     
     ##<a name="sublibrary-entity-attributes"></a>Sub Library Entity Attributes
     
-    A sub library inherits all common attributes. Additionally, the following table lists the attributes specifically for the Sub Library entity:
+    A sub library inherits all common attributes. In addition, the following table lists the attributes specific for the Sub Library entity:
     
-    | Attribute   | AUTO/ MANUAL  |  Description
-    | ----------- |:-------------:|--------------------------------------------------------------------------------
-    | **status**  | MANUAL        |  The status of the sub library. The status can be **private** or **published**. Defaults to **private** on create.
+    | Attribute       | AUTO / MANUAL |  Description
+    | ----------------|:-------------:|--------------------------------------------------------------------------------
+    | **status**      | MANUAL        |  The status of the sub library. The status can be **private** or **published**. Defaults to **private** on create.
+    | **externalId**  | MANUAL        |  An external Id attribute to hold the application/client's identifier for the entity. This must be unique under the library.
+    | **permissions** | MANUAL        |  The permissions object array specifying all the members having access to this library. This is effective for PATCH API call.
     
     ### Sample
     
@@ -413,6 +418,7 @@ info:
           "tags": "test, sub library",
           "language": "en",
           "region": "US",
+          "externalId": "e577c93d-cdfb-4fa5-8930-f19051b9eabc",
           "status": "private/published"
         }
       }
@@ -423,9 +429,10 @@ info:
     
     A node inherits all common attributes. Additionally, the following table lists the attributes specifically for the Node entity:
     
-    | Attribute           | AUTO/ MANUAL |  Description
+    | Attribute           | AUTO / MANUAL|  Description
     | --------------------|:------------:|-----------------------------------------------------------------------------------------
-    | **schemaFamily**    | MANUAL       | The schema family that you want to use for the sub nodes and contents inside a node. This is optional attribute. You can create a node without any schema family. 
+    | **schemaFamily**    | MANUAL       | The schema family that you want to use for the sub nodes and contents under a node. This is optional attribute. If the schema family is specified, all the nodes and contents under this node should belong to the same schema or descendants of this schema.
+    | **externalId**      | MANUAL       |  An external Id attribute to hold the application/client's identifier for the entity. This must be unique under the library/sub-library.
     
     ### Sample
     
@@ -437,7 +444,7 @@ info:
           "title": "test.node",
           "description": "Test Node",
           "tags": "test, node",
-          "language": "EN",
+          "language": "en",
           "region": "US",
           "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
           "schemaFamily": "contents:autodesk.mdb.alpha:materialAM-1.0.0"
@@ -448,12 +455,13 @@ info:
     
     ##<a name="content-entity-attributes"></a>Content Entity Attributes
     
-    A Content entity inherits all common attributes. Additionally, the following table lists the attributes specifically for the Content entity.
+    A Content entity inherits all common attributes. In addition, the following table lists the attributes specific for the Content entity.
     
     | Attribute         | AUTO/ MANUAL  |  Description
     | ------------------|:-------------:|------------------------------------------------------------------------------------------
     | **status**        | MANUAL        |  The status of the content. The status can be `draft` or `published`.
     | **version**       | MANUAL        |  The version of the content.
+    | **externalId**    | MANUAL        |  An external Id attribute to hold the application/client's identifier for the entity. This must be unique under the library/sub-library.
     | **files**         | MANUAL        |  A list of files attached to the content. Attaching files to the content is optional.
     | **thumbnails**    | MANUAL        |  A list of thumbnails attached to the content. Each thumbnail entity is same as the file entity with additional attributes, such as height and width.
     | **references**    | MANUAL        |  An external link to various other entities, such as other content, images, videos, and so on. 
