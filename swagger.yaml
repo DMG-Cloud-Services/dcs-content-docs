@@ -6078,35 +6078,6 @@ paths:
           - $ref: '#/parameters/query_filter_content_search_page_number'
         responses:
           '200': { $ref: '#/responses/getFollowers' }
-          
-  # /members/{memberId}/relationships/roles: 
-  #     x-summary: POST Admin Role
-  #     x-description: Member Role API
-  #     post:
-  #       tags: [ "Community" ]
-  #       operationId: addAdmin
-  #       consumes:
-  #         - application/json
-  #       description: |
-  #         An Admin can change another admin's role to admin. 
-  #       security:
-  #         [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
-  #       parameters:
-  #         - $ref: '#/parameters/memberId'
-  #         - in: body
-  #           name: body
-  #           description: Input schema
-  #           required: true
-  #           schema:
-  #             $ref: '#/definitions/json_api_input_new_member_role'
-  #             example: {
-  #                       "data": [{
-  #                           "type": "roles",
-  #                           "id": "1"
-  #                       }]
-  #                     }
-  #       responses:
-  #         '204':  { "description": "No content"  }
             
   /libraries/{libraryId}/flags:
       x-summary: Content Flag
@@ -6898,12 +6869,6 @@ definitions:
     properties:
       id: { type: string, description: 'id of flag' }
       status: { type: string, description: 'APPROVED or DELETED' }
-  json_api_input_new_member_role:
-    type: object
-    required: [ type, id ]
-    properties:
-      type: { type: string, description: 'type of object: roles' }
-      id: { type: string, description: 'id of the admin role' }
   json_api_input_new_comment:
     type: object
     required: [ data ]
@@ -7010,45 +6975,6 @@ definitions:
                   properties:
                     about: { $ref: '#/definitions/json_api_link' }
                     
-  json_api_type_id:
-    type: object
-    required: [ id, type ]
-    properties:
-      id: { type: string, description: 'resource id' }
-      type: { type: string, description: 'resource type' }
-      
-  json_api_resource:
-    allOf:
-    - $ref: '#/definitions/json_api_type_id'
-    - type: object
-      properties:
-        attributes: { $ref: '#/definitions/json_api_attributes' }
-        meta: { $ref: '#/definitions/json_api_meta' }
-        relationships: { $ref: '#/definitions/json_api_relationships' }
-        links: { $ref: '#/definitions/json_api_links' }
-        
-  json_api_resource_data:
-    allOf:
-      - type: object
-        required: [ data ]
-        properties:
-          data: { $ref: '#/definitions/json_api_resource'}
-
-  json_api_collection:
-    allOf:
-      - type: object
-        required: [ data, links ]
-        properties:
-          data: { type: array, items: { $ref: '#/definitions/json_api_resource' } }
-          links:
-            allOf:
-            - $ref: '#/definitions/json_api_links_self'
-            - $ref: '#/definitions/json_api_links_paging'
-            
-  json_api_attributes:
-    type: object
-    description: 'resource specific attributes/properties'
-    
   json_api_meta:
     type: object
     description: 'resource specific meta data'
@@ -7086,37 +7012,13 @@ definitions:
       pageNumber: { type: integer, description: 'pageNumber' }
       totalPages: { type: integer, description: 'totalPages' }
       pageSize: { type: integer, description: 'pageSize' }
-  
-  json_api_relationships:
-    type: object
-    description: 'resource specific relationships'
-    
-  json_api_links:
-    type: object
-    description: 'resource specific links'
-    
+      
   json_api_link:
     type: object
     required: [ href ]
     properties:
       href: { type: string }
       
-  json_api_links_self:
-    type: object
-    description: 'provides the identity link (a link to itself)'
-    required: [ self ]
-    properties:
-      self: { $ref: '#/definitions/json_api_link' }
-          
-  json_api_links_paging:
-    type: object
-    description: 'provides the links used for paging'
-    properties:
-      first: { $ref: '#/definitions/json_api_link' }
-      prev: { $ref: '#/definitions/json_api_link' }
-      next: { $ref: '#/definitions/json_api_link' }
-      last: { $ref: '#/definitions/json_api_link' }
-  
   update_library_members:
     allOf:
       - type: object
@@ -8351,13 +8253,6 @@ definitions:
           externalId: { type: string, description: 'externalId' }
       relationships: { $ref: '#/definitions/library_realtionship_definitions' }
       links: { $ref: '#/definitions/json_link_self' }      
-      
-  library_data_definition:
-    type: object
-    description: MainResponse definition for library
-    properties:
-      data:
-        $ref: '#/definitions/library_definition'
         
   library_collection_definition:
     allOf:
@@ -8615,48 +8510,6 @@ definitions:
           included: { type: array, items: { type: object } }
           meta: { $ref: '#/definitions/search_json_api_meta' }
           links: { $ref: '#/definitions/json_api_links_paging_definitions' }
-          
-  entity_policy_object_definition:
-    allOf:
-      - type: object
-        properties:
-          data: { $ref: '#/definitions/entity_policy_details_definition' } 
-          included: { type: array,items: { type: object },description: 'included' } 
-          
-  entity_policy_details_definition:
-    allOf:
-      - type: object
-        properties:
-          type: { type: string, description: 'type' }
-          id: { type: string, description: 'id' }
-          attributes: { $ref: '#/definitions/entity_policy_attribute_definition' }
-          relationships: { type: object }
-          links: { $ref: '#/definitions/json_link_self' }
-          
-  entity_policy_attribute_definition:
-    allOf:
-      - type: object
-        properties:
-          new: { type: string, description: 'new' }
-          Type: { type: string, description: 'Type' }
-          Version: { type: string, description: 'Version' }
-          Permissions: { type: array, items: { $ref: '#/definitions/entity_permission_object_definition' } }
-          Resources: { type: array, items: { type: object}}
-          Namespace: { type: string, description: 'Namespace' }
-              
-  entity_permission_object_definition:
-    allOf:
-      - type: object
-        properties:
-          Id: { type: string, description: 'Id' } 
-          Effect: { type: string, description: 'Effect' }
-          Subject:
-            type: object
-            properties:
-              O2User: { type: array, items: { type: object}}
-              O2Group: { type: array, items: { type: object}}
-              O2Tenant: { type: array, items: { type: object}}
-          Action: { type: string, description: 'Action' }
           
   member_access_information_definition:
     allOf:
@@ -9090,6 +8943,7 @@ responses:
           },
           "totalResultCount": 1
         }
+        
   getFlag:
     description: Successful response
     schema:
@@ -9123,6 +8977,7 @@ responses:
           "included": [],
           "meta": {}
         }
+        
   getFollow:
     description: Successful response
     schema:
@@ -9174,6 +9029,7 @@ responses:
               "last": "https://developer.api.autodesk.com/content-alpha/v1/followings?filter[member][id]=GK6UJWUMUD73&page[number]=1&page[size]=20"
           }
         }
+        
   getFollowers:
     description: Successful response
     schema:
@@ -9218,6 +9074,7 @@ responses:
           "last": "https://developer.api.autodesk.com/content-alpha/v1/followers?page[number]=1&page[size]=20"
         }
       }
+      
   followUser:
     description: Successful response
     schema:
@@ -9252,6 +9109,7 @@ responses:
         },
         "included": []
       }
+      
   getCommunityContentComment:
     description: Successful response
     schema:
@@ -9283,6 +9141,7 @@ responses:
           },
           "included": []
         }
+        
   getCommentReplies:
     description: Successful response
     schema:
@@ -9350,6 +9209,7 @@ responses:
               "last": "http://localhost:8080/comments/CGXWY61JCTUWP08/replies?page[number]=1&page[size]=20"
           }
       }
+      
   getCommunityContentComments:
     description: Successful response
     schema:
@@ -9412,6 +9272,7 @@ responses:
             "last": "http://developer.api.autodesk.com/content/v1/communityContents/ExtCommunityContentId0242/comments?filter[comments]=size&page[limit]=2&page[offset]=12"
           }
         }
+        
   createCommunityContentComment:
     description: Successful response
     schema:
@@ -9442,6 +9303,7 @@ responses:
           },
           "included": []
         }
+        
   getBadWords:
     description: Successful response
     schema:
@@ -9489,6 +9351,7 @@ responses:
             "additionalProperties": {},
             "totalResultCount": 7
         }
+        
   getFeaturedCommentsResponse:
     description: Successful response
     schema:
@@ -9562,6 +9425,7 @@ responses:
           },
           "totalResultCount": 1
         }
+        
   createCommunityContentLike:
     description: Successful response
     schema:
@@ -9589,6 +9453,7 @@ responses:
         "included": []
         }
       }
+      
   getCommunityContentLikes:
     description: Successful response
     schema:
@@ -9631,6 +9496,7 @@ responses:
           ],
           "included": []
         }
+        
   getCommunityContentSearchResults:
     description: Successful response
     schema:
@@ -9756,6 +9622,7 @@ responses:
             }
           }
         }
+        
   getMemberSearchResult:
     description: Successful response
     schema:
@@ -9800,6 +9667,7 @@ responses:
         }
       }
     }
+    
   bad_input:
     description: Bad input response
     schema:
@@ -9817,6 +9685,7 @@ responses:
                 }
             ]
         }
+        
   delete_library_error:
     description: Delete Library error
     schema:
@@ -9836,6 +9705,7 @@ responses:
                 }
             ]
         }
+        
   forbidden:
     description: Forbidden response
     schema:
@@ -9851,6 +9721,7 @@ responses:
             }
           ]
         }
+        
   library:
     description: Successful Library response
     schema:
@@ -9909,6 +9780,7 @@ responses:
             "included": [],
             "meta": {}
         }
+        
   subLibrary:
     description: Successful sub-library response
     schema:
@@ -9960,6 +9832,7 @@ responses:
             "included": [],
             "meta": {}
         }
+        
   libraries:
     description: Successful Libraries response
     schema:
@@ -10075,6 +9948,7 @@ responses:
                 "last": "https://developer.api.autodesk.com/content/v1/libraries?page[number]=514&page[size]=2"
             }
         }
+        
   subLibraries:
     description: Successful sub-libraries response
     schema:
@@ -10172,6 +10046,7 @@ responses:
               "last": "http://localhost:8080/content-alpha/v1/subLibraries?filter[contents][libraryId]=urn:adsk.content:library:3a62a6d5-2765-4846-9f82-3771f08877dd&page[number]=1&page[size]=16"
           }
       }
+      
   node:
     description: Successful Node response
     schema:
@@ -10225,6 +10100,7 @@ responses:
             }
           }
         }
+        
   nodes:
     description: Successful Node response
     schema:
@@ -10282,6 +10158,7 @@ responses:
           },
           "included": []
        }
+       
   nodescontents:
     description: Successful Node child Contents response
     schema:
@@ -10331,6 +10208,7 @@ responses:
             },
             "included": []
         }
+        
   nodesallcontents:
     description: Successful Node child Contents and nodes response
     schema:
@@ -10450,6 +10328,7 @@ responses:
             ]
           }
         }
+        
   nodesallparents:
     description: Successful node parents response
     schema:
@@ -10508,6 +10387,7 @@ responses:
             ]
           }
         }
+        
   content:
     description: Successful Content response
     schema:
@@ -10668,6 +10548,7 @@ responses:
                 }
             }
         }
+        
   contents:
     description: Successful Contents response
     schema:
@@ -10756,9 +10637,9 @@ responses:
                 "self": "https://developer.api.autodesk.com/content/v1/contents/urn:adsk.content:content:3a88ea6e-9a29-4641-ac26-d6debe822259"
             }
         }
-    ],
-    "included": []
-}
+      ],
+      "included": []
+    }
   contentVersions:
     description: Successful content version response
     schema:
@@ -10783,6 +10664,7 @@ responses:
                 }
             ]
         }  
+        
   fileURL:
     description: return an oss url which can be used for upload
     schema:
@@ -10801,6 +10683,7 @@ responses:
                 }
             }
         } 
+        
   fileDetails:
     description: the details of the file uploaded in the library bucket in OSS
     schema:
@@ -11195,6 +11078,7 @@ responses:
                 "last": "https://developer.api.autodesk.com/content/v1/contentsSearch?filter[contents][libraryId]=urn:adsk.wipstg:fs.folder:co.jsJ-UIC0T9-1VvwpG5xAuQ&page[number]=1&page[size]=20"
             }
         }
+        
   library_members:
     description: returns the list of user , groups, or tenants who has access to this library along with thier roles.
     schema:
@@ -11242,6 +11126,7 @@ responses:
                 ]
             }
         }
+        
   node_members:
     description: returns the list of user , groups, or tenants who has access to this node along with thier roles.
     schema:
@@ -11278,6 +11163,7 @@ responses:
             ]
           }
         }
+        
   content_members:
     description: returns the list of user , groups, or tenants who has access to this content along with thier roles.
     schema:
