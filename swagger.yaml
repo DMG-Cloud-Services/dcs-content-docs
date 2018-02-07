@@ -1024,13 +1024,13 @@ info:
           "region": "US",
           "status" : "draft",
           "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
-    	    "extension": {
+          "extension": {
             "type": "contents:autodesk.core:content",
             "version": "1.0.0",
             "namespace": "autodesk.core"
           }
         },
-        "relationships": {	
+        "relationships": {  
           "nodes": {
             "data": [
               {
@@ -1423,13 +1423,13 @@ info:
           "region": "US",
           "status" : "draft",
           "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
-    	    "extension": {
+          "extension": {
             "type": "contents:autodesk.core:content",
             "version": "1.0.0",
             "namespace": "autodesk.core"
           }
         },
-        "relationships": {	
+        "relationships": {  
           "nodes": {
             "data": [
               {
@@ -3253,8 +3253,8 @@ info:
                       "commented": "",
                       "likeOxygenIds": [],
                       "commentOxygenIds": []
-    		            },
-    		            "lock": true,
+                    },
+                    "lock": true,
                     "region": "US",
                     "status": "published"
                 },
@@ -3337,7 +3337,7 @@ info:
                       "commented": "",
                       "likeOxygenIds": [],
                       "commentOxygenIds": []
-    		            },
+                    },
                     "lock": true,
                     "region": "US",
                     "status": "published"
@@ -3906,7 +3906,7 @@ paths:
   /libraries:
     post:
       description: |
-        Create a new library. Please note that a ***"released"*** library data is served out through search so the management permissioning semantics applied to a library project is purely for the purposes of authoring and management. When release status is set to ***'published'*** the library data is public.
+        Create a new library.
         
          *Special Rules:*
         
@@ -3924,18 +3924,17 @@ paths:
         [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] }, { oauth2_application: [ 'data:create' ] } ]
       x-ads-docs-cli-example: 'curl -XPOST -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" -H "Content-Type: application/vnd.api+json" -d 
           ''{
-            "data": {
+              "data": {
                 "type": "libraries",
-                "attributes":{
-                "title": "ut Duis incididunt et sint",
-                "description": "nostrud mol",
-                "status": "private",
-                "language": "en",
-                "tags": "mollit incididunt ipsum tempor sint",
-                "region": "US",
-                "registerContentVersionInCommunity": false,
-                "searchCacheExpiryInSeconds": 600
-                }
+                "attributes": {
+                  "title": "ut Duis incididunt et sint",
+                  "description": "nostrud mol",
+                  "status": "private",
+                  "language": "en",
+                  "tags": "mollit incididunt ipsum tempor sint",
+                  "region": "US",
+                  "registerContentVersionInCommunity": false,
+                  "searchCacheExpiryInSeconds": 600
                 }
               }
             }'' "https://developer.api.autodesk.com/content/v1/libraries"'
@@ -6319,14 +6318,6 @@ parameters:
     schema: { 
       $ref: '#/definitions/update_content_members' 
     }
-  body_update_library_policy:
-    name: body
-    in: body
-    description: update policies for a library
-    required: true
-    schema: { 
-      $ref: '#/definitions/update_library_policy' 
-    }
   body_create_library:
     name: body
     in: body
@@ -7247,7 +7238,7 @@ definitions:
                   ]
               }
           }
-
+          
   update_content_members:
     allOf:
       - type: object
@@ -7302,85 +7293,7 @@ definitions:
                   }]
               }
           }
-  
-  update_library_policy:
-    allOf:
-      - type: object
-        required: [ data ]
-        properties:
-          data:
-            type: object
-            required: [ type, attributes, id ]
-            properties:
-              id: { type: string}
-              type: { type: string, enum: [ 'policies' ] }
-              attributes:
-                type: object
-                required: [new, Type, Namespace, Version, Permission]
-                properties:
-                  new:
-                    type: boolean
-                  Type:
-                    { type: string, enum: [ 'Policy' ] }
-                  Namespace:
-                    type: string
-                  Version:
-                    type: string
-                  Permission:
-                    type: array
-                    items:
-                      type: object 
-                      required: [ Id, Effect, Subjects, DeletedSubjects, Action ]
-                      properties:
-                        Id:
-                          { type: string, enum: [ '1' ] }
-                        Effect: 
-                          { type: string, enum: [ 'Allow' ] } 
-                        Subjects:
-                          type: object
-                          required: [O2User]
-                          properties:
-                            O2User:
-                              type: array
-                              items:
-                                type: string
-                        DeletedSubjects:
-                          type: object
-                          required: [O2User]
-                          properties:
-                            O2User:
-                              type: array
-                              items:
-                                type: string
-                        Action:
-                          { type: string, enum: [ 'LIBRARY_MANAGER', 'CONTENT_READER', 'CONTENT_CREATOR' ] } 
-        example:
-          {
-              "data": {
-                  "type": "policies",
-                  "id": "ForgeContentAlphaDB:urn:adsk.content:library:02669c62-8c22-47be-b496-dba7c7a7f976:LIBRARY_MANAGER",
-                  "attributes": {
-                      "new": false,
-                      "Type": "Policy",
-                      "Namespace": "ForgeContentAlphaDB",
-                      "Version": "ACM-1.0",
-                      "Permissions": [
-                          {
-                              "Id": "1",
-                              "Effect": "Allow",
-                              "Subjects": {
-                                  "O2User": [
-                                      "G9D8LQPDEEGK"
-                                  ]
-                              },
-                              "Action": "LIBRARY_MANAGER"
-                          }
-                      ]
-                  }
-              },
-              "included": []
-          }
-  
+          
   create_library:
     allOf:
       - type: object
@@ -7393,7 +7306,7 @@ definitions:
               type: { type: string, enum: [ 'libraries' ] }
               attributes:
                 type: object
-                required: [title, description, language, region, status]
+                required: [title, description]
                 properties:
                   title:
                     type: string
@@ -7404,9 +7317,11 @@ definitions:
                   language:
                     type: string
                     x-example: "en"
+                    description: Optional language to which the library is created. Default is "en".
                   region:
                     type: string
                     x-example: "US"
+                    description: Optional region to which the library is created. Default is "US".
                   status:
                     type: string
                     enum: ['private', 'published']
@@ -7451,8 +7366,22 @@ definitions:
               type: { type: string, enum: [ 'libraries' ] }
               attributes:
                 type: object
-                required: [status, subjects, deletedSubjects]
+                required: [status, permissions]
                 properties:
+                  title:
+                    type: string
+                  description:
+                    type: string
+                  tags:
+                    type: string  
+                  language:
+                    type: string
+                    x-example: "en"
+                    description: Optional language to which the library is created. Default is "en".
+                  region:
+                    type: string
+                    x-example: "US"
+                    description: Optional region to which the library is created. Default is "US".
                   status:
                     type: string
                     enum: ['private', 'published']
@@ -7466,47 +7395,33 @@ definitions:
                     description: optional param to set if the contents in this library has to be registered as individual entity for community activities such as likes, comments, flag etc.
                   searchCacheExpiryInSeconds:
                     type: integer
-                    description: optional param to set the "time to live" duration of the library data in search results cache. Default is set to 300 secs.                    
-                  subjects:
-                    type: object
-                    required: [o2Users]
-                    properties:
-                      o2Users:
-                        type: array
-                        items:
-                          type: string
-                  deletedSubjects:
-                    type: object
-                    required: [o2Users]
-                    properties:
-                      o2Users:
-                        type: array
-                        items:
-                          type: string
+                    description: optional param to set the "time to live" duration of the library data in search results cache. Default is set to 300 secs.
+                  permissions:
+                    type: array
+                    items:
+                      $ref: '#/definitions/permission_definition'                    
         example:
-          {
+            {
               "data": {
-                  "type": "libraries",
-                  "attributes": {
-                      "status": "published",
-                      "license": "Apache License 2.0",
-                      "registerContentVersionInCommunity": false,
-                      "searchCacheExpiryInSeconds": 600,
+                "type": "libraries",
+                "attributes": {
+                  "status": "published",
+                  "license": "Apache License 2.0",
+                  "registerContentVersionInCommunity": false,
+                  "searchCacheExpiryInSeconds": 600,
+                  "permissions": [
+                    {
+                      "role": "CONTENT_CREATOR",
                       "subjects": {
-                          "o2Users": [
-                              "S8MNRK2XZXCK"
-                          ],
-                          "o2Groups": []
-                      },
-                      "deletedSubjects": {
-                          "o2Users": [
-                              "NEWREADER"
-                          ],
-                          "o2Groups": []
+                        "o2Users": [
+                          "ERB3Q463BYQW"
+                        ]
                       }
-                  }
+                    }
+                  ]
+                }
               }
-          }
+            }
           
   create_sub_library:
     allOf:
@@ -7628,6 +7543,7 @@ definitions:
                   }
               }
           ]
+          
   create_subLibrary_node:
     allOf:
       - type: object
@@ -7740,6 +7656,7 @@ definitions:
                   }
               }
           ]          
+          
   create_library_node:
     allOf:
       - type: object
@@ -8565,6 +8482,55 @@ definitions:
           contentCount: { type: integer, description: 'contentCount' }
       relationships: { $ref: '#/definitions/ccontent_search_realtionship_definitions' }
       links: { $ref: '#/definitions/json_link_self' }
+      
+  permission_definition:
+    type: object
+    description: Permission object
+    properties:
+      role: 
+        type: string 
+        description: 'role of the member'
+        enum: [ 'LIBRARY_MANAGER', 'CONTENT_CREATOR', 'CONTENT_READER' ]
+      subjects: 
+        type: object
+        description: Subjects to be added to the entity.
+        properties:
+          o2Users:
+            type: array
+            items:
+              type: string
+          o2Groups:
+            type: array
+            items:
+              type: string
+          o2Tenants:
+            type: array
+            items:
+              type: string
+          services:
+            type: array
+            items:
+              type: string
+      deletedSubjects: 
+        type: object
+        description: Subjects to be deleted to the entity.
+        properties:
+          o2Users:
+            type: array
+            items:
+              type: string
+          o2Groups:
+            type: array
+            items:
+              type: string
+          o2Tenants:
+            type: array
+            items:
+              type: string
+          services:
+            type: array
+            items:
+              type: string              
       
   content_search_definition:
     allOf:
