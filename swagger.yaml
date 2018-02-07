@@ -313,6 +313,8 @@ info:
     * [File Entity Attributes](#file-entity-attributes)
     * [Thumbnail Entity Attributes](#thumbnail-entity-attributes)
     * [Reference Entity Attributes](#reference-entity-attributes)
+    * [Translations Entity Attributes](#translations-entity-attributes)
+    * [Permissions Entity Attributes](#permissions-entity-attributes)
     
     ##<a name="common-attributes"></a>Common Attributes
     
@@ -646,7 +648,7 @@ info:
     }
     ```
     
-    ##<a name="translation-entity-attributes"></a>Translations Entity Attributes
+    ##<a name="translations-entity-attributes"></a>Translations Entity Attributes
     
     The following table lists the attributes specific for Translations object in the array:
     
@@ -679,6 +681,71 @@ info:
         }
       }    
     ```
+    
+    ##<a name="permissions-entity-attributes"></a>Permissions Entity Attributes
+    
+    The following table lists the attributes specific for Permissions object in the array:
+    
+    | Attribute           | AUTO/ MANUAL  | Description
+    | ---------------     | ------------- | ---------------------------------------------------------------------------
+    | **role**            | MANUAL        | Role of the permission object. The following roles are allowed: LIBRARY_MANAGER, CONTENT_CREATOR, CONTENT_READER
+    | **subjects**        | MANUAL        | The subjects that has to be added to the entity.
+    | **deletedSubjects** | MANUAL        | The subjects that has to be deleted from the entity.
+
+    ### Sample
+    
+    ```json
+      {
+        "permissions": [
+          {
+            "role": "LIBRARY_MANAGER",
+            "subjects": {
+              "o2Users": [
+                "ERB3Q463BYQW"
+              ],
+              "o2Groups": [],
+              "o2Tenants": [],
+              "services": [
+                "hjcvwfvh6546jdfdfvjkik"
+              ]
+            },
+            "deletedSubjects": {
+              "o2Users": [],
+              "o2Groups": [],
+              "o2Tenants": [],
+              "services": []
+            }
+          },
+          {
+            "role": "CONTENT_CREATOR",
+            "subjects": {
+              "o2Users": [
+                "ERB3Q463BYQW"
+              ],
+              "o2Groups": [],
+              "o2Tenants": [],
+              "services": [
+                "hjcvwfvh6546jdfdfvjkik"
+              ]
+            }
+          },
+          {
+            "role": "CONTENT_READER",
+            "subjects": {
+              "o2Users": [
+                "ERB3Q463BYQW"
+              ],
+              "o2Groups": [],
+              "o2Tenants": [],
+              "services": [
+                "hjcvwfvh6546jdfdfvjkik"
+              ]
+            }
+          }
+        ]
+      }    
+    ```
+
     
     [@overivew/content-community]: <>
     # Forge Content Community
