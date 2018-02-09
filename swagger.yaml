@@ -2115,7 +2115,118 @@ info:
     }
     ```
     
-    ## Get the List of Contents under a Library/Sub-library/Node
+    ## Get the List of Contents under a Node
+    
+    In this step you get a list of contents under a Node.
+
+    The Forge Content provides the ``GET nodes/{nodeId}/contents`` API endpoint that allows you to get the list of contents present directly under the specified node.
+    
+    In the ``GET`` request, you need to specify the Id of the Node from which you want the list of nodes.
+    
+    ### Example
+    
+    ```shell
+    curl -X GET 
+    -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
+    -H "Accept: application/vnd.api+json" 
+    -H "Content-Type: application/vnd.api+json" 
+    –d "https://developer.api.autodesk.com/content/v1/libraries/{libraryid}/nodes/{nodeId}/contents"
+    ```
+    
+    The resource provides the following response:
+    
+    ```json
+    {
+      "data": [
+        {
+          "type": "contents",
+          "id": "urn:adsk.content:content:b371797d-c881-4ffc-b28c-d3c4c625a0bc",
+          "attributes": {
+            "entityPaths": [
+              "/urn:adsk.content:library:b820f488-8d36-4ed4-a01d-358363e1b1e0/urn:adsk.content:node:a62a09d5-5135-42df-8ae4-156e4edd1ce5/urn:adsk.content:content:b371797d-c881-4ffc-b28c-d3c4c625a0bc"
+            ],
+            "extension": {
+              "data": {
+                "amTech": "SLA",
+                "bedSize": {
+                  "height": {
+                    "units": "cm",
+                    "value": 175
+                  },
+                  "length": {
+                    "units": "cm",
+                    "value": 75
+                  },
+                  "breadth": {
+                    "units": "cm",
+                    "value": 50
+                  }
+                },
+                "facetId": "additiveManufacturing",
+                "modelName": "Form 2",
+                "displayName": "FormLabs-Form 2",
+                "machinePrice": {
+                  "units": "$",
+                  "value": 1500
+                },
+                "maxBuildHeight": {
+                  "units": "cm",
+                  "value": 175
+                },
+                "firmwareVersion": "PreForm",
+                "hardwareVersion": "1.0",
+                "manufacturerName": "FormLabs"
+              },
+              "type": "contents:autodesk.mdb.alpha:machineAM",
+              "version": "2.0.0"
+            },
+            "lastModifiedTime": "2017-02-18T04:15:24Z",
+            "lastModifiedBy": "ERB3Q463BYQW",
+            "description": "contents",
+            "language": "EN",
+            "title": "FormLabs Form 2 PreForm",
+            "version": "2",
+            "tags": "tags",
+            "license": "Apache License 2.0",
+            "createTime": "2017-02-18T04:15:24Z",
+            "createdBy": "ERB3Q463BYQW",
+            "externalId": "0c31922c-a241-11e7-abc4-cec278b6b50a",
+            "lock": false,
+            "region": "US",
+            "status": "published"
+          },
+          "relationships": {
+            "nodes": {
+              "links": {
+                "self": "https://developer.api.autodesk.com/content/v1/contents/urn:adsk.content:content:b371797d-c881-4ffc-b28c-d3c4c625a0bc/relationships/nodes",
+                "related": "https://developer.api.autodesk.com/content/v1/contents/urn:adsk.content:content:b371797d-c881-4ffc-b28c-d3c4c625a0bc/nodes"
+              }
+            }
+          },
+          "links": {
+            "self": "https://developer.api.autodesk.com/content/v1/contents/urn:adsk.content:content:b371797d-c881-4ffc-b28c-d3c4c625a0bc"
+          }
+        }
+      ],
+      "included": [
+        
+      ],
+      "meta": {
+        "paginationInfo": {
+          "totalResults": 7,
+          "pageNumber": 1,
+          "totalPages": 7,
+          "pageSize": 1
+        }
+      },
+      "links": {
+        "prev": "",
+        "next": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:a62a09d5-5135-42df-8ae4-156e4edd1ce5/contents?page[number]=2&page[size]=1",
+        "first": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:a62a09d5-5135-42df-8ae4-156e4edd1ce5/contents?page[number]=1&page[size]=1",
+        "last": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:a62a09d5-5135-42df-8ae4-156e4edd1ce5/contents?page[number]=7&page[size]=1"
+      }
+    }
+    ```    
     
     [@tutorials/attach-files-to-content]: <>
     # Attach Files to the Content
