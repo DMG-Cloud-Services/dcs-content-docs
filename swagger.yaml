@@ -1714,7 +1714,7 @@ info:
     
     In this step you get a list of libraries.
 
-    The Forge Content provides the ``GET libraries`` API endpoint that allows you to retrieve a list of all libraries. 
+    The Forge Content provides the ``GET libraries`` API endpoint that allows you to retrieve a list of all libraries. 
     
     In the ``GET`` request, you can also use different filters to retrieve the specific libraries. You can use multiple filters to retrive specific libraries.
     
@@ -1863,7 +1863,7 @@ info:
     
     In this step, you get a list of Sub-Libraries.
     
-    The Forge Content provides the ``GET libraries/{libraryid}/subLibraries`` API endpoint that allows you to retrieve the sub-libraries under a specific library. The list contains the sub-libraries that are published and the libraries for which the user has access.
+    The Forge Content provides the ``GET libraries/{libraryid}/subLibraries`` API  ndpoint that allows you to retrieve the sub-libraries under a specific library. The list contains the sub-libraries that are published and the libraries for which the user has access.
     
     In the ``GET`` request, you can also use different filters to retrieve the specific Sub-Libraries. You can use multiple filters to retrive specific Sub-Libraries.
     
@@ -1955,107 +1955,13 @@ info:
     }
     ```
     
-    ## Get the List of Nodes for a Sub-Library
+    ## Get the List of Nodes under a Library/Sub-Library/Node
     
-    In this step you get a list of nodes under a Sub-Library.
+    In this step you get a list of nodes under a Library, Sub-Library or Node.
 
-    The Forge Content provides the ``GET subLibraries/{subLibraryid}/nodes`` API endpoint that allows you to get the list of nodes present directly under the specified sub-library.
+    The Forge Content provides the ``GET subLibraries/{subLibraryid}/nodes``, ``GET libraries/{libraryid}/nodes`` & ``GET nodes/{nodeId}/nodes`` API endpoints that allows you to get the list of nodes present directly under the specified library, sub-library and node.
     
-    In the ``GET`` request, you need to specify the Id of the Sub-Library from which you want the list of nodes.
-    
-    ### Example
-    
-    ```shell
-    curl -X GET 
-    -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
-    -H "Accept: application/vnd.api+json" 
-    -H "Content-Type: application/vnd.api+json" 
-    –d "https://developer.api.autodesk.com/content/v1/subLibraries/{subLibraryid}/nodes"
-    ```
-      
-    The resource provides the following response: 
-      
-    ```json
-    {
-      "data": [
-        {
-          "type": "nodes",
-          "id": "urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6",
-          "attributes": {
-            "entityPaths": [
-                "/urn:adsk.content:library:5f5c7b29-4b9c-4f6d-9326-e7074b34badd/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6"
-            ],
-            "lastModifiedTime": "2017-08-10T08:27:10Z",
-            "lastModifiedBy": "TGTBKCMEJFW5",
-            "childNodesCount": 0,
-            "description": "Creating a test node",
-            "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
-            "language": "en",
-            "title": "TestNode1",
-            "tags": "test, node",
-            "totalChildrenCount": 2,
-            "createTime": "2017-08-10T08:27:10Z",
-            "createdBy": "TGTBKCMEJFW5",
-            "region": "US",
-            "childContentsCount": 2
-          },
-          "relationships": {
-              "libraries": {
-                  "links": {
-                      "self": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6/relationships/libraries",
-                      "related": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6/libraries"
-                  }
-              },
-              "contents": {
-                  "links": {
-                      "self": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6/relationships/contents",
-                      "related": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6/contents"
-                  },
-                  "data": []
-              },
-              "nodes": {
-                  "links": {
-                      "self": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6/relationships/nodes",
-                      "related": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6/nodes"
-                  }
-              },
-              "subLibraries": {
-                  "links": {
-                      "self": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6/relationships/subLibraries",
-                      "related": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6/subLibraries"
-                  }
-              }
-          },
-          "links": {
-              "self": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:446b94c9-9e73-4965-9064-28e9fb6fb2f6"
-          }
-        }
-      ],
-      "included": [],
-      "meta": {
-          "paginationInfo": {
-              "totalResults": 1,
-              "pageNumber": 1,
-              "totalPages": 1,
-              "pageSize": 20
-          }
-      },
-      "links": {
-          "prev": "",
-          "next": "",
-          "first": "https://developer.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01/nodes?page[number]=1&page[size]=20",
-          "last": "https://developer.api.autodesk.com/content/v1/subLibraries/urn:adsk.content:node:5b9dbb29-348f-4d10-9e15-d868306e1a01/nodes?page[number]=1&page[size]=20"
-      }
-    }
-    ```
-
-    ## Get the List of Nodes from a Library
-    
-    In this step you get a list of nodes under a library.
-    
-    The Forge Content provides the ``GET libraries/{libraryid}/nodes`` API endpoint that allows you to get the list of nodes present directly under the specified library.
-    
-    In the ``GET`` request, you need to specify the Id of the library from which you want the list of nodes.
+    In the ``GET`` request, you need to specify the Id of the Library, Sub-Library or Node from which you want the list of nodes.
     
     ### Example
     
@@ -2065,6 +1971,22 @@ info:
     -H "Accept: application/vnd.api+json" 
     -H "Content-Type: application/vnd.api+json" 
     –d "https://developer.api.autodesk.com/content/v1/libraries/{libraryid}/nodes"
+    ```
+    
+    ```shell
+    curl -X GET 
+    -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
+    -H "Accept: application/vnd.api+json" 
+    -H "Content-Type: application/vnd.api+json" 
+    –d "https://developer.api.autodesk.com/content/v1/subLibraries/{subLibraryid}/nodes"
+    ```
+    
+    ```shell
+    curl -X GET 
+    -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
+    -H "Accept: application/vnd.api+json" 
+    -H "Content-Type: application/vnd.api+json" 
+    –d "https://developer.api.autodesk.com/content/v1/libraries/{libraryid}/nodes/{nodeId}/nodes"
     ```
     
     The resource provides the following response:
@@ -2192,6 +2114,8 @@ info:
       }
     }
     ```
+    
+    ## Get the List of Contents under a Library/Sub-library/Node
     
     [@tutorials/attach-files-to-content]: <>
     # Attach Files to the Content
