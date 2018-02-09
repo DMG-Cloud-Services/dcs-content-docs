@@ -3522,9 +3522,11 @@ info:
     
     ## Step 3: Provide Access to Forge Content Members for your Library and Sub-Library
     
-    In this step, you provide access to other Forge Content members for your Library. The access can be LIBRARY_MANAGER, CONTENT_CREATOR, CONTENT_READER. Once you provide the necessary access to Forge Content members for your Library or Sub-library, they can perform all community operations on your library or sub-library.
+    In this step, you provide access to other Forge Content members to your Library. The access roles can be LIBRARY_MANAGER, CONTENT_CREATOR, CONTENT_READER. Once you provide the necessary access role to other Forge Content members on your Library or Sub-library, they can perform all community operations on your library or sub-library depending on the role assigned.
     
-    The Forge Content provides the `PATCH libraries/libraryId` and `PATCH subLibraries/subLibraryId` endpoint to provide the correct role for which you want to add or remove members.
+    The Forge Content provides the `PATCH libraries/libraryId` and `PATCH subLibraries/subLibraryId` endpoint to provide the correct role for which you want to add or remove members.    
+    
+    **Note**: The Library/Sub-Library has to published before adding other members on them for collaboration.
     
     ### Example
     
