@@ -15,7 +15,7 @@ info:
     
     As content is a core part of any design activities, and customers want to share their project-specific content with designers, engineers, and organization, Forge Content provide APIs for customers to build applications around the content for the Autodesk product suite.
     
-    The Forge Content API provides a hierarchical structure with Library, Sub Library, Nodes, and Contents as entities in the aforementioned sequence. This hierarchical structure helps you in creating the content, which can be easily organized, searched, shared, and maintained with different versions.
+    The Forge Content API provides a hierarchical structure with Library, Sub-Library, Nodes, and Contents as entities in the aforementioned sequence. This hierarchical structure helps you in creating the content, which can be easily organized, searched, shared, and maintained with different versions.
 
     Forge Content API follows the JSON API Specification 1.0. For more information, see [JSON API specification](http://jsonapi.org/format/).
 
@@ -49,7 +49,7 @@ info:
     2. Entity names are always plural e.g. ``Libraries``, ``SubLibraries``, ``Nodes``, ``Contents``
     3. Entities are organised in the following hierarchy: 
       - ``Libraries`` -> ``Nodes``... -> ``Contents`` OR
-      - ``Libraries`` -> ``Sub Library`` -> ``Nodes``... -> ``Contents``
+      - ``Libraries`` -> ``Sub-Library`` -> ``Nodes``... -> ``Contents``
     4. Element names are camelCase e.g. ``rootFolder``
     5. Most operations work with both 2 and 3 legged oauth keys. In case a 2 legged oauth key is used - some fields like userId may be empty (or use application name)
     6. You need to specify the Schema inside the "data":"attributes":"schema" attribute of the POST request body. For more information, see JSON schema examples for extension types [here](/en/docs/content/_snippets/v1/examples).
@@ -146,18 +146,18 @@ info:
     - **Library** > **Node** > **Content**
       This is the default content model where you create library, nodes, and contents in the given hierarchy. This content model is a flat model. You create one library and one or multiple nodes in the library. Then, you create contents under the nodes. 
     
-    ![Forge Content Structure](https://raw.githubusercontent.com/DMG-Cloud-Services/dcs_doc_images/master/content/content_structure.png "Content Model without Sub Library")
+    ![Forge Content Structure](https://raw.githubusercontent.com/DMG-Cloud-Services/dcs_doc_images/master/content/content_structure.png "Content Model without Sub-Library")
     
-    - **Library** > **Sub Library** > **Node** > **Content**
-      This is another content model with sub library as one more entity in the hierarchy. In this model, a base library is created for the application and then one or more sub libraries are created under the base library. Under these sub libraries, you further create one or more nodes and add the content under the nodes.
+    - **Library** > **Sub-Library** > **Node** > **Content**
+      This is another content model with sub-library as one more entity in the hierarchy. In this model, a base library is created for the application and then one or more Sub-Libraries are created under the base library. Under these Sub-Libraries, you further create one or more nodes and add the content under the nodes.
     
-    ![Forge Content Structure](https://raw.githubusercontent.com/DMG-Cloud-Services/dcs_doc_images/master/content/new_content_structure.png "Content Model with Sub Library")
+    ![Forge Content Structure](https://raw.githubusercontent.com/DMG-Cloud-Services/dcs_doc_images/master/content/new_content_structure.png "Content Model with Sub- Library")
     
     The content data models consists of the following entities that you need to create:
     
     * [Library](#library)
     
-    * [Sub Library](#sublibrary)
+    * [Sub-Library](#sublibrary)
     
     * [Node](#node)
     
@@ -171,25 +171,25 @@ info:
   
     When you create a library, by default you become the Library Manager of that library. You can, however; give the permissions to other users to work on your library.
       
-    ##<a name="sublibrary"></a>**Sub Library**
+    ##<a name="sublibrary"></a>**Sub-Library**
     
-    Sub Library is the second level entity in the content model. Inside the Sub Library, you create nodes and contents.
+    Sub-Library is the second level entity in the content model. Inside the Sub-Library, you create nodes and contents.
 
-    Sub Library resembles to the user specific storage location on a computer. You can create one base library for your application and one Sub Library for every user. Each user then stores their application specific contents inside their Sub Library. 
+    Sub-Library resembles to the user specific storage location on a computer. You can create one base library for your application and one Sub-Library for every user. Each user then stores their application specific contents inside their Sub-Library. 
     
-    When you create a Sub Library; by default, you get the ownership permissions to that Sub Library. You can create and manage your content inside the Sub Library independently from other users. You can also give permissions to other users to access or manage your Sub Library.
+    When you create a Sub-Library; by default, you get the ownership permissions to that Sub-Library. You can create and manage your content inside the Sub-Library independently from other users. You can also give permissions to other users to access or manage your Sub-Library.
     
     In this content model, Forge Content API indexes all data under the base library context. This helps you in optimizing the search performance for your content and keeping the data together under one context.
     
-    You can also set your Sub Library as a system library. System library acts as a public Sub Library where you can store application related content that can be shared by all users.
+    You can also set your Sub-Library as a system library. System library acts as a public Sub-Library where you can store application related content that can be shared by all users.
     
-    ### When to use Sub Library?
+    ### When to use Sub-Library?
     
-    Even though Sub Library is another entity level in the content model, there are specific advantages and benefits for which you can use Sub Library.
+    Even though Sub-Library is another entity level in the content model, there are specific advantages and benefits for which you can use Sub-Library.
     
-    If your content structure requires that you organize your application content based on users, allow the users to create and manage their content, and create global content that all users can share, then it is recommended that you use the content model with Sub Library.
+    If your content structure requires that you organize your application content based on users, allow the users to create and manage their content, and create global content that all users can share, then it is recommended that you use the content model with Sub-Library.
     
-    The following sample structure can give you an idea on when you can use Sub Library for your content structure.
+    The following sample structure can give you an idea on when you can use Sub-Library for your content structure.
     
     ```
     Materials (Base Library)
@@ -200,7 +200,7 @@ info:
       
           Content (Content)
       
-      User1 (Sub Library)
+      User1 (Sub-Library)
       
         Project A (Node)
       
@@ -212,7 +212,7 @@ info:
       
           Content (Content)
       
-      User2 (Sub Library)
+      User2 (Sub-Library)
       
         Project C (Node)
       
@@ -287,7 +287,7 @@ info:
     | View Library Hierarchy      | YES             | YES             | YES             |
     | Create New Library          | YES             | NO              | NO              |
     | Administer Library          | YES             | NO              | NO              |
-    | Create Sub Library          | YES             | NO              | NO              | 
+    | Create Sub-Library          | YES             | NO              | NO              | 
     | Add Users                   | YES             | NO              | NO              |
     | Add New Content             | YES             | YES             | NO              | Content can be added at any level in the hierarchy inside a library.
     | Update Content              | YES             | YES             | NO              | Content can be updated at any level in the hierarchy inside a library.
@@ -297,7 +297,7 @@ info:
     [@overview/content-attributes]: <>
     # Content Attributes
     
-    Forge Content provides a set of core attributes which can be used for creating entities such as Library, Sub Library, Nodes, and Contents.
+    Forge Content provides a set of core attributes which can be used for creating entities such as Library, Sub-Library, Nodes, and Contents.
     
     There are core attributes that are common to all entities, and there are few core attributes that are specific to an entity.  
     
@@ -398,13 +398,13 @@ info:
     }
     ```
     
-    ##<a name="sublibrary-entity-attributes"></a>Sub Library Entity Attributes
+    ##<a name="sublibrary-entity-attributes"></a>Sub-Library Entity Attributes
     
-    A sub library inherits all common attributes. In addition, the following table lists the attributes specific for the Sub Library entity:
+    A Sub-Library inherits all common attributes. In addition, the following table lists the attributes specific for the Sub-Library entity:
     
     | Attribute       | AUTO / MANUAL |  Description
     | ----------------|:-------------:|--------------------------------------------------------------------------------
-    | **status**      | MANUAL        |  The status of the sub library. The status can be **private** or **published**. Defaults to **private** on create.
+    | **status**      | MANUAL        |  The status of the Sub-Library. The status can be **private** or **published**. Defaults to **private** on create.
     | **externalId**  | MANUAL        |  The optional external Id attribute to hold the application/client's identifier for the entity. This must be unique under the library.
     | **permissions** | MANUAL        |  The optional permissions object array specifying all the members having access to this library. This is effective for PATCH API call.
     
@@ -416,8 +416,8 @@ info:
         "type": "subLibraries",
         "attributes": {
           "title": "test.subLibrary",
-          "description": "Test Sub Library",
-          "tags": "test, sub library",
+          "description": "Test Sub-Library",
+          "tags": "test, Sub-Library",
           "language": "en",
           "region": "US",
           "externalId": "e577c93d-cdfb-4fa5-8930-f19051b9eabc",
@@ -793,10 +793,10 @@ info:
     The Forge Content service provides a set or APIs for developers to create and manage the content for the Autodesk products. In this section, we will provide some step-by-step tutorials demonstrating how the Forge Content APIs work.
     
     ## [Create Content in the Library Data Model](/en/docs/content/v1/tutorials/create-content-in-new-library-with-sublibrary)
-      This tutorial explains how to create a content in a new library with sub library.
+      This tutorial explains how to create a content in a new library with Sub-Library.
       
     ## [Create Content in the Sub-Library Data Model](/en/docs/content/v1/tutorials/create-content-in-new-library-without-sublibrary)
-      This tutorial explains how to create a content in a new library without sub library.
+      This tutorial explains how to create a content in a new library without Sub-Library.
       
     ## [Create Content in the Sub-Library Data Model](/en/docs/content/v1/tutorials/list-api-tutorial)
       This tutorial explains how to get list of entities.
@@ -807,7 +807,7 @@ info:
     ## [Add Thumbnails to the Content](/en/docs/content/v1/tutorials/add-thumbnails-to-content)
       This tutorial explains how to add thumbnails to the content.
       
-    ## [Add Relationship among Library, Sub Library, Nodes, and Contents](/en/docs/content/v1/tutorials/add-relationships)
+    ## [Add Relationship among Library, Sub-Library, Nodes, and Contents](/en/docs/content/v1/tutorials/add-relationships)
       This tutorial explains how to create and update the relationships of nodes and contents within a sub-library or library.
       
     ## [Create Content Community](/en/docs/content/v1/tutorials/collaborate-within-community)
@@ -827,7 +827,7 @@ info:
       HTTP `POST` requests to the Forge Schema require the `data:create` scope, but can also be called with the `data:write` scope.
     
     [@tutorials/create-content-in-new-library-with-sublibrary]: <>
-    # Create Content in a New Library with Sub Library
+    # Create Content in a New Library with Sub-Library
     
     This tutorial explains how to create a content in a new library that contains a sub-library. This tutorial provides the steps based on the following content model:
 
@@ -917,9 +917,9 @@ info:
       
     ## Step 2: Create a Sub-Library under a Library
       
-    In this step, create a sub library. For more information about Sub library, see [Content Model](/en/docs/content/v1/overview/content-model).
+    In this step, create a Sub-Library. For more information about Sub-Library, see [Content Model](/en/docs/content/v1/overview/content-model).
 
-    The Forge Content provides the ``POST libraries/{libraryid}/subLibraries`` API endpoint that allows you to create a new sub library.
+    The Forge Content provides the ``POST libraries/{libraryid}/subLibraries`` API endpoint that allows you to create a new Sub-Library.
       
     ### Example
       
@@ -934,7 +934,7 @@ info:
         "type": "subLibraries",
         "attributes": {
           "title": "MaterialSubLibrary",
-          "description": "The Sub Library for the Material",
+          "description": "The Sub-Library for the Material",
           "status": "private",
           "language": "EN",
           "region": "US"
@@ -967,7 +967,7 @@ info:
               "createTime": "2017-10-13T07:32:02Z",
               "createdBy": "AYK2Q7S52XRU",
               "lastModifiedBy": "AYK2Q7S52XRU",
-              "description": "The Sub Library for the Material",
+              "description": "The Sub-Library for the Material",
               "language": "EN",
               "title": "MaterialSubLibrary",
               "region": "US",
@@ -999,7 +999,7 @@ info:
     
     ## Step 3: Create a Node under a Sub-Library
       
-    In this step, create a node under the sub library that you created in Step 2. For more information about Library and Sub-Library, see [Content Model](/en/docs/content/v1/overview/content-model).
+    In this step, create a node under the Sub-Library that you created in Step 2. For more information about Library and Sub-Library, see [Content Model](/en/docs/content/v1/overview/content-model).
 
     The Forge Content provides the ``POST libraries/{libraryId}/nodes`` API endpoint to create a node in the specified sub-library.
 
@@ -1036,7 +1036,7 @@ info:
             "data": [
               {
                 "type": "subLibraries",
-                "id": "[Sub Library ID]"
+                "id": "[Sub-Library ID]"
               }
             ]
           },
@@ -1308,9 +1308,9 @@ info:
     }
     ```
     [@tutorials/create-content-in-new-library-without-sublibrary]: <>
-    # Create Content in a Library without Sub Library
+    # Create Content in a Library without Sub-Library
     
-    This tutorial explains how to create content in a new library that does not contain a sub library. This tutorial provides the steps based on the following content model:
+    This tutorial explains how to create content in a new library that does not contain a Sub-Library. This tutorial provides the steps based on the following content model:
 
     **Library** -> **Node** -> **Content**
     
@@ -1710,9 +1710,9 @@ info:
     
     This tutorial explains how to fetch libraries, sub-libraries under a library, nodes under library, sub-library & another node and contents under a node.
     
-    ## Step 1: Get the List of Libraries
+    ## Get the List of Libraries
     
-    In this step you get a list of libraries. From the list, you select a library in which you want to create the content. For more information about library, see [Content Model](/en/docs/content/v1/overview/content-model).
+    In this step you get a list of libraries. There are various parameters available to fetch the results.
 
     The Forge Content provides the ``GET libraries`` API endpoint that allows you to retrieve a list of all libraries. 
     
@@ -1859,17 +1859,13 @@ info:
     }
     ```
     
-    From the response, make a note of the **id** attribute, which is the id of the library in which you want to create the content.
+    ## Get the List of Sub-Libraries
     
-    ## Step 2: Get the List of Sub Libraries
-
-    **Note**: Perform this step only if your content model contains a sub library. Otherwize, go to the Step 4.
+    In this step, you get a list of Sub-Libraries. There are various parameters available to fetch the results.
     
-    In this step, you get a list of sub libraries. From the list, you select a sub library in which you want to create nodes and then create the content. For more information about Sub library, see [Content Model](/en/docs/content/v1/overview/content-model).
+    The Forge Content provides the ``GET libraries/{libraryid}/subLibraries`` API endpoint that allows you to retrieve the sub-libraries under a specific library. The list contains the sub-libraries that are published and the libraries for which the user has access.
     
-    The Forge Content provides the ``GET libraries/{libraryid}/subLibraries`` API endpoint that allows you to retrieve the sub libraries from the specified library Id. The list contains the sub-libraries that are published and the libraries for which the user has access.
-    
-    In the ``GET`` request, you can also use different filters to retrieve the specific sub libraries. You can use multiple filters to retrive specific sub libraries.
+    In the ``GET`` request, you can also use different filters to retrieve the specific Sub-Libraries. You can use multiple filters to retrive specific Sub-Libraries.
     
     ### Filters
 
@@ -1915,12 +1911,12 @@ info:
                   "createTime": "2017-08-10T08:14:16Z",
                   "createdBy": "TGTBKCMEJFW5",
                   "lastModifiedBy": "TGTBKCMEJFW5",
-                  "description": "Test Sub Library",
+                  "description": "Test Sub-Library",
                   "language": "en",
                   "title": "TestSubLibrary",
                   "region": "US",
                   "status": "private",
-                  "tags": "test, sub library"
+                  "tags": "test, Sub-Library"
               },
               "relationships": {
                   "libraries": {
@@ -1959,15 +1955,15 @@ info:
     }
     ```
 
-    From the response, make a note of the **id** attribute, which is the id of the sub library in which you want to create the content.
+    From the response, make a note of the **id** attribute, which is the id of the Sub-Library in which you want to create the content.
     
     ## Step 3: Get the List of Nodes for a Sub-Library
     
-    In this step you get a list of nodes from the sub library that you selected in Step 2. From the list, you select a node in which you want to create the content. For more information about Library and Node, see [Content Model](/en/docs/content/v1/overview/content-model).
+    In this step you get a list of nodes from the Sub-Library that you selected in Step 2. From the list, you select a node in which you want to create the content. For more information about Library and Node, see [Content Model](/en/docs/content/v1/overview/content-model).
 
     The Forge Content provides the ``GET subLibraries/{subLibraryid}/nodes`` API endpoint that allows you to get the list of nodes present directly under the specified sub-library.
     
-    In the ``GET`` request, you need to specify the Id of the sub library from which you want the list of nodes.
+    In the ``GET`` request, you need to specify the Id of the Sub-Library from which you want the list of nodes.
     
     ### Example
     
@@ -2560,9 +2556,9 @@ info:
     }
     ```
     [@tutorials/add-relationships]: <>
-    # Add Relationship of Nodes and Contents with Sub Library and Library
+    # Add Relationship of Nodes and Contents with Sub-Library and Library
     
-    This tutorial explains how to create and update the relationships of [Nodes](/en/docs/content/v1/overview/content-model), and [Contents](/en/docs/content/v1/overview/content-model) with [Sub Library](/en/docs/content/v1/overview/content-model) and [Library](/en/docs/content/v1/overview/content-model).
+    This tutorial explains how to create and update the relationships of [Nodes](/en/docs/content/v1/overview/content-model), and [Contents](/en/docs/content/v1/overview/content-model) with [Sub-Library](/en/docs/content/v1/overview/content-model) and [Library](/en/docs/content/v1/overview/content-model).
     
     With the Relationship API, you can create the parent-child relationships among library, sub-library, nodes and contents within the same sub-library and library.
 
@@ -2717,33 +2713,33 @@ info:
     
     From the response, make a note of the **library id** that you want to use for the relationship.
     
-    ## Step 2: Get the Sub Libraries List
+    ## Step 2: Get the Sub-Libraries List
     
-    In this step you get a list of sub libraries from the specified library. For more information about sub library, see [Content Model](/en/docs/content/v1/overview/content-model).
+    In this step you get a list of Sub-Libraries from the specified library. For more information about Sub-Library, see [Content Model](/en/docs/content/v1/overview/content-model).
     
-    In the relationship, you can use single or multiple sub library IDs as child or you can use one sub library Id as parent and other sub library Ids as child.
+    In the relationship, you can use single or multiple Sub-Library IDs as child or you can use one Sub-Library Id as parent and other Sub-Library Ids as child.
     
-    The Library Node API provides the ``GET libraries/libraryId/subLibraries`` endpoint that allows you to get the list of sub libraries from the specified library.
+    The Library Node API provides the ``GET libraries/libraryId/subLibraries`` endpoint that allows you to get the list of Sub-Libraries from the specified library.
     
-    In the ``GET`` request, you need to specify the Id of the library from which you want the list of sub libraries. In the ``GET`` request, you can also use different filters to retrieve the specific sub libraries.
+    In the ``GET`` request, you need to specify the Id of the library from which you want the list of Sub-Libraries. In the ``GET`` request, you can also use different filters to retrieve the specific Sub-Libraries.
     
     ### Filters
     
     | Attribute                               | Description
     | --------------------------------------- | -------------------------------------------------------------------------------------------------------
-    | **filter[contents][role]**              | Displays the sub libraries for the specified role. Possible roles are: LIBRARY_MANAGER, CONTENT_CREATOR, CONTENT_READER, and ANONYMOUS.
-    | **filter[contents][tags]**              | Displays the sub libraries that contains the specified tags. You can specify multiple tags separate by comma.
-    | **filter[contents][publicLibrary]**     | Displays the sub libraries that are released to external poeple.
-    | **filter[contents][createdBy]**         | Displays the sub libraries that the specified user has created.
-    | **filter[contents][createdByAppId]**    | Displays the sub libraries that the specific application has created. You need to specify the application Id.
-    | **filter[contents][interestedAppIds]**  | Displays the sub libraries where the specified application Ids are added in the interestedAppIds list.
+    | **filter[contents][role]**              | Displays the Sub-Libraries for the specified role. Possible roles are: LIBRARY_MANAGER, CONTENT_CREATOR, CONTENT_READER, and ANONYMOUS.
+    | **filter[contents][tags]**              | Displays the Sub-Libraries that contains the specified tags. You can specify multiple tags separate by comma.
+    | **filter[contents][publicLibrary]**     | Displays the Sub-Libraries that are released to external poeple.
+    | **filter[contents][createdBy]**         | Displays the Sub-Libraries that the specified user has created.
+    | **filter[contents][createdByAppId]**    | Displays the Sub-Libraries that the specific application has created. You need to specify the application Id.
+    | **filter[contents][interestedAppIds]**  | Displays the Sub-Libraries where the specified application Ids are added in the interestedAppIds list.
     | **page[size]**                          | The total number of pages that you want to display for the content.
     | **page[number]**                        | The page number of the content that you want to display.
 
     **Notes**:
 
-    -  In the API request if you do not specify a valid token, the API applies the filter criteria only on the sub libraries that are released to public with the status as published.
-    -  In the API request if you do not specify the role, the API retrieves all sub libraries that the user, who is sending the request, has access to.  
+    -  In the API request if you do not specify a valid token, the API applies the filter criteria only on the Sub-Libraries that are released to public with the status as published.
+    -  In the API request if you do not specify the role, the API retrieves all Sub-Libraries that the user, who is sending the request, has access to.  
     
     ### Example
     
@@ -2772,12 +2768,12 @@ info:
             "createTime": "2017-08-10T08:14:16Z",
             "createdBy": "TGTBKCMEJFW5",
             "lastModifiedBy": "TGTBKCMEJFW5",
-            "description": "Test Sub Library",
+            "description": "Test Sub-Library",
             "language": "en",
             "title": "TestSubLibrary",
             "region": "US",
             "status": "private",
-            "tags": "test, sub library"
+            "tags": "test, Sub-Library"
           },
           "relationships": {
               "nodes": {
@@ -2815,7 +2811,7 @@ info:
       }
     }
     ```
-    From the response, make a note of the **sub library id** that you want to use for adding relationship.
+    From the response, make a note of the **Sub-Library id** that you want to use for adding relationship.
     
     ## Step 3: Get the List of Nodes from a Library
     
@@ -2962,7 +2958,7 @@ info:
     
     ## Step 4: Get the List of Contents from the Library
     
-    In this step you search for the content in a library and sub library. In the search request, you can use different filters to easily get specific content that you want to include in the relationship.
+    In this step you search for the content in a library and Sub-Library. In the search request, you can use different filters to easily get specific content that you want to include in the relationship.
 
     In the relationship, you can use single or multiple content ids as child.
     
@@ -3278,13 +3274,13 @@ info:
     ```
     From the response, make a note of the **content id** that you want to use for adding relationship.
 
-    ## Step 5: Create Relationship of Nodes and Contents with Library and Sub Library
+    ## Step 5: Create Relationship of Nodes and Contents with Library and Sub-Library
     
-    In this step, you actually create the relationship between the libraries, sub libraries, nodes, and content.
+    In this step, you actually create the relationship between the libraries, Sub-Libraries, nodes, and content.
 
     The Relationship API provides the ``POST relationships`` endpoint to create the relationships.
 
-    In the ``POST`` request, you need to specify the appropriate Ids of the libraries, sub libraries, nodes, and contents in the **parent** and **children** sections. In the **childern** section, you can specify multiple Ids.
+    In the ``POST`` request, you need to specify the appropriate Ids of the libraries, Sub-Libraries, nodes, and contents in the **parent** and **children** sections. In the **childern** section, you can specify multiple Ids.
     
     ### Example
     
@@ -3324,9 +3320,9 @@ info:
       }
     }' "https://developer.api.autodesk.com/content/v1/relationships"
     ```
-    **Sub Library Relationship**
+    **Sub-Library Relationship**
 
-    This example shows creating a relationship of nodes with a sub library.
+    This example shows creating a relationship of nodes with a Sub-Library.
 
     ```shell
     curl -X POST 
@@ -3398,9 +3394,9 @@ info:
     ```
     On successful creation of a relationship, the resource provides a 204 response without any content.
 
-    ## Step 6: Update Relationship of Nodes and Contents with Library and Sub Library
+    ## Step 6: Update Relationship of Nodes and Contents with Library and Sub-Library
     
-    In this step, you update the relationship between the libraries, sub libraries, nodes, and content.
+    In this step, you update the relationship between the libraries, Sub-Libraries, nodes, and content.
     
     The Relationship API provides the ``PUT relationships`` endpoint to update relationships.
     
@@ -3439,9 +3435,9 @@ info:
     }' "https://developer.api.autodesk.com/content/v1/relationships/nodes/{nodeId}"
     ```
     
-    **Relationship of Nodes with Sub Libraries**
+    **Relationship of Nodes with Sub-Libraries**
     
-    This example shows updating the relationship of a node with a sub library.
+    This example shows updating the relationship of a node with a Sub-Library.
     
     ```shell
     curl -X PUT 
@@ -3512,13 +3508,13 @@ info:
     
     In this step, you create a library that you want to collaborate within the community. The process of creating a library is same as creating your content library. 
     
-    For more information about creating a library, see the **Step 1** in the [Create Content in a New Library with Sub Library](/en/docs/content/v1/tutorials/create-content-in-new-library-with-sublibrary) tutorial.
+    For more information about creating a library, see the **Step 1** in the [Create Content in a New Library with Sub-Library](/en/docs/content/v1/tutorials/create-content-in-new-library-with-sublibrary) tutorial.
 
     ## Step 2: Create and Publish the Content in the Library
     
     In this step, you create content in the library and publish the content. Once you publish your content, you can collaborate that content with other members in the community. The members can like your content, add comments to the content, follow you, and perform many such community operation. For more information about community features, see [Content Community](/en/docs/content/v1/overview/content-community).
     
-    Before creating the content, ensure that you have sub library or nodes created in your library. For more information about creating content and publishing the content, follow the steps given in the [Create Content in a New Library with Sub Library](/en/docs/content/v1/tutorials/create-content-in-new-library-with-sublibrary) tutorial.
+    Before creating the content, ensure that you have Sub-Library or nodes created in your library. For more information about creating content and publishing the content, follow the steps given in the [Create Content in a New Library with Sub-Library](/en/docs/content/v1/tutorials/create-content-in-new-library-with-sublibrary) tutorial.
     
     ## Step 3: Provide Access to Forge Content Members for your Library and Sub-Library
     
@@ -3758,9 +3754,9 @@ info:
     
     .. include:: ../../_snippets/v1/reference/libraries.rst
     
-    ## Sub Library
+    ## Sub-Library
     
-    The following are the supported endpoints and methods related to Sub Library.
+    The following are the supported endpoints and methods related to Sub-Library.
     
     .. include:: ../../_snippets/v1/reference/subLibraries.rst
     
@@ -10087,7 +10083,7 @@ responses:
                     "createdBy": "AYK2Q7S52XRU",
                     "lastModifiedBy": "AYK2Q7S52XRU",
                     "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
-                    "description": "The Sub Library for the Material",
+                    "description": "The Sub-Library for the Material",
                     "language": "EN",
                     "title": "MaterialSubLibrary",
                     "region": "US",
@@ -10355,7 +10351,7 @@ responses:
                       "createdBy": "AYK2Q7S52XRU",
                       "lastModifiedBy": "AYK2Q7S52XRU",
                       "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
-                      "description": "The Sub Library for the Material",
+                      "description": "The Sub-Library for the Material",
                       "language": "EN",
                       "title": "MaterialSubLibrary",
                       "region": "US",
@@ -10408,7 +10404,7 @@ responses:
                       "createdBy": "AYK2Q7S52XRU",
                       "lastModifiedBy": "AYK2Q7S52XRU",
                       "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50b",
-                      "description": "The Sub Library for the Material2",
+                      "description": "The Sub-Library for the Material2",
                       "language": "EN",
                       "title": "MaterialSubLibrary2",
                       "region": "US",
