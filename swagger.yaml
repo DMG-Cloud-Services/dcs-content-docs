@@ -1712,7 +1712,7 @@ info:
     
     ## Get the List of Libraries
     
-    In this step you get a list of libraries. There are various parameters available to fetch the results.
+    In this step you get a list of libraries.
 
     The Forge Content provides the ``GET libraries`` API endpoint that allows you to retrieve a list of all libraries. 
     
@@ -1861,7 +1861,7 @@ info:
     
     ## Get the List of Sub-Libraries
     
-    In this step, you get a list of Sub-Libraries. There are various parameters available to fetch the results.
+    In this step, you get a list of Sub-Libraries.
     
     The Forge Content provides the ``GET libraries/{libraryid}/subLibraries`` API endpoint that allows you to retrieve the sub-libraries under a specific library. The list contains the sub-libraries that are published and the libraries for which the user has access.
     
@@ -1954,14 +1954,12 @@ info:
       }
     }
     ```
-
-    From the response, make a note of the **id** attribute, which is the id of the Sub-Library in which you want to create the content.
     
-    ## Step 3: Get the List of Nodes for a Sub-Library
+    ## Get the List of Nodes for a Sub-Library
     
-    In this step you get a list of nodes from the Sub-Library that you selected in Step 2. From the list, you select a node in which you want to create the content. For more information about Library and Node, see [Content Model](/en/docs/content/v1/overview/content-model).
+    In this step you get a list of nodes under a Sub-Library.
 
-    The Forge Content provides the ``GET subLibraries/{subLibraryid}/nodes`` API endpoint that allows you to get the list of nodes present directly under the specified sub-library.
+    The Forge Content provides the ``GET subLibraries/{subLibraryid}/nodes`` API endpoint that allows you to get the list of nodes present directly under the specified sub-library.
     
     In the ``GET`` request, you need to specify the Id of the Sub-Library from which you want the list of nodes.
     
@@ -2050,14 +2048,12 @@ info:
       }
     }
     ```
+
+    ## Get the List of Nodes from a Library
     
-    From the response, make a note of the node id that you want to use for creating the content.
+    In this step you get a list of nodes under a library.
     
-    ## Step 4: Get the List of Nodes from a Library
-    
-    In this step you get a list of nodes from the library that you selected in Step 1. From the list, you select a node in which you want to create the content. For more information about Library and Node, see [Content Model](/en/docs/content/v1/overview/content-model).
-    
-    The Forge Content provides the ``GET libraries/{libraryid}/nodes`` API endpoint that allows you to get the list of nodes present directly under the specified library.
+    The Forge Content provides the ``GET libraries/{libraryid}/nodes`` API endpoint that allows you to get the list of nodes present directly under the specified library.
     
     In the ``GET`` request, you need to specify the Id of the library from which you want the list of nodes.
     
