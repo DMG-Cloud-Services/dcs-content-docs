@@ -5116,7 +5116,7 @@ paths:
         [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
       tags: ["Relationships"]
 
-  /content/v1/libraries/{libraryId}/relationships/nodes:
+  /libraries/{libraryId}/relationships/nodes:
     post:
       description: |
         Add a new relationship between a library and nodes.
@@ -5151,7 +5151,7 @@ paths:
                       }
                     ]
                   }            
-                '' "https://developer.api.autodesk.com/content/v1/libraries/libraryId/relationships/nodes"'
+                '' "https://developer.api.autodesk.com/content/v1/libraries/{libraryId}/relationships/nodes"'
       security:
         [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
       tags: ["Relationships"]      
@@ -5189,12 +5189,12 @@ paths:
                       }
                     ]
                   }            
-                '' "https://developer.api.autodesk.com/content/v1/libraries/libraryId/relationships/nodes"'
+                '' "https://developer.api.autodesk.com/content/v1/libraries/{libraryId}/relationships/nodes"'
       security:
         [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
       tags: ["Relationships"]      
       
-  /content/v1/subLibraries/{subLibraryId}/relationships/nodes:
+  /subLibraries/{subLibraryId}/relationships/nodes:
     post:
       description: |
         Add a new relationship between a sub-library and nodes.
@@ -5229,7 +5229,7 @@ paths:
                       }
                     ]
                   }            
-                '' "https://developer.api.autodesk.com/content/v1/subLibraries/subLibraryId/relationships/nodes"'
+                '' "https://developer.api.autodesk.com/content/v1/subLibraries/{subLibraryId}/relationships/nodes"'
       security:
         [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
       tags: ["Relationships"]      
@@ -5267,12 +5267,12 @@ paths:
                       }
                     ]
                   }            
-                '' "https://developer.api.autodesk.com/content/v1/subLibraries/subLibraryId/relationships/nodes"'
+                '' "https://developer.api.autodesk.com/content/v1/subLibraries/{subLibraryId}/relationships/nodes"'
       security:
         [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
       tags: ["Relationships"]   
       
-  /content/v1/nodes/{nodeId}/relationships/nodes:
+  /libraries/{libraryId}/nodes/{nodeId}/relationships/nodes:
     post:
       description: |
         Add a new relationship between a node and nodes.
@@ -5281,6 +5281,7 @@ paths:
         
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-Updatecontentrelationship
       parameters:
+        - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
         - $ref: '#/parameters/body_update_parent_relationships'
       responses:
@@ -5307,7 +5308,7 @@ paths:
                       }
                     ]
                   }            
-                '' "https://developer.api.autodesk.com/content/v1/libraries/libraryId/nodes/{nodeId}/relationships/nodes"'
+                '' "https://developer.api.autodesk.com/content/v1/libraries/{libraryId}/nodes/{nodeId}/relationships/nodes"'
       security:
         [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
       tags: ["Relationships"]      
@@ -5319,6 +5320,7 @@ paths:
         
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-Updatecontentrelationship
       parameters:
+        - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
         - $ref: '#/parameters/body_update_parent_relationships'
       responses:
@@ -5345,10 +5347,90 @@ paths:
                       }
                     ]
                   }            
-                '' "https://developer.api.autodesk.com/content/v1/libraries/libraryId/nodes/{nodeId}/relationships/nodes"'
+                '' "https://developer.api.autodesk.com/content/v1/libraries/{libraryId}/nodes/{nodeId}/relationships/nodes"'
       security:
         [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
       tags: ["Relationships"]   
+      
+  /libraries/{libraryId}/nodes/{nodeId}/relationships/contents:
+    post:
+      description: |
+        Add a new relationship between a node and contents.
+        
+        ***Note:*** Please see the example payload in the [wiki][1].
+        
+        [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-Updatecontentrelationship
+      parameters:
+        - $ref: '#/parameters/libraryId'
+        - $ref: '#/parameters/nodeId'
+        - $ref: '#/parameters/body_update_parent_relationships'
+      responses:
+        '204': {
+          "description": "No content"  
+        }
+        '400': { $ref: '#/responses/bad_input' }
+        '403': { $ref: '#/responses/forbidden' }
+      x-ads-docs-cli-example: 
+          'curl -X POST 
+                -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" 
+                -H "Content-Type: application/vnd.api+json" 
+                -d
+                ''
+                  {
+                    "data": [
+                      {
+                        "type": "contents",
+                        "id": "urn:adsk.content:content:eea9d052-5e29-49ce-a5f3-c651824a1484"
+                      },
+                      {
+                        "type": "contents",
+                        "id": "urn:adsk.content:content:6d265a52-efd2-403e-846c-644c2659c582"
+                      }
+                    ]
+                  }            
+                '' "https://developer.api.autodesk.com/content/v1/libraries/{libraryId}/nodes/{nodeId}/relationships/contents"'
+      security:
+        [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
+      tags: ["Relationships"]      
+    delete:
+      description: |
+        Delete an existing relationship between a node and contents.
+        
+        ***Note:*** Please see the example payload in the [wiki][1].
+        
+        [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-Updatecontentrelationship
+      parameters:
+        - $ref: '#/parameters/libraryId'
+        - $ref: '#/parameters/nodeId'
+        - $ref: '#/parameters/body_update_parent_relationships'
+      responses:
+        '204': {
+          "description": "No content"  
+        }
+        '400': { $ref: '#/responses/bad_input' }
+        '403': { $ref: '#/responses/forbidden' }
+      x-ads-docs-cli-example: 
+          'curl -X POST 
+                -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" 
+                -H "Content-Type: application/vnd.api+json" 
+                -d
+                ''
+                  {
+                    "data": [
+                      {
+                        "type": "contents",
+                        "id": "urn:adsk.content:content:eea9d052-5e29-49ce-a5f3-c651824a1484"
+                      },
+                      {
+                        "type": "contents",
+                        "id": "urn:adsk.content:content:6d265a52-efd2-403e-846c-644c2659c582"
+                      }
+                    ]
+                  }            
+                '' "https://developer.api.autodesk.com/content/v1/libraries/{libraryId}/nodes/{nodeId}/relationships/contents"'
+      security:
+        [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
+      tags: ["Relationships"]       
       
   /contentsSearch:
     x-description: Search library contents
