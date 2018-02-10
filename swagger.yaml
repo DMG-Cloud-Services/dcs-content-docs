@@ -5116,7 +5116,7 @@ paths:
         [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
       tags: ["Relationships"]
 
-  /libraries/{libraryId}/relationships/nodes:
+  /content/v1/libraries/{libraryId}/relationships/nodes:
     post:
       description: |
         Add a new relationship between a library and nodes.
@@ -5194,7 +5194,7 @@ paths:
         [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
       tags: ["Relationships"]      
       
-  /subLibraries/{subLibraryId}/relationships/nodes:
+  /content/v1/subLibraries/{subLibraryId}/relationships/nodes:
     post:
       description: |
         Add a new relationship between a sub-library and nodes.
@@ -5272,7 +5272,7 @@ paths:
         [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
       tags: ["Relationships"]   
       
-  /nodes/{nodeId}/relationships/nodes:
+  /content/v1/libraries/{libraryId}/nodes/{nodeId}/relationships/nodes:
     post:
       description: |
         Add a new relationship between a node and nodes.
@@ -5281,6 +5281,7 @@ paths:
         
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-Updatecontentrelationship
       parameters:
+        - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
         - $ref: '#/parameters/body_update_parent_relationships'
       responses:
@@ -5319,6 +5320,7 @@ paths:
         
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-Updatecontentrelationship
       parameters:
+        - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
         - $ref: '#/parameters/body_update_parent_relationships'
       responses:
