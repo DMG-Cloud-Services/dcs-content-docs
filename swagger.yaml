@@ -4464,10 +4464,11 @@ paths:
       
   /libraries/{libraryId}/nodes/{nodeId}/nodes:
     get:
-      description: Get all the nodes under another node.
+      description: Get all the nodes (children & parents) under another node.
       parameters:
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
+        - $ref: '#/parameters/node_parents_relationship'
       responses:
         '200': { $ref: '#/responses/nodes' }
         '400': { $ref: '#/responses/bad_input' }
@@ -4502,7 +4503,11 @@ paths:
   
   /libraries/{libraryId}/nodes/{nodeId}/children:
     get:
-      description: Get all immediate contents & nodes under a node.
+      description: |
+          Get all immediate contents & nodes under a node.
+        
+          **Note**: This API is deprecated. Please use /nodes/{nodeId}/nodes and /nodes/{nodeId}/contents API instead.
+          
       parameters:
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
@@ -4517,7 +4522,10 @@ paths:
       
   /libraries/{libraryId}/nodes/{nodeId}/parents:
     get:
-      description: Get all immediate parents for a node.
+      description: |
+        Get all immediate parents for a node.
+        
+        **Note**: This API is deprecated. Please use /nodes/{nodeId}/nodes?filter[contents][relationship]=parents API instead.
       parameters:
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
@@ -6853,6 +6861,13 @@ parameters:
     required: false
     type: string
     x-example: "materials"    
+  node_parents_relationship:
+    name: filter[contents][relationship]
+    in: query
+    description: Parent param for the node
+    required: false
+    type: string
+    x-example: "parents"        
   createdBy:
     name: filter[contents][createdBy]
     in: query
