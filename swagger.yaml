@@ -4503,6 +4503,7 @@ paths:
   
   /libraries/{libraryId}/nodes/{nodeId}/children:
     get:
+      deprecated: true
       description: |
           Get all immediate contents & nodes under a node.
         
@@ -4522,6 +4523,7 @@ paths:
       
   /libraries/{libraryId}/nodes/{nodeId}/parents:
     get:
+      deprecated: true
       description: |
         Get all immediate parents for a node.
         
