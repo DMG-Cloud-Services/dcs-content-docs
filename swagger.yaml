@@ -2484,19 +2484,13 @@ info:
               "width": 46554,
               "height": 134334
             }
-          ],
-          "description": "contents",
-          "tags": "tags",
-          "title": "FormLabs Form 2 PreForm",
-          "region": "US",
-          "language": "en",
-          "status": "published"
+          ]
         }
       }
-    }' "https://developer.api.autodesk.com/content/v1/libraries/{libraryId}/contents/{contentId}"
+    }' "https://developer.api.autodesk.com/content/v1/libraries/{libraryId}/contents/{contentId}/thumbnails"
     ```
     
-    The reource provides the following response:
+    Once the thumbnails are added, the complete content looks as follows:
     
     ```json
     {
@@ -2567,7 +2561,19 @@ info:
                     "fileUrl": "https://developer.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:e5108ad7-1051-4293-b50f-73958019f779/contents/urn:adsk.content:content:99a477ca-8f41-4c0b-bf3e-2823327d6e65/927591e2-169b-4401-bb51-2ca273dbf9a9.abc.png?nonce=CnRqb-EOTCzQzAL6Fn8Bj04O8Uwj3nMfxq4Bnob-W4RYvw5YFDWOi6LCKiZBihlAVIYZZhgXmc-ArRu8zAYr0lfzliOdykoW3evyBzBWCOyh6ALK0W7rzYKOwnuBpYN16QCg7J0tPpuoajjzzcQUj5oSX_ilgcTFDzSJwrqOK-y1x-JZuUHuLS--hr39nKY6lAP459pHVOGxb1WwoW7iyyQsWBLPAFSXLsG5PL97GnwjZ5t9PU8kMEtB0JfpMsY_InxW0bBbEb_4eWaCiIe-ekssORcMgLJS2ptg35dJiFrSRzEwaANvsuANsGp-Vow2NG1uYGPLYUuL7MzOQHSziuKpf9NuWvktlAbesDDWovwwxsDwD7QgR7Lo2x-rIr3bA6vBxUfWj0106PVmAEuO8qCCRnRlzn259TGhDZmwCDvsHybRpoXU-qzBg8tqKQXUeCUWWL2TybTJ9HsGldlH1r4Y1ihpRn8tiyYxDmQZFFBity8vRL3tzIf8G2hKKcggHS6qrz2rjOSbBQpr8DK0aQ&seed=AAABXVtc4YAAAAFdWyXzAA",
                     "height": 134334,
                     "width": 46554
-                  }
+                  },
+                  {
+                    "title": "xyz.png",
+                    "description": "Image file",
+                    "size": 32423,
+                    "checksum": "0426238196c1109b17754484aedb7bf1496403cc",
+                    "objectKey": "29f54d3d-ec56-4c63-9860-02f18f061d55.xyz.png",
+                    "mimeType": "image/png",
+                    "id": "D49825EB-81F9-460E-82B3-8B55689F3941",
+                    "fileUrl": "https://developer.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:e5108ad7-1051-4293-b50f-73958019f779/contents/urn:adsk.content:content:99a477ca-8f41-4c0b-bf3e-2823327d6e65/29f54d3d-ec56-4c63-9860-02f18f061d55.xyz.png?nonce=CnRqb-EOTCzQzAL6Fn8Bj04O8Uwj3nMfxq4Bnob-W4RYvw5YFDWOi6LCKiZBihlAVIYZZhgXmc-ArRu8zAYr0lfzliOdykoW3evyBzBWCOyh6ALK0W7rzYKOwnuBpYN16QCg7J0tPpuoajjzzcQUj5oSX_ilgcTFDzSJwrqOK-y1x-JZuUHuLS--hr39nKY6lAP459pHVOGxb1WwoW7iyyQsWBLPAFSXLsG5PL97GnwjZ5t9PU8kMEtB0JfpMsY_InxW0bBbEb_4eWaCiIe-ekssORcMgLJS2ptg35dJiFrSRzEwaANvsuANsGp-Vow2NG1uYGPLYUuL7MzOQHSziuKpf9NuWvktlAbesDDWovwwxsDwD7QgR7Lo2x-rIr3bA6vBxUfWj0106PVmAEuO8qCCRnRlzn259TGhDZmwCDvsHybRpoXU-qzBg8tqKQXUeCUWWL2TybTJ9HsGldlH1r4Y1ihpRn8tiyYxDmQZFFBity8vRL3tzIf8G2hKKcggHS6qrz2rjOSbBQpr8DK0aQ&seed=AAABXVtc4YAAAAFdWyXzAA",
+                    "height": 134334,
+                    "width": 46554
+                  }                  
               ],
               "status": "draft"
           },
