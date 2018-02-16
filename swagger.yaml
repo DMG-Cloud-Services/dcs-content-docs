@@ -2463,7 +2463,7 @@ info:
     -d 
     '{
       "data": {
-        "type": "contents",
+        "type": "contentFiles",
         "attributes": {
           "thumbnails": [
             {
