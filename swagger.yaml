@@ -4025,7 +4025,10 @@ paths:
       description: |
         Update an existing library. This is usually for purpose of releasing it or adding new admins.
       
-        ***Note:*** Please see the example payload in the [wiki][1].
+        ***Note:*** 
+        
+        * Please see the example payload in the [wiki][1].
+        * The `permissions` on the library can be set only when the status is passed as `published`.
         
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-UpdateLibrary
       operationId: update_library
@@ -4193,7 +4196,10 @@ paths:
       description: |
         Get details of a sub-library.
         
-        ***Note:*** Please see the example payload in the [wiki][1].
+        ***Note:*** 
+        
+        * Please see the example payload in the [wiki][1].
+        * The `permissions` on the library can be set only when the status is passed as `published`.
         
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-GetSub-library
       parameters:
