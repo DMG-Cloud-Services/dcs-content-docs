@@ -4026,7 +4026,6 @@ paths:
         Update an existing library. This is usually for purpose of releasing it or adding new admins.
       
         ***Note:*** 
-        
         * Please see the example payload in the [wiki][1].
         * The `permissions` on the library can be set only when the status is passed as `published`.
         
@@ -4197,7 +4196,7 @@ paths:
         Get details of a sub-library.
         
         ***Note:*** 
-        
+  
         * Please see the example payload in the [wiki][1].
         * The `permissions` on the library can be set only when the status is passed as `published`.
         
