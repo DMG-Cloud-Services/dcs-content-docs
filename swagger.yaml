@@ -3559,7 +3559,9 @@ info:
     
     The Forge Content provides the `PATCH libraries/libraryId` and `PATCH subLibraries/subLibraryId` endpoint to provide the correct role for which you want to add or remove members.    
     
-    **Note**: The Library/Sub-Library has to published before adding other members on them for collaboration.
+    **Note**: 
+    * At least one subject has to be passed under the CONTENT_READER role when the Library/Sub-Library is being published.
+    * The Library/Sub-Library has to published before adding other members on the library for collaboration.
     
     ### Example
     
@@ -4027,6 +4029,7 @@ paths:
       
         ***Note:*** 
         * Please see the example payload in the [wiki][1].
+        * At least one subject has to be passed under the CONTENT_READER role when the library is being published.
         * The `permissions` on the library can be set only when the status is passed as `published`.
         
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-UpdateLibrary
@@ -4195,10 +4198,7 @@ paths:
       description: |
         Get details of a sub-library.
         
-        ***Note:*** 
-  
-        * Please see the example payload in the [wiki][1].
-        * The `permissions` on the library can be set only when the status is passed as `published`.
+        ***Note:*** Please see the example payload in the [wiki][1].
         
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-GetSub-library
       parameters:
@@ -4217,7 +4217,11 @@ paths:
       description: |
         Update an existing sub-library.
       
-        ***Note:*** Please see the example payload in the [wiki][1].
+        ***Note:*** 
+        * Please see the example payload in the [wiki][1].
+        * At least one subject has to be passed under the CONTENT_READER role when the sub-library is being published.
+        * The `permissions` on the library can be set only when the status is passed as `published`.
+
         
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-UpdateSub-library
       operationId: updateSubLibrary
