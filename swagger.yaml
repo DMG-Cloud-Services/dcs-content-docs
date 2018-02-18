@@ -8099,7 +8099,6 @@ definitions:
                   $ref: '#/definitions/translations_definition'                         
           relationships:
             type: object
-            required: [libraries]
             properties:
               libraries:
                 type: object
