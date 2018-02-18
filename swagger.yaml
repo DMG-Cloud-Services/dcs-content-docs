@@ -6993,35 +6993,35 @@ parameters:
   query_filter_content_title:
     name: filter[contents][title]
     in: query
-    description: Title of the library, node or content
+    description: Title of the library, sub-library, node or content
     required: false
     type: string
     x-example: "TonerPLANatural285Ultimaker2at200micron"
   query_filter_content_description:
     name: filter[contents][description]
     in: query
-    description: Description of the content or node
+    description: Description of the library, sub-library, node or content
     required: false
     type: string
     x-example: "Standard PLA for the purposes of prototyping. A balance of quality and speed."
   query_filter_content_tags:
     name: filter[contents][tags]
     in: query
-    description: Content, Node and Library tags
+    description: Library, Sub-library, Node or Content tags
     required: false
     type: string
     x-example: "metal"
   query_filter_content_language:
     name: filter[contents][language]
     in: query
-    description: Library, Node or Content locale language, e.g. en, fr, cn, etc.
+    description: Library, Sub-library, Node or Content locale language, e.g. en, fr, cn, etc.
     required: false
     type: string
     x-example: "fr"
   query_filter_content_region:
     name: filter[contents][region]
     in: query
-    description: Library, Node or Content locale region code such as US, CA, FR, etc.
+    description: Library, Sub-library, Node or Content locale region code such as US, CA, FR, etc.
     required: false
     type: string
     x-example: "FR"
@@ -7052,7 +7052,7 @@ parameters:
     description: Entity type.
     required: false
     type: string
-    enum: [library, node, content]
+    enum: [library, subLibrary, node, content]
     x-example: "content"
   query_filter_content_lock:
     name: filter[contents][lock]
@@ -7067,7 +7067,7 @@ parameters:
     description: Parent Entity type.
     required: false
     type: string
-    enum: [library, node, content]
+    enum: [library, subLibrary, node, content]
     x-example: "library"
   query_filter_content_parents_id:
     name: filter[contents][parents.id]
