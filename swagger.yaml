@@ -8067,72 +8067,70 @@ definitions:
           ]          
           
   create_library_node:
-    allOf:
-      - type: object
-        required: [ data ]
+    type: object
+    properties:
+      data:
+        type: object
+        required: [ type, attributes, relationships ]
         properties:
-          data:
+          type: { type: string, enum: [ 'nodes' ] }
+          attributes:
             type: object
-            required: [ type, attributes, relationships ]
+            required: [title, description]
             properties:
-              type: { type: string, enum: [ 'nodes' ] }
-              attributes:
+              title:
+                type: string
+              description:
+                type: string
+              tags:
+                type: string  
+              language:
+                type: string  
+              region:
+                type: string  
+              schemaFamily:
+                type: string
+              externalId:
+                type: string
+              translations:
                 type: object
-                required: [title, description]
+                items:
+                  $ref: '#/definitions/translations_definition'                         
+          relationships:
+            type: object
+            required: [libraries]
+            properties:
+              libraries:
+                type: object
+                required: [data]
                 properties:
-                  title:
-                    type: string
-                  description:
-                    type: string
-                  tags:
-                    type: string  
-                  language:
-                    type: string  
-                  region:
-                    type: string  
-                  schemaFamily:
-                    type: string
-                  externalId:
-                    type: string
-                  translations:
-                    type: object
+                  data:
+                    type: array
+                    maxItems: 1
                     items:
-                      $ref: '#/definitions/translations_definition'                         
-              relationships:
+                      type: object
+                      required: [type, id]
+                      properties:
+                        type:
+                          { type: string, enum: [ 'libraries' ] }
+                        id:
+                          type: string
+              nodes:
                 type: object
-                required: [libraries]
+                required: [data]
                 properties:
-                  libraries:
-                    type: object
-                    required: [data]
-                    properties:
-                      data:
-                        type: array
-                        maxItems: 1
-                        items:
-                          type: object
-                          required: [type, id]
-                          properties:
-                            type:
-                              { type: string, enum: [ 'libraries' ] }
-                            id:
-                              type: string
-                  nodes:
-                    type: object
-                    required: [data]
-                    properties:
-                      data:
-                        type: array
-                        maxItems: 1
-                        items:
-                          type: object
-                          required: [type, id]
-                          properties:
-                            type:
-                              { type: string, enum: [ 'nodes' ] }
-                            id:
-                              type: string
-    additionalProperties: true
+                  data:
+                    type: array
+                    maxItems: 1
+                    items:
+                      type: object
+                      required: [type, id]
+                      properties:
+                        type:
+                          { type: string, enum: [ 'nodes' ] }
+                        id:
+                          type: string
+
           
   update_library_node:
     allOf:
