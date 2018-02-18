@@ -8132,6 +8132,7 @@ definitions:
                               { type: string, enum: [ 'nodes' ] }
                             id:
                               type: string
+    additionalProperties: true
           
   update_library_node:
     allOf:
