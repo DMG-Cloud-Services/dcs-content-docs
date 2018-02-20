@@ -1963,6 +1963,13 @@ info:
     
     In the ``GET`` request, you need to specify the Id of the Library, Sub-Library or Node from which you want the list of nodes.
     
+    ### Filters
+    
+    | Attribute                               | Description
+    | --------------------------------------- | -------------------------------------------------------------------------------------------------------
+    | **page[size]**                          | The total number of pages that you want to display for the nodes.
+    | **page[number]**                        | The page number of the nodes that you want to display.
+    
     ### Example
     
     ```shell
@@ -2121,7 +2128,12 @@ info:
 
     The Forge Content provides the ``GET nodes/{nodeId}/contents`` API endpoint that allows you to get the list of contents present directly under the specified node.
     
-    In the ``GET`` request, you need to specify the Id of the Node from which you want the list of nodes.
+    In the ``GET`` request, you need to specify the Id of the Node from which you want the list of contents.
+    
+    | Attribute                               | Description
+    | --------------------------------------- | -------------------------------------------------------------------------------------------------------
+    | **page[size]**                          | The total number of pages that you want to display for the contents.
+    | **page[number]**                        | The page number of the contents that you want to display.
     
     ### Example
     
@@ -10818,73 +10830,77 @@ responses:
     examples:
       application/vnd.api+json:
         {
-          "data": {
+          "data": [
+            {
               "type": "nodes",
-              "id": "urn:adsk.content:node:686fdb70-965b-4df1-8b27-9a1aaa0c493e",
+              "id": "urn:adsk.content:node:fe9bcf2f-9872-4b89-b228-6b6bc47e999d",
               "attributes": {
-                  "totalChildrenCount": 0,
-                  "entityPaths": [
-                      "/urn:adsk.content:library:592d9e66-c963-4975-ac59-75864e68410c/urn:adsk.content:node:686fdb70-965b-4df1-8b27-9a1aaa0c493e"
-                  ],
-                  "lastModifiedTime": "2017-10-13T07:41:55Z",
-                  "createTime": "2017-10-13T07:41:55Z",
-                  "createdBy": "AYK2Q7S52XRU",
-                  "lastModifiedBy": "AYK2Q7S52XRU",
-                  "childNodesCount": 0,
-                  "description": "this is a test node",
-                  "title": "Library node number 1",
-                  "childContentsCount": 0,
-                  "translations": {
-                    "fr_FR": {
-                      "title": "Contenu du film",
-                      "description": "Contenu d'un film",
-                      "tags": "film de film"
-                    },
-                    "es_MX": {
-                      "title": "Contenido de la película",
-                      "description": "Contenido sobre una película",
-                      "tags": "película"
-                    },
-                    "zh_CN": {
-                      "title": "电影内容",
-                      "description": "关于电影的内容",
-                      "tags": "电影电影"
-                    }
-                  }                      
+                "entityPaths": [
+                  "/urn:adsk.content:library:e5108ad7-1051-4293-b50f-73958019f779/urn:adsk.content:node:fe9bcf2f-9872-4b89-b228-6b6bc47e999d"
+                ],
+                "lastModifiedTime": "2017-07-31T09:05:45Z",
+                "lastModifiedBy": "TGTBKCMEJFW5",
+                "childNodesCount": 0,
+                "description": "The node for demo creation of the node.",
+                "language": "en",
+                "title": "DemoNode",
+                "tags": "demo, node, content",
+                "totalChildrenCount": 0,
+                "createTime": "2017-07-31T09:05:45Z",
+                "createdBy": "TGTBKCMEJFW5",
+                "region": "US",
+                "childContentsCount": 0
               },
               "relationships": {
-                  "nodes": {
-                      "links": {
-                          "self": "https://developer.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:686fdb70-965b-4df1-8b27-9a1aaa0c493e/relationships/nodes",
-                          "related": "https://developer.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:686fdb70-965b-4df1-8b27-9a1aaa0c493e/nodes"
-                      }
-                  },
-                  "contents": {
-                      "links": {
-                          "self": "https://developer.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:686fdb70-965b-4df1-8b27-9a1aaa0c493e/relationships/contents",
-                          "related": "https://developer.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:686fdb70-965b-4df1-8b27-9a1aaa0c493e/contents"
-                      },
-                      "data": []
-                  },
-                  "subLibraries": {
-                      "links": {
-                          "self": "https://developer.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:686fdb70-965b-4df1-8b27-9a1aaa0c493e/relationships/subLibraries",
-                          "related": "https://developer.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:686fdb70-965b-4df1-8b27-9a1aaa0c493e/subLibraries"
-                      }
-                  },
-                  "libraries": {
-                      "links": {
-                          "self": "https://developer.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:686fdb70-965b-4df1-8b27-9a1aaa0c493e/relationships/libraries",
-                          "related": "https://developer.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:686fdb70-965b-4df1-8b27-9a1aaa0c493e/libraries"
-                      }
+                "libraries": {
+                  "links": {
+                    "self": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:fe9bcf2f-9872-4b89-b228-6b6bc47e999d/relationships/libraries",
+                    "related": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:fe9bcf2f-9872-4b89-b228-6b6bc47e999d/libraries"
                   }
+                },
+                "contents": {
+                  "links": {
+                    "self": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:fe9bcf2f-9872-4b89-b228-6b6bc47e999d/relationships/contents",
+                    "related": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:fe9bcf2f-9872-4b89-b228-6b6bc47e999d/contents"
+                  },
+                  "data": [
+                    
+                  ]
+                },
+                "nodes": {
+                  "links": {
+                    "self": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:fe9bcf2f-9872-4b89-b228-6b6bc47e999d/relationships/nodes",
+                    "related": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:fe9bcf2f-9872-4b89-b228-6b6bc47e999d/nodes"
+                  }
+                },
+                "subLibraries": {
+                  "links": {
+                    "self": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:fe9bcf2f-9872-4b89-b228-6b6bc47e999d/relationships/subLibraries",
+                    "related": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:fe9bcf2f-9872-4b89-b228-6b6bc47e999d/subLibraries"
+                  }
+                }
               },
               "links": {
-                  "self": "https://developer.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:686fdb70-965b-4df1-8b27-9a1aaa0c493e"
+                "self": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:fe9bcf2f-9872-4b89-b228-6b6bc47e999d"
               }
+            }
+          ],
+          "included": [
+            
+          ],
+          "meta": {
+            "paginationInfo": {
+              "totalResults": 4,
+              "pageNumber": 1,
+              "totalPages": 1,
+              "pageSize": 1
+            }
           },
-          "included": []
-       }
+          "links": {
+            "first": "https://developer.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:e5108ad7-1051-4293-b50f-73958019f779/nodes?page[number]=1&page[size]=20",
+            "last": "https://developer.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:e5108ad7-1051-4293-b50f-73958019f779/nodes?page[number]=1&page[size]=20"
+          }
+        }
        
   nodescontents:
     description: Successful Node child Contents response
