@@ -4287,6 +4287,8 @@ paths:
       operationId: get_library_node
       parameters:
         - $ref: '#/parameters/subLibraryId'
+        - $ref: '#/parameters/query_filter_content_search_page_size'
+        - $ref: '#/parameters/query_filter_content_search_page_number'
       responses:
         '200': { $ref: '#/responses/nodes' }
         '400': { $ref: '#/responses/bad_input' }
@@ -4411,6 +4413,8 @@ paths:
       operationId: getAlllibraryNodes
       parameters:
         - $ref: '#/parameters/libraryId'
+        - $ref: '#/parameters/query_filter_content_search_page_size'
+        - $ref: '#/parameters/query_filter_content_search_page_number'
       responses:
         '200': { $ref: '#/responses/nodes' }
         '400': { $ref: '#/responses/bad_input' }
@@ -4496,6 +4500,8 @@ paths:
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
         - $ref: '#/parameters/node_parents_relationship'
+        - $ref: '#/parameters/query_filter_content_search_page_size'
+        - $ref: '#/parameters/query_filter_content_search_page_number'
       responses:
         '200': { $ref: '#/responses/nodes' }
         '400': { $ref: '#/responses/bad_input' }
