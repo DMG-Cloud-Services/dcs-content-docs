@@ -4526,7 +4526,7 @@ paths:
         - $ref: '#/parameters/query_filter_content_search_page_size'
         - $ref: '#/parameters/query_filter_content_search_page_number'
       responses:
-        '200': { $ref: '#/responses/nodescontents' }
+        '200': { $ref: '#/responses/contents' }
         '400': { $ref: '#/responses/bad_input' }
         '403': { $ref: '#/responses/forbidden' }
       x-ads-docs-cli-example: 'curl -X GET -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" "https://developer.api.autodesk.com/content/v1/libraries/libraryId/nodes/nodeId/contents"'
@@ -10915,64 +10915,93 @@ responses:
     examples:
       application/vnd.api+json:
         {
-            "data": {
-                "type": "contents",
-                "id": "urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3",
-                "attributes": {
-                    "entityPaths": [
-                        "/urn:adsk.content:library:3a62a6d5-2765-4846-9f82-3771f08877dd/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1/urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3"
-                    ],
-                    "extension": {
-                        "type": "contents:autodesk.core:content",
-                        "version": "1.0.0",
-                        "namespace": "autodesk.core"
-                    },
-                    "lastModifiedTime": "2017-10-13T07:37:34Z",
-                    "contentDownloadCount": 0,
-                    "lastModifiedBy": "AYK2Q7S52XRU",
-                    "deprecated": false,
-                    "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
-                    "description": "ContentDescription",
-                    "language": "en",
-                    "title": "ContentTitle",
-                    "version": "draft",
-                    "tags": "ContentTag",
-                    "createTime": "2017-10-13T07:37:34Z",
-                    "createdBy": "AYK2Q7S52XRU",
-                    "lock": false,
-                    "region": "US",
-                    "status": "draft",
-                    "translations": {
-                      "fr_FR": {
-                        "title": "Contenu du film",
-                        "description": "Contenu d'un film",
-                        "tags": "film de film"
+          "data": [
+            {
+              "type": "contents",
+              "id": "urn:adsk.content:content:b371797d-c881-4ffc-b28c-d3c4c625a0bc",
+              "attributes": {
+                "entityPaths": [
+                  "/urn:adsk.content:library:b820f488-8d36-4ed4-a01d-358363e1b1e0/urn:adsk.content:node:a62a09d5-5135-42df-8ae4-156e4edd1ce5/urn:adsk.content:content:b371797d-c881-4ffc-b28c-d3c4c625a0bc"
+                ],
+                "extension": {
+                  "data": {
+                    "amTech": "SLA",
+                    "bedSize": {
+                      "height": {
+                        "units": "cm",
+                        "value": 175
                       },
-                      "es_MX": {
-                        "title": "Contenido de la película",
-                        "description": "Contenido sobre una película",
-                        "tags": "película"
+                      "length": {
+                        "units": "cm",
+                        "value": 75
                       },
-                      "zh_CN": {
-                        "title": "电影内容",
-                        "description": "关于电影的内容",
-                        "tags": "电影电影"
+                      "breadth": {
+                        "units": "cm",
+                        "value": 50
                       }
-                    }                      
+                    },
+                    "facetId": "additiveManufacturing",
+                    "modelName": "Form 2",
+                    "displayName": "FormLabs-Form 2",
+                    "machinePrice": {
+                      "units": "$",
+                      "value": 1500
+                    },
+                    "maxBuildHeight": {
+                      "units": "cm",
+                      "value": 175
+                    },
+                    "firmwareVersion": "PreForm",
+                    "hardwareVersion": "1.0",
+                    "manufacturerName": "FormLabs"
+                  },
+                  "type": "contents:autodesk.mdb.alpha:machineAM",
+                  "version": "2.0.0"
                 },
-                "relationships": {
-                    "nodes": {
-                        "links": {
-                            "self": "https://developer.api.autodesk.com/content-alpha/v1/contents/urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3/relationships/nodes",
-                            "related": "https://developer.api.autodesk.com/content-alpha/v1/contents/urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3/nodes"
-                        }
-                    }
-                },
-                "links": {
-                    "self": "https://developer.api.autodesk.com/content-alpha/v1/contents/urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3"
+                "lastModifiedTime": "2017-02-18T04:15:24Z",
+                "lastModifiedBy": "ERB3Q463BYQW",
+                "description": "contents",
+                "language": "en",
+                "title": "FormLabs Form 2 PreForm",
+                "version": "2",
+                "tags": "tags",
+                "license": "Apache License 2.0",
+                "createTime": "2017-02-18T04:15:24Z",
+                "createdBy": "ERB3Q463BYQW",
+                "externalId": "0c31922c-a241-11e7-abc4-cec278b6b50a",
+                "lock": false,
+                "region": "US",
+                "status": "published"
+              },
+              "relationships": {
+                "nodes": {
+                  "links": {
+                    "self": "https://developer.api.autodesk.com/content/v1/contents/urn:adsk.content:content:b371797d-c881-4ffc-b28c-d3c4c625a0bc/relationships/nodes",
+                    "related": "https://developer.api.autodesk.com/content/v1/contents/urn:adsk.content:content:b371797d-c881-4ffc-b28c-d3c4c625a0bc/nodes"
+                  }
                 }
-            },
-            "included": []
+              },
+              "links": {
+                "self": "https://developer.api.autodesk.com/content/v1/contents/urn:adsk.content:content:b371797d-c881-4ffc-b28c-d3c4c625a0bc"
+              }
+            }
+          ],
+          "included": [
+            
+          ],
+          "meta": {
+            "paginationInfo": {
+              "totalResults": 7,
+              "pageNumber": 1,
+              "totalPages": 7,
+              "pageSize": 1
+            }
+          },
+          "links": {
+            "next": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:a62a09d5-5135-42df-8ae4-156e4edd1ce5/contents?page[number]=2&page[size]=1",
+            "first": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:a62a09d5-5135-42df-8ae4-156e4edd1ce5/contents?page[number]=1&page[size]=1",
+            "last": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:a62a09d5-5135-42df-8ae4-156e4edd1ce5/contents?page[number]=7&page[size]=1"
+          }
         }
         
   nodesallcontents:
@@ -11399,20 +11428,7 @@ responses:
           ],
           "included": [
             
-          ],
-          "meta": {
-            "paginationInfo": {
-              "totalResults": 7,
-              "pageNumber": 1,
-              "totalPages": 7,
-              "pageSize": 1
-            }
-          },
-          "links": {
-            "next": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:a62a09d5-5135-42df-8ae4-156e4edd1ce5/contents?page[number]=2&page[size]=1",
-            "first": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:a62a09d5-5135-42df-8ae4-156e4edd1ce5/contents?page[number]=1&page[size]=1",
-            "last": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:a62a09d5-5135-42df-8ae4-156e4edd1ce5/contents?page[number]=7&page[size]=1"
-          }
+          ]
         }
         
   contentVersions:
@@ -11473,6 +11489,7 @@ responses:
           "contentType": "text/plain",
           "storageType": "OSS"
         }
+        
   contentSearch:
     description: Successful Search response
     schema:
