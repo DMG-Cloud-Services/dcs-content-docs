@@ -11326,90 +11326,95 @@ responses:
     examples:
       application/vnd.api+json:
         {
-    "data": [
-        {
-            "type": "contents",
-            "id": "urn:adsk.content:content:ef9f51d5-6431-4958-acfc-74cee6953ff4",
-            "attributes": {
+          "data": [
+            {
+              "type": "contents",
+              "id": "urn:adsk.content:content:b371797d-c881-4ffc-b28c-d3c4c625a0bc",
+              "attributes": {
                 "entityPaths": [
-                    "/urn:adsk.content:library:2618afeb-8800-4981-9059-659fa9af647a/urn:adsk.content:node:b79736ba-2679-496c-8339-fbc8061d190d/urn:adsk.content:content:ef9f51d5-6431-4958-acfc-74cee6953ff4"
+                  "/urn:adsk.content:library:b820f488-8d36-4ed4-a01d-358363e1b1e0/urn:adsk.content:node:a62a09d5-5135-42df-8ae4-156e4edd1ce5/urn:adsk.content:content:b371797d-c881-4ffc-b28c-d3c4c625a0bc"
                 ],
                 "extension": {
-                    "type": "contents:autodesk.core:content",
-                    "version": "1.0.0",
-                    "namespace": "autodesk.core"
+                  "data": {
+                    "amTech": "SLA",
+                    "bedSize": {
+                      "height": {
+                        "units": "cm",
+                        "value": 175
+                      },
+                      "length": {
+                        "units": "cm",
+                        "value": 75
+                      },
+                      "breadth": {
+                        "units": "cm",
+                        "value": 50
+                      }
+                    },
+                    "facetId": "additiveManufacturing",
+                    "modelName": "Form 2",
+                    "displayName": "FormLabs-Form 2",
+                    "machinePrice": {
+                      "units": "$",
+                      "value": 1500
+                    },
+                    "maxBuildHeight": {
+                      "units": "cm",
+                      "value": 175
+                    },
+                    "firmwareVersion": "PreForm",
+                    "hardwareVersion": "1.0",
+                    "manufacturerName": "FormLabs"
+                  },
+                  "type": "contents:autodesk.mdb.alpha:machineAM",
+                  "version": "2.0.0"
                 },
-                "lastModifiedTime": "2017-10-24T05:36:18Z",
-                "contentDownloadCount": 0,
-                "lastModifiedBy": "AYK2Q7S52XRU",
-                "deprecated": false,
-                "description": "ContentRight1",
+                "lastModifiedTime": "2017-02-18T04:15:24Z",
+                "lastModifiedBy": "ERB3Q463BYQW",
+                "description": "contents",
                 "language": "en",
-                "title": "ContentRight1.96319533-9200-457e-b403-b39bdb1c142f",
-                "version": "draft",
-                "tags": "x,y,z",
-                "license": "Apache-2.0",
-                "createTime": "2017-10-24T05:36:18Z",
-                "createdBy": "AYK2Q7S52XRU",
+                "title": "FormLabs Form 2 PreForm",
+                "version": "2",
+                "tags": "tags",
+                "license": "Apache License 2.0",
+                "createTime": "2017-02-18T04:15:24Z",
+                "createdBy": "ERB3Q463BYQW",
+                "externalId": "0c31922c-a241-11e7-abc4-cec278b6b50a",
                 "lock": false,
                 "region": "US",
-                "status": "draft"
-            },
-            "relationships": {
+                "status": "published"
+              },
+              "relationships": {
                 "nodes": {
-                    "links": {
-                        "self": "https://developer.api.autodesk.com/content/v1/contents/urn:adsk.content:content:ef9f51d5-6431-4958-acfc-74cee6953ff4/relationships/nodes",
-                        "related": "https://developer.api.autodesk.com/content/v1/contents/urn:adsk.content:content:ef9f51d5-6431-4958-acfc-74cee6953ff4/nodes"
-                    }
+                  "links": {
+                    "self": "https://developer.api.autodesk.com/content/v1/contents/urn:adsk.content:content:b371797d-c881-4ffc-b28c-d3c4c625a0bc/relationships/nodes",
+                    "related": "https://developer.api.autodesk.com/content/v1/contents/urn:adsk.content:content:b371797d-c881-4ffc-b28c-d3c4c625a0bc/nodes"
+                  }
                 }
-            },
-            "links": {
-                "self": "https://developer.api.autodesk.com/content/v1/contents/urn:adsk.content:content:ef9f51d5-6431-4958-acfc-74cee6953ff4"
+              },
+              "links": {
+                "self": "https://developer.api.autodesk.com/content/v1/contents/urn:adsk.content:content:b371797d-c881-4ffc-b28c-d3c4c625a0bc"
+              }
             }
-        },
-        {
-            "type": "contents",
-            "id": "urn:adsk.content:content:3a88ea6e-9a29-4641-ac26-d6debe822259",
-            "attributes": {
-                "entityPaths": [
-                    "/urn:adsk.content:library:2618afeb-8800-4981-9059-659fa9af647a/urn:adsk.content:node:b79736ba-2679-496c-8339-fbc8061d190d/urn:adsk.content:content:3a88ea6e-9a29-4641-ac26-d6debe822259"
-                ],
-                "extension": {
-                    "type": "contents:autodesk.core:content",
-                    "version": "1.0.0",
-                    "namespace": "autodesk.core"
-                },
-                "lastModifiedTime": "2017-10-24T05:36:48Z",
-                "contentDownloadCount": 0,
-                "lastModifiedBy": "AYK2Q7S52XRU",
-                "deprecated": false,
-                "description": "ContentRight1",
-                "language": "en",
-                "title": "ContentRight1.3b148c98-4014-4872-8aae-ad2a1a5adae7",
-                "version": "draft",
-                "tags": "x,y,z",
-                "license": "Apache-2.0",
-                "createTime": "2017-10-24T05:36:48Z",
-                "createdBy": "AYK2Q7S52XRU",
-                "lock": false,
-                "region": "US",
-                "status": "draft"
-            },
-            "relationships": {
-                "nodes": {
-                    "links": {
-                        "self": "https://developer.api.autodesk.com/content/v1/contents/urn:adsk.content:content:3a88ea6e-9a29-4641-ac26-d6debe822259/relationships/nodes",
-                        "related": "https://developer.api.autodesk.com/content/v1/contents/urn:adsk.content:content:3a88ea6e-9a29-4641-ac26-d6debe822259/nodes"
-                    }
-                }
-            },
-            "links": {
-                "self": "https://developer.api.autodesk.com/content/v1/contents/urn:adsk.content:content:3a88ea6e-9a29-4641-ac26-d6debe822259"
+          ],
+          "included": [
+            
+          ],
+          "meta": {
+            "paginationInfo": {
+              "totalResults": 7,
+              "pageNumber": 1,
+              "totalPages": 7,
+              "pageSize": 1
             }
+          },
+          "links": {
+            "next": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:a62a09d5-5135-42df-8ae4-156e4edd1ce5/contents?page[number]=2&page[size]=1",
+            "first": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:a62a09d5-5135-42df-8ae4-156e4edd1ce5/contents?page[number]=1&page[size]=1",
+            "last": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.content:node:a62a09d5-5135-42df-8ae4-156e4edd1ce5/contents?page[number]=7&page[size]=1"
+          }
         }
-      ],
-      "included": []
-    }
+        
   contentVersions:
     description: Successful content version response
     schema:
