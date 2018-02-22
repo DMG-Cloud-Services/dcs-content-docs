@@ -8,7 +8,7 @@ info:
     [@overview]: <> (title)
     
     In Autodesk, various products manage their own metadata, components data, parts data, materials data, or assets data through libraries and catalogs. Deploying & managing data separately for individual products are expensive and non-standardized without having a common platform to share the content across teams or across product families.
-
+    
     Forge Content API provides an extensible platform for products and users to use the cloud services to create, organize, access, search, and even share the contents of various Autodesk products within internal teams and external customers.
     
     Forge Content also provides the permission-based model using which specific group of users, projects, and organizations can create and access the content.
@@ -16,16 +16,16 @@ info:
     As content is a core part of any design activities, and customers want to share their project-specific content with designers, engineers, and organization, Forge Content provide APIs for customers to build applications around the content for the Autodesk product suite.
     
     The Forge Content API provides a hierarchical structure with Library, Sub-Library, Nodes, and Contents as entities in the aforementioned sequence. This hierarchical structure helps you in creating the content, which can be easily organized, searched, shared, and maintained with different versions.
-
+    
     Forge Content API follows the JSON API Specification 1.0. For more information, see [JSON API specification](http://jsonapi.org/format/).
-
+    
     ## Forge Content API Environments
     
     | Environment       | Value                                   | Purpose
     | ------------------|-----------------------------------------|--------------------------------
     | **Production**    | https://developer.api.autodesk.com      | Real production standard data
     | **Staging**       | https://developer-stg.api.autodesk.com  | Development & Testing
-
+    
     ## Headers
     
     The following headers have to be passed for all API calls.
@@ -37,16 +37,16 @@ info:
     | **Authorization** | Bearer <2-legged or 3-leggedToken>
     
     ## Getting Started
-
+    
     The [API Basics](/en/docs/content/v1/overview/basics) section guides you through the process of getting started with the API and explains the main concepts and functionality.
     
     [@overview/basics]: <>
     # API Basics
     
     Forge-Content provides a set of APIs that allows the internal & external people to publish the content for the Autodesk applications. Using Forge Content API, users can organize content in a hierarchical, searchable, shareable, version controlled manner. 
-
+    
     For additional information about entities related to contents, see the [Content Attributes](/en/docs/content/v1/overview/content-attributes).
-
+    
     ## Standards
    
     1. This API follows the ``JSON API`` specs 1.0 documented at `JSON API Spec <http://jsonapi.org/format/>`_
@@ -57,9 +57,9 @@ info:
     4. Element names are camelCase e.g. ``rootFolder``
     5. Most operations work with both 2 and 3 legged oauth keys. In case a 2 legged oauth key is used - some fields like userId may be empty (or use application name)
     6. You need to specify the Schema inside the "data":"attributes":"schema" attribute of the POST request body. For more information, see JSON schema examples for extension types [here](/en/docs/content/_snippets/v1/examples).
-
+    
     ## Content API JSON Structure
-
+    
     All APIs follow the JSON API resources using similar structure:
     
     ```JSON
@@ -104,9 +104,9 @@ info:
     | ``POST``    | Used to create a new item. Success returns ``201`` status code with newly created json item in body.
     | ``PATCH``   | Used to update an item. Success returns ``200`` status code with updated json item in body. 
     | ``DELETE``  | Used to hard delete an item. Success returns ``204`` status code with no body.  
-  
+    
     ## Errors
-
+    
     Forge Content services provide an extended error data about the problems encountered while attempting to perform an operation. Error objects are returned as an array keyed by errors in the response body.
     
     For example, here is an example error payload accompanying an HTTP 403, returned because a the user is not authenticated:
@@ -125,7 +125,7 @@ info:
     ```
     
     ## Status Codes
-
+    
     Forge Content API endpoints responds with any one of the following status codes.
     
     | Code     | Description            
@@ -142,11 +142,11 @@ info:
     
     [@overview/content-model]: <>
     # Content Model
-  
+    
     Forge Content API provides two distinct content data models to create and organize the content data. Before selecting the content data model, you must analyze your content structure and then decide the content data model that suits your requirements.
-
+    
     **Note**: Once you select one of these content data model and follow that model, you cannot change to the other content data model. You have to recreat everything again in the other content model.
-
+    
     - **Library** > **Node** > **Content**
       This is the default content model where you create library, nodes, and contents in the given hierarchy. This content model is a flat model. You create one library and one or multiple nodes in the library. Then, you create contents under the nodes. 
     
