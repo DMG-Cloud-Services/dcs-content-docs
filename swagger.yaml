@@ -23,8 +23,8 @@ info:
     
     | Environment       | Value                                   | Purpose
     | ------------------|-----------------------------------------|--------------------------------
-    | Production        | https://developer.api.autodesk.com      | Real production standard data
-    | Staging           | https://developer-stg.api.autodesk.com  | Development & Testing
+    | **Production**    | https://developer.api.autodesk.com      | Real production standard data
+    | **Staging**       | https://developer-stg.api.autodesk.com  | Development & Testing
 
     ## Headers
     
@@ -32,7 +32,7 @@ info:
     | ------------------|----------------------------------------
     | **Content-Type**  | application/vnd.api+json.
     | **Accept**        | application/vnd.api+json.
-    | **Authorization** | Bearer < 2-legged or 3-leggedToken >.
+    | **Authorization** | Bearer <2-legged or 3-leggedToken>
     
     ## Getting Started
 
