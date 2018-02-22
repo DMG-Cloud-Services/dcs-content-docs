@@ -6502,7 +6502,7 @@ paths:
           '200': { $ref: '#/responses/getFollowers' }
             
   /libraries/{libraryId}/flags:
-      x-summary: Content Flag
+      x-summary: Content Flags
       x-description: API to manually flag Content or Comment. Contents and comments are automatically flagged if they contain badwords. Users can also manually flag them. 
                     The basic workflow would be normal user manually flags a content/comment using POST flag api. At this time, if a normal user calls get content/comments api, the content will still show in the response. Then admin user calls GET flags API to check all pending flags. (The response doesn't include deleted flag.) Next admin user calls PUT flag api to approve the flag (put the content or comment into quarantine status) or deny(delete) the flag. Both action will change the flag's status to DELETED. If the flag is approved, the content/comment will be in quarantined status. When admin user calls quarantined content/comment, the content/comment will show in the response. If admin user calls GET flags API, the content will NOT show in the response. If a normal user calls get content/comment api, the content/comment will NOT show in the response.
       post:
