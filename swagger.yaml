@@ -285,6 +285,8 @@ info:
         
     The following table lists the functions that users with different roles can perform in Forge Content.
     
+    ##Library Roles
+    
     | Functions                   | LIBRARY MANAGER | CONTENT CREATOR | CONTENT READER  | Remarks             
     | ----------------------------|:---------------:|:---------------:|:---------------:|----------------------------------------------------
     | View Content                | YES             | YES             | YES             |
