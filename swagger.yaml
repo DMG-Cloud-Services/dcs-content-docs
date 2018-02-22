@@ -19,18 +19,20 @@ info:
 
     Forge Content API follows the JSON API Specification 1.0. For more information, see [JSON API specification](http://jsonapi.org/format/).
 
-    Forge Content API Environments:
+    ## Forge Content API Environments
+    
     | Environment       | Value                                   | Purpose
-    | ----------------- | --------------------------------------- | -------------------------------------------------------------
-    | Production        |  https://developer.api.autodesk.com     |  Real production standard data
-    | Staging           |  https://developer-stg.api.autodesk.com |  Development & Testing
+    | ------------------|-----------------------------------------|--------------------------------
+    | Production        | https://developer.api.autodesk.com      | Real production standard data
+    | Staging           | https://developer-stg.api.autodesk.com  | Development & Testing
 
-    For all Forge Content API requests, you must set the following headers:
+    ## Headers
+    
     | Header            | Value
-    | ----------------- | -------------------------------------------------------------------------------------------------------
-    | **Content-Type**  |  application/vnd.api+json.
-    | **Accept**        |  application/vnd.api+json.
-    | **Authorization** |  Bearer < 2-legged or 3-leggedToken >.
+    | ------------------|----------------------------------------
+    | **Content-Type**  | application/vnd.api+json.
+    | **Accept**        | application/vnd.api+json.
+    | **Authorization** | Bearer < 2-legged or 3-leggedToken >.
     
     ## Getting Started
 
