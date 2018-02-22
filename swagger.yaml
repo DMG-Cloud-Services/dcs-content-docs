@@ -287,18 +287,42 @@ info:
     
     ##Library Roles
     
-    | Functions                   | LIBRARY MANAGER | CONTENT CREATOR | CONTENT READER  | Remarks             
-    | ----------------------------|:---------------:|:---------------:|:---------------:|----------------------------------------------------
-    | View Content                | YES             | YES             | YES             |
-    | View Library Hierarchy      | YES             | YES             | YES             |
-    | Create New Library          | YES             | NO              | NO              |
-    | Administer Library          | YES             | NO              | NO              |
-    | Create Sub-Library          | YES             | NO              | NO              | 
-    | Add Users                   | YES             | NO              | NO              |
-    | Add New Content             | YES             | YES             | NO              | Content can be added at any level in the hierarchy inside a library.
-    | Update Content              | YES             | YES             | NO              | Content can be updated at any level in the hierarchy inside a library.
-    | Delete Content              | YES             | YES             | NO              | Content can be deleted from at level in the hierarchy inside a library.
-    | Release Library             | YES             | NO              | NO              | The library can be released or published to a set of users or groups, or to everyone.
+    | Functions                    | LIBRARY_MANAGER | CONTENT_CREATOR | CONTENT_READER  | Remarks             
+    | -----------------------------|:---------------:|:---------------:|:---------------:|----------------------------------------------------
+    | Update Library          	   | YES             | NO              | NO              |
+    | Create/Update/Delete Node    | YES             | NO              | NO              | A node can be added under the library or another node.
+    | Create/Update/Delete Content | YES             | YES             | NO              | A content can be only under a node at any level.
+    | View Library Hierarchy       | YES             | YES             | YES             |
+    | Create Sub-Library           | YES             | NO              | NO              | A sub-library can be added only under the library.
+    | Add Users                    | YES             | NO              | NO              | Members can be added at Library, Node or Content level.
+    | Release Library              | YES             | NO              | NO              | The library can be released or published to a set of users or groups, or to everyone.
+    
+    ##Sub-Library Roles
+    
+    | Functions                    | LIBRARY_MANAGER | CONTENT_CREATOR | CONTENT_READER  | Remarks             
+    | -----------------------------|:---------------:|:---------------:|:---------------:|----------------------------------------------------
+    | Update Sub-Library           | YES             | NO              | NO              |
+    | Create/Update/Delete Node    | YES             | NO              | NO              | A node can be added under the library or another node.
+    | Create/Update/Delete Content | YES             | YES             | NO              | A content can be only under a node at any level.
+    | View Library Hierarchy       | YES             | YES             | YES             |
+    | Add Users                    | YES             | NO              | NO              | Members can be added at Sub-Library, Node or Content level.
+    | Release Library              | YES             | NO              | NO              | The library can be released or published to a set of users or groups, or to everyone.
+    
+    ##Node Roles
+    
+    | Functions                    | NODE_MANAGER 	 | CONTENT_CREATOR | CONTENT_READER  | Remarks             
+    | -----------------------------|:---------------:|:---------------:|:---------------:|----------------------------------------------------
+    | Create/Update/Delete Node    | YES             | NO              | NO              | A node can be added under the library or another node.
+    | Create/Update/Delete Content | YES             | YES             | NO              | A content can be only under a node at any level.
+    | Add Users                    | YES             | NO              | NO              | Members can be added at Node or Content level.
+    
+    ##Content Roles
+    
+    | Functions                    | CONTENT_MANAGER | CONTENT_WRITER  | CONTENT_READER  | Remarks             
+    | -----------------------------|:---------------:|:---------------:|:---------------:|----------------------------------------------------
+    | Create/Delete Content 	     | YES             | NO              | NO              | A content can be only under a node at any level.
+    | Update Content       		     | YES             | YES             | NO              |
+    | Add Users                    | YES             | NO              | NO              | Members can be added to Content.
     
     [@overview/content-attributes]: <>
     # Content Attributes
