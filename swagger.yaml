@@ -28,6 +28,8 @@ info:
 
     ## Headers
     
+    The following headers have to be passed for all API calls.
+    
     | Header            | Value
     | ------------------|----------------------------------------
     | **Content-Type**  | application/vnd.api+json.
