@@ -6578,6 +6578,25 @@ paths:
         - $ref: '#/parameters/query_filter_content_search_page_number'
         responses:
           '200': {$ref: '#/responses/getFlaggedContentOrCommentResult'}
+  
+  /libraries/{libraryId}/flags/{flagId}:
+      x-summary: Content Flag
+      x-description: Delete flag by id
+      delete:
+        tags: [ "Community" ]
+        operationId: deleteFlag
+        description: |
+          Removes a flag
+        security:
+          [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
+        produces:
+         - text/plain
+        parameters:
+          - $ref: '#/parameters/libraryId'
+          - $ref: '#/parameters/flagId'
+        responses:
+          '204':
+            description: Flag deleted
           
   /libraries/{libraryId}/quarantines:
       x-summary: Content Quarantine
@@ -6813,6 +6832,13 @@ parameters:
     required: true
     type: string
     x-example: "CXXAZKWJ6ZZO981"
+  flagId:
+    name: flagId
+    in: path
+    description: Flag Id
+    required: true
+    type: string
+    x-example: "FWJ3W0PJDYEENB6"
   policy_id:
     name: policy_id
     in: path
