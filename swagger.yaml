@@ -489,17 +489,18 @@ info:
     
     A Content entity inherits all common attributes. In addition, the following table lists the attributes specific for the Content entity.
     
-    | Attribute         | AUTO/ MANUAL  |  Description
-    | ------------------|:-------------:|------------------------------------------------------------------------------------------
-    | **status**        | MANUAL        |  The status of the content. The status can be `draft` or `published`.
-    | **version**       | MANUAL        |  The version of the content.
-    | **externalId**    | MANUAL        |  An optional external Id attribute to hold the application/client's identifier for the entity. This must be unique under the library/sub-library.
-    | **lock**          | MANUAL        |  An optional lock boolean attribute to lock the content from deletion.
-    | **deprecated**    | MANUAL        |  An optional deprecated boolean attribute to deprecate the content.
-    | **files**         | MANUAL        |  A list of files attached to the content. Attaching files to the content is optional.
-    | **thumbnails**    | MANUAL        |  A list of thumbnails attached to the content. Each thumbnail entity is same as the file entity with additional attributes, such as height and width.
-    | **references**    | MANUAL        |  An external link to various other entities, such as other content, images, videos, and so on. 
-    | **extension**     | MANUAL        |  The custom extension data of an entity. You must specify the extension data in `key:value` pair in JSON format.
+    | Attribute           | AUTO/ MANUAL  |  Description
+    | --------------------|:-------------:|------------------------------------------------------------------------------------------
+    | **status**          | MANUAL        |  The status of the content. The status can be `draft` or `published`.
+    | **version**         | MANUAL        |  The version of the content.
+    | **externalId**      | MANUAL        |  An optional external Id attribute to hold the application/client's identifier for the entity. This must be unique under the library/sub-library.
+    | **externalVersion** | MANUAL        |  An optional external version attribute to hold the application/client's version for the entity. This must be unique among all the versions of the same content.
+    | **lock**            | MANUAL        |  An optional lock boolean attribute to lock the content from deletion.
+    | **deprecated**      | MANUAL        |  An optional deprecated boolean attribute to deprecate the content.
+    | **files**           | MANUAL        |  A list of files attached to the content. Attaching files to the content is optional.
+    | **thumbnails**      | MANUAL        |  A list of thumbnails attached to the content. Each thumbnail entity is same as the file entity with additional attributes, such as height and width.
+    | **references**      | MANUAL        |  An external link to various other entities, such as other content, images, videos, and so on. 
+    | **extension**       | MANUAL        |  The custom extension data of an entity. You must specify the extension data in `key:value` pair in JSON format.
       
     ### Sample
     
