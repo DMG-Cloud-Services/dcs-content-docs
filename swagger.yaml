@@ -6332,25 +6332,6 @@ paths:
           - $ref: '#/parameters/query_filter_content_search_page_number'
         responses:
           '200': {$ref: '#/responses/getMemberSearchResult'}
-          
-  /libraries/{libraryId}/members/{memberId}/likes:
-    x-summary: GET member liked Contents
-    x-description: Retrive the contents liked within a library by a member
-    get:
-      tags: [ "Community" ]
-      operationId: likedCommunityContents
-      description: |
-          Search for member Liked Contents using filters, sorting and pagination.
-      security:
-        [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
-      parameters:
-        - $ref: '#/parameters/query_filter_content_search_page_size'
-        - $ref: '#/parameters/query_filter_content_search_page_number'
-        - $ref: '#/parameters/sort'
-        - $ref: '#/parameters/libraryId'
-        - $ref: '#/parameters/memberId'
-      responses:
-        '200': { $ref: '#/responses/getCommunityContentSearchResults' }
 
   /contents/{contentId}/likes:
       x-summary: Content Likes
@@ -6360,6 +6341,13 @@ paths:
         operationId: getCommunityContentLikes
         description: |
           Retrieve all likes for a given content.
+          <br/>
+          <br/>
+          <br/>
+          To get member liked contents, you can call /contentsSearch api with the following parameters: /contentsSearch?filter[contents][libraryId]=$1&filter[contents][community.liked]=true&filter[contents][version]=tip
+          <br/>
+          <br/>
+          To get all the liked contents within a library, you can call /contentsSearch?filter[contents][libraryId]=$1&filter[contents][community.likeOxygenIds]=$2&filter[contents][version]=tip
         security:
           [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
         parameters:
@@ -7154,6 +7142,13 @@ parameters:
     required: false
     type: string
     default: "tip"
+  version_required:
+    name: filter[contents][version] 
+    in: query
+    description: Content version
+    required: true
+    type: string
+    default: "tip"
   deleteVersion:
     name: filter[contents][version] 
     in: query
@@ -7416,6 +7411,20 @@ parameters:
     required: false
     type: string
     x-example: "extension.data.glassTransition.value>59.0"
+  query_filter_content_search_community_liked:
+    name: filters[contents][meta]
+    in: query
+    description: Param to fetch facets
+    required: true
+    type: string
+    default: facets
+  query_filter_content_search_community_liked_oxygenId:
+    name: filters[contents][meta]
+    in: query
+    description: Param to fetch facets
+    required: true
+    type: string
+    default: facets
   query_filter_content_search_meta_facets:
     name: filters[contents][meta]
     in: query
