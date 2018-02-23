@@ -503,7 +503,7 @@ info:
     | **extension**       | MANUAL        |  The custom extension data of an entity. You must specify the extension data in `key:value` pair in JSON format.
     
     *Note:* 
-    * A content can have only one external Id among all the versions.
+    * A content can have only one external Id among all its versions.
     * The external version attribute is effective only for the patch API when the content is being published.
       
     ### Sample
