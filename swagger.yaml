@@ -2236,6 +2236,7 @@ info:
             "createTime": "2017-02-18T04:15:24Z",
             "createdBy": "ERB3Q463BYQW",
             "externalId": "0c31922c-a241-11e7-abc4-cec278b6b50a",
+            "externalVersion": "version1",
             "lock": false,
             "region": "US",
             "status": "published"
@@ -5559,6 +5560,7 @@ paths:
         - $ref: '#/parameters/query_filter_content_facet'
         - $ref: '#/parameters/query_filter_content_subLibrary'
         - $ref: '#/parameters/query_filter_content_externalId'
+        - $ref: '#/parameters/query_filter_content_externalVersion'
         - $ref: '#/parameters/query_filter_content_locale'
         - $ref: '#/parameters/query_filter_content_skip_search_cache'
         - $ref: '#/parameters/query_filter_content_search_page_size'
@@ -7220,7 +7222,14 @@ parameters:
     description: External Id of Sub-library, Node & Content
     required: false
     type: string
-    x-example: "urn:adsk.content:library:319eba64-9045-4872-b76f-aec3abff3b70"
+    x-example: "319eba64-9045-4872-b76f-aec3abff3b70"
+  query_filter_content_externalVersion:
+    name: filter[contents][externalVersion]
+    in: query
+    description: External version of Content
+    required: false
+    type: string
+    x-example: "version1"
   query_filter_content_locale:
     name: filter[contents][locale]
     in: query
@@ -8305,6 +8314,8 @@ definitions:
                     description: Standard license for the content. Please refer to the allowed license list here - https://spdx.org/licenses/
                   externalId:
                     type: string
+                  externalVersion:
+                    type: string
                   translations:
                     type: object
                     items:
@@ -8394,6 +8405,7 @@ definitions:
                       "license": "Apache License 1.0",
                       "status": "draft",
                       "externalId": "abc",
+                      "externalVersion": "version1",
                       "translations": {
                         "fr_FR": {
                           "title": "Contenu du film",
@@ -8488,9 +8500,11 @@ definitions:
                     type: string
                   license:
                     type: string
+                    description: Standard license for the content. Please refer to the allowed license list here - https://spdx.org/licenses/
                   externalId:
                     type: string
-                    description: Standard license for the content. Please refer to the allowed license list here - https://spdx.org/licenses/
+                  externalVersion:
+                    type: string
                   lock:
                     type: boolean
                   deprecate:
@@ -8544,6 +8558,7 @@ definitions:
                       "license": "Apache License 2.0",
                       "status": "published",
                       "externalId": "abc",
+                      "externalVersion": "version1",
                       "translations": {
                         "fr_FR": {
                           "title": "Contenu du film",
@@ -8899,6 +8914,7 @@ definitions:
           tags: { type: string, description: 'tags' }
           status: { type: string, description: 'status' }
           externalId: { type: string, description: 'externalId' }
+          externalVersion: { type: string, description: 'externalVersion' }
           lastModifiedTime: { type: string, description: 'lastModifiedTime' }
           createTime: { type: string, description: 'createTime' }
           thumbnails: { type: array, items: { $ref: '#/definitions/file_object_definition' } }
@@ -8949,6 +8965,7 @@ definitions:
       description: { type: string, description: 'description' }
       version: { type: string, description: 'version' }
       externalId: { type: string, description: 'externalId' }
+      externalVersion: { type: string, description: 'externalVersion' }
       language: { type: string, description: 'language' }
       createTime: { type: string, description: 'createTime' }
       lastModifiedTime: { type: string, description: 'lastModifiedTime' }
@@ -10136,6 +10153,7 @@ responses:
               "version": "3",
               "tags": "test, library",
               "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
+              "externalVersion": "version1",
               "createdBy": "YUT9M5AU27KN",
               "lock": false,
               "translations": {
@@ -11028,6 +11046,7 @@ responses:
                 "createTime": "2017-02-18T04:15:24Z",
                 "createdBy": "ERB3Q463BYQW",
                 "externalId": "0c31922c-a241-11e7-abc4-cec278b6b50a",
+                "externalVersion": "version1",
                 "lock": false,
                 "region": "US",
                 "status": "published"
@@ -11468,6 +11487,7 @@ responses:
                 "createTime": "2017-02-18T04:15:24Z",
                 "createdBy": "ERB3Q463BYQW",
                 "externalId": "0c31922c-a241-11e7-abc4-cec278b6b50a",
+                "externalVersion": "version1",
                 "lock": false,
                 "region": "US",
                 "status": "published"
