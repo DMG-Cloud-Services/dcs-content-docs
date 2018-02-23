@@ -3807,9 +3807,433 @@ info:
       }
     ```
     
-    The PATCH Sub-library API can be used in the same way to set member permissions on the sub-library.
+    ## Step 4: Provide Access to Forge Content Members on your Node
     
-    ## Step 4: Perform the Community Operations
+    In this step, you can provide access to other Forge Content members at a node level. The access roles can be NODE_MANAGER, CONTENT_CREATOR, CONTENT_READER. Once you provide the necessary access role to other Forge Content members on the node, they can perform operations on the node and entities below depending on the role assigned.
+    
+    The Forge Content provides the `PATCH nodes/nodeId` endpoint to assign the role for the members.
+    
+    ### Example
+    
+    ```
+    curl -X PATCH 
+    -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
+    -H "Accept: application/vnd.api+json"
+    -H "Content-Type: application/vnd.api+json" 
+    -d
+      '{
+        "data": {
+          "type": "nodes",
+          "attributes": {
+            "permissions": [
+              {
+                "role": "NODE_MANAGER",
+                "subjects": {
+                  "o2Users": [
+                    "ERB3Q463BYQW"
+                  ],
+                  "o2Groups": [
+                    
+                  ],
+                  "o2Tenants": [
+                    
+                  ],
+                  "services": [
+                    "hjcvwfvh6546jdfdfvjkik"
+                  ]
+                },
+                "deletedSubjects": {
+                  "o2Users": [
+                    
+                  ],
+                  "o2Groups": [
+                    
+                  ],
+                  "o2Tenants": [
+                    
+                  ],
+                  "services": [
+                    
+                  ]
+                }
+              },
+              {
+                "role": "CONTENT_CREATOR",
+                "subjects": {
+                  "o2Users": [
+                    "ERB3Q463BYQW"
+                  ],
+                  "o2Groups": [
+                    
+                  ],
+                  "o2Tenants": [
+                    
+                  ],
+                  "services": [
+                    "hjcvwfvh6546jdfdfvjkik"
+                  ]
+                }
+              },
+              {
+                "role": "CONTENT_READER",
+                "subjects": {
+                  "o2Users": [
+                    "ERB3Q463BYQW"
+                  ],
+                  "o2Groups": [
+                    
+                  ],
+                  "o2Tenants": [
+                    
+                  ],
+                  "services": [
+                    "hjcvwfvh6546jdfdfvjkik"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }' "https://developer.api.autodesk.com/content/v1/libraries/{libraryId}/nodes/{nodeId}"
+    ```
+    
+    The resource provides the following response:
+    
+    ```
+      {
+        "data": {
+          "type": "nodes",
+          "id": "urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1",
+          "attributes": {
+            "entityPaths": [
+              "/urn:adsk.content:library:3a62a6d5-2765-4846-9f82-3771f08877dd/urn:adsk.content:node:5a071edd-b066-4038-ac26-38cdd566bc1d/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1"
+            ],
+            "lastModifiedTime": "2017-10-13T07:33:23Z",
+            "lastModifiedBy": "AYK2Q7S52XRU",
+            "childNodesCount": 0,
+            "description": "The node for storing material content",
+            "language": "en",
+            "title": "MaterialNode",
+            "tags": "material, content",
+            "totalChildrenCount": 0,
+            "createTime": "2017-10-13T07:33:23Z",
+            "createdBy": "AYK2Q7S52XRU",
+            "region": "US",
+            "childContentsCount": 0,
+            "permissions": [
+              {
+                "role": "NODE_MANAGER",
+                "subjects": {
+                  "o2Users": [
+                    "ERB3Q463BYQW"
+                  ],
+                  "o2Groups": [
+                    
+                  ],
+                  "o2Tenants": [
+                    
+                  ],
+                  "services": [
+                    "hjcvwfvh6546jdfdfvjkik"
+                  ]
+                },
+                "deletedSubjects": {
+                  "o2Users": [
+                    
+                  ],
+                  "o2Groups": [
+                    
+                  ],
+                  "o2Tenants": [
+                    
+                  ],
+                  "services": [
+                    
+                  ]
+                }
+              },
+              {
+                "role": "CONTENT_CREATOR",
+                "subjects": {
+                  "o2Users": [
+                    "ERB3Q463BYQW"
+                  ],
+                  "o2Groups": [
+                    
+                  ],
+                  "o2Tenants": [
+                    
+                  ],
+                  "services": [
+                    "hjcvwfvh6546jdfdfvjkik"
+                  ]
+                }
+              },
+              {
+                "role": "CONTENT_READER",
+                "subjects": {
+                  "o2Users": [
+                    "ERB3Q463BYQW"
+                  ],
+                  "o2Groups": [
+                    
+                  ],
+                  "o2Tenants": [
+                    
+                  ],
+                  "services": [
+                    "hjcvwfvh6546jdfdfvjkik"
+                  ]
+                }
+              }
+            ]
+          },
+          "relationships": {
+            "nodes": {
+              "links": {
+                "self": "https://developer.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1/relationships/nodes",
+                "related": "https://developer.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1/nodes"
+              }
+            },
+            "contents": {
+              "links": {
+                "self": "https://developer.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1/relationships/contents",
+                "related": "https://developer.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1/contents"
+              },
+              "data": [
+                
+              ]
+            },
+            "subLibraries": {
+              "links": {
+                "self": "https://developer.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1/relationships/subLibraries",
+                "related": "https://developer.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1/subLibraries"
+              }
+            },
+            "libraries": {
+              "links": {
+                "self": "https://developer.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1/relationships/libraries",
+                "related": "https://developer.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1/libraries"
+              }
+            }
+          },
+          "links": {
+            "self": "https://developer.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1"
+          }
+        },
+        "included": [
+          
+        ]
+      }
+    ```
+
+    ## Step 5: Provide Access to Forge Content Members on your Content
+    
+    In this step, you can provide access to other Forge Content members at a content level. The access roles can be CONTENT_MANAGER, CONTENT_WRITER, CONTENT_READER. Once you provide the necessary access role to other Forge Content members on the content, they can perform operations on the content depending on the role assigned.
+    
+    The Forge Content provides the `PATCH contents/contentId` endpoint to assign the role for the members. The permissions gets applied to all the versions of the contents.
+    
+    ### Example
+    
+    ```
+    curl -X PATCH 
+    -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
+    -H "Accept: application/vnd.api+json"
+    -H "Content-Type: application/vnd.api+json" 
+    -d
+      '{
+        "data": {
+          "type": "contents",
+          "attributes": {
+            "permissions": [
+              {
+                "role": "CONTENT_MANAGER",
+                "subjects": {
+                  "o2Users": [
+                    "ERB3Q463BYQW"
+                  ],
+                  "o2Groups": [
+                    
+                  ],
+                  "o2Tenants": [
+                    
+                  ],
+                  "services": [
+                    "hjcvwfvh6546jdfdfvjkik"
+                  ]
+                },
+                "deletedSubjects": {
+                  "o2Users": [
+                    
+                  ],
+                  "o2Groups": [
+                    
+                  ],
+                  "o2Tenants": [
+                    
+                  ],
+                  "services": [
+                    
+                  ]
+                }
+              },
+              {
+                "role": "CONTENT_WRITER",
+                "subjects": {
+                  "o2Users": [
+                    "ERB3Q463BYQW"
+                  ],
+                  "o2Groups": [
+                    
+                  ],
+                  "o2Tenants": [
+                    
+                  ],
+                  "services": [
+                    "hjcvwfvh6546jdfdfvjkik"
+                  ]
+                }
+              },
+              {
+                "role": "CONTENT_READER",
+                "subjects": {
+                  "o2Users": [
+                    "ERB3Q463BYQW"
+                  ],
+                  "o2Groups": [
+                    
+                  ],
+                  "o2Tenants": [
+                    
+                  ],
+                  "services": [
+                    "hjcvwfvh6546jdfdfvjkik"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }' "https://developer.api.autodesk.com/content/v1/libraries/{libraryId}/contents/{contentId}"
+    ```
+    
+    The resource provides the following response:
+    
+    ```
+      {
+        "data": {
+          "type": "contents",
+          "id": "urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3",
+          "attributes": {
+            "entityPaths": [
+              "/urn:adsk.content:library:3a62a6d5-2765-4846-9f82-3771f08877dd/urn:adsk.content:node:5a071edd-b066-4038-ac26-38cdd566bc1d/urn:adsk.content:node:655549cf-8081-48ab-94ea-5b6b74d603a1/urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3"
+            ],
+            "extension": {
+              "type": "contents:autodesk.core:content",
+              "version": "1.0.0",
+              "namespace": "autodesk.core"
+            },
+            "lastModifiedTime": "2017-10-13T07:37:34Z",
+            "contentDownloadCount": 0,
+            "lastModifiedBy": "AYK2Q7S52XRU",
+            "deprecated": false,
+            "description": "ContentDescription",
+            "language": "en",
+            "title": "ContentTitle",
+            "version": "draft",
+            "tags": "ContentTag",
+            "createTime": "2017-10-13T07:37:34Z",
+            "createdBy": "AYK2Q7S52XRU",
+            "lock": false,
+            "region": "US",
+            "status": "draft",
+            "permissions": [
+              {
+                "role": "CONTENT_MANAGER",
+                "subjects": {
+                  "o2Users": [
+                    "ERB3Q463BYQW"
+                  ],
+                  "o2Groups": [
+                    
+                  ],
+                  "o2Tenants": [
+                    
+                  ],
+                  "services": [
+                    "hjcvwfvh6546jdfdfvjkik"
+                  ]
+                },
+                "deletedSubjects": {
+                  "o2Users": [
+                    
+                  ],
+                  "o2Groups": [
+                    
+                  ],
+                  "o2Tenants": [
+                    
+                  ],
+                  "services": [
+                    
+                  ]
+                }
+              },
+              {
+                "role": "CONTENT_WRITER",
+                "subjects": {
+                  "o2Users": [
+                    "ERB3Q463BYQW"
+                  ],
+                  "o2Groups": [
+                    
+                  ],
+                  "o2Tenants": [
+                    
+                  ],
+                  "services": [
+                    "hjcvwfvh6546jdfdfvjkik"
+                  ]
+                }
+              },
+              {
+                "role": "CONTENT_READER",
+                "subjects": {
+                  "o2Users": [
+                    "ERB3Q463BYQW"
+                  ],
+                  "o2Groups": [
+                    
+                  ],
+                  "o2Tenants": [
+                    
+                  ],
+                  "services": [
+                    "hjcvwfvh6546jdfdfvjkik"
+                  ]
+                }
+              }
+            ]
+          },
+          "relationships": {
+            "nodes": {
+              "links": {
+                "self": "https://developer.api.autodesk.com/content-alpha/v1/contents/urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3/relationships/nodes",
+                "related": "https://developer.api.autodesk.com/content-alpha/v1/contents/urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3/nodes"
+              }
+            }
+          },
+          "links": {
+            "self": "https://developer.api.autodesk.com/content-alpha/v1/contents/urn:adsk.content:content:1d8a56d2-69b0-4702-ac31-436032139fa3"
+          }
+        },
+        "included": [
+          
+        ]
+      }
+    ```
+
+    ## Step 6: Perform the Community Operations
     
     In this step, you perform various operations on the content from various members of the community. Also, other members can perform various social media operations on your content. For more information about community features, see [Content Community](/en/docs/content/v1/overview/content-community).
     
