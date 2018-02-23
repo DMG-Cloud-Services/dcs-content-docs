@@ -5443,182 +5443,6 @@ paths:
         [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
       tags: ["Library Content File"]
       
-  /relationships:
-    post:
-      description: |
-        API to add relationships between library, nodes & contents.
-        
-        ***Note:*** Please see the example payload in the [wiki][1].
-        
-        [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-Createnewrelationships
-      parameters:
-        - $ref: '#/parameters/body_add_relationships'  
-      responses:
-        '204': {
-          "description": "No content"  
-        }
-        '400': { $ref: '#/responses/bad_input' }
-        '403': { $ref: '#/responses/forbidden' }
-      security:
-        [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
-      x-ads-docs-cli-example: 'curl -X POST -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" -H "Content-Type: application/vnd.api+json" -d
-          ''{
-             "data": {
-                 "type": "relationships",
-                 "relationships": {
-                   "parent": {
-                     "data": {
-                       "type": "nodes",
-                       "id": "adipisicing Duis"
-                     }
-                   }
-                 },
-                 "attributes": {
-                   "children": [
-                     {
-                       "type": "nodes",
-                       "id": "exercitation ex"
-                     },
-                     {
-                       "type": "nodes",
-                       "id": "aliqua occaecat "
-                     },
-                     {
-                       "type": "contents",
-                       "id": "commodo"
-                     }
-                    ]
-                 }
-             }
-          }
-          '' "https://developer.api.autodesk.com/content/v1/relationships"'
-      tags: ["Relationships"]
-    delete:
-      description: |
-        API to delete a releationship.
-        
-        ***Note:*** Please see the example payload in the [wiki][1].
-        
-        [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-Deleterelationship
-      produces:
-        - text/plain
-      parameters:
-        - $ref: '#/parameters/body_delete_relationships'  
-      responses:
-        '204': {
-          "description": "No content"  
-        }
-        '400': { $ref: '#/responses/bad_input' }
-        '403': { $ref: '#/responses/forbidden' }
-      x-ads-docs-cli-example: 'curl -X POST -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" -H "Content-Type: application/vnd.api+json" -d
-          ''{
-             "data": {
-                "type": "relationships",
-                "relationships": {
-                  "parent": {
-                    "data": {
-                      "type": "libraries",
-                      "id": "f"
-                    }
-                  }
-                },
-                "attributes": {
-                  "child": {
-                      "type": "nodes",
-                      "id": "of"
-                  }
-                }
-             }
-            }
-            '' "https://developer.api.autodesk.com/content/v1/relationships"'
-      security:
-        [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
-      tags: ["Relationships"]      
-      
-  /relationships/nodes/{nodeId}:
-    put:
-      description: |
-        Update parent of a node
-        
-        ***Note:*** Please see the example payload in the [wiki][1].
-        
-        [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-Updatenoderelationship
-      parameters:
-        - $ref: '#/parameters/nodeId'
-        - $ref: '#/parameters/body_update_parent_relationships'
-      responses:
-        '204': {
-          "description": "No content"  
-        }
-        '400': { $ref: '#/responses/bad_input' }
-        '403': { $ref: '#/responses/forbidden' }
-      x-ads-docs-cli-example: 'curl -X POST -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" -H "Content-Type: application/vnd.api+json" -d
-          ''{
-             "data": {
-                "type": "relationships",
-                "relationships": {
-                    "parent": {
-                        "data": {
-                            "type": "libraries",
-                            "id": "incididunt es"
-                        }
-                    }
-                },
-                "attributes": {
-                    "oldParent": {
-                        "type": "libraries",
-                        "id": "tempor et voluptate"
-                    }
-                }
-             }
-          }
-          '' "https://developer.api.autodesk.com/content/v1/relationships/nodes/nodeId"'
-      security:
-        [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
-      tags: ["Relationships"]
-      
-  /relationships/contents/{contentId}:
-    put:
-      description: |
-        Update parent of a Content
-        
-        ***Note:*** Please see the example payload in the [wiki][1].
-        
-        [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-Updatecontentrelationship
-      parameters:
-        - $ref: '#/parameters/contentId'
-        - $ref: '#/parameters/body_update_parent_relationships'
-      responses:
-        '204': {
-          "description": "No content"  
-        }
-        '400': { $ref: '#/responses/bad_input' }
-        '403': { $ref: '#/responses/forbidden' }
-      x-ads-docs-cli-example: 'curl -X POST -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" -H "Content-Type: application/vnd.api+json" -d
-          ''{
-             "data": {
-                "type": "relationships",
-                "relationships": {
-                    "parent": {
-                        "data": {
-                            "type": "nodes",
-                            "id": "incididunt es"
-                        }
-                    }
-                },
-                "attributes": {
-                    "oldParent": {
-                        "type": "libraries",
-                        "id": "tempor et voluptate"
-                    }
-                }
-             }
-          }
-          '' "https://developer.api.autodesk.com/content/v1/relationships/contents/contentId"'
-      security:
-        [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
-      tags: ["Relationships"]
-
   /libraries/{libraryId}/relationships/nodes:
     post:
       description: |
@@ -5629,7 +5453,7 @@ paths:
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-Updatecontentrelationship
       parameters:
         - $ref: '#/parameters/libraryId'
-        - $ref: '#/parameters/body_update_parent_relationships'
+        - $ref: '#/parameters/body_add_delete_relationships'
       responses:
         '204': {
           "description": "No content"  
@@ -5667,7 +5491,7 @@ paths:
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-Updatecontentrelationship
       parameters:
         - $ref: '#/parameters/libraryId'
-        - $ref: '#/parameters/body_update_parent_relationships'
+        - $ref: '#/parameters/body_add_delete_relationships'
       responses:
         '204': {
           "description": "No content"  
@@ -5707,7 +5531,7 @@ paths:
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-Updatecontentrelationship
       parameters:
         - $ref: '#/parameters/subLibraryId'
-        - $ref: '#/parameters/body_update_parent_relationships'
+        - $ref: '#/parameters/body_add_delete_relationships'
       responses:
         '204': {
           "description": "No content"  
@@ -5745,7 +5569,7 @@ paths:
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-Updatecontentrelationship
       parameters:
         - $ref: '#/parameters/subLibraryId'
-        - $ref: '#/parameters/body_update_parent_relationships'
+        - $ref: '#/parameters/body_add_delete_relationships'
       responses:
         '204': {
           "description": "No content"  
@@ -5786,7 +5610,7 @@ paths:
       parameters:
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
-        - $ref: '#/parameters/body_update_parent_relationships'
+        - $ref: '#/parameters/body_add_delete_relationships'
       responses:
         '204': {
           "description": "No content"  
@@ -5825,7 +5649,7 @@ paths:
       parameters:
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
-        - $ref: '#/parameters/body_update_parent_relationships'
+        - $ref: '#/parameters/body_add_delete_relationships'
       responses:
         '204': {
           "description": "No content"  
@@ -5866,7 +5690,7 @@ paths:
       parameters:
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
-        - $ref: '#/parameters/body_update_parent_relationships'
+        - $ref: '#/parameters/body_add_delete_relationships'
       responses:
         '204': {
           "description": "No content"  
@@ -5905,7 +5729,7 @@ paths:
       parameters:
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
-        - $ref: '#/parameters/body_update_parent_relationships'
+        - $ref: '#/parameters/body_add_delete_relationships'
       responses:
         '204': {
           "description": "No content"  
@@ -7231,31 +7055,14 @@ parameters:
     schema: {
       $ref: '#/definitions/add_files_to_content' 
     }
-  body_add_relationships:  
+  body_add_delete_relationships:  
     name: body
     in: body
-    description: describe the relationships to the be added
+    description: describe the entities to be added/deleted
     required: true
     schema: {
-      $ref: '#/definitions/add_relationships' 
+      $ref: '#/definitions/add_delete_relationships' 
     }
-  body_update_parent_relationships:  
-    name: body
-    in: body
-    description: describe the relationships to the be added
-    required: true
-    schema: {
-      $ref: '#/definitions/update_parent_relationships' 
-    }
-  body_delete_relationships:  
-    name: body
-    in: body
-    description: describe the relationships to the be added
-    required: true
-    schema: {
-      $ref: '#/definitions/delete_relationships' 
-    }        
-    
   commentId:
     name: commentId
     in: path
@@ -9094,124 +8901,35 @@ definitions:
               }
           }
           
-  add_relationships:
+  add_delete_relationships:
     allOf:
       - type: object
         required: [ data ]
         properties:
           data:
-            type: object
-            required: [ type, relationships, attributes ]
-            properties:
-              type: { type: string, enum: [ 'relationships' ] }
-              attributes:
-                type: object
-                required: [children]
-                properties:
-                  children: 
-                    type: array
-                    description: child item object
-                    items:
-                      type: object
-                      description: File Object                    
-                      required: [type, id] 
-                      properties:
-                        type: { type: string, enum: [ 'nodes','contents' ] }
-                        id: {type: string}
-              relationships:
-                type: object
-                required: [parent]
-                properties:
-                  parent:
-                    type: object
-                    required: [data]
-                    properties:
-                      data:
-                        type: object
-                        required: [type,id]
-                        properties:
-                          type: { type: string, enum: [ 'nodes','libraries' ] }
-                          id:
-                            type: string  
+            type: array
+            items:
+              type: object
+              required: [type, id] 
+              properties:
+                type: { 
+                  type: string, 
+                  enum: [ 'nodes', 'contents' ] 
+                }
+                id:
+                  type: string
         example:
           {
-              "data": {
-                  "relationships": {
-                      "parent": {
-                          "data": {
-                              "type": "libraries",
-                              "id": "urn:adsk.wipstg:fs.folder:co.gJNtEQ_WQF6Aaq-VyGhU7Q"
-                          }
-                      }
-                  },
-                  "attributes": {
-                      "children": [
-                          {
-                              "type": "nodes",
-                              "id": "urn:adsk.wipstg:dm.lineage:LQDT3Lc9S-mDf70MET-POA"
-                          }
-                      ]
-                  },
-                  "type": "relationships"
+            "data": [
+              {
+                "type": "nodes",
+                "id": "urn:adsk.content:node:eea9d052-5e29-49ce-a5f3-c651824a1484"
+              },
+              {
+                "type": "nodes",
+                "id": "urn:adsk.content:node:6d265a52-efd2-403e-846c-644c2659c582"
               }
-          }
-          
-  update_parent_relationships:
-    allOf:
-      - type: object
-        required: [ data ]
-        properties:
-          data:
-            type: object
-            required: [ type, relationships, attributes ]
-            properties:
-              type: { type: string, enum: [ 'relationships' ] }
-              attributes:
-                type: object
-                required: [oldParent]
-                properties:
-                  oldParent: 
-                    type: object
-                    description: old parent object
-                    required: [type, id] 
-                    properties:
-                      type: { type: string, enum: [ 'nodes','libraries' ] }
-                      id:
-                        type: string
-              relationships:
-                type: object
-                required: [parent]
-                properties:
-                  parent:
-                    type: object
-                    required: [data]
-                    properties:
-                      data:
-                        type: object
-                        required: [type,id]
-                        properties:
-                          type: { type: string, enum: [ 'nodes','libraries' ] }
-                          id:
-                            type: string
-        example:
-          {
-              "data": {
-                  "relationships": {
-                      "parent": {
-                          "data": {
-                              "type": "nodes",
-                              "id": "urn:adsk.wipstg:dm.lineage:Dy7cIJXCQROCYTpWtzch4g"
-                          }
-                      }
-                  },
-                  "attributes": {
-                      "oldParent": {
-                          "type": "nodes",
-                          "id": "urn:adsk.wipstg:dm.lineage:wZUuTlTVQSa2QKA2oY-aPg"
-                      }
-                  },
-                  "type": "relationships"
-              }
+            ]
           }
           
   library_definition:
