@@ -5169,7 +5169,7 @@ paths:
         [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] } ,{ oauth2_application: [ 'data:write' ] }]
       tags: ["Library Content"]      
       
-  /libraries/{libraryId}/contents/{contentId1},{contentId2}:
+  /libraries/{libraryId}/contents/comma_separated_content_id_list:
     get:
       description: |
         Get multiple library contents by Ids. Here, the content can be present anywhere under the library tree.
@@ -5180,8 +5180,6 @@ paths:
       operationId: get_contents_by_ids
       parameters:
         - $ref: '#/parameters/libraryId'
-        - $ref: '#/parameters/contentId1'
-        - $ref: '#/parameters/contentId2'
         - $ref: '#/parameters/version'
         - $ref: '#/parameters/loadReferencedContents'
       responses:
