@@ -3224,21 +3224,25 @@ info:
                         }
                     ],
                     "communityData": {
-                      "commentCount": "",
-                      "likeCount": "",
-                      "totalHits": "",
-                      "featured": "",
-                      "status": "published",
-                      "featuredDate": "",
-                      "lastCommentId": "",
-                      "lastCommentDate": "",
-                      "lastQuarantineDate": "",
-                      "lastActivityDate": "",
-                      "limboed": "",
-                      "liked": "",
-                      "commented": "",
-                      "likeOxygenIds": [],
-                      "commentOxygenIds": []
+                        "commentCount": 1,
+                        "likeCount": 1,
+                        "totalHits": 0,
+                        "featured": true,
+                        "status": "published",
+                        "featuredDate": "2017-09-12T03:39:14Z",
+                        "lastCommentId": "CXN69KYJ7HDVQVX",
+                        "lastCommentDate": "2017-09-12T09:17:16Z",
+                        "lastQuarantineDate": "",
+                        "lastActivityDate": "",
+                        "limboed": false,
+                        "liked": true,
+                        "commented": true,
+                        "likeOxygenIds": [
+                          "YUT9M5AU27KN"
+                        ],
+                        "commentOxygenIds": [
+                          "YUT9M5AU27KN"
+                        ]
                     },
                     "lock": true,
                     "region": "US",
@@ -8602,7 +8606,7 @@ definitions:
                           type: string
                   extension:
                     type: object
-                    required: [type,version,namespace]
+                    required: [type, version, namespace]
                     properties:
                       type:
                         type: string
@@ -8794,10 +8798,13 @@ definitions:
                           type: string
                   extension:
                     type: object
+                    required: [type, version, namespace]
                     properties:
                       type:
                         type: string
                       version:
+                        type: string
+                      namespace:
                         type: string
                       data:
                         type: object
@@ -8834,6 +8841,7 @@ definitions:
                         }
                       },
                       "extension": {
+                          "namespace": "autodesk.mdb.alpha",
                           "type": "contents:autodesk.mdb.alpha:machineAM",
                           "version": "2.0.0",
                           "data": {
@@ -9310,17 +9318,17 @@ definitions:
       likeCount: { type: integer, description: 'likeCount' }
       totalHits: { type: integer, description: 'totalHits' }
       featured: { type: boolean, description: 'featured' }
-      wasLimbo: { type: boolean, description: 'wasLimbo' }
+      limboed: { type: boolean, description: 'limboed' }
       status: { type: string, description: 'status' }
-      featureddate: { type: string, description: 'featureddate' }
+      featuredDate: { type: string, description: 'featureddate' }
       lastCommentId: { type: string, description: 'lastCommentId' }
-      lastCommentdate: { type: string, description: 'lastCommentdate' }
-      lastQuarantinedate: { type: string, description: 'lastQuarantinedate' }
-      lastActivitydate: { type: string, description: 'lastActivitydate' }
-      memberLikes: { type: boolean, description: 'memberLikes' }
-      memberAddsComment: { type: boolean, description: 'memberAddsComment' }
-      likeOxygenIdList: { type: array, items: { type: string} ,description: 'likeOxygenIdList' }
-      commentOxygenIdList: { type: array, items: { type: string} ,description: 'commentOxygenIdList' }
+      lastCommentDate: { type: string, description: 'lastCommentDate' }
+      lastQuarantineDate: { type: string, description: 'lastQuarantineDate' }
+      lastActivityDate: { type: string, description: 'lastActivityDate' }
+      liked: { type: boolean, description: 'liked' }
+      commented: { type: boolean, description: 'commented' }
+      likeOxygenIds: { type: array, items: { type: string} ,description: 'likeOxygenIds' }
+      commentOxygenIds: { type: array, items: { type: string} ,description: 'commentOxygenIds' }
   
   file_details_definition:
     type: object
@@ -9341,8 +9349,9 @@ definitions:
   extension_object:
     type: object
     properties:
-      data: { type: object, description: 'self' }
-      type: { type: string, description: 'type' }
+      data: { type: object, description: 'extension data' }
+      type: { type: string, description: 'schema type' }
+      namespace: { type: string, description: 'schema namespace' }
       version: { type: string, description: 'version' }
       
   library_realtionship_definitions:
