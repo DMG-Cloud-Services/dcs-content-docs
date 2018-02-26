@@ -8724,7 +8724,6 @@ definitions:
               type: { type: string, enum: [ 'contents' ] }
               attributes:
                 type: object
-                required: [title,description,tags,language,region]
                 properties:
                   title:
                     type: string
@@ -8775,6 +8774,24 @@ definitions:
                           type: integer
                         width:
                           type: integer
+                  files:
+                    type: array
+                    items:
+                      type: object
+                      required: [title, description, objectKey, size, checksum, mimeType]
+                      properties:
+                        title:
+                          type: string
+                        description:
+                          type: string
+                        objectKey:
+                          type: string
+                        size:
+                          type: integer
+                        checksum:
+                          type: string
+                        mimeType:
+                          type: string
                   extension:
                     type: object
                     properties:
