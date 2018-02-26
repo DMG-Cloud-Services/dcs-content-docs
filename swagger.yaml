@@ -8535,7 +8535,7 @@ definitions:
               type: { type: string, enum: [ 'contents' ] }
               attributes:
                 type: object
-                required: [title, description, tags, status, language, region,extension]
+                required: [title, description, tags, status, language, region, extension]
                 properties:
                   title:
                     type: string
