@@ -5107,7 +5107,8 @@ paths:
         - $ref: '#/parameters/body_update_library_content'
       responses:
         '200': { $ref: '#/responses/content' }
-
+        '400': { $ref: '#/responses/bad_input' }
+        '403': { $ref: '#/responses/forbidden' }
       x-ads-docs-cli-example: 'curl -X POST -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" -H "Content-Type: application/vnd.api+json" -d
           ''{
               "data": {
