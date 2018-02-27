@@ -9174,6 +9174,7 @@ definitions:
     type: object
     properties:
       libraries: { $ref: '#/definitions/entity_link_object_definitions' }
+      subLibraries: { $ref: '#/definitions/entity_link_object_definitions' }
       contents: { $ref: '#/definitions/entity_link_object_definitions' }
       nodes: { $ref: '#/definitions/entity_link_object_definitions' }
       
@@ -9187,6 +9188,7 @@ definitions:
         type: object
         properties:
           libraryCount: { type: integer, description: 'libraryCount' }
+          subLibraryCount: { type: integer, description: 'subLibraryCount' }
           nodeCount: { type: integer, description: 'nodeCount' }
           contentCount: { type: integer, description: 'contentCount' }
       relationships: { $ref: '#/definitions/ccontent_search_realtionship_definitions' }
