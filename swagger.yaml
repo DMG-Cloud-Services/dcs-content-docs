@@ -8981,7 +8981,7 @@ definitions:
           createTime: { type: string, description: 'createTime' }
           createdBy: { type: string, description: 'createdBy' }
           lastModifiedBy: { type: string, description: 'lastModifiedBy' }
-      relationships: { $ref: '#/definitions/library_realtionship_definitions' }
+      relationships: { $ref: '#/definitions/library_relationship_definitions' }
       links: { $ref: '#/definitions/json_link_self' }
       
   sub_library_definition:
@@ -9002,7 +9002,7 @@ definitions:
           createdBy: { type: string, description: 'createdBy' }
           lastModifiedBy: { type: string, description: 'lastModifiedBy' }
           externalId: { type: string, description: 'externalId' }
-      relationships: { $ref: '#/definitions/library_realtionship_definitions' }
+      relationships: { $ref: '#/definitions/sub_library_relationship_definitions' }
       links: { $ref: '#/definitions/json_link_self' }      
         
   library_collection_definition:
@@ -9356,11 +9356,17 @@ definitions:
       namespace: { type: string, description: 'schema namespace' }
       version: { type: string, description: 'version' }
       
-  library_realtionship_definitions:
+  library_relationship_definitions:
     type: object
     properties:
       nodes: { $ref: '#/definitions/entity_link_object_definitions' }
 
+  sub_library_relationship_definitions:
+    type: object
+    properties:
+      libraries: { $ref: '#/definitions/entity_link_object_definitions' }
+      nodes: { $ref: '#/definitions/entity_link_object_definitions' }
+      
   node_relationship_definitions:
     type: object
     properties:
