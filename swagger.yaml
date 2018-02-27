@@ -9045,7 +9045,7 @@ definitions:
           childNodesCount: { type: integer, description: 'childNodesCount' }
           childContentsCount: { type: integer, description: 'childContentsCount' }
           externalId: { type: string, description: 'externalId' }
-      relationships: { $ref: '#/definitions/node_realtionship_definitions' }
+      relationships: { $ref: '#/definitions/node_relationship_definitions' }
       links: { $ref: '#/definitions/json_link_self' }
       
   node_data_definition:
@@ -9102,7 +9102,7 @@ definitions:
           lastModifiedBy: { type: string, description: 'deprecated' }
           contentDownloadCount : { type: integer, description: 'contentDownloadCount' }
           entityPaths: { type: array, items: { type: string }, description: 'entityPaths' }
-      relationships: { $ref: '#/definitions/node_realtionship_definitions' }
+      relationships: { $ref: '#/definitions/content_relationship_definitions' }
       links: { $ref: '#/definitions/json_link_self' }
       
   content_data_definition:
@@ -9359,12 +9359,18 @@ definitions:
     properties:
       nodes: { $ref: '#/definitions/entity_link_object_definitions' }
 
-  node_realtionship_definitions:
+  node_relationship_definitions:
     type: object
     properties:
       libraries: { $ref: '#/definitions/library_link_object_definitions' }
       contents: { $ref: '#/definitions/entity_link_object_definitions' }
       nodes: { $ref: '#/definitions/entity_link_object_definitions' }
+      
+  content_relationship_definitions:
+    type: object
+    properties:
+      contentReferences: { $ref: '#/definitions/entity_link_object_definitions' }
+      nodes: { $ref: '#/definitions/entity_link_object_definitions' }      
 
   entity_link_object_definitions:
     type: object
