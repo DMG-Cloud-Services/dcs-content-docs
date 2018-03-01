@@ -5040,7 +5040,7 @@ paths:
   /libraries/{libraryId}/contents:
     post:
       description: |
-        Create a new content. A content can be added directly under a node only. Content is created with ***draft*** status. It can later be updated to ***published*** status using the PATCH call when it is ready.
+        Create a new content. A content can only be added directly under a node. Content is created with ***draft*** status. It can later be updated to ***published*** status using the PATCH call when it is ready.
         
         *Special Rules:*
         
