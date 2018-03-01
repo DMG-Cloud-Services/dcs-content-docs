@@ -5095,9 +5095,12 @@ paths:
   /libraries/{libraryId}/contents/{contentId}:
     patch:
       description: |
-        Udpate content. The status field indicates if the content is in ***draft*** or ***published*** state.  All changes will be applied to content draft. If status is passed as ***published***, the draft will be published in addition to applying requested changes.
+        Udpate content. A content metadata can be updated on the ***draft*** status. The status has to be passed as ***published*** when its ready to be published. This will generate a new version of the content. 
         
-        ***Note:*** Please see the example payload in the [wiki][1].
+        ***Note:*** 
+        * If there any change in the metadata and the status is passed as ***published*** will directly publish the content generating a new version. The changes are not applied to the draft version.
+        * It is always recommended to apply all the changes to ***draft*** status of the content and then publish it.
+        * Please see the example payload in the [wiki][1].
         
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-UpdateContent
       operationId: update_library_content
