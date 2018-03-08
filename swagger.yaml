@@ -407,6 +407,7 @@ info:
     | **registerContentVersionInCommunity** | MANUAL        |  The attribute to indicate if the each version of the content under this library as to be registered as separate entity for community features.
     | **searchCacheExpiryInSeconds**        | MANUAL        |  The value in seconds to indicate the time to live for the search data in local cache. The data is removed from the cache after the time is lapsed.
     | **permissions**                       | MANUAL        |  The optional permissions object array specifying all the members having access to this library. This is effective for PATCH API call.
+    | **subLibraryPresent**                 | AUTO          |  The flag to indicate if this library contains sub-libraries inside it.
     
     ### Sample
     
