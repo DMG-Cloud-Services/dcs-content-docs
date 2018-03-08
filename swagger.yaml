@@ -10547,6 +10547,7 @@ responses:
                     "createdBy": "AYK2Q7S52XRU",
                     "region": "US",
                     "status": "published",
+                    "subLibraryPresent": true,
                     "role": "LIBRARY_MANAGER",
                     "translations": {
                       "fr_FR": {
@@ -10797,6 +10798,7 @@ responses:
                       "createdBy": "AYK2Q7S52XRU",
                       "region": "US",
                       "status": "published",
+                      "subLibraryPresent": true,
                       "translations": {
                         "fr_FR": {
                           "title": "Contenu du film",
@@ -10859,6 +10861,7 @@ responses:
                       "createdBy": "AYK2Q7S52XRU",
                       "region": "US",
                       "status": "published",
+                      "subLibraryPresent": false,
                       "translations": {
                         "fr_FR": {
                           "title": "Contenu du film",
