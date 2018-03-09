@@ -7994,7 +7994,6 @@ definitions:
               type: { type: string, enum: [ 'libraries' ] }
               attributes:
                 type: object
-                required: [status, permissions]
                 properties:
                   title:
                     type: string
