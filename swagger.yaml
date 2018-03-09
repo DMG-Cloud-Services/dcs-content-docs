@@ -7675,7 +7675,7 @@ definitions:
             type: array
             items:
               type: object
-              required: [ id, status, detail ]
+              required: [ id, code, detail ]
               properties:
                 id: { type: string, description: "a unique identifier for this particular occurrence of the problem" }
                 status: { type: string, description: "the HTTP status code applicable to this problem, expressed as a string value" }
@@ -10466,16 +10466,17 @@ responses:
     examples:
       application/json:
         {
-            "errors": [
-                {
-                    "id": "f994fbeb-ae29-46ed-82da-7293aac53d20",
-                    "status": "400",
-                    "code": "BAD_INPUT",
-                    "title": "One or more input values in the request were bad",
-                    "detail": "'abcxyz' is an invalid Urn"
-                }
-            ]
-        }
+          "errors": [
+              {
+                  "id": "c4ac5fc6-bce8-4ae3-a3b8-a2900d173f6b",
+                  "code": "2002",
+                  "detail": "Library cannot be found. Invalid Content Library",
+                  "meta": {
+                      "id": "urn%253Aadsk.content%253Alibrary%253A62889e9d-f985-4a2f-a3ec-18b341f720de"
+                  }
+              }
+          ]
+      }
         
   delete_library_error:
     description: Delete Library error
