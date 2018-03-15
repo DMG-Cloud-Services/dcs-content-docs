@@ -5096,7 +5096,7 @@ paths:
   /libraries/{libraryId}/contents/{contentId}:
     patch:
       description: |
-        Udpate content. A content metadata can be updated on the ***draft*** status. The status has to be passed as ***published*** when its ready to be published. This will generate a new version of the content. 
+        Update content. A content metadata can be updated on the ***draft*** status. The status has to be passed as ***published*** when its ready to be published. This will generate a new version of the content. 
         
         ***Note:*** 
         * If there any change in the metadata and the status is passed as ***published***, this operation will directly publish the content generating a new version. In this case, the changes are not applied to the ***draft*** version.
@@ -8815,6 +8815,10 @@ definitions:
                     type: boolean
                   deprecate:
                     type: boolean
+                  permissions:
+                    type: array
+                    items:
+                      $ref: '#/definitions/permissions_definition' 
                   translations:
                     type: object
                     items:
@@ -8886,6 +8890,62 @@ definitions:
                       "status": "published",
                       "externalId": "abc",
                       "externalVersion": "version1",
+                      "permissions": [
+                        {
+                            "role": "NODE_MANAGER",
+                            "subjects": {
+                                "o2Users": [
+                                    "C3G6N78Q8852",
+                                    "HT6LJVYYY2TB"
+                                ],
+                                "o2Groups": [
+                                    
+                                ],
+                                "o2Tenants": [
+                                    
+                                ],
+                                "services": [
+        
+                                ]
+                            }
+                        },
+                        {
+                            "role": "CONTENT_CREATOR",
+                            "subjects": {
+                                "o2Users": [
+                                    "C3G6N78Q8852",
+                                    "HT6LJVYYY2TB"
+                                ],
+                                "o2Groups": [
+                                    
+                                ],
+                                "o2Tenants": [
+                                    
+                                ],
+                                "services": [
+        
+                                ]
+                            }
+                        },
+                        {
+                            "role": "CONTENT_READER",
+                            "subjects": {
+                                "o2Users": [
+                                    "C3G6N78Q8852",
+                                    "HT6LJVYYY2TB"
+                                ],
+                                "o2Groups": [
+                                    
+                                ],
+                                "o2Tenants": [
+                                    
+                                ],
+                                "services": [
+        
+                                ]
+                            }
+                        }
+                    ],
                       "translations": {
                         "fr_FR": {
                           "title": "Contenu du film",
