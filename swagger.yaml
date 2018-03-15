@@ -8493,6 +8493,10 @@ definitions:
                     type: string
                   externalId:
                     type: string
+                  permissions:
+                    type: array
+                    items:
+                      $ref: '#/definitions/permissions_definition' 
                   translations:
                     type: object
                     items:
@@ -8508,6 +8512,62 @@ definitions:
                       "language": "en",
                       "externalId": "abc",
                       "schemaFamily": "contents:autodesk.mdb.alpha:materialAM-1.0.0",
+                      "permissions": [
+                        {
+                            "role": "NODE_MANAGER",
+                            "subjects": {
+                                "o2Users": [
+                                    "C3G6N78Q8852",
+                                    "HT6LJVYYY2TB"
+                                ],
+                                "o2Groups": [
+                                    
+                                ],
+                                "o2Tenants": [
+                                    
+                                ],
+                                "services": [
+        
+                                ]
+                            }
+                        },
+                        {
+                            "role": "CONTENT_CREATOR",
+                            "subjects": {
+                                "o2Users": [
+                                    "C3G6N78Q8852",
+                                    "HT6LJVYYY2TB"
+                                ],
+                                "o2Groups": [
+                                    
+                                ],
+                                "o2Tenants": [
+                                    
+                                ],
+                                "services": [
+        
+                                ]
+                            }
+                        },
+                        {
+                            "role": "CONTENT_READER",
+                            "subjects": {
+                                "o2Users": [
+                                    "C3G6N78Q8852",
+                                    "HT6LJVYYY2TB"
+                                ],
+                                "o2Groups": [
+                                    
+                                ],
+                                "o2Tenants": [
+                                    
+                                ],
+                                "services": [
+        
+                                ]
+                            }
+                        }
+                    ],
                       "translations": {
                         "fr_FR": {
                           "title": "Contenu du film",
