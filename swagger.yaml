@@ -11775,7 +11775,7 @@ responses:
                     },
                     "permissions": [
                         {
-                            "role": "NODE_MANAGER",
+                            "role": "CONTENT_MANAGER",
                             "subjects": {
                                 "o2Users": [
                                     "C3G6N78Q8852",
@@ -11793,7 +11793,7 @@ responses:
                             }
                         },
                         {
-                            "role": "CONTENT_CREATOR",
+                            "role": "CONTENT_WRITER",
                             "subjects": {
                                 "o2Users": [
                                     "C3G6N78Q8852",
