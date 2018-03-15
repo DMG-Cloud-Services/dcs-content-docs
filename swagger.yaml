@@ -11772,7 +11772,63 @@ responses:
                         },
                         "type": "contents:autodesk.mdb.alpha:materialAM",
                         "version": "1.0.0"
-                    }
+                    },
+                    "permissions": [
+                        {
+                            "role": "NODE_MANAGER",
+                            "subjects": {
+                                "o2Users": [
+                                    "C3G6N78Q8852",
+                                    "HT6LJVYYY2TB"
+                                ],
+                                "o2Groups": [
+                                    
+                                ],
+                                "o2Tenants": [
+                                    
+                                ],
+                                "services": [
+                                     "1z1jrkfPPZacTkFid1V889lHfDuQzhKf"
+                                ]
+                            }
+                        },
+                        {
+                            "role": "CONTENT_CREATOR",
+                            "subjects": {
+                                "o2Users": [
+                                    "C3G6N78Q8852",
+                                    "HT6LJVYYY2TB"
+                                ],
+                                "o2Groups": [
+                                    
+                                ],
+                                "o2Tenants": [
+                                    
+                                ],
+                                "services": [
+                                    "1z1jrkfPPZacTkFid1V889lHfDuQzhKf"
+                                ]
+                            }
+                        },
+                        {
+                            "role": "CONTENT_READER",
+                            "subjects": {
+                                "o2Users": [
+                                    "C3G6N78Q8852",
+                                    "HT6LJVYYY2TB"
+                                ],
+                                "o2Groups": [
+                                    
+                                ],
+                                "o2Tenants": [
+                                    
+                                ],
+                                "services": [
+                                     "1z1jrkfPPZacTkFid1V889lHfDuQzhKf"
+                                ]
+                            }
+                        }
+                    ],
                 },
                 "relationships": {
                     "nodes": {
