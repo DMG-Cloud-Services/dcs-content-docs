@@ -8026,7 +8026,7 @@ definitions:
                   permissions:
                     type: array
                     items:
-                      $ref: '#/definitions/permissions_definition'     
+                      $ref: '#/definitions/library_permissions_definition'     
                   translations:
                     type: object
                     items:
@@ -8198,7 +8198,7 @@ definitions:
                   permissions:
                     type: array
                     items:
-                      $ref: '#/definitions/permissions_definition'     
+                      $ref: '#/definitions/library_permissions_definition'     
                   translations:
                     type: object
                     items:
@@ -8496,7 +8496,7 @@ definitions:
                   permissions:
                     type: array
                     items:
-                      $ref: '#/definitions/permissions_definition' 
+                      $ref: '#/definitions/node_permissions_definition' 
                   translations:
                     type: object
                     items:
@@ -8818,7 +8818,7 @@ definitions:
                   permissions:
                     type: array
                     items:
-                      $ref: '#/definitions/permissions_definition' 
+                      $ref: '#/definitions/content_permissions_definition' 
                   translations:
                     type: object
                     items:
@@ -9317,7 +9317,7 @@ definitions:
       relationships: { $ref: '#/definitions/ccontent_search_realtionship_definitions' }
       links: { $ref: '#/definitions/json_link_self' }
       
-  permissions_definition:
+  library_permissions_definition:
     type: object
     description: Permission object
     properties:
@@ -9365,7 +9365,102 @@ definitions:
             type: array
             items:
               type: string
-              
+  node_permissions_definition:
+    type: object
+    description: Permission object
+    properties:
+      role: 
+        type: string 
+        description: 'role of the member'
+        enum: [ 'NODE_MANAGER', 'CONTENT_CREATOR', 'CONTENT_READER' ]
+      subjects: 
+        type: object
+        description: Subjects to be added to the entity.
+        properties:
+          o2Users:
+            type: array
+            items:
+              type: string
+          o2Groups:
+            type: array
+            items:
+              type: string
+          o2Tenants:
+            type: array
+            items:
+              type: string
+          services:
+            type: array
+            items:
+              type: string
+      deletedSubjects: 
+        type: object
+        description: Subjects to be deleted to the entity.
+        properties:
+          o2Users:
+            type: array
+            items:
+              type: string
+          o2Groups:
+            type: array
+            items:
+              type: string
+          o2Tenants:
+            type: array
+            items:
+              type: string
+          services:
+            type: array
+            items:
+              type: string            
+  content_permissions_definition:
+    type: object
+    description: Permission object
+    properties:
+      role: 
+        type: string 
+        description: 'role of the member'
+        enum: [ 'CONTENT_MANAGER', 'CONTENT_WRITER', 'CONTENT_READER' ]
+      subjects: 
+        type: object
+        description: Subjects to be added to the entity.
+        properties:
+          o2Users:
+            type: array
+            items:
+              type: string
+          o2Groups:
+            type: array
+            items:
+              type: string
+          o2Tenants:
+            type: array
+            items:
+              type: string
+          services:
+            type: array
+            items:
+              type: string
+      deletedSubjects: 
+        type: object
+        description: Subjects to be deleted to the entity.
+        properties:
+          o2Users:
+            type: array
+            items:
+              type: string
+          o2Groups:
+            type: array
+            items:
+              type: string
+          o2Tenants:
+            type: array
+            items:
+              type: string
+          services:
+            type: array
+            items:
+              type: string
   translations_definition:
     type: object
     description: Translation object
