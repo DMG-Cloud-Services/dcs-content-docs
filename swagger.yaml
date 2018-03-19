@@ -11257,12 +11257,12 @@ responses:
         {
           "data": {
         		"type": "nodes",
-        		"id": "urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ",
+            "id": "urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ",
         		"attributes": {
         			"totalChildrenCount": 1,
         			"entityPaths": [
         				"/urn:adsk.wipstg:fs.folder:co.RNco7Y6CSmm3IFzFR0FYHg/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ"
-        			],
+              ],
         			"lastModifiedTime": "2017-01-11T23:31:19Z",
         			"createTime": "2017-01-11T23:29:20Z",
         			"createdBy": "ERB3Q463BYQW",
