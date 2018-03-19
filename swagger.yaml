@@ -7573,14 +7573,14 @@ definitions:
       data: { $ref: '#/definitions/json_api_input_update_flag_data' }
   json_api_input_update_flag_data:
     type: object
-    required: [ id, type, attributes ]
+    required: [ type, attributes ]
     description: 'json data'
     properties:
       type: { type: string, description: 'resource type' }
       attributes: { $ref: '#/definitions/json_api_input_update_attributes_flag' }
   json_api_input_update_attributes_flag:
     type: object
-    required: [ entryType, entryId, flag ]
+    required: [ id, status ]
     properties:
       id: { type: string, description: 'id of flag' }
       status: { type: string, description: 'APPROVED or DELETED' }
