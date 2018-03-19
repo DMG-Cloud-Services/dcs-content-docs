@@ -288,7 +288,7 @@ info:
     ##Library Roles
     
     | Functions                    | LIBRARY_MANAGER | CONTENT_CREATOR | CONTENT_READER  | Remarks             
-    | -----------------------------|-----------------|-----------------|-----------------|------------------------------------------------------------------------------------
+    | ----------------------------e-|-----------------|-----------------|-----------------|------------------------------------------------------------------------------------
     | Update Library          	   | YES             | NO              | NO              |
     | Create/Update/Delete Node    | YES             | NO              | NO              | A node can be added under the library or another node.
     | Create/Update/Delete Content | YES             | YES             | NO              | A content can be only under a node at any level.
@@ -11256,111 +11256,111 @@ responses:
       application/vnd.api+json:
         {
           "data": {
-        		"type": "nodes",
+            "type": "nodes",
             "id": "urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ",
-        		"attributes": {
-        			"totalChildrenCount": 1,
-        			"entityPaths": [
-        				"/urn:adsk.wipstg:fs.folder:co.RNco7Y6CSmm3IFzFR0FYHg/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ"
+            "attributes": {
+              "totalChildrenCount": 1,
+              "entityPaths": [
+                "/urn:adsk.wipstg:fs.folder:co.RNco7Y6CSmm3IFzFR0FYHg/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ"
               ],
-        			"lastModifiedTime": "2017-01-11T23:31:19Z",
-        			"createTime": "2017-01-11T23:29:20Z",
-        			"createdBy": "ERB3Q463BYQW",
-        			"lastModifiedBy": "",
-        			"childNodesCount": 0,
-        			"externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
-        			"description": "This is description for node NodeForGlobalMaterialRegistry",
-        			"title": "NodeForGlobalMaterialRegistry",
-        			"childContentsCount": 1,
-        			"tags": "a,b,c,d",
-        			"translations": {
-        				"fr_FR": {
-        					"title": "Contenu du film",
-        					"description": "Contenu d'un film",
-        					"tags": "film de film"
-        				},
-        				"es_MX": {
-        					"title": "Contenido de la película",
-        					"description": "Contenido sobre una película",
-        					"tags": "película"
-        				},
-        				"zh_CN": {
-        					"title": "电影内容",
-        					"description": "关于电影的内容",
-        					"tags": "电影电影"
-        				}
-        			},
-        			"permissions": [
-        				{
-        					"role": "NODE_MANAGER",
-        					"subjects": {
-        						"o2Users": [
-        							"C3G6N78Q8852",
-        							"HT6LJVYYY2TB"
-        						],
-        						"o2Groups": [],
-        						"o2Tenants": [],
-        						"services": [
-        							"1z1jrkfPPZacTkFid1V889lHfDuQzhKf"
-        						]
-        					}
-        				},
-        				{
-        					"role": "CONTENT_CREATOR",
-        					"subjects": {
-        						"o2Users": [
-        							"C3G6N78Q8852",
-        							"HT6LJVYYY2TB"
-        						],
-        						"o2Groups": [],
-        						"o2Tenants": [],
-        						"services": [
-        							"1z1jrkfPPZacTkFid1V889lHfDuQzhKf"
-        						]
-        					}
-        				},
-        				{
-        					"role": "CONTENT_READER",
-        					"subjects": {
-        						"o2Users": [
-        							"C3G6N78Q8852",
-        							"HT6LJVYYY2TB"
-        						],
-        						"o2Groups": [],
-        						"o2Tenants": [],
-        						"services": [
-        							"1z1jrkfPPZacTkFid1V889lHfDuQzhKf"
-        						]
-        					}
-        				}
-        			]
-        		},
-        		"relationships": {
-        			"libraries": {
-        				"links": {
-        					"self": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ/relationships/libraries",
-        					"related": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ/libraries"
-        				}
-        			},
-        			"contents": {
-        				"links": {
-        					"self": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ/relationships/contents",
-        					"related": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ/contents"
-        				},
-        				"data": []
-        			},
-        			"nodes": {
-        				"links": {
-        					"self": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ/relationships/nodes",
-        					"related": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ/nodes"
-        				},
-        				"data": []
-        			}
-        		},
-        		"links": {
-        			"self": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ"
-        		}
-        	}
+              "lastModifiedTime": "2017-01-11T23:31:19Z",
+              "createTime": "2017-01-11T23:29:20Z",
+              "createdBy": "ERB3Q463BYQW",
+              "lastModifiedBy": "",
+              "childNodesCount": 0,
+              "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
+              "description": "This is description for node NodeForGlobalMaterialRegistry",
+              "title": "NodeForGlobalMaterialRegistry",
+              "childContentsCount": 1,
+              "tags": "a,b,c,d",
+              "translations": {
+                "fr_FR": {
+                  "title": "Contenu du film",
+                  "description": "Contenu d'un film",
+                  "tags": "film de film"
+                },
+                "es_MX": {
+                  "title": "Contenido de la película",
+                  "description": "Contenido sobre una película",
+                  "tags": "película"
+                },
+                "zh_CN": {
+                  "title": "电影内容",
+                  "description": "关于电影的内容",
+                  "tags": "电影电影"
+                }
+              },
+              "permissions": [
+                {
+                  "role": "NODE_MANAGER",
+                  "subjects": {
+                    "o2Users": [
+                      "C3G6N78Q8852",
+                      "HT6LJVYYY2TB"
+                    ],
+                    "o2Groups": [],
+                    "o2Tenants": [],
+                    "services": [
+                      "1z1jrkfPPZacTkFid1V889lHfDuQzhKf"
+                    ]
+                  }
+                },
+                {
+                  "role": "CONTENT_CREATOR",
+                  "subjects": {
+                    "o2Users": [
+                      "C3G6N78Q8852",
+                      "HT6LJVYYY2TB"
+                    ],
+                    "o2Groups": [],
+                    "o2Tenants": [],
+                    "services": [
+                      "1z1jrkfPPZacTkFid1V889lHfDuQzhKf"
+                    ]
+                  }
+                },
+                {
+                  "role": "CONTENT_READER",
+                  "subjects": {
+                    "o2Users": [
+                      "C3G6N78Q8852",
+                      "HT6LJVYYY2TB"
+                    ],
+                    "o2Groups": [],
+                    "o2Tenants": [],
+                    "services": [
+                      "1z1jrkfPPZacTkFid1V889lHfDuQzhKf"
+                    ]
+                  }
+                }
+              ]
+            },
+            "relationships": {
+              "libraries": {
+                "links": {
+                  "self": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ/relationships/libraries",
+                  "related": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ/libraries"
+                }
+              },
+              "contents": {
+                "links": {
+                  "self": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ/relationships/contents",
+                  "related": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ/contents"
+                },
+                "data": []
+              },
+              "nodes": {
+                "links": {
+                  "self": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ/relationships/nodes",
+                  "related": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ/nodes"
+                },
+                "data": []
+              }
+            },
+            "links": {
+              "self": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ"
+            }
+          }
         }
         
   nodes:
