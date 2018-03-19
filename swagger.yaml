@@ -11255,7 +11255,7 @@ responses:
     examples:
       application/vnd.api+json:
         {
-        	"data": {
+          "data": {
         		"type": "nodes",
         		"id": "urn:adsk.wipstg:dm.lineage:bpvPjZI0Smq2_zi7rgb8mQ",
         		"attributes": {
