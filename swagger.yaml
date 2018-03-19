@@ -7491,7 +7491,7 @@ parameters:
     in: query
     description: Skip the cache for /contentSearch
     required: false
-    type: string 
+    type: boolean 
     default: false
   query_filter_content_search_page_size:
     name: page[size]
