@@ -974,18 +974,18 @@ info:
           "status": "private",
           "language": "en",
           "region": "US"
+        },
+        "relationships": {
+          "libraries": {
+            "data": [
+              {
+                "type": "libraries",
+                "id": "{Library ID}"
+              }
+            ]
+          }
         }
-      },
-      "relationships": {
-        "libraries": {
-          "data": [
-            {
-              "type": "libraries",
-              "id": "{Library ID}"
-            }
-          ]
-        }
-      } 
+      }
     }'"https://developer.api.autodesk.com/content/v1/libraries/{libraryid}/subLibraries"
     ```
     The resource provides the following response:
