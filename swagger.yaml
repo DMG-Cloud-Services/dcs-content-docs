@@ -7498,14 +7498,14 @@ parameters:
     in: query
     description: Result size.
     required: false
-    type: number
+    type: integer
     default: 20
   query_filter_content_search_page_number:
     name: page[number]
     in: query
     description: Result page number.
     required: false
-    type: number
+    type: integer
     default: 1
   query_sort_content_search:
     name: sort[contents][*]
