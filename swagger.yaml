@@ -7938,7 +7938,7 @@ definitions:
                     description: Standard license for the library. Please refer to the allowed license list here - https://spdx.org/licenses/
                   registerContentVersionInCommunity:
                     type: boolean
-                    enum: ['true', 'false']
+                    default: false
                     description: optional param to set if the contents in this library has to be registered as individual entity for community activities such as likes, comments, flag etc.
                   searchCacheExpiryInSeconds:
                     type: integer
@@ -8018,7 +8018,7 @@ definitions:
                     description: Standard license for the library. Please refer to the allowed license list here - https://spdx.org/licenses/
                   registerContentVersionInCommunity:
                     type: boolean
-                    enum: ['true', 'false']
+                    default: false
                     description: optional param to set if the contents in this library has to be registered as individual entity for community activities such as likes, comments, flag etc.
                   searchCacheExpiryInSeconds:
                     type: integer
