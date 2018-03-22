@@ -7168,7 +7168,6 @@ parameters:
     description: Flag to load referenced contents
     required: false
     type: boolean
-    default: false
   role:
     name: filter[contents][role]
     in: query
@@ -7373,7 +7372,6 @@ parameters:
     description: Entity type.
     required: false
     type: boolean
-    default: false
   query_filter_content_parents_entityType:
     name: filter[contents][parents.entityType]
     in: query
@@ -7462,8 +7460,7 @@ parameters:
     in: query
     description: Flag to indicate if its a sub-library model search.
     required: false
-    type: boolean 
-    default: false     
+    type: boolean
   query_filter_content_externalId:
     name: filter[contents][externalId]
     in: query
@@ -7491,8 +7488,7 @@ parameters:
     in: query
     description: Skip the cache for /contentSearch
     required: false
-    type: boolean 
-    default: false
+    type: boolean
   query_filter_content_search_page_size:
     name: page[size]
     in: query
@@ -7938,7 +7934,6 @@ definitions:
                     description: Standard license for the library. Please refer to the allowed license list here - https://spdx.org/licenses/
                   registerContentVersionInCommunity:
                     type: boolean
-                    default: false
                     description: optional param to set if the contents in this library has to be registered as individual entity for community activities such as likes, comments, flag etc.
                   searchCacheExpiryInSeconds:
                     type: integer
@@ -8018,7 +8013,6 @@ definitions:
                     description: Standard license for the library. Please refer to the allowed license list here - https://spdx.org/licenses/
                   registerContentVersionInCommunity:
                     type: boolean
-                    default: false
                     description: optional param to set if the contents in this library has to be registered as individual entity for community activities such as likes, comments, flag etc.
                   searchCacheExpiryInSeconds:
                     type: integer
