@@ -9272,7 +9272,7 @@ definitions:
               nodes: { type: array, items: { $ref: '#/definitions/node_definition' } }
               libraries: { type: array, items: { $ref: '#/definitions/library_definition' } }            
               
-  ccontent_search_relationship_definitions:
+  content_search_relationship_definitions:
     type: object
     properties:
       libraries: { $ref: '#/definitions/entity_link_object_definitions' }
@@ -9293,7 +9293,7 @@ definitions:
           subLibraryCount: { type: integer, description: 'subLibraryCount' }
           nodeCount: { type: integer, description: 'nodeCount' }
           contentCount: { type: integer, description: 'contentCount' }
-      relationships: { $ref: '#/definitions/ccontent_search_relationship_definitions' }
+      relationships: { $ref: '#/definitions/content_search_relationship_definitions' }
       links: { $ref: '#/definitions/json_link_self' }
       
   library_permissions_definition:
