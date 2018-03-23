@@ -7940,7 +7940,7 @@ definitions:
                     description: optional param to set the "time to live" duration of the library data in search results cache. Default is set to 300 secs.
                   translations:
                     type: object
-                    items:
+                    additionalProperties:
                       $ref: '#/definitions/translations_definition'                         
         example:
           {
@@ -8023,7 +8023,7 @@ definitions:
                       $ref: '#/definitions/library_permissions_definition'     
                   translations:
                     type: object
-                    items:
+                    additionalProperties:
                       $ref: '#/definitions/translations_definition'                         
         example:
           {
@@ -8095,7 +8095,7 @@ definitions:
                     type: string
                   translations:
                     type: object
-                    items:
+                    additionalProperties:
                       $ref: '#/definitions/translations_definition'                         
               relationships:
                 type: object
@@ -8195,7 +8195,7 @@ definitions:
                       $ref: '#/definitions/library_permissions_definition'     
                   translations:
                     type: object
-                    items:
+                    additionalProperties:
                       $ref: '#/definitions/translations_definition'                         
         example :
           [
@@ -8272,7 +8272,7 @@ definitions:
                     type: string
                   translations:
                     type: object
-                    items:
+                    additionalProperties:
                       $ref: '#/definitions/translations_definition'                         
               relationships:
                 type: object
@@ -8422,7 +8422,7 @@ definitions:
                 type: string
               translations:
                 type: object
-                items:
+                additionalProperties:
                   $ref: '#/definitions/translations_definition'                         
           relationships:
             type: object
@@ -8493,7 +8493,7 @@ definitions:
                       $ref: '#/definitions/node_permissions_definition' 
                   translations:
                     type: object
-                    items:
+                    additionalProperties:
                       $ref: '#/definitions/translations_definition'                         
         example:
           {
@@ -8619,7 +8619,7 @@ definitions:
                     type: string
                   translations:
                     type: object
-                    items:
+                    additionalProperties:
                       $ref: '#/definitions/translations_definition'                         
                   thumbnails:
                     type: array
