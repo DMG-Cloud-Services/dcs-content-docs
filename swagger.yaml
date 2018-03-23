@@ -288,7 +288,7 @@ info:
     ##Library Roles
     
     | Functions                    | LIBRARY_MANAGER | CONTENT_CREATOR | CONTENT_READER  | Remarks             
-    | ----------------------------e-|-----------------|-----------------|-----------------|------------------------------------------------------------------------------------
+    | -----------------------------|-----------------|-----------------|-----------------|------------------------------------------------------------------------------------
     | Update Library          	   | YES             | NO              | NO              |
     | Create/Update/Delete Node    | YES             | NO              | NO              | A node can be added under the library or another node.
     | Create/Update/Delete Content | YES             | YES             | NO              | A content can be only under a node at any level.
