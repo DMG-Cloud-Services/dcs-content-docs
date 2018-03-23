@@ -7415,27 +7415,14 @@ parameters:
     required: false
     type: string
     x-example: "extension.data.glassTransition.value>59.0"
-  query_filter_content_search_community_liked:
-    name: filters[contents][meta]
-    in: query
-    description: Param to fetch facets
-    required: true
-    type: string
-    default: facets
-  query_filter_content_search_community_liked_oxygenId:
-    name: filters[contents][meta]
-    in: query
-    description: Param to fetch facets
-    required: true
-    type: string
-    default: facets
   query_filter_content_search_meta_facets:
     name: filters[contents][meta]
     in: query
     description: Param to fetch facets
     required: false
     type: string
-    default: facets
+    x-example: "facets"
+    enum: ["facets"]
   query_filter_content_facet:
     name: filter[contents][facet]
     in: query
@@ -7481,7 +7468,6 @@ parameters:
     description: Locale of the entities
     required: false
     type: string
-    default: "en_US"
     x-example: "es_MX"
   query_filter_content_skip_search_cache:
     name: filter[contents][searchSkipCache]
