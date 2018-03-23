@@ -8173,7 +8173,6 @@ definitions:
               type: { type: string, enum: [ 'subLibraries' ] }
               attributes:
                 type: object
-                required: [title, description]
                 properties:
                   title:
                     type: string
