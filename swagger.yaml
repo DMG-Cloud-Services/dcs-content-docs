@@ -8814,7 +8814,7 @@ definitions:
                       $ref: '#/definitions/content_permissions_definition' 
                   translations:
                     type: object
-                    items:
+                    additionalProperties:
                       $ref: '#/definitions/translations_definition'                         
                   thumbnails:
                     type: array
