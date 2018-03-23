@@ -9275,11 +9275,79 @@ definitions:
   content_search_relationship_definitions:
     type: object
     properties:
-      libraries: { $ref: '#/definitions/entity_link_object_definitions' }
-      subLibraries: { $ref: '#/definitions/entity_link_object_definitions' }
-      contents: { $ref: '#/definitions/entity_link_object_definitions' }
-      nodes: { $ref: '#/definitions/entity_link_object_definitions' }
-      
+      libraries:
+        $ref: '#/definitions/content_search_relationship_libraries'
+      subLibraries:
+        $ref: '#/definitions/content_search_relationship_sublibraries'
+      contents:
+        $ref: '#/definitions/content_search_relationship_contents'
+      nodes:
+        $ref: '#/definitions/content_search_relationship_nodes'
+        
+  content_search_relationship_libraries:
+    type: object
+    properties:
+      links: { $ref: '#/definitions/json_link_self_related' }
+      data:
+        type: array
+        items:
+          type: object
+          description: data
+          properties:
+            type:
+              type: string
+              enum: [ libraries ]
+            id:
+              type: string
+              
+  content_search_relationship_sublibraries:
+    type: object
+    properties:
+      links: { $ref: '#/definitions/json_link_self_related' }
+      data:
+        type: array
+        items:
+          type: object
+          description: data
+          properties:
+            type:
+              type: string
+              enum: [ subLibraries ]
+            id:
+              type: string
+              
+  content_search_relationship_contents:
+    type: object
+    properties:
+      links: { $ref: '#/definitions/json_link_self_related' }
+      data:
+        type: array
+        items:
+          type: object
+          description: data
+          properties:
+            type:
+              type: string
+              enum: [ contents ]
+            id:
+              type: string
+              
+  content_search_relationship_nodes:
+    type: object
+    properties:
+      links: { $ref: '#/definitions/json_link_self_related' }
+      data:
+        type: array
+        items:
+          type: object
+          description: data
+          properties:
+            type:
+              type: string
+              enum: [ nodes ]
+            id:
+              type: string
+              
   content_search_object_definition:
     type: object
     description: Response definition for content
