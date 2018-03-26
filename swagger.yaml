@@ -5498,6 +5498,8 @@ paths:
       parameters:
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/body_add_delete_relationships'
+      produces:
+        []
       responses:
         '204': {
           "description": "No content"  
@@ -5576,6 +5578,8 @@ paths:
       parameters:
         - $ref: '#/parameters/subLibraryId'
         - $ref: '#/parameters/body_add_delete_relationships'
+      produces:
+        []
       responses:
         '204': {
           "description": "No content"  
@@ -5656,6 +5660,8 @@ paths:
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
         - $ref: '#/parameters/body_add_delete_relationships'
+      produces:
+        []
       responses:
         '204': {
           "description": "No content"  
@@ -5736,6 +5742,8 @@ paths:
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
         - $ref: '#/parameters/body_add_delete_relationships'
+      produces:
+        []
       responses:
         '204': {
           "description": "No content"  
