@@ -4541,7 +4541,7 @@ paths:
       description: Delete an existing library. A library can be deleted only if it has no child nodes.
       operationId: delete_library
       produces:
-        - text/plain
+        []
       parameters:
         - $ref: '#/parameters/libraryId'
       responses:
@@ -4582,7 +4582,7 @@ paths:
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-RemoveapplicationidinLibrary'sinterestedAppIdslist
       operationId: delete_library_interest
       produces:
-        - text/plain
+        []
       parameters:
         - $ref: '#/parameters/libraryId'   
       responses:
@@ -4727,7 +4727,7 @@ paths:
       description: Delete an existing sub-library. A sub-library can be deleted only if it has no child nodes.
       operationId: deleteSubLibrary
       produces:
-        - text/plain
+        []
       parameters:
         - $ref: '#/parameters/libraryId'   
         - $ref: '#/parameters/subLibraryId'
@@ -4943,7 +4943,7 @@ paths:
       description: |
         Delete a node.
       produces:
-        - text/plain
+        []
       parameters:
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
@@ -5160,7 +5160,7 @@ paths:
         1. If an unlocked content is referenced and its deleted, the Forge Content does not remove the content from the referencing contents.
         2. In order to avoid the above stated scenario, please reference locked published contents.
       produces:
-        - text/plain
+        []
       operationId: delete_content_by_id
       parameters:
         - $ref: '#/parameters/libraryId'
@@ -5396,7 +5396,7 @@ paths:
       description: |
         API to delete all files of a particular type within a content.
       produces:
-        - text/plain  
+        []
       parameters:
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/contentId'
@@ -5417,7 +5417,7 @@ paths:
       description: |
         API to delete a file from the content.
       produces:
-        - text/plain  
+        []  
       parameters:
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/contentId'
@@ -6393,7 +6393,7 @@ paths:
         description: |
           Unlike a Content
         produces:
-          - text/plain
+          []
         security:
           [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
         parameters:
@@ -6443,7 +6443,7 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
         produces:
-          - text/plain
+          []
         parameters:
         - $ref: '#/parameters/libraryId'
         - in: body
@@ -6532,7 +6532,7 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
         produces:
-          - text/plain
+          []
         parameters:
         - $ref: '#/parameters/libraryId'
         - in: body
@@ -6648,7 +6648,7 @@ paths:
       security:
         [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
       produces:
-       - text/plain
+       []
       parameters:
         - $ref: '#/parameters/contentId'
         - $ref: '#/parameters/commentId'
@@ -6727,7 +6727,7 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
         produces:
-          - text/plain
+          []
         parameters:
           - $ref: '#/parameters/memberId'
         responses:
@@ -6839,7 +6839,7 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
         produces:
-         - text/plain
+         []
         parameters:
           - $ref: '#/parameters/libraryId'
           - $ref: '#/parameters/flagId'
