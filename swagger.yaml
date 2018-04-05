@@ -5234,12 +5234,16 @@ paths:
       
   /libraries/{libraryId}/uploadUrl:       
     get:
-      description: Get file upload url. This url can be used to upload files for the content. This API will check if the user has permission to the library and returns an encrypted url to upload all the files.
+      description: |
+        Get file upload url. This url can be used to upload files for the content. This API will check if the user has permission to the library and returns an encrypted url to upload all the files.
+        
+        ***Note***: The upload url is valid for 1 hour duration.
       parameters:
         - $ref: '#/parameters/libraryId'
       responses:
         '200': { $ref: '#/responses/fileURL' }
         '400': { $ref: '#/responses/bad_input' }
+        '401': { $ref: '#/responses/unauthorized' }
         '403': { $ref: '#/responses/forbidden' }
       x-ads-docs-cli-example: 'curl -X GET -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" "https://developer.api.autodesk.com/content/v1/libraries/libraryId/uploadUrl"'
       security:
@@ -10876,6 +10880,23 @@ responses:
             }
           ]
         }
+        
+  unauthorized:
+    description: Unauthorized response
+    schema:
+      $ref: '#/definitions/json_api_error'
+    examples:
+      application/json:
+        {
+          "errors": [
+            {
+              "id": "c4f0c7da-dbb7-4b53-9403-93344d3c9966",
+              "code": "123",
+              "detail": "Request is not allowed for this member's role, please login using a valid role."
+            }
+          ]
+        }
+
         
   library:
     description: Successful Library response
