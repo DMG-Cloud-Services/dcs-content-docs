@@ -6839,6 +6839,26 @@ paths:
         responses:
           '200': {$ref: '#/responses/getFlaggedContentOrCommentResult'}
   
+  /libraries/{libraryId}/flagEntities:
+      x-summary: Content Flag Entities
+      x-description: Get Flagged contents or flagged comments for library
+      get:
+        tags: [ "Community" ]
+        operationId: getFlaggedEntitiesContentOrComment
+        description: |
+          Get Flagged contents or flagged comments for library
+        security:
+          [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
+        produces:
+         []
+        parameters:
+          - $ref: '#/parameters/libraryId'
+          - $ref: '#/parameters/flagEntityTypeFilter'
+          - $ref: '#/parameters/query_filter_content_search_page_size'
+          - $ref: '#/parameters/query_filter_content_search_page_number'
+        responses:
+          '200': {$ref: '#/responses/getFlaggedEntitiesContentOrCommentResult'}
+  
   /libraries/{libraryId}/flags/{flagId}:
       x-summary: Content Flag
       x-description: Delete flag by id
@@ -9819,6 +9839,77 @@ responses:
            },
            "totalResultCount": 1
          }
+         
+  getFlaggedEntitiesContentOrCommentResult:
+    description: Successful response
+    schema:
+      title: schema versions
+      type: object
+      allOf:
+      - type: object
+    headers:
+        authorization:
+          description: Bearer Token
+          type: integer
+    examples:
+      application/vnd.api+json:
+        {
+    "firstLink": {
+        "meta": null,
+        "href": "http://localhost:8080/libraries/urn%3Aadsk.content%3Alibrary%3A5d95723b-e1ed-49cd-aad6-7b0222dc842a/flaggedEntities?filter[contents][entityType]=comment&page[number]=1&page[size]=20"
+    },
+    "previousLink": {
+        "meta": null,
+        "href": null
+    },
+    "totalResultCount": 1,
+    "collection": [
+        {
+            "featured": false,
+            "addedDate": 1522919127000,
+            "replies": [
+                
+            ],
+            "totalReplies": 0,
+            "entityType": "comment",
+            "contentId": "urn:adsk.content:content:97646f27-7b74-4b60-93a0-e5017a1fd02f",
+            "flags": [
+                {
+                    "flag": "INCOMPLETE",
+                    "entityType": "comment",
+                    "count": 1,
+                    "entityId": "CG93SM7JFMAQ6SG",
+                    "id": "FDUYDX6JFMAQMDE",
+                    "flaggerId": "CM96UPOBJDNHB561"
+                },
+                {
+                    "flag": "SPAM",
+                    "entityType": "comment",
+                    "count": 1,
+                    "entityId": "CG93SM7JFMAQ6SG",
+                    "id": "FAEDG7NJFMAQIS8",
+                    "flaggerId": "CM96UPOBJDNHB561"
+                }
+            ],
+            "id": "CG93SM7JFMAQ6SG",
+            "body": "this is regression comment 5",
+            "authorId": "HT6LJVYYY2TB",
+            "status": "PUBLISHED"
+        }
+    ],
+    "additionalProperties": {
+        
+    },
+    "lastLink": {
+        "meta": null,
+        "href": "http://localhost:8080/libraries/urn%3Aadsk.content%3Alibrary%3A5d95723b-e1ed-49cd-aad6-7b0222dc842a/flaggedEntities?filter[contents][entityType]=comment&page[number]=1&page[size]=20"
+    },
+    "nextLink": {
+        "meta": null,
+        "href": null
+    }
+}
+      
   getFlaggedContentOrCommentResult:
     description: Successful response
     schema:
