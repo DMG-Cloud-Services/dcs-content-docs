@@ -4699,9 +4699,9 @@ paths:
         ***Note:*** 
         * Please see the example payload in the [wiki][1].
         * The `permissions` on the library can be set only when the status is passed as `published`.
-        * A library can be published without adding other members on the permission list.
-        * A library has to be published or being published if the other members have to be added to the permission list.
-        * A library has to be published or being published if it has to be released (adding * to CONTENT_READER subject).
+        * A sub-library can be published without adding other members on the permission list.
+        * A sub-library has to be published or being published if the other members have to be added to the permission list.
+        * A sub-library has to be published or being published if it has to be released (adding * to CONTENT_READER subject).
         
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-UpdateSub-library
       operationId: updateSubLibrary
