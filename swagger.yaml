@@ -289,7 +289,7 @@ info:
     
     | Functions                    | LIBRARY_MANAGER | CONTENT_CREATOR | CONTENT_READER  | Remarks             
     | -----------------------------|-----------------|-----------------|-----------------|------------------------------------------------------------------------------------
-    | Update Library          	   | YES             | NO              | NO              |
+    | Update Library               | YES             | NO              | NO              |
     | Create/Update/Delete Node    | YES             | NO              | NO              | A node can be added under the library or another node.
     | Create/Update/Delete Content | YES             | YES             | NO              | A content can be only under a node at any level.
     | View Library Hierarchy       | YES             | YES             | YES             |
@@ -310,7 +310,7 @@ info:
     
     ##Node Roles
     
-    | Functions                    | NODE_MANAGER 	 | CONTENT_CREATOR | CONTENT_READER  | Remarks             
+    | Functions                    | NODE_MANAGER    | CONTENT_CREATOR | CONTENT_READER  | Remarks             
     | -----------------------------|-----------------|-----------------|-----------------|-------------------------------------------------------------------------------------
     | Create/Update/Delete Node    | YES             | NO              | NO              | A node can be added under the library or another node.
     | Create/Update/Delete Content | YES             | YES             | NO              | A content can be only under a node at any level.
@@ -320,8 +320,8 @@ info:
     
     | Functions                    | CONTENT_MANAGER | CONTENT_WRITER  | CONTENT_READER  | Remarks             
     | -----------------------------|-----------------|-----------------|-----------------|-------------------------------------------------------------------------------------
-    | Create/Delete Content 	     | YES             | NO              | NO              | A content can be only under a node at any level.
-    | Update Content       		     | YES             | YES             | NO              |
+    | Create/Delete Content        | YES             | NO              | NO              | A content can be only under a node at any level.
+    | Update Content                | YES             | YES             | NO              |
     | Add Users                    | YES             | NO              | NO              | Members can be added to Content.
     
     [@overview/content-attributes]: <>
@@ -9185,67 +9185,6 @@ definitions:
         type: object
         properties:
           uploadUrl: { type: string, description: 'uploadUrl' }
-  
-  delete_relationships:
-    allOf:
-      - type: object
-        required: [ data ]
-        properties:
-          data:
-            type: object
-            required: [ type, relationships, attributes ]
-            properties:
-              type: { type: string, enum: [ 'relationships' ] }
-              attributes:
-                type: object
-                required: [child]
-                properties:
-                  child: 
-                    type: object
-                    description: child item object
-                    required: [type, id] 
-                    properties:
-                      type: { type: string, enum: [ 'nodes','contents' ] }
-                      id:
-                        type: string
-                  forceDelete:
-                    type: boolean
-              relationships:
-                type: object
-                required: [parent]
-                properties:
-                  parent:
-                    type: object
-                    required: [data]
-                    properties:
-                      data:
-                        type: object
-                        required: [type,id]
-                        properties:
-                          type: { type: string, enum: [ 'nodes','libraries' ] }
-                          id:
-                            type: string
-        example:
-          {
-              "data": {
-                  "relationships": {
-                      "parent": {
-                          "data": {
-                              "type": "nodes",
-                              "id": "urn:adsk.wipstg:dm.lineage:LQDT3Lc9S-mDf70MET-POA"
-                          }
-                      }
-                  },
-                  "attributes": {
-                      "forceDelete": true,
-                      "child": {
-                          "type": "contents",
-                          "id": "urn:adsk.wipstg:dm.lineage:y3rxbVUCQKKvboCLzNs1vQ"
-                      }
-                  },
-                  "type": "relationships"
-              }
-          }        
           
 responses:
   getFeaturedContentsResponse:
@@ -9336,61 +9275,61 @@ responses:
     examples:
       application/vnd.api+json:
         {
-    "firstLink": {
-        "meta": null,
-        "href": "http://localhost:8080/libraries/urn%3Aadsk.content%3Alibrary%3A5d95723b-e1ed-49cd-aad6-7b0222dc842a/flaggedEntities?filter[contents][entityType]=comment&page[number]=1&page[size]=20"
-    },
-    "previousLink": {
-        "meta": null,
-        "href": null
-    },
-    "totalResultCount": 1,
-    "collection": [
-        {
-            "featured": false,
-            "addedDate": 1522919127000,
-            "replies": [
+          "firstLink": {
+            "meta": null,
+            "href": "http://localhost:8080/libraries/urn%3Aadsk.content%3Alibrary%3A5d95723b-e1ed-49cd-aad6-7b0222dc842a/flaggedEntities?filter[contents][entityType]=comment&page[number]=1&page[size]=20"
+          },
+          "previousLink": {
+            "meta": null,
+            "href": null
+          },
+          "totalResultCount": 1,
+          "collection": [
+            {
+              "featured": false,
+              "addedDate": 1522919127000,
+              "replies": [
                 
-            ],
-            "totalReplies": 0,
-            "entityType": "comment",
-            "contentId": "urn:adsk.content:content:97646f27-7b74-4b60-93a0-e5017a1fd02f",
-            "flags": [
+              ],
+              "totalReplies": 0,
+              "entityType": "comment",
+              "contentId": "urn:adsk.content:content:97646f27-7b74-4b60-93a0-e5017a1fd02f",
+              "flags": [
                 {
-                    "flag": "INCOMPLETE",
-                    "entityType": "comment",
-                    "count": 1,
-                    "entityId": "CG93SM7JFMAQ6SG",
-                    "id": "FDUYDX6JFMAQMDE",
-                    "flaggerId": "CM96UPOBJDNHB561"
+                  "flag": "INCOMPLETE",
+                  "entityType": "comment",
+                  "count": 1,
+                  "entityId": "CG93SM7JFMAQ6SG",
+                  "id": "FDUYDX6JFMAQMDE",
+                  "flaggerId": "CM96UPOBJDNHB561"
                 },
                 {
-                    "flag": "SPAM",
-                    "entityType": "comment",
-                    "count": 1,
-                    "entityId": "CG93SM7JFMAQ6SG",
-                    "id": "FAEDG7NJFMAQIS8",
-                    "flaggerId": "CM96UPOBJDNHB561"
+                  "flag": "SPAM",
+                  "entityType": "comment",
+                  "count": 1,
+                  "entityId": "CG93SM7JFMAQ6SG",
+                  "id": "FAEDG7NJFMAQIS8",
+                  "flaggerId": "CM96UPOBJDNHB561"
                 }
-            ],
-            "id": "CG93SM7JFMAQ6SG",
-            "body": "this is regression comment 5",
-            "authorId": "HT6LJVYYY2TB",
-            "status": "PUBLISHED"
+              ],
+              "id": "CG93SM7JFMAQ6SG",
+              "body": "this is regression comment 5",
+              "authorId": "HT6LJVYYY2TB",
+              "status": "PUBLISHED"
+            }
+          ],
+          "additionalProperties": {
+            
+          },
+          "lastLink": {
+            "meta": null,
+            "href": "http://localhost:8080/libraries/urn%3Aadsk.content%3Alibrary%3A5d95723b-e1ed-49cd-aad6-7b0222dc842a/flaggedEntities?filter[contents][entityType]=comment&page[number]=1&page[size]=20"
+          },
+          "nextLink": {
+            "meta": null,
+            "href": null
+          }
         }
-    ],
-    "additionalProperties": {
-        
-    },
-    "lastLink": {
-        "meta": null,
-        "href": "http://localhost:8080/libraries/urn%3Aadsk.content%3Alibrary%3A5d95723b-e1ed-49cd-aad6-7b0222dc842a/flaggedEntities?filter[contents][entityType]=comment&page[number]=1&page[size]=20"
-    },
-    "nextLink": {
-        "meta": null,
-        "href": null
-    }
-}
       
   getFlaggedContentOrCommentResult:
     description: Successful response
