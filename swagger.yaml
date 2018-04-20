@@ -406,6 +406,7 @@ info:
     | **status**                            | MANUAL        |  The status of the library. The status can be **private** or **published**. Defaults to **private** on create.
     | **registerContentVersionInCommunity** | MANUAL        |  The attribute to indicate if the each version of the content under this library as to be registered as separate entity for community features.
     | **searchCacheExpiryInSeconds**        | MANUAL        |  The value in seconds to indicate the time to live for the search data in local cache. The data is removed from the cache after the time is lapsed.
+    | **contentReferencesIndexDepth**       | MANUAL        |  The reference content indexing depth. The indexing process will go to so many levels to index the referenced content so many levels.
     | **permissions**                       | MANUAL        |  The optional permissions object array specifying all the members having access to this library. This is effective for PATCH API call.
     | **subLibraryPresent**                 | AUTO          |  The flag to indicate if this library contains sub-libraries inside it.
     
@@ -423,7 +424,8 @@ info:
             "region": "US",
             "status": "private/published",
             "registerContentVersionInCommunity": true,
-            "searchCacheExpiryInSeconds": 600
+            "searchCacheExpiryInSeconds": 600,
+            "contentReferencesIndexDepth": 2
         }
       }
     }
@@ -4440,7 +4442,8 @@ paths:
                   "tags": "mollit incididunt ipsum tempor sint",
                   "region": "US",
                   "registerContentVersionInCommunity": false,
-                  "searchCacheExpiryInSeconds": 600
+                  "searchCacheExpiryInSeconds": 600,
+                  "contentReferencesIndexDepth": 2
                 }
               }
             }'' "https://developer.api.autodesk.com/content/v1/libraries"'
@@ -7437,6 +7440,9 @@ definitions:
                   searchCacheExpiryInSeconds:
                     type: integer
                     description: optional param to set the "time to live" duration of the library data in search results cache. Default is set to 300 secs.
+                  contentReferencesIndexDepth:
+                    type: integer
+                    description: optional param to to specify the reference contents indexing depth.
                   translations:
                     type: object
                     additionalProperties:
@@ -7455,6 +7461,7 @@ definitions:
                       "status": "private",
                       "registerContentVersionInCommunity": false,
                       "searchCacheExpiryInSeconds": 600,
+                      "contentReferencesIndexDepth": 2,
                       "translations": {
                         "fr_FR": {
                           "title": "Contenu du film",
@@ -7516,6 +7523,9 @@ definitions:
                   searchCacheExpiryInSeconds:
                     type: integer
                     description: optional param to set the "time to live" duration of the library data in search results cache. Default is set to 300 secs.
+                  contentReferencesIndexDepth:
+                    type: integer
+                    description: optional param to to specify the reference contents indexing depth.
                   permissions:
                     type: array
                     items:
@@ -7533,6 +7543,7 @@ definitions:
                 "license": "Apache License 2.0",
                 "registerContentVersionInCommunity": false,
                 "searchCacheExpiryInSeconds": 600,
+                "contentReferencesIndexDepth": 3,
                 "permissions": [
                   {
                     "role": "CONTENT_CREATOR",
