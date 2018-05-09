@@ -4460,7 +4460,7 @@ paths:
         
         1. This API can be called with 2, 3 legged tokens and no token.
         2. Role is a multi-value param. More than one role can be passed. When one of the roles passed is **ANONYMOUS**, the result will also include ***released*** libraries.
-        3. When no role is passed, the app returns all the libraries created by the calling member.
+        3. When no role is passed, the app returns all the libraries created or presented by the calling member.
         4. When no token is passed in the header, the criteria is applied only on ***released*** libraries.
       
         ***Note:*** Please see the example payload in the [wiki][1].
