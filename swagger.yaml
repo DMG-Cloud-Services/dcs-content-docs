@@ -4450,6 +4450,7 @@ paths:
       responses:
         '201': { $ref: '#/responses/library' }
         '400': { $ref: '#/responses/bad_input' }
+        '401': { $ref: '#/responses/unauthorized' }
         '403': { $ref: '#/responses/forbidden' }
     get: 
       description: |
