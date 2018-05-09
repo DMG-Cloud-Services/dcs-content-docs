@@ -9149,6 +9149,7 @@ definitions:
     type: object
     properties:
       nodes: { $ref: '#/definitions/entity_link_object_definitions' }
+      subLibraries: { $ref: '#/definitions/entity_link_object_definitions' }
 
   sub_library_relationship_definitions:
     type: object
