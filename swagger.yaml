@@ -4643,6 +4643,7 @@ paths:
       responses:
         '201': { $ref: '#/responses/subLibrary' }
         '400': { $ref: '#/responses/bad_input' }
+        '401': { $ref: '#/responses/unauthorized' }
         '403': { $ref: '#/responses/forbidden' }
       tags: ["Sub-Library"]      
     get: 
