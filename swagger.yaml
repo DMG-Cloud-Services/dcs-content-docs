@@ -5013,11 +5013,7 @@ paths:
   /libraries/{libraryId}/nodes/{nodeId}/parents:
     get:
       description: |
-        Get all contents immediately under the node.
-        
-        ***Note:*** Please see the example payload in the [wiki][1].
-        
-        [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-GetContents
+        Get all parents of the node
       parameters:
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
@@ -5027,7 +5023,7 @@ paths:
         '200': { $ref: '#/responses/nodesParents' }
         '400': { $ref: '#/responses/bad_input' }
         '403': { $ref: '#/responses/forbidden' }
-      x-ads-docs-cli-example: 'curl -X GET -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" "https://developer.api.autodesk.com/content/v1/libraries/libraryId/nodes/nodeId/contents"'
+      x-ads-docs-cli-example: 'curl -X GET -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" "https://developer.api.autodesk.com/content/v1/libraries/libraryId/nodes/nodeId/parents"'
       security:
         [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
       tags: ["Library Node"]
