@@ -5024,7 +5024,7 @@ paths:
         - $ref: '#/parameters/query_filter_content_search_page_size'
         - $ref: '#/parameters/query_filter_content_search_page_number'
       responses:
-        '200': { $ref: '#/responses/nodesParents' }
+        '200': { $ref: '#/responses/nodesallparents' }
         '400': { $ref: '#/responses/bad_input' }
         '403': { $ref: '#/responses/forbidden' }
       x-ads-docs-cli-example: 'curl -X GET -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" "https://developer.api.autodesk.com/content/v1/libraries/libraryId/nodes/nodeId/contents"'
