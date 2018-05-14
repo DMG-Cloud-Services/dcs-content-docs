@@ -5024,7 +5024,7 @@ paths:
         - $ref: '#/parameters/query_filter_content_search_page_size'
         - $ref: '#/parameters/query_filter_content_search_page_number'
       responses:
-        '200': { $ref: '#/responses/nodesallparents' }
+        '200': { $ref: '#/responses/nodesParents' }
         '400': { $ref: '#/responses/bad_input' }
         '403': { $ref: '#/responses/forbidden' }
       x-ads-docs-cli-example: 'curl -X GET -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" "https://developer.api.autodesk.com/content/v1/libraries/libraryId/nodes/nodeId/contents"'
@@ -9207,7 +9207,7 @@ definitions:
   library_node_parent_relationship_definitions:
     type: object
     properties:
-      refs: { $ref: '#/definitions/library_node_parent_link_object_definitions' }
+      children: { $ref: '#/definitions/library_link_object_definitions' }
 
   sub_library_relationship_definitions:
     type: object
@@ -9243,7 +9243,7 @@ definitions:
   library_node_parent_link_object_definitions:
     type: object
     properties:
-      children: { $ref: '#/definitions/json_link_self_related' }
+      links: { $ref: '#/definitions/json_link_self_related' }
 
   json_link_self_related:
     type: object
