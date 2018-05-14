@@ -9164,6 +9164,7 @@ definitions:
     type: object
     properties:
       libraries: { $ref: '#/definitions/library_link_object_definitions' }
+      subLibraries: { $ref: '#/definitions/entity_link_object_definitions' }
       contents: { $ref: '#/definitions/entity_link_object_definitions' }
       nodes: { $ref: '#/definitions/entity_link_object_definitions' }
       
