@@ -4962,6 +4962,7 @@ paths:
           "description": "No content"  
         }
         '400': { $ref: '#/responses/bad_input' }
+        '401': { $ref: '#/responses/unauthorized' }
         '403': { $ref: '#/responses/forbidden' }
       x-ads-docs-cli-example: 'curl -X DELETE -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" "https://developer.api.autodesk.co/content/v1/libraries/{libraryId}/nodes/{nodeId}"'
       security:
