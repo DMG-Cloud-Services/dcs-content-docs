@@ -8638,6 +8638,26 @@ definitions:
       relationships: { $ref: '#/definitions/library_relationship_definitions' }
       links: { $ref: '#/definitions/json_link_self' }
       
+  library_definition_node_parent:
+    type: object
+    description: Response definition for library
+    properties:
+      type: { type: string, description: 'type' }
+      id: { type: string, description: 'id' }
+      attributes:
+        type: object
+        properties:
+          title: { type: string, description: 'title' }
+          description: { type: string, description: 'description' }
+          status: { type: string, description: 'status' }
+          entityPaths: { type: array, items: { type: string }, description: 'entityPaths' }
+          lastModifiedTime: { type: string, description: 'lastModifiedTime' }
+          createTime: { type: string, description: 'createTime' }
+          createdBy: { type: string, description: 'createdBy' }
+          lastModifiedBy: { type: string, description: 'lastModifiedBy' }
+      relationships: { $ref: '#/definitions/library_node_parent_relationship_definitions' }
+      links: { $ref: '#/definitions/json_link_self' }
+      
   sub_library_definition:
     type: object
     description: Response definition for library
@@ -9178,6 +9198,11 @@ definitions:
     properties:
       nodes: { $ref: '#/definitions/entity_link_object_definitions' }
       subLibraries: { $ref: '#/definitions/entity_link_object_definitions' }
+      
+  library_node_parent_relationship_definitions:
+    type: object
+    properties:
+      refs: { $ref: '#/definitions/library_link_object_definitions' }
 
   sub_library_relationship_definitions:
     type: object
@@ -11076,7 +11101,7 @@ responses:
       title: Node parents response
       type: object
       properties:
-        data: { $ref: '#/definitions/library_definition'}
+        data: { $ref: '#/definitions/library_definition_node_parent'}
     examples:
       application/vnd.api+json:
         {
