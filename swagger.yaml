@@ -8696,7 +8696,7 @@ definitions:
     allOf:
       - type: object
         properties:
-          data: { type: object, items: { $ref: '#/definitions/library_node_parent_data_definition' } }
+          data: { $ref: '#/definitions/library_node_parent_data_definition' }
          
   sub_library_collection_definition:
     allOf:
