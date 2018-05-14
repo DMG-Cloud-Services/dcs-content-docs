@@ -4912,6 +4912,7 @@ paths:
       responses:
         '200': { $ref: '#/responses/node' }
         '400': { $ref: '#/responses/bad_input' }
+        '401': { $ref: '#/responses/unauthorized' }
         '403': { $ref: '#/responses/forbidden' }
       security:
         [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
