@@ -8637,7 +8637,7 @@ definitions:
       relationships: { $ref: '#/definitions/library_relationship_definitions' }
       links: { $ref: '#/definitions/json_link_self' }
       
-  library_definition_node_parent:
+  library_node_parent_definition:
     type: object
     description: Response definition for library
     properties:
@@ -8686,6 +8686,12 @@ definitions:
           included: { type: array , items: { type: object } }
           meta: { $ref: '#/definitions/json_api_meta' }
           links: { $ref: '#/definitions/json_api_links_paging_definitions' }
+  
+  library_node_parent_collection_definition:
+    allOf:
+      - type: object
+        properties:
+          data: { type: array, items: { $ref: '#/definitions/library_node_parent_definition' } }
          
   sub_library_collection_definition:
     allOf:
@@ -11102,10 +11108,7 @@ responses:
   nodesParents:
     description: Successful Node Parents response
     schema:
-      title: Node parents response
-      type: object
-      properties:
-        data: { $ref: '#/definitions/library_definition_node_parent'}
+      $ref : '#/definitions/library_node_parent_collection_definition'
     examples:
       application/vnd.api+json:
         {
