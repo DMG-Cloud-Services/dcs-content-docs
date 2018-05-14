@@ -9201,7 +9201,7 @@ definitions:
   library_node_parent_relationship_definitions:
     type: object
     properties:
-      refs: { $ref: '#/definitions/library_link_object_definitions' }
+      refs: { $ref: '#/definitions/library_node_parent_link_object_definitions' }
 
   sub_library_relationship_definitions:
     type: object
@@ -9233,6 +9233,11 @@ definitions:
     type: object
     properties:
       links: { $ref: '#/definitions/json_link_self_related' }
+  
+  library_node_parent_link_object_definitions:
+    type: object
+    properties:
+      children: { $ref: '#/definitions/json_link_self_related' }
 
   json_link_self_related:
     type: object
