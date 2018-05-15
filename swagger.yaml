@@ -8644,7 +8644,6 @@ definitions:
         properties:
           title: { type: string, description: 'title' }
           description: { type: string, description: 'description' }
-          status: { type: string, description: 'status' }
           entityPaths: { type: array, items: { type: string }, description: 'entityPaths' }
           lastModifiedTime: { type: string, description: 'lastModifiedTime' }
           createTime: { type: string, description: 'createTime' }
