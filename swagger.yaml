@@ -8683,15 +8683,16 @@ definitions:
           meta: { $ref: '#/definitions/json_api_meta' }
           links: { $ref: '#/definitions/json_api_links_paging_definitions' }
   
+  library_node_parent_collection_definition:
+    allOf:
+      - type: object
+        properties:
+          libraries: { type: array, items: { $ref: '#/definitions/library_node_parent_definition' } }
+        
   library_node_parent_data_definition:
     type: object
     properties:
-      libraries: { type: array, items: { $ref: '#/definitions/library_node_parent_definition' } }
-        
-  library_node_parent_collection_definition:
-    type: object
-    properties:
-      data: { $ref: '#/definitions/library_node_parent_data_definition' }
+      data: { $ref: '#/definitions/library_node_parent_collection_definition' }
          
   sub_library_collection_definition:
     allOf:
@@ -11108,7 +11109,7 @@ responses:
   nodesParents:
     description: Successful Node Parents response
     schema:
-      $ref : '#/definitions/library_node_parent_collection_definition'
+      $ref : '#/definitions/library_node_parent_data_definition'
     examples:
       application/vnd.api+json:
         {
