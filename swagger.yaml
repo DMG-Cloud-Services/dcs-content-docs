@@ -8639,18 +8639,6 @@ definitions:
     properties:
       type: { type: string, description: 'type' }
       id: { type: string, description: 'id' }
-      attributes:
-        type: object
-        properties:
-          title: { type: string, description: 'title' }
-          description: { type: string, description: 'description' }
-          entityPaths: { type: array, items: { type: string }, description: 'entityPaths' }
-          lastModifiedTime: { type: string, description: 'lastModifiedTime' }
-          createTime: { type: string, description: 'createTime' }
-          createdBy: { type: string, description: 'createdBy' }
-          lastModifiedBy: { type: string, description: 'lastModifiedBy' }
-      relationships: { $ref: '#/definitions/library_node_parent_relationship_definitions' }
-      links: { $ref: '#/definitions/json_link_self' }
       
   sub_library_definition:
     type: object
@@ -11109,7 +11097,8 @@ responses:
   nodesParents:
     description: Successful Node Parents response
     schema:
-      $ref : '#/definitions/library_node_parent_data_definition'
+      type: object
+        
     examples:
       application/vnd.api+json:
         {
