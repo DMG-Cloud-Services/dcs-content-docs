@@ -8003,7 +8003,6 @@ definitions:
               type: { type: string, enum: [ 'nodes' ] }
               attributes:
                 type: object
-                required: [title, description]
                 properties:
                   title:
                     type: string
