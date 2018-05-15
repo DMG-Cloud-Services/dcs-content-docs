@@ -7031,7 +7031,7 @@ parameters:
   query_sort_content_search:
     name: sort[contents][*]
     in: query
-    description: This param can be used to sort entities
+    description: This param can be used to sort entities. The entities can be sorted on fields in extension.data. For example sort[contents][extension.data.facets.additive.extension.data.displayName]=asc. Besides the result can be sorted in following fields when passing sort[contents][<fieldName>]=asc or sort[contents][<fieldName>]=desc. For example sort[contents][title]=asc. Available fields are:,title,lastCommentDate,likeCount,color,commentCount,featuredDate,totalHits,lastActivityDate,featuredDate,totalHits,lastQuarantineDate,createTime,lastCommentDate,contentDownloadCount,createTime,lastActivityDate,commentCount,referencedCount,lastQuarantineDate,contentDownloadCount,title,referencedCount,lastModifiedTime,likeCount,lastModifiedTime,color
     required: false
     type: string
     enum: ["desc", "asc"]
