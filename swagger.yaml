@@ -8800,13 +8800,12 @@ definitions:
           data: { type: array, items: { $ref: '#/definitions/content_version_object_definition' } }
           
   content_version_object_definition:
-    allOf:
-      - type: object
-        properties:
-          type: { type: string, description: 'type' }
-          id: { type: string, description: 'id' }
-          links: { $ref: '#/definitions/json_link_self' }
-          attributes: { $ref: '#/definitions/content_version_object_attributes_definition' }
+    type: object
+    properties:
+      type: { type: string, description: 'type' }
+      id: { type: string, description: 'id' }
+      links: { $ref: '#/definitions/json_link_self' }
+      attributes: { $ref: '#/definitions/content_version_object_attributes_definition' }
           
   content_version_object_attributes_definition:
     type: object
