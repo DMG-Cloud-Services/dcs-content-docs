@@ -11643,7 +11643,7 @@ responses:
   contents:
     description: Successful Contents response
     schema:
-      $ref: '#/definitions/content_collection_data_definition'
+      $ref: '#/definitions/content_collection_definition'
     examples:
       application/vnd.api+json:
         {
