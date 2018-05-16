@@ -8784,11 +8784,11 @@ definitions:
         $ref: '#/definitions/content_definition'
   
   content_collection_data_definition:
-    type: object
-    description: MainResponse definition for content collection
-    properties:
-      data:
-        $ref: '#/definitions/content_collection_definition'
+    allOf:
+      - type: object
+        properties:
+          data: { type: array, items: { $ref: '#/definitions/content_definition' } }
+          included: { type: array, items: { type: object }  }
           
   content_version_definition:
     allOf:
@@ -11643,7 +11643,7 @@ responses:
   contents:
     description: Successful Contents response
     schema:
-      $ref: '#/definitions/content_collection_definition'
+      $ref: '#/definitions/content_collection_data_definition'
     examples:
       application/vnd.api+json:
         {
