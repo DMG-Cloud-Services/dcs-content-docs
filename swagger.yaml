@@ -4999,6 +4999,7 @@ paths:
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
         - $ref: '#/parameters/content_title'
+        - $ref: '#/parameters/version'
         - $ref: '#/parameters/query_filter_content_search_page_size'
         - $ref: '#/parameters/query_filter_content_search_page_number'
       responses:
