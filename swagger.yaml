@@ -4999,7 +4999,7 @@ paths:
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
         - $ref: '#/parameters/content_title'
-        - $ref: '#/parameters/version'
+        - $ref: '#/parameters/version_tip_draft'
         - $ref: '#/parameters/query_filter_content_search_page_size'
         - $ref: '#/parameters/query_filter_content_search_page_number'
       responses:
@@ -6709,6 +6709,14 @@ parameters:
     required: false
     type: string
     x-example: "3"
+  version_tip_draft:
+    name: filter[contents][version] 
+    in: query
+    description: Content version
+    required: false
+    type: string
+    default: "tip"
+    enum: [ "tip", "draft"] 
   loadReferencedContents:
     name: filters[contents][loadReferencedContents] 
     in: query
