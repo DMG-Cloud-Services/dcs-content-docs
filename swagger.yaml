@@ -8162,8 +8162,6 @@ definitions:
                     description: Standard license for the content. Please refer to the allowed license list here - https://spdx.org/licenses/
                   externalId:
                     type: string
-                  externalVersion:
-                    type: string
                   translations:
                     type: object
                     additionalProperties:
@@ -8253,7 +8251,6 @@ definitions:
                       "license": "Apache License 1.0",
                       "status": "draft",
                       "externalId": "abc",
-                      "externalVersion": "version1",
                       "translations": {
                         "fr_FR": {
                           "title": "Contenu du film",
