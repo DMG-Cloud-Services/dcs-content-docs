@@ -5231,7 +5231,7 @@ paths:
         ***Note***: 
         
         1. The upload url is valid for 1 hour duration.
-        2. For more features and capabilities of file upload, please refer to this [wiki][1].
+        2. For all features and capabilities of file upload operation, please refer to this [wiki][1].
         
         [1]: https://wiki.autodesk.com/display/CLDSVC/Files+API+Flow+-+Advanced
       parameters:
