@@ -5228,7 +5228,12 @@ paths:
       description: |
         Get file upload url. This url can be used to upload files for the content. This API will check if the user has permission to the library and returns an encrypted url to upload all the files.
         
-        ***Note***: The upload url is valid for 1 hour duration.
+        ***Note***: 
+        
+        1. The upload url is valid for 1 hour duration.
+        2. For more features and capabilities of file upload, please refer to this [wiki][1].
+        
+        [1]: https://wiki.autodesk.com/display/CLDSVC/Files+API+Flow+-+Advanced
       parameters:
         - $ref: '#/parameters/libraryId'
       responses:
