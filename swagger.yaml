@@ -5011,6 +5011,24 @@ paths:
         [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
       tags: ["Library Node"]
       
+  /libraries/{libraryId}/nodes/{nodeId}/libraries:
+    get:
+      description: |
+        Get parent library of the node.
+      parameters:
+        - $ref: '#/parameters/libraryId'
+        - $ref: '#/parameters/nodeId'
+        - $ref: '#/parameters/query_filter_content_search_page_size'
+        - $ref: '#/parameters/query_filter_content_search_page_number'
+      responses:
+        '200': { $ref: '#/responses/libraries' }
+        '400': { $ref: '#/responses/bad_input' }
+        '403': { $ref: '#/responses/forbidden' }
+      x-ads-docs-cli-example: 'curl -X GET -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" "https://developer.api.autodesk.com/content/v1/libraries/libraryId/nodes/nodeId/contents"'
+      security:
+        [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
+      tags: ["Library Node"]
+  
   /libraries/{libraryId}/nodes/{nodeId}/parents:
     get:
       description: |
