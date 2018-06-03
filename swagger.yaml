@@ -5159,7 +5159,7 @@ paths:
         '400': { $ref: '#/responses/bad_input' }
         '401': { $ref: '#/responses/unauthorized' }
         '403': { $ref: '#/responses/forbidden' }
-      x-ads-docs-cli-example: 'curl -X GET -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" "https://developer.api.autodesk.com/content/v1/libraries/{libraryId}/contents/{contentId}{?filters[contents][version],filters[contents][loadReferencedContents]}"'
+      x-ads-docs-cli-example: 'curl -X GET -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" "https://developer.api.autodesk.com/content/v1/libraries/{libraryId}/contents/{contentId}{?filter[contents][version],filter[contents][loadReferencedContents]}"'
       security:
         [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] } ,{ oauth2_application: [ 'data:read' ] }]
       tags: ["Library Content"]   
@@ -5184,7 +5184,7 @@ paths:
         '400': { $ref: '#/responses/bad_input' }
         '401': { $ref: '#/responses/unauthorized' }
         '403': { $ref: '#/responses/forbidden' }
-      x-ads-docs-cli-example: 'curl -X GET -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" "https://developer.api.autodesk.com/content/v1/libraries/{libraryId}/contents/{contentId}{?filters[contents][version]}"'
+      x-ads-docs-cli-example: 'curl -X GET -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" "https://developer.api.autodesk.com/content/v1/libraries/{libraryId}/contents/{contentId}{?filter[contents][version]}"'
       security:
         [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] } ,{ oauth2_application: [ 'data:write' ] }]
       tags: ["Library Content"]      
@@ -5206,7 +5206,7 @@ paths:
         '200': { $ref: '#/responses/contents' }
         '400': { $ref: '#/responses/bad_input' }
         '403': { $ref: '#/responses/forbidden' }
-      x-ads-docs-cli-example: 'curl -X GET -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" "https://developer.api.autodesk.com/content/v1/libraries/{libraryId}/contents/{contentId1}{contentId2}{?filters[contents][version],filters[contents][loadReferencedContents]}"'
+      x-ads-docs-cli-example: 'curl -X GET -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" "https://developer.api.autodesk.com/content/v1/libraries/{libraryId}/contents/{contentId1}{contentId2}{?filter[contents][version],filter[contents][loadReferencedContents]}"'
       security:
         [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] } ,{ oauth2_application: [ 'data:read' ] }]
       tags: ["Library Content"]
@@ -6741,7 +6741,7 @@ parameters:
     default: "tip"
     enum: [ "tip", "draft"] 
   loadReferencedContents:
-    name: filters[contents][loadReferencedContents] 
+    name: filter[contents][loadReferencedContents] 
     in: query
     description: Flag to load referenced contents
     required: false
@@ -6994,7 +6994,7 @@ parameters:
     type: string
     x-example: "extension.data.glassTransition.value>59.0"
   query_filter_content_search_meta_facets:
-    name: filters[contents][meta]
+    name: filter[contents][meta]
     in: query
     description: Param to fetch facets
     required: false
@@ -7006,12 +7006,12 @@ parameters:
     in: query
     description: 
         List of fields on which facets are required. <br>
-        *filters[contents][meta]=facets* must be passed for this param to take effect. The faceting results contains only fields specified in this param.
+        *filter[contents][meta]=facets* must be passed for this param to take effect. The faceting results contains only fields specified in this param.
     required: false
     type: string
     x-example: "facets"
   query_filter_content_search_mode:
-    name: filters[contents][mode]
+    name: filter[contents][mode]
     in: query
     description: 
       Param to specify the different search modes to fetch results. <br/>
@@ -9339,11 +9339,11 @@ responses:
              }
            }],
            "firstLink": {
-             "href": "http://forgecon-c-uw2.cosv2-c-uw2.autodesk.com/libraries/bdf4ded6-c704-4c93-ad21-c7db835c35d9/features?filters[contents][entryType]=content&page[number]=1&page[size]=20",
+             "href": "http://forgecon-c-uw2.cosv2-c-uw2.autodesk.com/libraries/bdf4ded6-c704-4c93-ad21-c7db835c35d9/features?filter[contents][entryType]=content&page[number]=1&page[size]=20",
              "meta": null
            },
            "lastLink": {
-             "href": "http://forgecon-c-uw2.cosv2-c-uw2.autodesk.com/libraries/bdf4ded6-c704-4c93-ad21-c7db835c35d9/features?filters[contents][entryType]=content&page[number]=1&page[size]=20",
+             "href": "http://forgecon-c-uw2.cosv2-c-uw2.autodesk.com/libraries/bdf4ded6-c704-4c93-ad21-c7db835c35d9/features?filter[contents][entryType]=content&page[number]=1&page[size]=20",
              "meta": null
            },
            "previousLink": {
@@ -10061,11 +10061,11 @@ responses:
             }
           }],
           "firstLink": {
-            "href": "http://forgecon-c-uw2.cosv2-c-uw2.autodesk.com/libraries/6b595247-ea49-4443-848f-f8112a3a0672/features?filters[contents][entryType]=comment&page[number]=1&page[size]=20",
+            "href": "http://forgecon-c-uw2.cosv2-c-uw2.autodesk.com/libraries/6b595247-ea49-4443-848f-f8112a3a0672/features?filter[contents][entryType]=comment&page[number]=1&page[size]=20",
             "meta": null
           },
           "lastLink": {
-            "href": "http://forgecon-c-uw2.cosv2-c-uw2.autodesk.com/libraries/6b595247-ea49-4443-848f-f8112a3a0672/features?filters[contents][entryType]=comment&page[number]=1&page[size]=20",
+            "href": "http://forgecon-c-uw2.cosv2-c-uw2.autodesk.com/libraries/6b595247-ea49-4443-848f-f8112a3a0672/features?filter[contents][entryType]=comment&page[number]=1&page[size]=20",
             "meta": null
           },
           "previousLink": {
