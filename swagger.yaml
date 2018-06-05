@@ -2286,7 +2286,7 @@ info:
       
     ## Step 1: Get the URL to Upload the file
       
-    The Forge Content provides the `GET libraries/{libraryId}/uploadUrl` API endpoint that allows you to fetch the URL where you can upload your file. The API checks if the caller has the required permissions on the library and returns the url to upload the files.
+    The Forge Content provides the `GET libraries/{libraryId}/uploadUrl` API endpoint that allows you to fetch the URL where you can upload your file. The API checks if the caller has the required permissions on the library or sublibrary or node or content and returns the url to upload the files.
     
     In the `GET` request, you need to specify the Id of the library.
     
@@ -6880,6 +6880,24 @@ parameters:
     required: true
     type: string 
     x-example: "urn:adsk.content:library:8f7bd492-70e5-4364-8f5c-0d27c2e5c19d"
+  query_filter_sublibrary_id:
+    name: filter[contents][subLibraryId]
+    in: query
+    description: Sub Library Id
+    type: string 
+    x-example: "urn:adsk.content:node:8f7bd492-70e5-4364-8f5c-0d27c2e5c19d"
+  query_filter_node_id:
+    name: filter[contents][nodeId]
+    in: query
+    description: Node Id
+    type: string 
+    x-example: "urn:adsk.content:node:8f7bd492-70e5-4364-8f5c-0d27c2e5c19d"  
+  query_filter_content_id:
+    name: filter[contents][contentId]
+    in: query
+    description: Content Id
+    type: string 
+    x-example: "urn:adsk.content:content:8f7bd492-70e5-4364-8f5c-0d27c2e5c19d"
   query_filter_content_title:
     name: filter[contents][title]
     in: query
