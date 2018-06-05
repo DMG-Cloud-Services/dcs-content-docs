@@ -5254,6 +5254,9 @@ paths:
         [1]: https://wiki.autodesk.com/display/CLDSVC/Files+API+Flow+-+Advanced
       parameters:
         - $ref: '#/parameters/libraryId'
+        - $ref: '#/parameters/query_filter_sublibrary_id'
+        - $ref: '#/parameters/query_filter_node_id'
+        - $ref: '#/parameters/query_filter_content_id'
       responses:
         '200': { $ref: '#/responses/fileURL' }
         '400': { $ref: '#/responses/bad_input' }
