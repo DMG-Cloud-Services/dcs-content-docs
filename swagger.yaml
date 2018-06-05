@@ -5244,8 +5244,10 @@ paths:
   /libraries/{libraryId}/uploadUrl:       
     get:
       description: |
-        Get file upload url to upload the files. This url can be used to upload files for the all contents created under this library. This API will check if the user has permission to the library and returns an encrypted url to upload all the files.
-        Api will check user permission at library, sublibrary, node and content levels. If calling user has only particular content level permission, then api must be called with filter[contents][contentId]. If calling user has only particular node level permission, then api must be called with filter[contents][nodeId]. If calling user has only particular sublibrary level permission, then api must be called with filter[contents][subLibraryId].
+        Get file upload url to upload the files. This url can be used to upload files for the all contents created under this library. This API will check if the user has the required permission at library or sublibrary or node or content levels and returns an encrypted url to upload the files.
+        If calling user has the permission only for particular content, then api must be called with filter[contents][contentId].
+        If calling user has the permission only for particular node, then api must be called with filter[contents][nodeId]. 
+        If calling user has the permission only for particular sublibrary, then api must be called with filter[contents][subLibraryId].
         
         ***Note***: 
         
