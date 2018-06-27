@@ -699,6 +699,10 @@ info:
     | **title**       | MANUAL        | The translated title of the entity.
     | **description** | MANUAL        | The translated description of the entity.
     | **tags**        | MANUAL        | The translated tags of the entity.
+    
+    For more details on localization support, please refer to this [wiki][1].
+        
+    [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+-+Localization
 
     ### Sample
     
