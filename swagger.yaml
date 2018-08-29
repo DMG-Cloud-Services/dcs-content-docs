@@ -855,6 +855,9 @@ info:
     ## [Create Content Community](/en/docs/content/v1/tutorials/collaborate-within-community)
       This tutorial explains how you can collaborate within the content community.
       
+    ## [Add Webhook](/en/docs/content/v1/tutorials/webhooks)
+      This tutorial explains how to use webhooks to listen to events, such as content changes.
+      
     [@tutorials/before-you-begin]: <>
     # Before you begin
     
@@ -4267,6 +4270,140 @@ info:
     | Unfollow member             | [DELETE follows/memberId](/en/docs/content/v1/reference/http/follows-memberId-DELETE)                     
     | Quarantine content          | [POST libraries/{libraryId}/quarantines](/en/docs/content/v1/reference/http/libraries-libraryId-quarantines-POST)
     
+    [@tutorials/webhooks]: <>
+    # Add a Webhook to listen to content changes.
+
+    Webhooks APIs allow applications to subscribe to Forge events, such as content, and receive notifications when modifications occur. When an event is triggered, the Webhooks API sends a notification to a callback URL. Callback URL is set when a webhook is created.
+    The following entities support webhooks in Forge Content: Libraries, Sub-Libraries, Nodes or Content.
+    
+    The scope determines which entity gets a callback, using its id.
+
+    System name: **adsk.content**
+
+    Available events:
+    | Attribute                               | Description
+    | --------------------------------------- | -------------------------------------------------------------------------------------------------------
+    | **entity.added**                        | Fires when a content entity has been added.
+    | **entity.updated**                      | Fires when a content entity has been updated.
+    | **entity.deleted**                      | FIres when a content entity has been deleted.
+
+    Available scopes
+    | Attribute                               | Description
+    | --------------------------------------- | -------------------------------------------------------------------------------------------------------
+    | **library**                             | Used to listen to a specific library.
+    | **sublibrary**                          | Used to listen to a specific sub-library.
+    | **node**                                | Used to listen to a specific node.
+    | **content**                             | Used to listen to a specific content.
+
+    This tutorial explains how to create webhooks for [Nodes](/en/docs/content/v1/overview/content-model), and [Contents](/en/docs/content/v1/overview/content-model) with [Sub-Library](/en/docs/content/v1/overview/content-model) and [Library](/en/docs/content/v1/overview/content-model).
+
+    ### Step 1: Add permission to Allow service to register webhook on a given entity.
+    In order for your application to be able to use a webhook for a given entityId, it first has to allow it by changing the permissions, such as below.
+    
+    ```
+    curl -X PATCH \
+      https://developer.api.autodesk.com/content/v1/libraries/urn:adsk.content:library:0873c28b-93e4-431c-9dff-5df862219315/nodes/urn:adsk.content:node:215e698e-7d7a-4d09-ac5a-8114e6ed4615 \
+      -H 'Accept: application/vnd.api+json' \
+      -H 'Content-Type: application/vnd.api+json;charset=utf-8' \
+      -H 'Authorization: Bearer ******' \
+      -d '{
+      "data": {
+        "type": "nodes",
+        "attributes": {
+    
+          "permissions": [
+            {
+              "role": "CONTENT_READER",
+              "subjects": {
+                "services": [
+                  "wl6L0yfZNgZ5QEwQ6gyW55kVyVXEhHuD"
+                ]
+              }
+            }
+          ]
+        },
+        "id": "urn:adsk.content:node:215e698e-7d7a-4d09-ac5a-8114e6ed4615"
+      }
+    }'
+    ```
+    
+
+    ### Step 2: Register a library to receive webhooks:
+
+    Next, a Webhook needs to be registered to receive callbacks for events.
+
+    In order to register the webhook, use Forge Webhook API using afore mentioned system name, event, and scope(s):
+    https://dev.forge.autodesk.com/en/docs/webhooks/v1/reference/http/systems-system-events-event-hooks-POST
+
+    ### Example
+
+    (uses 2 legged Bearer token with scope=data:read)
+
+    ```
+    curl -X POST \
+      https://developer-stg.api.autodesk.com/webhooks/v1/systems/adsk.content/events/entity.updated/hooks \
+      -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsImtpZCI' \
+      -H 'Content-Type: application/json' \
+      -d '{
+      "callbackUrl":"http://api.webhookinbox.com/i/h4t4rk7Y/in/",
+      "scope":{
+        "library":"urn:adsk.content:library:0873c28b-93e4-431c-9dff-5df862219315"
+      }
+    }' "https://developer.api.autodesk.com/content/v1/libraries/{libraryId}"
+    ```
+
+    Resposne: 201 CREATED
+
+    ### Step 3: Make change to the entity
+
+    Any modification to an entity for which a webhook has already been registered will send a webhook event for that entity id.  Simply make any modification to an entity, such as a library,
+    
+    i.e. a PATCH call to /libraries/urn:adsk.content:library:0873c28b-93e4-431c-9dff-5df862219315
+
+    ###Step 4: Recieveing webhook event
+    After a successful update occurs to the entity registered for the webhook, a webhook event is sent to the callback Url.  Here is an example of a webhook event notification.
+
+    ### Example
+
+    ```
+    ***HEADERS:***
+    Content-Type: application/json
+    User-Agent: AHC/2.0
+    Content-Length: 944
+    X-Adsk-Delivery-Id: httpadapter:adsk.content-alpha:1-5b7f5a0a-157f8d639722ca6dae152ee0/ea45dec4-cefa-48ef-8ce9-359a0ef5902f
+    Accept: */*
+    Host: api.webhookinbox.com
+
+    ***POST CONTENT:***
+    {
+      "version": "1.0",
+      "resourceUrn": "urn:adsk.content:library:0873c28b-93e4-431c-9dff-5df862219315",
+      "hook": {
+        "hookId": "7027a140-a739-11e8-8e31-2584fa4c5b4e",
+        "tenant": "urn:adsk.content:library:0873c28b-93e4-431c-9dff-5df862219315",
+        "callbackUrl": "http://api.webhookinbox.com/i/RTmQkvHL/in/",
+        "createdBy": "yDZNgZ5Qf6gyW5wlVXEh0yV5kEwQHu6L",
+        "event": "entity.updated",
+        "createdDate": "2018-08-24T01:02:57.142+0000",
+        "system": "adsk.content",
+        "creatorType": "Application",
+        "status": "active",
+        "scope": {
+          "library": "urn:adsk.content:library:0873c28b-93e4-431c-9dff-5df862219315"
+        },
+        "urn": "urn:adsk.webhooksstg:events.hook:7027a160-a739-11e8-8e31-2584fa4c5b4d",
+        "__self__": "/systems/adsk.content-alpha/events/entity.updated/hooks/7027a160-a739-11e8-8e31-2584fa4c5b4d"
+      },
+      "payload": {
+        "id": "urn:adsk.content:library:0873c28b-93e4-431c-9dff-5df862219315",
+        "entityType": "library",
+        "lastModifiedBy": "GDTELDXHW9H4"
+      }
+    }
+    ```
+    
+    In the above example, the "payload" section contains content related attributes about the modified entity, such as id, entityType, and libraryId (if applicable).
+
     [%http]: <>
     # HTTP Specification
     
@@ -9432,7 +9569,7 @@ responses:
                   "count": 1,
                   "entityId": "CG93SM7JFMAQ6SG",
                   "id": "FDUYDX6JFMAQMDE",
-                  "flaggerId": "CM96UPOBJDNHB561"
+                  ate
                 },
                 {
                   "flag": "SPAM",
@@ -9440,7 +9577,7 @@ responses:
                   "count": 1,
                   "entityId": "CG93SM7JFMAQ6SG",
                   "id": "FAEDG7NJFMAQIS8",
-                  "flaggerId": "CM96UPOBJDNHB561"
+                  "flaggerId": "CM96UPOBJDNHB482"
                 }
               ],
               "id": "CG93SM7JFMAQ6SG",
