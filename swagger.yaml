@@ -6628,6 +6628,9 @@ paths:
           [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
         parameters:
           - $ref: '#/parameters/memberId'
+          - $ref: '#/parameters/query_filter_activities_libraryId'
+          - $ref: '#/parameters/query_filter_activities_activitytype'
+          - $ref: '#/parameters/query_filter_activities_searchskipcache'
         responses:
           '200': { $ref: '#/responses/getCommunityMemberActivities' }
           
@@ -7038,7 +7041,7 @@ parameters:
     description: list of keywords (firstName and LastName) to search against as well as range expressions. eg.. filter[members][query]=(firstName:"Scott" OR lastName:"Davis")
     required: false
     type: string
-    x-example: "(firstName:\"Scott\" OR lastName:\"Davis\")"
+    x-example: "(firstName:\"Scott\" OR lastName:\"Davis\")" 
   query_filter_library_id:
     name: filter[contents][libraryId]
     in: query
@@ -7046,6 +7049,27 @@ parameters:
     required: true
     type: string 
     x-example: "urn:adsk.content:library:8f7bd492-70e5-4364-8f5c-0d27c2e5c19d"
+  query_filter_activities_libraryId:
+    name: filters[activities][libraryId]
+    in: query
+    description: Library Id (support up to 10 ids)
+    required: true
+    type: string 
+    x-example: "urn:adsk.content:library:8f7bd492-70e5-4364-8f5c-0d27c2e5c19d" 
+  query_filter_activities_activitytype:
+    name: filters[activities][activityType]
+    in: query
+    description: activity type likes - COMMENT, LIKE, FOLLOW.
+    required: false
+    type: string 
+    x-example: "COMMENT"   
+  query_filter_activities_searchskipcache:
+    name: filters[activities][searchSkipCache]
+    in: query
+    description: if we want to skip cache and hit the adsk search.
+    required: false
+    type: boolean 
+    x-example: true    
   query_filter_sublibrary_id:
     name: filter[contents][subLibraryId]
     in: query
