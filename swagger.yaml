@@ -7052,7 +7052,7 @@ parameters:
   query_filter_activities_libraryId:
     name: filters[activities][libraryId]
     in: query
-    description: Library Id (support up to 10 ids)
+    description: Library Id
     required: true
     type: string 
     x-example: "urn:adsk.content:library:8f7bd492-70e5-4364-8f5c-0d27c2e5c19d" 
@@ -7066,7 +7066,7 @@ parameters:
   query_filter_activities_searchskipcache:
     name: filters[activities][searchSkipCache]
     in: query
-    description: if we want to skip cache and hit the adsk search.
+    description: If you set this condition to true, the Searche returns the fresh content from the database instead of the content in the primary cache.
     required: false
     type: boolean 
     x-example: true    
