@@ -6410,7 +6410,10 @@ paths:
               example: {
                 "data": {
                   "id": "userOxygenId",
-                  "type": "followings"
+                  "type": "followings",
+                  "attributes": {
+                      "libraryIds": ["urn:adsk.content:library:b2b670cd-79ff-4185-8e53-d07a69353065"]
+                  }
                 }
               }
         responses:
