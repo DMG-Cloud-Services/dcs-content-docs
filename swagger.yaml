@@ -4271,7 +4271,7 @@ info:
     | Quarantine content          | [POST libraries/{libraryId}/quarantines](/en/docs/content/v1/reference/http/libraries-libraryId-quarantines-POST)
     
     [@tutorials/webhooks]: <>
-    # Add a Webhook to listen to content changes.
+    # Add a Content Webhook
 
     Webhooks APIs allow applications to subscribe to Forge events, such as content, and receive notifications when modifications occur. When an event is triggered, the Webhooks API sends a notification to a callback URL. Callback URL is set when a webhook is created.
     The following entities support webhooks in Forge Content: Libraries, Sub-Libraries, Nodes or Content.
@@ -4297,7 +4297,7 @@ info:
 
     This tutorial explains how to create webhooks for [Nodes](/en/docs/content/v1/overview/content-model), and [Contents](/en/docs/content/v1/overview/content-model) with [Sub-Library](/en/docs/content/v1/overview/content-model) and [Library](/en/docs/content/v1/overview/content-model).
 
-    ### Step 1: Add permission to Allow service to register webhook on a given entity.
+    ## Step 1: Add permission to Allow service to register webhook on a given entity.
     In order for your application to be able to use a webhook for a given entityId, it first has to allow it by changing the permissions, such as below.
     
     ```
@@ -4328,7 +4328,7 @@ info:
     ```
     
 
-    ### Step 2: Register a library to receive webhooks:
+    ## Step 2: Register a library to receive webhooks:
 
     Next, a Webhook needs to be registered to receive callbacks for events.
 
@@ -4354,13 +4354,13 @@ info:
 
     Resposne: 201 CREATED
 
-    ### Step 3: Make change to the entity
+    ## Step 3: Make change to the entity
 
     Any modification to an entity for which a webhook has already been registered will send a webhook event for that entity id.  Simply make any modification to an entity, such as a library,
     
     i.e. a PATCH call to /libraries/urn:adsk.content:library:0873c28b-93e4-431c-9dff-5df862219315
 
-    ###Step 4: Recieveing webhook event
+    ##Step 4: Recieveing webhook event
     After a successful update occurs to the entity registered for the webhook, a webhook event is sent to the callback Url.  Here is an example of a webhook event notification.
 
     ### Example
@@ -6634,6 +6634,8 @@ paths:
           - $ref: '#/parameters/query_filter_activities_libraryId'
           - $ref: '#/parameters/query_filter_activities_activitytype'
           - $ref: '#/parameters/query_filter_activities_searchskipcache'
+          - $ref: '#/parameters/query_filter_content_search_page_size'
+          - $ref: '#/parameters/query_filter_content_search_page_number'
         responses:
           '200': { $ref: '#/responses/getCommunityMemberActivities' }
           
