@@ -10381,140 +10381,74 @@ responses:
     examples:
       application/vnd.api+json:
         {
-    "data": [
-        {
-            "type": "activities",
-            "id": "UA379SMJLDKOUOC",
-            "attributes": {
-                "actorImageUrl": "",
-                "authorableType": "Content",
-                "lastModifiedDate": "2018-08-28T16:03:55Z",
-                "libraryId": "urn:adsk.content:library:53de860d-a823-46fc-affa-2c290e6cf8a9",
-                "actorFirstName": "temp67",
-                "entityId": "CLOUVGCJLDKOO6C",
-                "authorId": "WD93M85GE63Z",
-                "authorableId": "urn:adsk.content:content:08d03c98-94fb-48de-acf9-8e844e5d00fc",
-                "activityDate": "2018-08-28T16:03:55Z",
-                "actorId": "4BGJJKBKHGTZ",
-                "actorLastName": "lastNm",
-                "authorLastName": "lastname",
-                "authorFirstName": "temp68",
-                "activityType": "COMMENT",
-                "authorImageUrl": "",
-                "status": "OK"
+        "data": [
+            {
+                "type": "activities",
+                "id": "UAUY4E0JKS10P3U",
+                "attributes": {
+                    "actorImageUrl": "",
+                    "authorableType": "Content",
+                    "lastModifiedDate": "2018-08-13T14:08:50Z",
+                    "libraryId": "urn:adsk.content:library:244de369-91fa-4779-a668-e3b6af606445",
+                    "actorFirstName": "regression",
+                    "entityId": "CUAFKQQJKS10L5J",
+                    "authorId": "HT6LJVYYY2TB",
+                    "authorableId": "urn:adsk.content:content:a53a4834-c82f-4471-9690-eacc7712ded9",
+                    "activityDate": "2018-08-13T14:08:50Z",
+                    "actorId": "HT6LJVYYY2TB",
+                    "actorLastName": "alpha.base.user",
+                    "authorLastName": "alpha.base.user",
+                    "authorFirstName": "regression",
+                    "activityType": "COMMENT",
+                    "authorImageUrl": "",
+                    "status": "OK"
+                },
+                "relationships": {},
+                "links": {
+                    "self": "http://localhost:8080/activities/UAUY4E0JKS10P3U"
+                }
             },
-            "relationships": {},
-            "links": {
-                "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/activities/UA379SMJLDKOUOC"
+            {
+                "type": "activities",
+                "id": "U7DL2BMJKS0ZPBB",
+                "attributes": {
+                    "actorImageUrl": "",
+                    "authorableType": "Content",
+                    "lastModifiedDate": "2018-08-13T14:08:04Z",
+                    "libraryId": "urn:adsk.content:library:244de369-91fa-4779-a668-e3b6af606445",
+                    "actorFirstName": "regression",
+                    "entityId": "LHHY2CKJKS0ZO4R",
+                    "authorId": "HT6LJVYYY2TB",
+                    "authorableId": "urn:adsk.content:content:a53a4834-c82f-4471-9690-eacc7712ded9",
+                    "activityDate": "2018-08-13T14:08:04Z",
+                    "actorId": "HT6LJVYYY2TB",
+                    "actorLastName": "alpha.base.user",
+                    "authorLastName": "alpha.base.user",
+                    "authorFirstName": "regression",
+                    "activityType": "LIKE",
+                    "authorImageUrl": "",
+                    "status": "OK"
+                },
+                "relationships": {},
+                "links": {
+                    "self": "http://localhost:8080/activities/U7DL2BMJKS0ZPBB"
+                }
+            }
+        ],
+        "included": [],
+        "meta": {
+            "paginationInfo": {
+                "totalResults": 2,
+                "pageNumber": 1,
+                "totalPages": 1,
+                "pageSize": 20
             }
         },
-        {
-            "type": "activities",
-            "id": "UGQ508RJLDKL4N9",
-            "attributes": {
-                "actorImageUrl": "",
-                "authorableType": "Content",
-                "lastModifiedDate": "2018-08-28T15:59:46Z",
-                "libraryId": "urn:adsk.content:library:53de860d-a823-46fc-affa-2c290e6cf8a9",
-                "actorFirstName": "temp67",
-                "entityId": "C16YWOOJLDKL16C",
-                "authorId": "WD93M85GE63Z",
-                "authorableId": "urn:adsk.content:content:08d03c98-94fb-48de-acf9-8e844e5d00fc",
-                "activityDate": "2018-08-28T15:59:46Z",
-                "actorId": "4BGJJKBKHGTZ",
-                "actorLastName": "lastNm",
-                "authorLastName": "lastname",
-                "authorFirstName": "temp68",
-                "activityType": "COMMENT",
-                "authorImageUrl": "",
-                "status": "OK"
-            },
-            "relationships": {},
-            "links": {
-                "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/activities/UGQ508RJLDKL4N9"
-            }
-        },
-        {
-            "type": "activities",
-            "id": "UB1MN78JLDKIJDM",
-            "attributes": {
-                "actorImageUrl": "",
-                "authorableType": "Content",
-                "lastModifiedDate": "2018-08-28T15:58:47Z",
-                "libraryId": "urn:adsk.content:library:53de860d-a823-46fc-affa-2c290e6cf8a9",
-                "actorFirstName": "temp67",
-                "entityId": "CZLG5BLJLDKIC9F",
-                "authorId": "WD93M85GE63Z",
-                "authorableId": "urn:adsk.content:content:08d03c98-94fb-48de-acf9-8e844e5d00fc",
-                "activityDate": "2018-08-28T15:58:47Z",
-                "actorId": "4BGJJKBKHGTZ",
-                "actorLastName": "lastNm",
-                "authorLastName": "lastname",
-                "authorFirstName": "temp68",
-                "activityType": "COMMENT",
-                "authorImageUrl": "",
-                "status": "OK"
-            },
-            "relationships": {},
-            "links": {
-                "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/activities/UB1MN78JLDKIJDM"
-            }
-        },
-        {
-            "type": "activities",
-            "id": "UJZU3TGJLDGNAW5",
-            "attributes": {
-                "actorImageUrl": "",
-                "authorableType": "Content",
-                "lastModifiedDate": "2018-08-28T14:09:29Z",
-                "libraryId": "urn:adsk.content:library:53de860d-a823-46fc-affa-2c290e6cf8a9",
-                "actorFirstName": "temp67",
-                "entityId": "LE6PXP7JLDGN9M5",
-                "authorId": "WD93M85GE63Z",
-                "authorableId": "urn:adsk.content:content:08d03c98-94fb-48de-acf9-8e844e5d00fc",
-                "activityDate": "2018-08-28T14:09:29Z",
-                "actorId": "4BGJJKBKHGTZ",
-                "actorLastName": "lastNm",
-                "authorLastName": "lastname",
-                "authorFirstName": "temp68",
-                "activityType": "LIKE",
-                "authorImageUrl": "",
-                "status": "OK"
-            },
-            "relationships": {},
-            "links": {
-                "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/activities/UJZU3TGJLDGNAW5"
-            }
-        },
-        {
-            "type": "activities",
-            "id": "U3Z0N5FJLDGMVEV",
-            "attributes": {
-                "actorImageUrl": "",
-                "authorableType": "Content",
-                "lastModifiedDate": "2018-08-28T14:09:09Z",
-                "libraryId": "urn:adsk.content:library:53de860d-a823-46fc-affa-2c290e6cf8a9",
-                "actorFirstName": "temp67",
-                "entityId": "LKRT7JQJLC8LHB0",
-                "authorId": "WD93M85GE63Z",
-                "authorableId": "urn:adsk.content:content:08d03c98-94fb-48de-acf9-8e844e5d00fc",
-                "activityDate": "2018-08-28T14:09:09Z",
-                "actorId": "4BGJJKBKHGTZ",
-                "actorLastName": "lastNm",
-                "authorLastName": "lastname",
-                "authorFirstName": "temp68",
-                "activityType": "UNLIKE",
-                "authorImageUrl": "",
-                "status": "OK"
-            },
-            "relationships": {},
-            "links": {
-                "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/activities/U3Z0N5FJLDGMVEV"
-            }
+        "links": {
+            "first": "http://localhost:8080/activities?filters[activities][libraryId]=urn:adsk.content:library:244de369-91fa-4779-a668-e3b6af606445&page[number]=1&page[size]=20",
+            "last": "http://localhost:8080/activities?filters[activities][libraryId]=urn:adsk.content:library:244de369-91fa-4779-a668-e3b6af606445&page[number]=1&page[size]=20"
         }
-    ],
-    "included": []
-}
+    }
 
   getCommunityContentSearchResults:
     description: Successful response
