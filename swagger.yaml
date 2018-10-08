@@ -6621,8 +6621,10 @@ paths:
   /members/{memberId}/activities:
       x-summary: Member Activities
       x-description: APIs for member activities.
+      
                     activities that are performed by other users on user's content or when other users follows this user. 
                     For example - If you are retrieving activities for John. The response will include people commentented or liked John's Content. Or some one starts following John.
+                   
                     An array of activities, sorted in descending order of time of activity.
 
       get:
@@ -7084,7 +7086,7 @@ parameters:
   query_filter_activities_member_id:
     name: filters[members][id]
     in: query
-    description: Get activity stream for a user for whom activity stream is being requested. This can be used when bearer token is not avaialable and it activities can be requestd using this param.
+    description: Get activity stream for a user for whom activity stream is being requested. This can be used when bearer token is not avaialable and activities can be requestd using this param.
     required: false
     type: string 
     x-example: "HT6LJVYYY2TB"
