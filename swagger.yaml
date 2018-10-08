@@ -6621,6 +6621,10 @@ paths:
   /members/{memberId}/activities:
       x-summary: Member Activities
       x-description: APIs for member activities.
+                    activities that are performed by other users on user's content or when other users follows this user. 
+                    For example - If you are retrieving activities for John. The response will include people commentented or liked John's Content. Or some one starts following John.
+                    An array of activities, sorted in descending order of time of activity.
+
       get:
         tags: [ "Community" ]
         operationId: getCommunityMemberActivities
@@ -6633,6 +6637,8 @@ paths:
           - $ref: '#/parameters/memberId'
           - $ref: '#/parameters/query_filter_activities_libraryId'
           - $ref: '#/parameters/query_filter_activities_activitytype'
+          - $ref: '#/parameters/query_filter_activities_following'
+          - $ref: '#/parameters/query_filter_activities_member_id'
           - $ref: '#/parameters/query_filter_activities_searchskipcache'
           - $ref: '#/parameters/query_filter_content_search_page_size'
           - $ref: '#/parameters/query_filter_content_search_page_number'
@@ -7068,6 +7074,20 @@ parameters:
     required: false
     type: string 
     x-example: "COMMENT"   
+  query_filter_activities_following:
+    name: filters[activities][members_type]
+    in: query
+    description: Get activity stream for a user which this user is following. This includes activities performed by the users this user is following.
+    required: false
+    type: string 
+    x-example: "following"  
+  query_filter_activities_member_id:
+    name: filters[members][id]
+    in: query
+    description: Get activity stream for a user for whom activity stream is being requested. This can be used when bearer token is not avaialable and it activities can be requestd using this param.
+    required: false
+    type: string 
+    x-example: "HT6LJVYYY2TB"
   query_filter_activities_searchskipcache:
     name: filters[activities][searchSkipCache]
     in: query
