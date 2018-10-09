@@ -6377,7 +6377,7 @@ paths:
         
   /followings:
       x-summary: Follow members
-      x-description: APIs to follow Members
+      x-description: APIs to follow Members. For all Follow APIs - if libraryId is not public/published then forge-community do not register new user.
       get:
         tags: [ "Community" ]
         operationId: getfollowedUsers
@@ -6397,7 +6397,7 @@ paths:
         consumes:
           - application/json
         description: |
-          Follow a Member
+          Follow a Member. libraryIds is mandatory.
         security:
           [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
         parameters:
