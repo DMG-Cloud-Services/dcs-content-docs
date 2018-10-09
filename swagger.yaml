@@ -6377,7 +6377,7 @@ paths:
         
   /followings:
       x-summary: Follow members
-      x-description: APIs to follow Members. For all Follow APIs - if libraryId is not public/published then forge-community do not register new user.
+      x-description: APIs to follow Members. For all Follow APIs - if libraryId is not public/published then forge-community do not register new user. pass param as filters[contents][libraryId] to register new user to forge-community database.
       get:
         tags: [ "Community" ]
         operationId: getfollowedUsers
