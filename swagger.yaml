@@ -6647,6 +6647,61 @@ paths:
         responses:
           '200': { $ref: '#/responses/getCommunityMemberActivities' }
           
+  /followEntity:
+      x-summary: Follow Content
+      x-description: API to Follow Content.
+      post:
+        tags: [ "Community" ]
+        operationId: followContent
+        consumes:
+          - application/vnd.api+json
+        description: |
+          Follow Content.
+        security:
+          [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
+        parameters:
+        - in: body
+          name: body
+          description: Input Quarantine
+          required: true
+          schema:
+            example: {
+                      "data": {
+                        "type": "followEntity",
+                        "attributes": {
+                          "entityId": "urn:adsk.content:content:38ae93c8-9348-46e4-a58e-eac71f2fbfd8",
+                          "entityType": "content"
+                          }
+                        }
+                      }
+        responses:
+          '201': {"description": "Created"}
+      get:
+        tags: [ "Community" ]
+        operationId: getFollowContent
+        consumes:
+          - application/vnd.api+json
+        description: |
+          Follow content response by member token
+        security:
+          [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
+        parameters:
+          - $ref: '#/parameters/query_filter_content_search_page_size'
+          - $ref: '#/parameters/query_filter_content_search_page_number'
+        responses:
+          '200': { $ref: '#/responses/getFollowers' }
+      delete:
+        tags: [ "Community" ]
+        operationId: deleteFollowContent
+        description: |
+          remove follow Content
+        produces:
+          []
+        security:
+          [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
+        responses:
+          '204':  { "description": "No content"  }
+
 parameters:
   commentTimeSort:
     name: sort[comments][addedDate]
