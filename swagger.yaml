@@ -6649,7 +6649,7 @@ paths:
         responses:
           '200': { $ref: '#/responses/getCommunityMemberActivities' }
           
-  /followEntity:
+  /contents/{contentId}/followings:
       x-summary: Follow Content
       x-description: API to Follow Content.
       post:
@@ -6662,18 +6662,17 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
         parameters:
+        - $ref: '#/parameters/contentId'
         - in: body
           name: body
-          description: Input Quarantine
+          description: Follow Content
           required: true
           schema:
             example: {
                       "data": {
-                        "type": "followEntity",
+                        "type": "contentFollowings",
                         "attributes": {
-                          "entityId": "urn:adsk.content:content:38ae93c8-9348-46e4-a58e-eac71f2fbfd8",
-                          "entityType": "content"
-                          }
+                          "contentId": "urn:adsk.content:content:38ae93c8-9348-46e4-a58e-eac71f2fbfd8"                          }
                         }
                       }
         responses:
@@ -6688,6 +6687,7 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
         parameters:
+          - $ref: '#/parameters/contentId'
           - $ref: '#/parameters/query_filter_content_search_page_size'
           - $ref: '#/parameters/query_filter_content_search_page_number'
         responses:
@@ -6701,6 +6701,8 @@ paths:
           []
         security:
           [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
+        parameters:
+          - $ref: '#/parameters/contentId'
         responses:
           '204':  { "description": "No content"  }
 
