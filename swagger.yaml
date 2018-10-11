@@ -7398,6 +7398,7 @@ definitions:
     required: [ body ]
     properties:
       body: { type: string, description: 'body of the comment' }
+      customMetaData: { type: string, description: '{\"key\":\"value\"}' }
   json_api_input_new_flag:
     type: object
     required: [ data ]
