@@ -6691,7 +6691,7 @@ paths:
           - $ref: '#/parameters/query_filter_content_search_page_size'
           - $ref: '#/parameters/query_filter_content_search_page_number'
         responses:
-          '200': { $ref: '#/responses/getFollowers' }
+          '200': { $ref: '#/responses/getFollow' }
       delete:
         tags: [ "Community" ]
         operationId: deleteFollowContent
