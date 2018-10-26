@@ -4346,7 +4346,7 @@ info:
 
     ```
     curl -X POST \
-      https://developer-stg.api.autodesk.com/webhooks/v1/systems/adsk.content/events/entity.updated/hooks \
+      https://developer.api.autodesk.com/webhooks/v1/systems/adsk.content/events/entity.updated/hooks \
       -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsImtpZCI' \
       -H 'Content-Type: application/json' \
       -d '{
