@@ -6285,7 +6285,19 @@ paths:
         - application/json
       description: |
         Creates a comment for a given content. Operations for Content Comments, inReplyToCommentId param in the body is optional and passed only in the case replying an existing comment.
+        
         customMetaData - is optional for Location field in comments. To be used by client as needed.
+        Use below payload for post/patch call:
+        {
+          "data": {
+            "type": "comments",
+            "attributes": {
+              "contentId": "urn:adsk.content:content:da9f28ef-4856-482b-8c4a-04560ff93fd3",
+              "body": "Body of new comment for content",
+              "customMetaData":"{\"location\":\"adsk, SF, USA\"}"
+            }
+          }
+        }
       security:
         [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
       parameters:
