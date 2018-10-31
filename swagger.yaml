@@ -6288,6 +6288,7 @@ paths:
         
         customMetaData - is optional for Location field in comments. To be used by client as needed.
         Use below payload for post/patch call:
+        ```JSON 
         {
           "data": {
             "type": "comments",
@@ -6298,6 +6299,7 @@ paths:
             }
           }
         }
+        ```  
       security:
         [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
       parameters:
