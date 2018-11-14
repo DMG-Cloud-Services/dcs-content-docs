@@ -6974,17 +6974,17 @@ parameters:
   version:
     name: filter[contents][version] 
     in: query
-    description: Content version
+    description: Content version to be deleted, can be a number or tip
     required: false
     type: string
-    default: "tip"
+    x-example: "tip"
   version_required:
     name: filter[contents][version] 
     in: query
-    description: Content version
+    description: Content version to be deleted, can be a number or tip
     required: true
     type: string
-    default: "tip"
+    x-example: "tip"
   deleteVersion:
     name: filter[contents][version] 
     in: query
@@ -6995,11 +6995,10 @@ parameters:
   version_tip_draft:
     name: filter[contents][version] 
     in: query
-    description: Content version
+    description: Content version to be deleted, can be a number or tip
     required: false
     type: string
-    default: "tip"
-    enum: [ "tip", "draft"] 
+    enum: [ "tip", "draft","1"] 
   loadReferencedContents:
     name: filter[contents][loadReferencedContents] 
     in: query
