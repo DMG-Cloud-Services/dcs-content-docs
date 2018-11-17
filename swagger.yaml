@@ -4692,8 +4692,6 @@ paths:
     delete:
       description: Delete an existing library. A library can be deleted only if it has no child nodes.
       operationId: delete_library
-      produces:
-        []
       parameters:
         - $ref: '#/parameters/libraryId'
       responses:
@@ -4733,8 +4731,6 @@ paths:
         
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-RemoveapplicationidinLibrary'sinterestedAppIdslist
       operationId: delete_library_interest
-      produces:
-        []
       parameters:
         - $ref: '#/parameters/libraryId'   
       responses:
@@ -4880,8 +4876,6 @@ paths:
     delete:
       description: Delete an existing sub-library. A sub-library can be deleted only if it has no child nodes.
       operationId: deleteSubLibrary
-      produces:
-        []
       parameters:
         - $ref: '#/parameters/libraryId'   
         - $ref: '#/parameters/subLibraryId'
@@ -5098,8 +5092,6 @@ paths:
     delete:
       description: |
         Delete a node.
-      produces:
-        []
       parameters:
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
@@ -5316,8 +5308,6 @@ paths:
         ***Note:***
         1. If an unlocked content is referenced and its deleted, the Forge Content does not remove the content from the referencing contents.
         2. In order to avoid the above stated scenario, please reference locked published contents.
-      produces:
-        []
       operationId: delete_content_by_id
       parameters:
         - $ref: '#/parameters/libraryId'
@@ -5571,8 +5561,6 @@ paths:
     delete:
       description: |
         API to delete all files of a particular type within a content.
-      produces:
-        []
       parameters:
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/contentId'
@@ -5592,8 +5580,6 @@ paths:
     delete:
       description: |
         API to delete a file from the content.
-      produces:
-        []  
       parameters:
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/contentId'
@@ -5674,8 +5660,6 @@ paths:
       parameters:
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/body_add_delete_relationships'
-      produces:
-        []
       responses:
         '204': {
           "description": "No content"  
@@ -5754,8 +5738,6 @@ paths:
       parameters:
         - $ref: '#/parameters/subLibraryId'
         - $ref: '#/parameters/body_add_delete_relationships'
-      produces:
-        []
       responses:
         '204': {
           "description": "No content"  
@@ -5836,8 +5818,6 @@ paths:
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
         - $ref: '#/parameters/body_add_delete_relationships'
-      produces:
-        []
       responses:
         '204': {
           "description": "No content"  
@@ -5918,8 +5898,6 @@ paths:
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
         - $ref: '#/parameters/body_add_delete_relationships'
-      produces:
-        []
       responses:
         '204': {
           "description": "No content"  
@@ -6097,8 +6075,6 @@ paths:
         operationId: deleteAnContentLike
         description: |
           Unlike a Content
-        produces:
-          []
         security:
           [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
         parameters:
@@ -6147,8 +6123,6 @@ paths:
           Unfeatures a content or comment. To unfeature a content, set ***featureItemType*** as ***content***. To unfeature a comment, set ***featureItemType*** to ***comment***.
         security:
           [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
-        produces:
-          []
         parameters:
         - $ref: '#/parameters/libraryId'
         - in: body
@@ -6236,8 +6210,6 @@ paths:
           Delete a bad word
         security:
           [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
-        produces:
-          []
         parameters:
         - $ref: '#/parameters/libraryId'
         - in: body
@@ -6368,8 +6340,6 @@ paths:
         Removes a comment for a given content
       security:
         [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
-      produces:
-       []
       parameters:
         - $ref: '#/parameters/contentId'
         - $ref: '#/parameters/commentId'
@@ -6450,8 +6420,6 @@ paths:
           Unfollow member with id specified
         security:
           [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
-        produces:
-          []
         parameters:
           - $ref: '#/parameters/memberId'
         responses:
@@ -6562,8 +6530,6 @@ paths:
           Get Flagged contents or flagged comments for library
         security:
           [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
-        produces:
-         []
         parameters:
           - $ref: '#/parameters/libraryId'
           - $ref: '#/parameters/flagEntityTypeFilter'
@@ -6582,8 +6548,6 @@ paths:
           Removes a flag
         security:
           [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
-        produces:
-         []
         parameters:
           - $ref: '#/parameters/libraryId'
           - $ref: '#/parameters/flagId'
@@ -6716,8 +6680,6 @@ paths:
         operationId: deleteFollowContent
         description: |
           remove follow Content
-        produces:
-          []
         security:
           [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
         parameters:
