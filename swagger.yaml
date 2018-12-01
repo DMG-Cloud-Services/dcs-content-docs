@@ -6168,6 +6168,7 @@ paths:
             $ref: '#/definitions/json_api_input_new_badword'
         responses:
           '201': {"description": "Created"}
+          '400': { $ref: '#/responses/bad_input' }
       delete:
         tags: [ "Community" ]
         operationId: deleteBadWord
