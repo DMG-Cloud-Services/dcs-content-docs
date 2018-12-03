@@ -6021,6 +6021,43 @@ paths:
           - $ref: '#/parameters/query_filter_content_search_page_number'
         responses:
           '200': {$ref: '#/responses/getMemberSearchResult'}
+          
+  /members/{memberId}:
+      x-summary: members email frequency
+      x-description: Get or set member email notification frequency. 
+      get:
+        tags: [ "get member email preferences" ]
+        operationId: getEmailFrequency
+        consumes:
+          - application/json
+        description: |
+          get member Email Frequencies
+        security:
+          [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
+        parameters:
+          - $ref: '#/parameters/memberId'
+        responses:
+          '200': { $ref: '#/responses/createCommunityContentLike' }
+          
+      patch:
+        tags: [ "update member email notification preference" ]
+        operationId: updateEmailFrequency
+        consumes:
+          - application/json
+        description: |
+          update Email Frequency
+        security:
+          [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
+        parameters:
+          - $ref: '#/parameters/memberId'
+          - in: body
+            name: body
+            description: Input schema
+            required: true
+            schema:
+              $ref: '#/definitions/json_api_input_email_preference'
+        responses:
+          '200': { $ref: '#/responses/createCommunityContentLike' }
 
   /contents/{contentId}/likes:
       x-summary: Content Likes
@@ -7488,6 +7525,40 @@ definitions:
     properties:
       contentId: { type: string, description: 'id of communityContent' }
   
+  json_api_input_email_preference:
+    type: object
+    required: [ data ]
+    properties:
+      id: { type: string, description: 'id' }
+      data: { $ref: '#/definitions/json_api_input_data_email_preference' }
+    example: {
+        {
+          "data": {
+            "type": "members",
+            "attributes": {
+            	"memberEmailPreference": {
+            		"commentFrequency": "WEEKLY",
+            		"likeFrequency": "WEEKLY"
+            	}
+            }
+          }
+        }
+    }
+    
+  json_api_input_data_email_preference:
+    type: object
+    required: [ type, attributes ]
+    description: 'json data'
+    properties:
+      type: { type: string, description: 'resource type' }
+      attributes: { $ref: '#/definitions/json_api_input_data_attributes_email_preference' }    
+    
+  json_api_input_data_attributes_email_preference:
+    type: object
+    required: [ memberId ]
+    properties:
+      memberId: { type: string, description: 'id of logged-In member' }
+      
   json_api_error:
     allOf:
       - type: object
