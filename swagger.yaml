@@ -6050,9 +6050,9 @@ paths:
           When member is created, default email frequency is WEEKLY for likeFrequency, commentFrequency & subscriptionFrequency.
           <br/>
           The above email notification preferences will be used even for sending email notifications to users'. 
-          These preferences can be updated by user using API.<br/>
-          Following preference can be used:<br/>
-          WEEKLY,<br/>
+          These preferences can be updated by user using API.<br/><br/>
+          Following email preference's can be used:<br/>
+          WEEKLY, (default)<br/>
           DAILY, <br/>
           AS_MADE (evey 5-mins or so)<br/>
 
