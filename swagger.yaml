@@ -7553,9 +7553,9 @@ definitions:
     
   json_api_input_data_attributes_email_preference:
     type: object
-    required: [ memberId ]
+    required: [ memberEmailPreference ]
     properties:
-      memberId: { type: string, description: 'id of logged-In member' }
+      memberEmailPreference: { type: string, description: 'id of logged-In member' }
       
   json_api_error:
     allOf:
