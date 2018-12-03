@@ -6196,6 +6196,7 @@ paths:
         - $ref: '#/parameters/libraryId'
         responses:
           '200': { $ref: '#/responses/getBadWords' }
+          '400': { $ref: '#/responses/bad_input' }
       post:
         tags: [ "Community" ]
         operationId: createBadWord
@@ -6233,6 +6234,7 @@ paths:
             $ref: '#/definitions/json_api_input_new_badword'
         responses:
           '204':  { "description": "No content"  }
+          '400': { $ref: '#/responses/bad_input' }
 
   /contents/{contentId}/comments:
     x-summary: Content comments
@@ -7472,9 +7474,10 @@ definitions:
 
   json_api_input_data_attributes_badword:
     type: object
-    required: [ word ]
+    required: [ words, libraryId ]
     properties:
-      word: { type: string, description: 'bad word' }
+      words: { type: array , items: { type: string }, description: 'array of bad words' }
+      libraryId: { type: string, description: 'library id' }
 
   json_api_input_feature_communityContent:
     type: object
@@ -7541,20 +7544,19 @@ definitions:
     properties:
       id: { type: string, description: 'id' }
       data: { $ref: '#/definitions/json_api_input_data_email_preference' }
-    example: {
-        {
-          "data": {
-            "type": "members",
-            "attributes": {
-            	"memberEmailPreference": {
-            		"commentFrequency": "WEEKLY",
-            		"likeFrequency": "WEEKLY",
-            		"subscriptionFrequency": "WEEKLY"
-            	}
+    example:
+      {
+        "data": {
+          "type": "members",
+          "attributes": {
+            "memberEmailPreference": {
+              "commentFrequency": "WEEKLY",
+              "likeFrequency": "WEEKLY",
+              "subscriptionFrequency": "WEEKLY"
             }
           }
         }
-    }
+      }
     
   json_api_input_data_email_preference:
     type: object
