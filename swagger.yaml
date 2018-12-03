@@ -6023,7 +6023,7 @@ paths:
           '200': {$ref: '#/responses/getMemberSearchResult'}
           
   /members/{memberId}:
-      x-summary: members email frequency
+      x-summary: Members Email Frequency
       x-description: Get or set member email notification frequency. 
       get:
         tags: [ "Community" ]
@@ -10514,35 +10514,37 @@ responses:
           description: Bearer Token
           type: integer
     examples:
-      {
-          "data": {
-              "type": "members",
-              "id": "BSZWLMSHYTJS-null",
-              "attributes": {
-                  "accountStatus": "OK",
-                  "firstName": "arvind",
-                  "lastName": "patel",
-                  "imageUrl": "",
-                  "libraryId": "",
-                  "oxygenId": "BSZWLMSHYTJS",
-                  "admin": "",
-                  "memberEmailPreference": {
-                      "subscriptionFrequency": "WEEKLY",
-                      "commentFrequency": "WEEKLY",
-                      "likeFrequency": "WEEKLY"
-                  },
-                  "email": "arvind.patel@autodesk.com"
-              },
-              "relationships": {},
-              "links": {
-                  "self": "http://localhost:8080/members/BSZWLMSHYTJS-null"
-              }
-          },
-          "included": [],
-          "meta": {
-              "paginationInfo": ""
-          }
-      } 
+      application/vnd.api+json:
+        {
+            "data": {
+                "type": "members",
+                "id": "BSZWLMSHYTJS-null",
+                "attributes": {
+                    "accountStatus": "OK",
+                    "firstName": "arvind",
+                    "lastName": "patel",
+                    "imageUrl": "",
+                    "libraryId": "",
+                    "oxygenId": "BSZWLMSHYTJS",
+                    "admin": "",
+                    "memberEmailPreference": {
+                        "subscriptionFrequency": "WEEKLY",
+                        "commentFrequency": "WEEKLY",
+                        "likeFrequency": "WEEKLY"
+                    },
+                    "email": "arvind.patel@autodesk.com"
+                },
+                "relationships": {},
+                "links": {
+                    "self": "http://localhost:8080/members/BSZWLMSHYTJS-null"
+                }
+            },
+            "included": [],
+            "meta": {
+                "paginationInfo": ""
+            }
+        } 
+      
   getCommunityContentLikes:
     description: Successful response
     schema:
