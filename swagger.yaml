@@ -6037,7 +6037,7 @@ paths:
         parameters:
           - $ref: '#/parameters/memberId'
         responses:
-          '200': { $ref: '#/responses/createCommunityContentLike' }
+          '200': { $ref: '#/responses/memberEmailPreference' }
           
       patch:
         tags: [ "Community" ]
@@ -6057,7 +6057,7 @@ paths:
             schema:
               $ref: '#/definitions/json_api_input_email_preference'
         responses:
-          '200': { $ref: '#/responses/createCommunityContentLike' }
+          '200': { $ref: '#/responses/memberEmailPreference' }
 
   /contents/{contentId}/likes:
       x-summary: Content Likes
@@ -10503,7 +10503,48 @@ responses:
         "included": []
         }
       }
-      
+     
+  memberEmailPreference:
+    description: Successful response
+    schema:
+      title: schema versions
+      type: object
+      allOf:
+      - type: object
+    headers:
+        authorization:
+          description: Bearer Token
+          type: integer
+    examples:
+      {
+          "data": {
+              "type": "members",
+              "id": "BSZWLMSHYTJS-null",
+              "attributes": {
+                  "accountStatus": "OK",
+                  "firstName": "arvind",
+                  "lastName": "patel",
+                  "imageUrl": "",
+                  "libraryId": "",
+                  "oxygenId": "BSZWLMSHYTJS",
+                  "admin": "",
+                  "memberEmailPreference": {
+                      "subscriptionFrequency": "WEEKLY",
+                      "commentFrequency": "WEEKLY",
+                      "likeFrequency": "WEEKLY"
+                  },
+                  "email": "arvind.patel@autodesk.com"
+              },
+              "relationships": {},
+              "links": {
+                  "self": "http://localhost:8080/members/BSZWLMSHYTJS-null"
+              }
+          },
+          "included": [],
+          "meta": {
+              "paginationInfo": ""
+          }
+      } 
   getCommunityContentLikes:
     description: Successful response
     schema:
