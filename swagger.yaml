@@ -6028,16 +6028,14 @@ paths:
       get:
         tags: [ "Community" ]
         operationId: getEmailFrequency
-        consumes:
-          - application/json
         description: |
-          get member Email Frequencies
+          get member Email Frequency
         security:
           [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
         parameters:
           - $ref: '#/parameters/memberId'
         responses:
-          '200': { $ref: '#/responses/memberEmailPreference' }
+          '200': { $ref: '#/responses/memberEmailNotificationPreference' }
           
       patch:
         tags: [ "Community" ]
@@ -6057,7 +6055,7 @@ paths:
             schema:
               $ref: '#/definitions/json_api_input_email_preference'
         responses:
-          '200': { $ref: '#/responses/memberEmailPreference' }
+          '200': { $ref: '#/responses/memberEmailNotificationPreference' }
 
   /contents/{contentId}/likes:
       x-summary: Content Likes
@@ -10504,7 +10502,7 @@ responses:
         }
       }
      
-  memberEmailPreference:
+  memberEmailNotificationPreference:
     description: Successful response
     schema:
       title: schema versions
