@@ -6108,7 +6108,7 @@ paths:
             schema:
               $ref: '#/definitions/json_api_input_new_like'
         responses:
-          '200': { $ref: '#/responses/createCommunityContentLike' }
+          '201': { $ref: '#/responses/createCommunityContentLike' }
       delete:
         tags: [ "Community" ]
         operationId: deleteAnContentLike
