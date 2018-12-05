@@ -6382,6 +6382,7 @@ paths:
           - $ref: '#/parameters/query_filter_content_search_page_number'
         responses:
           '200': { $ref: '#/responses/getFollow' }
+          '400': { $ref: '#/responses/bad_input' }
       post:
         tags: [ "Community" ]
         operationId: followAnUser
