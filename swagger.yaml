@@ -6400,6 +6400,7 @@ paths:
               $ref: '#/definitions/json_api_input_new_follow'
         responses:
           '200': { $ref: '#/responses/followUser' }
+          '400': { $ref: '#/responses/bad_input' }
           
   /followings/{memberId}:
       x-summary: Un-Follow members
