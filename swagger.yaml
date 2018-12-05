@@ -6143,6 +6143,7 @@ paths:
             $ref: '#/definitions/json_api_input_feature_communityContent'
         responses:
           '201': {"description": "Created"}
+          '400': { $ref: '#/responses/bad_input' }
         
       delete:
         tags: [ "Community" ]
@@ -6180,6 +6181,9 @@ paths:
         responses:
           '200': { $ref: "#/responses/getFeaturedCommentsResponse"}
           '201': { $ref: "#/responses/getFeaturedContentsResponse"}
+          '400': { $ref: '#/responses/bad_input' }
+          '401': { $ref: '#/responses/unauthorized' }
+          '403': { $ref: '#/responses/forbidden' }
         
   /libraries/{libraryId}/badwords:
       x-summary: BadWords
@@ -6619,6 +6623,7 @@ paths:
                       }
         responses:
           '201': {"description": "Created"}
+          '400': { $ref: '#/responses/bad_input' }
       get:
         tags: [ "Community" ]
         operationId: getFollowContent
