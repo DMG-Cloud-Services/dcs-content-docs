@@ -6399,7 +6399,7 @@ paths:
             schema:
               $ref: '#/definitions/json_api_input_new_follow'
         responses:
-          '200': { $ref: '#/responses/followUser' }
+          '201': { $ref: '#/responses/followUser' }
           '400': { $ref: '#/responses/bad_input' }
           
   /followings/{memberId}:
