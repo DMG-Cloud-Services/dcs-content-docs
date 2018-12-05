@@ -6415,7 +6415,8 @@ paths:
         parameters:
           - $ref: '#/parameters/memberId'
         responses:
-          '204':  { "description": "No content"  }
+          '204':  { "description": "No content" }
+          '400': { $ref: '#/responses/bad_input' }
           
   /followers:
       x-summary: GET Member followers
