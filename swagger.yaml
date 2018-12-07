@@ -6021,6 +6021,7 @@ paths:
           - $ref: '#/parameters/query_filter_content_search_page_number'
         responses:
           '200': {$ref: '#/responses/getMemberSearchResult'}
+          '401': { $ref: '#/responses/unauthorized' }
           
   /members/{memberId}:
       x-summary: Members Email Frequency
@@ -6036,6 +6037,7 @@ paths:
           - $ref: '#/parameters/memberId'
         responses:
           '200': { $ref: '#/responses/memberEmailNotificationPreference' }
+          '401': { $ref: '#/responses/unauthorized' }
           
       patch:
         tags: [ "Community" ]
