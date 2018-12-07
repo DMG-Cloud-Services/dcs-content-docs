@@ -6070,6 +6070,7 @@ paths:
               $ref: '#/definitions/json_api_input_email_preference'
         responses:
           '200': { $ref: '#/responses/memberEmailNotificationPreference' }
+          '401': { $ref: '#/responses/unauthorized' }
 
   /contents/{contentId}/likes:
       x-summary: Content Likes
