@@ -7377,7 +7377,7 @@ definitions:
     type: object
     required: [ data ]
     properties:
-      data: { $ref: '#/definitions/json_api_input_data_flag' }
+      data: { $ref: '#/definitions/json_api_input_data_quarantine' }
     example: {
       "data": {
         "type": "quarantines",
@@ -7395,6 +7395,14 @@ definitions:
       id: { type: string, description: 'id' }
       type: { type: string, description: 'resource type' }
       attributes: { $ref: '#/definitions/json_api_input_data_attributes_flag' }
+  json_api_input_data_quarantine:
+    type: object
+    required: [ type, attributes ]
+    description: 'json data'
+    properties:
+      id: { type: string, description: 'id' }
+      type: { type: string, description: 'resource type' }
+      attributes: { $ref: '#/definitions/json_api_input_data_attributes_quarantine' }
   json_api_input_data_attributes_flag:
     type: object
     required: [ entityType, entityId, flag ]
@@ -7402,6 +7410,12 @@ definitions:
       entityType: { type: string, description: 'type of entry: communityContent|comment' }
       entityId: { type: string, description: 'id of (communityContent or comment)' }
       flag: { type: string, description: 'flag' }
+  json_api_input_data_attributes_quarantine:
+    type: object
+    required: [ quarantineItemId, quarantineItemType ]
+    properties:
+      quarantineItemId: { type: string, description: 'id of (communityContent or comment)' }
+      quarantineItemType: { type: string, description: 'type of entry: communityContent|comment' }
   json_api_input_update_flag:
     type: object
     required: [ data ]
