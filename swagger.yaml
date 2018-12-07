@@ -7580,7 +7580,8 @@ definitions:
             "memberEmailPreference": {
               "commentFrequency": "WEEKLY",
               "likeFrequency": "WEEKLY",
-              "subscriptionFrequency": "WEEKLY"
+              "subscriptionFrequency": "WEEKLY",
+              "featureFrequency": "NONE"
             }
           }
         }
