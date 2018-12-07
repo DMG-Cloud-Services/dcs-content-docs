@@ -6459,6 +6459,7 @@ paths:
             $ref: '#/definitions/json_api_input_new_flag'
         responses:
           '201': { $ref: '#/responses/getFlag' }
+          '400': { $ref: '#/responses/bad_input' }
       put:
         tags: [ "Community" ]
         operationId: updateFlag
@@ -7367,8 +7368,8 @@ definitions:
         "type": "flags",
         "attributes": {
             "flag": "spam",
-            "entryId": "ExtCommunityContentId0242",
-            "entryType": "content"
+            "entityId": "ExtCommunityContentId0242",
+            "entityType": "content"
         }
       }
     }
@@ -7388,7 +7389,7 @@ definitions:
     }
   json_api_input_data_flag:
     type: object
-    required: [ id, type, attributes ]
+    required: [ type, attributes ]
     description: 'json data'
     properties:
       id: { type: string, description: 'id' }
@@ -7396,10 +7397,10 @@ definitions:
       attributes: { $ref: '#/definitions/json_api_input_data_attributes_flag' }
   json_api_input_data_attributes_flag:
     type: object
-    required: [ entryType, entryId, flag ]
+    required: [ entityType, entityId, flag ]
     properties:
-      entryType: { type: string, description: 'type of entry: communityContent|comment' }
-      entryId: { type: string, description: 'id of (communityContent or comment)' }
+      entityType: { type: string, description: 'type of entry: communityContent|comment' }
+      entityId: { type: string, description: 'id of (communityContent or comment)' }
       flag: { type: string, description: 'flag' }
   json_api_input_update_flag:
     type: object
