@@ -6598,6 +6598,7 @@ paths:
           - $ref: '#/parameters/query_filter_content_search_page_number'
         responses:
           '200': { $ref: '#/responses/getCommunityMemberActivities' }
+          '401': { $ref: '#/responses/unauthorized' }
           
   /contents/{contentId}/followings:
       x-summary: Follow Content
