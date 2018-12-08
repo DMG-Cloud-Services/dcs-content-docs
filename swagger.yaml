@@ -6022,6 +6022,7 @@ paths:
         responses:
           '200': {$ref: '#/responses/getMemberSearchResult'}
           '401': { $ref: '#/responses/unauthorized' }
+          '403': { $ref: '#/responses/forbidden' }
           
   /members/{memberId}:
       x-summary: Members Email Frequency
@@ -7603,12 +7604,12 @@ definitions:
   
   json_api_input_data_attributes_email_preference_data:
     type: object
-    required: [ commentFrequency, likeFrequency, subscriptionFrequency ]
     properties:
       commentFrequency: { type: string, description: 'email notification when some one comments on content' }
       likeFrequency: { type: string, description: 'email notification when some one likes your content' }
       subscriptionFrequency: { type: string, description: 'email notification when some one follows you' }
-      
+      featureFrequency: { type: string, description: 'email notification when content is featured' }
+     
   json_api_error:
     allOf:
       - type: object
