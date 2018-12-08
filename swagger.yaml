@@ -7605,11 +7605,10 @@ definitions:
   json_api_input_data_attributes_email_preference_data:
     type: object
     properties:
-      commentFrequency: { type: string, description: 'email notification when some one comments on content' }
-      likeFrequency: { type: string, description: 'email notification when some one likes your content' }
-      subscriptionFrequency: { type: string, description: 'email notification when some one follows you' }
-      featureFrequency: { type: string, description: 'email notification when content is featured' }
-     
+      commentFrequency: { type: string, enum: [NONE, AS_MADE, HOURLY, DAILY, WEEKLY], description: 'email notification when some one comments on content' }
+      likeFrequency: { type: string, enum: [NONE, AS_MADE, HOURLY, DAILY, WEEKLY], description: 'email notification when some one likes your content' }
+      subscriptionFrequency: { type: string, enum: [NONE, AS_MADE, HOURLY, DAILY, WEEKLY], description: 'email notification when some one follows you' }
+      featureFrequency: { type: string, enum: [NONE, AS_MADE, HOURLY, DAILY, WEEKLY], description: 'email notification when content is featured' }     
   json_api_error:
     allOf:
       - type: object
