@@ -6353,7 +6353,7 @@ paths:
         '401': { $ref: '#/responses/unauthorized' }
 
  
-  /comments/{commentId}/replies:
+  /contents/{contentId}/comments/{commentId}/replies:
     x-summary: Content Comment Replies
     x-description: Retrive replies of a comment
     get:
@@ -6366,6 +6366,7 @@ paths:
       security:
         [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
       parameters:
+        - $ref: '#/parameters/contentId'
         - $ref: '#/parameters/commentId'
         - $ref: '#/parameters/commentTimeSort'
 
