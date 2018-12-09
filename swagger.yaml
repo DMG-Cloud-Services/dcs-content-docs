@@ -6350,6 +6350,8 @@ paths:
       responses:
         '204':
           description: Content Comment deleted
+        '401': { $ref: '#/responses/unauthorized' }
+
  
   /comments/{commentId}/replies:
     x-summary: Content Comment Replies
