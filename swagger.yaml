@@ -6316,7 +6316,7 @@ paths:
         - $ref: '#/parameters/contentId'
         - $ref: '#/parameters/commentId'
       responses:
-        '201': {$ref: '#/responses/getCommunityContentComment'}
+        '200': {$ref: '#/responses/getCommunityContentComment'}
     patch:
       tags: [ "Community" ]
       operationId: updateContentComment
