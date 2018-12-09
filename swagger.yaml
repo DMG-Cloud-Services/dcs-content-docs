@@ -6368,7 +6368,7 @@ paths:
         - $ref: '#/parameters/commentTimeSort'
 
       responses:
-        '201': {$ref: '#/responses/getCommentReplies'}
+        '200': {$ref: '#/responses/getCommentReplies'}
         
   /followings:
       x-summary: Follow members
