@@ -7640,16 +7640,17 @@ definitions:
     type: object
     description: 'resource specific meta data'
     properties:
-          paginationInfo: { $ref: '#/definitions/json_api_meta_pagination_info'}
-  
+      paginationInfo: { $ref: '#/definitions/json_api_meta_pagination_info'}
+      id: { type: string, description: 'id of the item' }
+
   search_json_api_meta:
     type: object
     description: 'resource specific meta data'
     properties:
-          paginationInfo: { $ref: '#/definitions/json_api_meta_pagination_info'}
-          messages: { type: array , items: { type: object } }
-          queryResultCount: { type: integer, description: 'queryResultCount' }
-          queryCategories: { type: array, items: { $ref: '#/definitions/queryCategories_definition' } }
+      paginationInfo: { $ref: '#/definitions/json_api_meta_pagination_info'}
+      messages: { type: array , items: { type: object } }
+      queryResultCount: { type: integer, description: 'queryResultCount' }
+      queryCategories: { type: array, items: { $ref: '#/definitions/queryCategories_definition' } }
   
   queryCategories_definition:
     type: object
