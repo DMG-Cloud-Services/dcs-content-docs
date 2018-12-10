@@ -5166,24 +5166,6 @@ paths:
       security:
         [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
       tags: ["Library Node"]
-  
-  /libraries/{libraryId}/nodes/{nodeId}/parents:
-    get:
-      description: |
-        Get all parents of the node
-      parameters:
-        - $ref: '#/parameters/libraryId'
-        - $ref: '#/parameters/nodeId'
-        - $ref: '#/parameters/query_filter_content_search_page_size'
-        - $ref: '#/parameters/query_filter_content_search_page_number'
-      responses:
-        '200': { $ref: '#/responses/nodesParents' }
-        '400': { $ref: '#/responses/bad_input' }
-        '403': { $ref: '#/responses/forbidden' }
-      x-ads-docs-cli-example: 'curl -X GET -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" "https://developer.api.autodesk.com/content/v1/libraries/libraryId/nodes/nodeId/parents"'
-      security:
-        [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
-      tags: ["Library Node"]
       
   /libraries/{libraryId}/contents:
     post:
@@ -11733,14 +11715,6 @@ responses:
                         "createdBy": "HT6LJVYYY2TB",
                         "lastModifiedBy": "HT6LJVYYY2TB"
                     },
-                    "relationships": {
-                        "refs": {
-                            "children": {
-                                "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:library:1d89983b-765f-4a85-b671-8a1580e1f680/relationships/children",
-                                "related": "https://developer-stg.api.autodesk.com/content-alpha/v1/nodes/urn:adsk.content:library:1d89983b-765f-4a85-b671-8a1580e1f680/children"
-                            }
-                        }
-                    },
                     "links": {
                         "self": "https://developer-stg.api.autodesk.com/content-alpha/v1/libraries/urn:adsk.content:library:1d89983b-765f-4a85-b671-8a1580e1f680"
                     }
@@ -11867,20 +11841,6 @@ responses:
                           "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
                           "lastModifiedBy": ""
                       },
-                      "relationships": {
-                          "parent": {
-                              "links": {
-                                  "self": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:ldrA_V5lTGmLpbwj74ikzw/relationships/parents",
-                                  "related": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:ldrA_V5lTGmLpbwj74ikzw/parents"
-                              }
-                          },
-                          "refs": {
-                              "children": {
-                                  "self": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:ldrA_V5lTGmLpbwj74ikzw/relationships/children",
-                                  "related": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:ldrA_V5lTGmLpbwj74ikzw/children"
-                              }
-                          }
-                      },
                       "links": {
                           "self": "https://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:ldrA_V5lTGmLpbwj74ikzw"
                       }
@@ -11952,14 +11912,6 @@ responses:
                         "createdBy": "ERB3Q463BYQW",
                         "lastModifiedBy": "ERB3Q463BYQW"
                     },
-                    "relationships": {
-                        "parent": {
-                            "links": {
-                                "self": "https://developer.api.autodesk.com/content/v1/contents/urn:adsk.wipstg:dm.lineage:yLuhkkB2RdCtCoDzop-1Ng/relationships/parents",
-                                "related": "https://developer.api.autodesk.com/content/v1/contents/urn:adsk.wipstg:dm.lineage:yLuhkkB2RdCtCoDzop-1Ng/parents"
-                            }
-                        }
-                    },
                     "links": {
                         "self": "https://developer.api.autodesk.com/content/v1/contents/urn:adsk.wipstg:dm.lineage:yLuhkkB2RdCtCoDzop-1Ng"
                     }
@@ -11985,20 +11937,6 @@ responses:
                 "lastModifiedTime": "2016-08-25T10:57:36Z",
                 "createTime": "2016-08-25T10:57:36Z",
                 "externalId": "9a6fb81a-a238-11e7-abc4-cec278b6b50a",
-                "relationships": {
-                    "parent": {
-                        "links": {
-                            "self": "http://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:FfNVwArBTECHUczacfgn3w/relationships/parents",
-                            "related": "http://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:FfNVwArBTECHUczacfgn3w/parents"
-                        }
-                    },
-                    "refs": {
-                        "children": {
-                            "self": "http://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:FfNVwArBTECHUczacfgn3w/relationships/children",
-                            "related": "http://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:FfNVwArBTECHUczacfgn3w/children"
-                        }
-                    }
-                },
                 "links": {
                     "self": "http://developer.api.autodesk.com/content/v1/nodes/urn:adsk.wipstg:dm.lineage:FfNVwArBTECHUczacfgn3w"
                 }
@@ -12011,14 +11949,6 @@ responses:
                 "lastModifiedTime": "2016-08-25T10:57:36Z",
                 "createTime": "2016-08-25T10:57:36Z",
                 "name": "Library1",
-                "relationships": {
-                    "refs": {
-                        "children": {
-                            "self": "http://developer.api.autodesk.com/content/v1/libraries/a.cGVyc29uYWw6cGUyOWNjNTVhIzIwMTYwODEwMTUxODg3Ng/relationships/children",
-                            "related": "http://developer.api.autodesk.com/content/v1/libraries/a.cGVyc29uYWw6cGUyOWNjNTVhIzIwMTYwODEwMTUxODg3Ng/children"
-                        }
-                    }
-                },
                 "links": {
                     "self": "http://developer.api.autodesk.com/content/v1/libraries/a.cGVyc29uYWw6cGUyOWNjNTVhIzIwMTYwODEwMTUxODg3Ng"
                 }
