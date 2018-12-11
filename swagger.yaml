@@ -6248,6 +6248,7 @@ paths:
 
       responses:
         '200': { $ref: '#/responses/getCommunityContentComments' }
+        '401': { $ref: '#/responses/unauthorized' }
     post:
       tags: [ "Community" ]
       operationId: createContentComment
@@ -6282,6 +6283,7 @@ paths:
             $ref: '#/definitions/json_api_input_new_comment'
       responses:
         '201': {$ref: '#/responses/createCommunityContentComment'}
+        '400': { $ref: '#/responses/bad_input' }
         
   /contents/{contentId}/comments/{commentId}:
     x-summary: Content Comment
@@ -7464,6 +7466,7 @@ definitions:
       contentId: { type: string, description: 'id of communityContent' }
       userId: { type: string, description: 'id of member' }
       body: { type: string, description: 'body of the comment' }
+      inReplyToCommentId: { type: string, description: 'id of comment this is in reply to' }
 
   json_api_input_new_badword:
     type: object
