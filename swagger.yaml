@@ -6006,7 +6006,7 @@ paths:
           '401': { $ref: '#/responses/unauthorized' }
           '403': { $ref: '#/responses/forbidden' }
           
-  /libraries/{libraryId}/members/{memberId}:
+  /members/{memberId}:
       x-summary: Members Email Frequency
       x-description: Get or set member email notification frequency. 
       get:
@@ -6017,7 +6017,6 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
         parameters:
-          - $ref: '#/parameters/libraryId'
           - $ref: '#/parameters/memberId'
         responses:
           '200': { $ref: '#/responses/memberEmailNotificationPreference' }
@@ -6044,7 +6043,6 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
         parameters:
-          - $ref: '#/parameters/libraryId'
           - $ref: '#/parameters/memberId'
           - in: body
             name: body
