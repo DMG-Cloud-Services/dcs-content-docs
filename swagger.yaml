@@ -6426,6 +6426,7 @@ paths:
           - $ref: '#/parameters/query_filter_content_search_page_number'
         responses:
           '200': { $ref: '#/responses/getFollowers' }
+          '400': { $ref: '#/responses/bad_input' }
             
   /libraries/{libraryId}/flags:
       x-summary: Content Flags
