@@ -6187,6 +6187,7 @@ paths:
         responses:
           '200': { $ref: '#/responses/getBadWords' }
           '400': { $ref: '#/responses/bad_input' }
+          '403': { $ref: '#/responses/forbidden' }
       post:
         tags: [ "Community" ]
         operationId: createBadWord
