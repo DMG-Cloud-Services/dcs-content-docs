@@ -6359,7 +6359,7 @@ paths:
         
   /followings:
       x-summary: Follow members
-      x-description: APIs to follow Members. For all Follow APIs - if libraryId is not public/published then forge-community do not register new user. pass param as filters[contents][libraryId] to register new user to forge-community database.
+      x-description: APIs to follow Members. For all Follow APIs - if libraryId is not public/published then forge-community do not register new user. pass param as filter[contents][libraryId] to register new user to forge-community database.
       get:
         tags: [ "Community" ]
         operationId: getfollowedUsers
@@ -7041,14 +7041,14 @@ parameters:
     type: boolean
     x-example: false
   membersQuery:
-    name: filters[members][query]
+    name: filter[members][query]
     in: query
     description: list of keywords to search against as well as range expressions.
     required: false
     type: string
     x-example: "aluminum"
   memberNameQuery:
-    name: filters[members][query]
+    name: filter[members][query]
     in: query
     description: list of keywords (firstName and LastName) to search against as well as range expressions. eg.. filter[members][query]=(firstName:"Scott" OR lastName:"Davis")
     required: false
@@ -7062,35 +7062,34 @@ parameters:
     type: string 
     x-example: "urn:adsk.content:library:8f7bd492-70e5-4364-8f5c-0d27c2e5c19d"
   query_filter_activities_libraryId:
-    name: filters[activities][libraryId]
+    name: filter[activities][libraryId]
     in: query
     description: Library Id
-    required: true
     type: string 
     x-example: "urn:adsk.content:library:8f7bd492-70e5-4364-8f5c-0d27c2e5c19d" 
   query_filter_activities_activitytype:
-    name: filters[activities][activityType]
+    name: filter[activities][activityType]
     in: query
     description: activity type likes - COMMENT, LIKE, FOLLOW.
     required: false
     type: string 
     x-example: "COMMENT"   
   query_filter_activities_following:
-    name: filters[activities][members_type]
+    name: filter[activities][members_type]
     in: query
     description: Get activity stream for a user which this user is following. This includes activities performed by the users this user is following.
     required: false
     type: string 
     x-example: "following"  
   query_filter_activities_member_id:
-    name: filters[members][id]
+    name: filter[members][id]
     in: query
     description: Get activity stream for a user for whom activity stream is being requested. This can be used when bearer token is not avaialable and activities can be requestd using this param.
     required: false
     type: string 
     x-example: "HT6LJVYYY2TB"
   query_filter_activities_searchskipcache:
-    name: filters[activities][searchSkipCache]
+    name: filter[activities][searchSkipCache]
     in: query
     description: If you set this condition to true, the Searche returns the fresh content from the database instead of the content in the primary cache.
     required: false
@@ -10707,8 +10706,8 @@ responses:
             }
         },
         "links": {
-            "first": "http://localhost:8080/activities?filters[activities][libraryId]=urn:adsk.content:library:244de369-91fa-4779-a668-e3b6af606445&page[number]=1&page[size]=20",
-            "last": "http://localhost:8080/activities?filters[activities][libraryId]=urn:adsk.content:library:244de369-91fa-4779-a668-e3b6af606445&page[number]=1&page[size]=20"
+            "first": "http://localhost:8080/activities?filter[activities][libraryId]=urn:adsk.content:library:244de369-91fa-4779-a668-e3b6af606445&page[number]=1&page[size]=20",
+            "last": "http://localhost:8080/activities?filter[activities][libraryId]=urn:adsk.content:library:244de369-91fa-4779-a668-e3b6af606445&page[number]=1&page[size]=20"
         }
     }
 
