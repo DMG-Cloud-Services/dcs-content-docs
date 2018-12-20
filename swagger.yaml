@@ -4890,6 +4890,7 @@ paths:
       security:
         [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
       tags: ["Sub-Library"]
+
   /libraries/{libraryId}/subLibraries/{subLibraryId}/nodes:
     get:
       description: |
@@ -4965,7 +4966,79 @@ paths:
           }
           }'' "https://developer.api.autodesk.com/content/v1/libraries/libraryId/subLibrary/subLibraryId/nodes"'
       tags: ["Sub-Library"]
-        
+
+  /libraries/{libraryId}/subLibraries/{subLibraryId}/nodes/{nodeId}:
+    get:
+      description: |
+        Get node details.
+
+        ***Note:*** Please see the example payload in the [wiki][1].
+
+        [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-GetNode
+      parameters:
+        - $ref: '#/parameters/libraryId'
+        - $ref: '#/parameters/subLibraryId'
+        - $ref: '#/parameters/nodeId'
+      responses:
+        '200': { $ref: '#/responses/node' }
+        '400': { $ref: '#/responses/bad_input' }
+        '401': { $ref: '#/responses/unauthorized' }
+        '403': { $ref: '#/responses/forbidden' }
+      security:
+        [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
+      x-ads-docs-cli-example: 'curl -X GET -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" "https://developer.api.autodesk.com/content/v1/libraries/{libraryId}/subLibraries/{subLibraryId}/nodes/{nodeId}"'
+      tags: ["Sub-Library"]
+    patch:
+      description: |
+        Update a node.
+
+        ***Note:*** Please see the example payload in the [wiki][1].
+
+        [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-UpdateNode
+      parameters:
+        - $ref: '#/parameters/libraryId'
+        - $ref: '#/parameters/subLibraryId'
+        - $ref: '#/parameters/nodeId'
+        - $ref: '#/parameters/body_update_library_node'
+      responses:
+        '200': { $ref: '#/responses/node' }
+        '400': { $ref: '#/responses/bad_input' }
+        '403': { $ref: '#/responses/forbidden' }
+      security:
+        [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
+      x-ads-docs-cli-example: 'curl -X PATCH -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" -H "Content-Type: application/vnd.api+json" -d
+          ''{
+              "data": {
+                "type": "nodes",
+                "attributes": {
+                  "title": "deserunt ipsum non laborum minim",
+                  "description": "esse tempor pariatur sit commodo",
+                  "tags": "do Lorem tempor dolor et",
+                  "region": "in"
+                }
+              }
+          }
+          }'' "https://developer.api.autodesk.com/content/v1/libraries/libraryId/nodes/nodeId"'
+      tags: ["Sub-Library"]
+    delete:
+      description: |
+        Delete a node.
+      parameters:
+        - $ref: '#/parameters/libraryId'
+        - $ref: '#/parameters/subLibraryId'
+        - $ref: '#/parameters/nodeId'
+      responses:
+        '204': {
+          "description": "No content"
+        }
+        '400': { $ref: '#/responses/bad_input' }
+        '401': { $ref: '#/responses/unauthorized' }
+        '403': { $ref: '#/responses/forbidden' }
+      x-ads-docs-cli-example: 'curl -X DELETE -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" "https://developer.api.autodesk.com/content/v1/libraries/{libraryId}/nodes/{nodeId}"'
+      security:
+        [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
+      tags: ["Sub-Library"]
+
   /libraries/{libraryId}/nodes:
     post:
       description: |
