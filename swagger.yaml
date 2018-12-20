@@ -7628,6 +7628,8 @@ definitions:
     properties:
       paginationInfo: { $ref: '#/definitions/json_api_meta_pagination_info'}
       id: { type: string, description: 'id of the item' }
+      errorMessage: { type: string, description: 'error message' }
+      fileType: { type: string, description: 'file type of the item' }
 
   search_json_api_meta:
     type: object
