@@ -8295,7 +8295,6 @@ definitions:
                       $ref: '#/definitions/translations_definition'                         
               relationships:
                 type: object
-                required: [subLibraries, nodes]
                 properties:
                   subLibraries:
                     type: object
