@@ -8949,15 +8949,37 @@ definitions:
               type: { type: string, enum: [ 'contentFiles' ] }
               attributes:
                 type: object
-                required: [ files ]
+                additionalProperties: true
                 properties:
-                  files: 
+                  files:
                     type: array
                     description: file item object
                     items:
                       type: object
                       description: File Object
-                      required: [title, description, size, checksum, objectKey, mimeType] 
+                      required: [title, description, size, checksum, objectKey, mimeType]
+                      additionalProperties: true
+                      properties:
+                        title:
+                          type: string
+                        description:
+                          type: string
+                        objectKey:
+                          type: string
+                        size:
+                          type: integer
+                        checksum:
+                          type: string
+                        mimeType:
+                          type: string
+                  thumbnails:
+                    type: array
+                    description: file item object
+                    items:
+                      type: object
+                      description: File Object
+                      required: [title, description, size, checksum, objectKey, mimeType]
+                      additionalProperties: true
                       properties:
                         title:
                           type: string
