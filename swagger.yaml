@@ -6888,7 +6888,6 @@ parameters:
     description: Type of the file
     required: true
     type: string
-    enum: [ "thumbnails", "files" ]
   fileId:
     name: fileId
     in: path
