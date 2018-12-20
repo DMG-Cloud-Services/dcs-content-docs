@@ -5131,7 +5131,7 @@ paths:
         '403': { $ref: '#/responses/forbidden' }
       security:
         [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
-      x-ads-docs-cli-example: 'curl -X GET -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" "https://developer.api.autodesk.co/content/v1/libraries/{libraryId}/nodes/{nodeId}"'
+      x-ads-docs-cli-example: 'curl -X GET -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" "https://developer.api.autodesk.com/content/v1/libraries/{libraryId}/nodes/{nodeId}"'
       tags: ["Library Node"]
     patch:
       description: |
@@ -5177,7 +5177,7 @@ paths:
         '400': { $ref: '#/responses/bad_input' }
         '401': { $ref: '#/responses/unauthorized' }
         '403': { $ref: '#/responses/forbidden' }
-      x-ads-docs-cli-example: 'curl -X DELETE -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" "https://developer.api.autodesk.co/content/v1/libraries/{libraryId}/nodes/{nodeId}"'
+      x-ads-docs-cli-example: 'curl -X DELETE -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" "https://developer.api.autodesk.com/content/v1/libraries/{libraryId}/nodes/{nodeId}"'
       security:
         [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
       tags: ["Library Node"]
