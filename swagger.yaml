@@ -8611,6 +8611,7 @@ definitions:
             required: [ type, attributes, relationships ]
             properties:
               type: { type: string, enum: [ 'contents' ] }
+              id: { type: string, description: 'id' }
               attributes:
                 type: object
                 required: [title, description, tags, status, language, region, extension]
