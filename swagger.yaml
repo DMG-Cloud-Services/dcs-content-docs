@@ -6151,7 +6151,7 @@ paths:
         responses:
           '200': { $ref: '#/responses/getCommunityContentLikes' }
       post:
-        tags: [ "Contents Likes" ]
+        tags: [ "Community" ]
         operationId: likeAContent
         consumes:
           - application/json
