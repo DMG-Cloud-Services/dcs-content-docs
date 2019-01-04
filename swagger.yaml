@@ -4598,6 +4598,7 @@ paths:
         '400': { $ref: '#/responses/bad_input' }
         '401': { $ref: '#/responses/unauthorized' }
         '403': { $ref: '#/responses/forbidden' }
+      tags: ["Library"]
     get: 
       description: |
         Get libraries.
@@ -4722,7 +4723,7 @@ paths:
         '204':  { "description": "No content"  }
         '400': { $ref: '#/responses/bad_input' }
         '403': { $ref: '#/responses/forbidden' }
-      
+      tags: ["Library"]
     delete:
       description: |
         Delete the application id from the interestedAppIds list for the Library.
