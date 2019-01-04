@@ -9703,8 +9703,8 @@ definitions:
   json_link_self_related:
     type: object
     properties:
-      self: { type: string, description: 'self' }
-      related: { type: string, description: 'related' }
+      self: { type: string, description: 'self', example: 'https://developer.api.autodesk.com/content/v1/...' }
+      related: { type: string, description: 'related', example: 'https://developer.api.autodesk.com/content/v1/...' }
   
   fileURL_data_attributes:
     type: object
