@@ -9083,19 +9083,19 @@ definitions:
     type: object
     description: Response definition for library
     properties:
-      type: { type: string, description: 'type' }
-      id: { type: string, description: 'id' }
+      type: { type: string, description: 'type', example: 'libraries' }
+      id: { type: string, description: 'id' , example: 'urn:adsk.content:library:592d9e66-c963-4975-ac59-75864e68410c'}
       attributes:
         type: object
         properties:
-          title: { type: string, description: 'title' }
-          description: { type: string, description: 'description' }
-          status: { type: string, description: 'status' }
-          entityPaths: { type: array, items: { type: string }, description: 'entityPaths' }
-          lastModifiedTime: { type: string, description: 'lastModifiedTime' }
-          createTime: { type: string, description: 'createTime' }
-          createdBy: { type: string, description: 'createdBy' }
-          lastModifiedBy: { type: string, description: 'lastModifiedBy' }
+          title: { type: string, description: 'title', example: 'test.library.sng101303' }
+          description: { type: string, description: 'description', example: 'description' }
+          status: { type: string, description: 'status', enum: ['private', 'published'], example: 'published' }
+          entityPaths: { type: array, items: { type: string }, description: 'entityPaths', example: '[/urn:adsk.content:library:592d9e66-c963-4975-ac59-75864e68410c]' }
+          lastModifiedTime: { type: string, description: 'lastModifiedTime', example: '2017-10-13T07:41:40Z' }
+          createTime: { type: string, description: 'createTime', example: '2017-10-13T07:41:40Z' }
+          createdBy: { type: string, description: 'createdBy', example: 'AYK2Q7S52XRU' }
+          lastModifiedBy: { type: string, description: 'lastModifiedBy', example: 'AYK2Q7S52XRU' }
       relationships: { $ref: '#/definitions/library_relationship_definitions' }
       links: { $ref: '#/definitions/json_link_self' }
       
