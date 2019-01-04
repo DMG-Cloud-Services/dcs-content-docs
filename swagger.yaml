@@ -4348,7 +4348,7 @@ info:
     curl -X POST \
       https://developer.api.autodesk.com/webhooks/v1/systems/adsk.content/events/entity.updated/hooks \
       -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsImtpZCI' \
-      -H 'Content-Type: application/json' \
+      -H 'Content-Type: application/vnd.api+json:' \
       -d '{
       "callbackUrl":"http://api.webhookinbox.com/i/h4t4rk7Y/in/",
       "scope":{
@@ -4372,7 +4372,7 @@ info:
 
     ```
     ***HEADERS:***
-    Content-Type: application/json
+    Content-Type: application/vnd.api+json:
     User-Agent: AHC/2.0
     Content-Length: 944
     X-Adsk-Delivery-Id: httpadapter:adsk.content-alpha:1-5b7f5a0a-157f8d639722ca6dae152ee0/ea45dec4-cefa-48ef-8ce9-359a0ef5902f
@@ -4504,7 +4504,7 @@ info:
     
     The following are the supported endpoints and methods related to Quarantine Contents and Comments.
     
-    .. include:: ../../_snippets/v1/reference/quarantines.rstl 
+    .. include:: ../../_snippets/v1/reference/quarantines.rst
     
     ### Flags
     
@@ -10233,28 +10233,29 @@ responses:
           description: Bearer Token
           type: integer
     examples:
-      {
-        "data": {
-          "type": "followings",
-          "id": "ABCSUUBNHC",
-          "attributes": {
-            "followersCount": 0,
-            "followingsCount": 0
-          },
-          "relationships": {
-            "roles": {
-              "links": {
-                "self": "https://developer.api.autodesk.com/content-alpha/v1/followings/ABCSUUBNHC/relationships/roles",
-                "related": "https://developer.api.autodesk.com/content-alpha/v1/followings/ABCSUUBNHC/roles"
+      application/vnd.api+json:
+        {
+          "data": {
+            "type": "followings",
+            "id": "ABCSUUBNHC",
+            "attributes": {
+              "followersCount": 0,
+              "followingsCount": 0
+            },
+            "relationships": {
+              "roles": {
+                "links": {
+                  "self": "https://developer.api.autodesk.com/content-alpha/v1/followings/ABCSUUBNHC/relationships/roles",
+                  "related": "https://developer.api.autodesk.com/content-alpha/v1/followings/ABCSUUBNHC/roles"
+                }
               }
+            },
+            "links": {
+              "self": "https://developer.api.autodesk.com/content-alpha/v1/followings/ABCSUUBNHC"
             }
           },
-          "links": {
-            "self": "https://developer.api.autodesk.com/content-alpha/v1/followings/ABCSUUBNHC"
-          }
-        },
-        "included": []
-      }
+          "included": []
+        }
       
   getCommunityContentComment:
     description: Successful response
@@ -10585,21 +10586,22 @@ responses:
           description: Bearer Token
           type: integer
     examples:
-      {
-        "data": {
-          "type": "likes",
-          "id": "LMQTWC4IN3UQ89K",
-          "attributes": {
-            "contentId": "ExtCommunityContentId98744",
-            "userId": "WPE2RG679EP4"
-          },
-          "relationships": {},
-          "links": {
-            "self": "http://developer.api.autodesk.com/content/v1/likes/LMQTWC4IN3UQ89K"
-          },
-        "included": []
+      application/vnd.api+json:
+        {
+          "data": {
+            "type": "likes",
+            "id": "LMQTWC4IN3UQ89K",
+            "attributes": {
+              "contentId": "ExtCommunityContentId98744",
+              "userId": "WPE2RG679EP4"
+            },
+            "relationships": {},
+            "links": {
+              "self": "http://developer.api.autodesk.com/content/v1/likes/LMQTWC4IN3UQ89K"
+            },
+          "included": []
+          }
         }
-      }
      
   memberEmailNotificationPreference:
     description: Successful response
@@ -10964,7 +10966,7 @@ responses:
     schema:
       $ref: '#/definitions/json_api_error'
     examples:
-      application/json:
+      application/vnd.api+json:
         {
           "errors": [
               {
@@ -10983,7 +10985,7 @@ responses:
     schema:
       $ref: '#/definitions/json_api_error'
     examples:
-      application/json:
+      application/vnd.api+json:
         {
             "errors": [
                 {
@@ -11003,7 +11005,7 @@ responses:
     schema:
       $ref: '#/definitions/json_api_error'
     examples:
-      application/json:
+      application/vnd.api+json:
         {
           "errors": [
             {
@@ -11019,7 +11021,7 @@ responses:
     schema:
       $ref: '#/definitions/json_api_error'
     examples:
-      application/json:
+      application/vnd.api+json:
         {
           "errors": [
             {
