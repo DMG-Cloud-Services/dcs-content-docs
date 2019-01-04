@@ -4504,7 +4504,7 @@ info:
     
     The following are the supported endpoints and methods related to Quarantine Contents and Comments.
     
-    .. include:: ../../_snippets/v1/reference/quarantines.rst
+    .. include:: ../../_snippets/v1/reference/quarantines.rstl 
     
     ### Flags
     
@@ -6061,8 +6061,6 @@ paths:
       get:
         tags: [ "Community" ]
         operationId: getCommunityContentComment
-        consumes:
-          - application/json
         security:
           [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
         description: |
@@ -6099,8 +6097,6 @@ paths:
       patch:
         tags: [ "Community" ]
         operationId: updateEmailFrequency
-        consumes:
-          - application/json
         description: |
           update Email notifications Frequency
           
@@ -6153,8 +6149,6 @@ paths:
       post:
         tags: [ "Community" ]
         operationId: likeAContent
-        consumes:
-          - application/json
         description: |
           Like a Content
         security:
@@ -6187,8 +6181,6 @@ paths:
       post:
         tags: [ "Community" ]
         operationId: createFeature
-        consumes:
-          - application/json
         description: |
           Features a content or comment. To feature a content, set ***featureItemType*** as ***content***. To feature a comment, set ***featureItemType*** to ***comment***.
         security:
@@ -6208,8 +6200,6 @@ paths:
       delete:
         tags: [ "Community" ]
         operationId: deleteFeature
-        consumes:
-          - application/json
         description: |
           Unfeatures a content or comment. To unfeature a content, set ***featureItemType*** as ***content***. To unfeature a comment, set ***featureItemType*** to ***comment***.
         security:
@@ -6229,8 +6219,6 @@ paths:
       get:
         tags: [ "Community" ]
         operationId: getFeatures
-        consumes:
-          - application/json
         description: |
           Get featured content or comment.
         security:
@@ -6251,8 +6239,6 @@ paths:
       get:
         tags: [ "Community" ]
         operationId: getBadWords
-        consumes:
-          - application/json
         description: |
           Get the list of Badwords in a library.
         security:
@@ -6266,8 +6252,6 @@ paths:
       post:
         tags: [ "Community" ]
         operationId: createBadWord
-        consumes:
-          - application/json
         description: |
           Add bad word in the Badwords list.
         security:
@@ -6326,8 +6310,6 @@ paths:
     post:
       tags: [ "Community" ]
       operationId: createContentComment
-      consumes:
-        - application/json
       description: |
         Creates a comment for a given content. Operations for Content Comments, inReplyToCommentId param in the body is optional and passed only in the case replying an existing comment.
         
@@ -6365,8 +6347,6 @@ paths:
     get:
       tags: [ "Community" ]
       operationId: getContentComment
-      consumes:
-        - application/json
       description: |
         Retrieve a comment for a given content
       security:
@@ -6379,8 +6359,6 @@ paths:
     patch:
       tags: [ "Community" ]
       operationId: updateContentComment
-      consumes:
-        - application/json
       description: |
         Updates a comment for a given content
       security:
@@ -6418,8 +6396,6 @@ paths:
     get:
       tags: [ "Community" ]
       operationId: getCommentReplies
-      consumes:
-        - application/vnd.api+json
       description: |
         Retrieve replies of a given comment
       security:
@@ -6452,8 +6428,6 @@ paths:
       post:
         tags: [ "Community" ]
         operationId: followAnUser
-        consumes:
-          - application/json
         description: |
           Follow a Member. libraryIds is mandatory.
         security:
@@ -6510,8 +6484,6 @@ paths:
       post:
         tags: [ "Community" ]
         operationId: createFlag
-        consumes:
-          - application/json
         description: |
           Flag a content or comment. To flag a content, set entryType as content. To feature a comment, set entryType to comment.
         security:
@@ -6530,8 +6502,6 @@ paths:
       put:
         tags: [ "Community" ]
         operationId: updateFlag
-        consumes:
-          - application/json
         description: |
           Update Flag status for content or comment to either APPROVED or DELETED . Admin can either approve or delete the flag. If approved, relevant comment or content get quarantined. If flag is deleted, means Flag has not been approved and relevant comment or content will remain untouched.
         security:
@@ -6549,8 +6519,6 @@ paths:
       get:
         tags: [ "Community" ]
         operationId: getFlaggedContentOrComment
-        consumes:
-          - application/json
         description: |
           Search for all the flagged content or comment for the library. EntityType filter is mandatory and value for it is either content or comment.
         security:
@@ -6604,8 +6572,6 @@ paths:
       post:
         tags: [ "Community" ]
         operationId: createQuarantine
-        consumes:
-          - application/json
         description: |
           Quarantine a content or comment. To quarantine a content, set quarantineItemType as content. To quarantine a comment, set quarantineItemType to comment.
         security:
@@ -6623,8 +6589,6 @@ paths:
       get:
         tags: [ "Community" ]
         operationId: getQuarantinedContentOrComment
-        consumes:
-          - application/json
         description: |
           Search for all the quarantined content or comment for the library. EntityType filter is mandatory and value for it is either content or comment.
         security:
@@ -6673,8 +6637,6 @@ paths:
       post:
         tags: [ "Community" ]
         operationId: followContent
-        consumes:
-          - application/vnd.api+json
         description: |
           Follow Content.
         security:
@@ -6699,8 +6661,6 @@ paths:
       get:
         tags: [ "Community" ]
         operationId: getFollowContent
-        consumes:
-          - application/vnd.api+json
         description: |
           return list of members following this content.
         security:
