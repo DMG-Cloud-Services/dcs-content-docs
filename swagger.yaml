@@ -271,7 +271,7 @@ info:
     -  **version number**: Retrives the specified version of the content.
     -  **tip**: Retrieves the latest published version of the content.
     
-    For more information about searching the content, see [GET ContentsSearch API](/en/docs/content/v1/reference/http/contentsSearch-GET).
+    For more information about searching the content, see [GET ContentsSearch API](/en/docs/content/v1/reference/http/content-contentsSearch-GET).
       
     [@overview/content-validation]: <>
     # Content Validation
