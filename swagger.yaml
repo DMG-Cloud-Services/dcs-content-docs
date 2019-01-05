@@ -62,7 +62,7 @@ info:
     
     All APIs follow the JSON API resources using similar structure:
     
-    ```JSON
+    ```
     {
        "data": {
         "type": "type",
@@ -111,7 +111,7 @@ info:
     
     For example, here is an example error payload accompanying an HTTP 403, returned because a the user is not authenticated:
     
-    ```JSON
+    ```
     {
       "errors": [
         {
@@ -365,7 +365,7 @@ info:
     
     ### Sample
     
-    ```java
+    ```
       {
         "data": {
           "type": "libraries/subLibraries/nodes/contents",
@@ -412,7 +412,7 @@ info:
     
     ### Sample
     
-    ```json
+    ```
     {
       "data": {
         "type": "libraries",
@@ -443,7 +443,7 @@ info:
     
     ### Sample
     
-    ```json
+    ```
     {
       "data": {
         "type": "subLibraries",
@@ -471,7 +471,7 @@ info:
     
     ### Sample
     
-    ```json
+    ```
     {
       "data": {
         "type": "nodes",
@@ -511,7 +511,7 @@ info:
       
     ### Sample
     
-    ```json
+    ```
     {
         "data": {
         "type": "contents",
@@ -597,7 +597,7 @@ info:
     
     ### Sample
     
-    ```json
+    ```
     {
       "data": {
         "type": "contentFiles",
@@ -628,7 +628,7 @@ info:
     
     ### Sample
     
-    ```json
+    ```
     {
       "data": {
         "type": "contents",
@@ -706,7 +706,7 @@ info:
 
     ### Sample
     
-    ```json
+    ```
       {
         "translations": {
           "fr_FR": {
@@ -968,7 +968,7 @@ info:
       
     ### Example
       
-    ```shell
+    ```
     curl -X POST 
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json" 
