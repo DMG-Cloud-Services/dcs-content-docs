@@ -4255,20 +4255,20 @@ info:
     
     | Operation                   | Endpoint     
     |-----------------------------|-----------------------------------------------------                        
-    | Like Content                | [POST contents/{contentId}/likes](/en/docs/content/v1/reference/http/contents-contentId-likes-POST)
-    | Unlike Content              | [DELETE contents/{contentId}/likes](/en/docs/content/v1/reference/http/contents-contentId-likes-DELETE)      
-    | Add Comment to Content      | [POST contents/{contentId}/comments](/en/docs/content/v1/reference/http/contents-contentId-comments-POST)        
-    | Update Comment              | [PATCH contents/{contentId}/comments/{commentId}](/en/docs/content/v1/reference/http/contents-contentId-comments-commentId-PATCH)
-    | Remove Comment              | [DELETE contents/{contentId}/comments/{commentId}](/en/docs/content/v1/reference/http/contents-contentId-comments-commentId-DELETE)
-    | Set Flag                    | [POST libraries/{libraryId}/flags](/en/docs/content/v1/reference/http/libraries-libraryId-flags-POST)             
-    | Update Flag Status          | [PUT libraries/{libraryId}/flags](/en/docs/content/v1/reference/http/libraries-libraryId-flags-PUT)            
-    | Featured Comment or Content | [POST libraries/{libraryId}/features](/en/docs/content/v1/reference/http/libraries-libraryId-features-POST)          
-    | Unfeatured Comment          | [DELETE libraries/{libraryId}/features](/en/docs/content/v1/reference/http/libraries-libraryId-features-DELETE)          
-    | Add Badwords                | [POST libraries/{libraryId}/badwords](/en/docs/content/v1/reference/http/libraries-libraryId-badwords-POST)          
-    | Remove Badwords             | [DELETE libraries/{libraryId}/badwords](/en/docs/content/v1/reference/http/libraries-libraryId-badwords-DELETE)          
-    | Follow member               | [POST follows](/en/docs/content/v1/reference/http/follows-POST)                                        
-    | Unfollow member             | [DELETE follows/memberId](/en/docs/content/v1/reference/http/follows-memberId-DELETE)                     
-    | Quarantine content          | [POST libraries/{libraryId}/quarantines](/en/docs/content/v1/reference/http/libraries-libraryId-quarantines-POST)
+    | Like Content                | [POST contents/{contentId}/likes](/en/docs/content/v1/reference/http/content-contents-contentId-likes-POST)
+    | Unlike Content              | [DELETE contents/{contentId}/likes](/en/docs/content/v1/reference/http/content-contents-contentId-likes-DELETE)      
+    | Add Comment to Content      | [POST contents/{contentId}/comments](/en/docs/content/v1/reference/http/content-contents-contentId-comments-POST)        
+    | Update Comment              | [PATCH contents/{contentId}/comments/{commentId}](/en/docs/content/v1/reference/http/content-contents-contentId-comments-commentId-PATCH)
+    | Remove Comment              | [DELETE contents/{contentId}/comments/{commentId}](/en/docs/content/v1/reference/http/content-contents-contentId-comments-commentId-DELETE)
+    | Set Flag                    | [POST libraries/{libraryId}/flags](/en/docs/content/v1/reference/http/content-libraries-libraryId-flags-POST)             
+    | Update Flag Status          | [PUT libraries/{libraryId}/flags](/en/docs/content/v1/reference/http/content-libraries-libraryId-flags-PUT)            
+    | Featured Comment or Content | [POST libraries/{libraryId}/features](/en/docs/content/v1/reference/http/content-libraries-libraryId-features-POST)          
+    | Unfeatured Comment          | [DELETE libraries/{libraryId}/features](/en/docs/content/v1/reference/http/content-libraries-libraryId-features-DELETE)          
+    | Add Badwords                | [POST libraries/{libraryId}/badwords](/en/docs/content/v1/reference/http/content-libraries-libraryId-badwords-POST)          
+    | Remove Badwords             | [DELETE libraries/{libraryId}/badwords](/en/docs/content/v1/reference/http/content-libraries-libraryId-badwords-DELETE)          
+    | Follow member               | [POST follows](/en/docs/content/v1/reference/http/content-followings-POST)                                        
+    | Unfollow member             | [DELETE follows/memberId](/en/docs/content/v1/reference/http/content-followings-memberId-DELETE)                     
+    | Quarantine content          | [POST libraries/{libraryId}/quarantines](/en/docs/content/v1/reference/http/content-libraries-libraryId-quarantines-POST)
     
     [@tutorials/webhooks]: <>
     # Add a Content Webhook
