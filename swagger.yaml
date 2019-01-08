@@ -7916,8 +7916,8 @@ definitions:
                     description: optional param to to specify the reference contents indexing depth.
                   translations:
                     type: object
-                    additionalProperties:
-                      $ref: '#/definitions/translations_definition'                         
+                    # additionalProperties:
+                    #   $ref: '#/definitions/translations_definition'                         
         example:
           {
               "data": {
@@ -8003,8 +8003,8 @@ definitions:
                       $ref: '#/definitions/library_permissions_definition'     
                   translations:
                     type: object
-                    additionalProperties:
-                      $ref: '#/definitions/translations_definition'                         
+                    # additionalProperties:
+                    #   $ref: '#/definitions/translations_definition'                         
         example:
           {
             "data": {
@@ -8076,8 +8076,8 @@ definitions:
                     type: string
                   translations:
                     type: object
-                    additionalProperties:
-                      $ref: '#/definitions/translations_definition'                         
+                    # additionalProperties:
+                    #   $ref: '#/definitions/translations_definition'                         
               relationships:
                 type: object
                 required: [libraries]
@@ -8175,8 +8175,8 @@ definitions:
                       $ref: '#/definitions/library_permissions_definition'     
                   translations:
                     type: object
-                    additionalProperties:
-                      $ref: '#/definitions/translations_definition'                         
+                    # additionalProperties:
+                    #   $ref: '#/definitions/translations_definition'                         
         example :
           [
               {
@@ -8252,8 +8252,8 @@ definitions:
                     type: string
                   translations:
                     type: object
-                    additionalProperties:
-                      $ref: '#/definitions/translations_definition'                         
+                    # additionalProperties:
+                    #   $ref: '#/definitions/translations_definition'                         
               relationships:
                 type: object
                 properties:
@@ -8401,8 +8401,8 @@ definitions:
                 type: string
               translations:
                 type: object
-                additionalProperties:
-                  $ref: '#/definitions/translations_definition'                         
+                # additionalProperties:
+                #   $ref: '#/definitions/translations_definition'                         
           relationships:
             type: object
             properties:
@@ -8471,8 +8471,8 @@ definitions:
                       $ref: '#/definitions/node_permissions_definition' 
                   translations:
                     type: object
-                    additionalProperties:
-                      $ref: '#/definitions/translations_definition'                         
+                    # additionalProperties:
+                    #   $ref: '#/definitions/translations_definition'                         
         example:
           {
               "data": {
@@ -8596,8 +8596,8 @@ definitions:
                     type: string
                   translations:
                     type: object
-                    additionalProperties:
-                      $ref: '#/definitions/translations_definition'                         
+                    # additionalProperties:
+                    #   $ref: '#/definitions/translations_definition'                         
                   thumbnails:
                     type: array
                     items:
@@ -8791,8 +8791,8 @@ definitions:
                       $ref: '#/definitions/content_permissions_definition' 
                   translations:
                     type: object
-                    additionalProperties:
-                      $ref: '#/definitions/translations_definition'                         
+                    # additionalProperties:
+                    #   $ref: '#/definitions/translations_definition'                         
                   thumbnails:
                     type: array
                     items:
@@ -9539,20 +9539,20 @@ definitions:
             type: array
             items:
               type: string
-  translations_definition:
-    type: object
-    description: Translation object
-    properties:
-      locale_key:
-        type: object
-        description: the locale key is the locale value such as fr_FR, es_MX
-        properties:
-          title:
-            type: string
-          description:
-            type: string
-          tags:
-            type: string
+  # translations_definition:
+  #   type: object
+  #   description: Translation object
+  #   properties:
+  #     locale_key:
+  #       type: object
+  #       description: the locale key is the locale value such as fr_FR, es_MX
+  #       properties:
+  #         title:
+  #           type: string
+  #         description:
+  #           type: string
+  #         tags:
+  #           type: string
     
   content_search_definition:
     allOf:
