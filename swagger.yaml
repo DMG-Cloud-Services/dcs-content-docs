@@ -665,7 +665,7 @@ info:
     
     ### Sample
     
-    ```json
+    ```
     {
       "data": {
         "type": "contents",
@@ -740,7 +740,7 @@ info:
 
     ### Sample
     
-    ```json
+    ```
       {
         "permissions": [
           {
@@ -888,7 +888,7 @@ info:
       
     ### Example
       
-    ```shell
+    ```
     curl -X POST 
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json" 
@@ -909,7 +909,7 @@ info:
     ```
     The resource provides the following response:
       
-    ```json
+    ```
     {
       "data": {
           "type": "libraries",
@@ -999,7 +999,7 @@ info:
     ```
     The resource provides the following response:
       
-    ```json
+    ```
     {
       "data": {
           "type": "subLibraries",
@@ -1060,7 +1060,7 @@ info:
     
     ### Example
       
-    ```shell
+    ```
     curl -X POST 
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json" 
@@ -1100,7 +1100,7 @@ info:
     
     The resource provides the following response:
     
-    ```json
+    ```
     {
       "data": {
           "type": "nodes",
@@ -1178,7 +1178,7 @@ info:
       
     ### Example
       
-    ```shell
+    ```
     curl -X POST
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json" 
@@ -1216,7 +1216,7 @@ info:
     
     The resource provides the following response:
     
-    ```json
+    ```
     {
       "data": {
           "type": "contents",
@@ -1273,7 +1273,7 @@ info:
       
     ### Example
       
-    ```shell
+    ```
       curl -X PATCH 
       -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
       -H "Accept: application/vnd.api+json" 
@@ -1307,7 +1307,7 @@ info:
     
     The resource provides the following response:
     
-    ```json
+    ```
     {
       "data": {
           "type": "contents",
@@ -1369,7 +1369,7 @@ info:
     
     ### Example
     
-    ```shell
+    ```
     curl -X POST 
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json" 
@@ -1390,7 +1390,7 @@ info:
     ```
     The resource provides the following response:
 
-    ```json
+    ```
     {
       "data": {
           "type": "libraries",
