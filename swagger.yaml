@@ -1460,7 +1460,7 @@ info:
 
     ### Example
 
-    ```shell
+    ```
     curl -X POST 
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json" 
@@ -1500,7 +1500,7 @@ info:
     
     The resource provides the following response:
     
-    ```json
+    ```
     {
       "data": {
           "type": "nodes",
@@ -1577,7 +1577,7 @@ info:
     
     ### Example
     
-    ```shell
+    ```
     curl -X POST
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json" 
@@ -1615,7 +1615,7 @@ info:
     
     The resource provides the following response:
   
-    ```json
+    ```
     {
       "data": {
           "type": "contents",
@@ -1672,7 +1672,7 @@ info:
     
     ### Example
     
-    ```shell
+    ```
     curl -X PATCH 
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json" 
@@ -1704,7 +1704,7 @@ info:
     ```
     The resource provides the following response:
 
-    ```json
+    ```
     {
       "data": {
           "type": "contents",
@@ -1782,7 +1782,7 @@ info:
     
     ### Example
       
-    ```shell
+    ```
     curl -X GET 
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json" 
@@ -1792,7 +1792,7 @@ info:
         
       The resource provides the following response:
       
-    ```json
+    ```
     {
       "data": [
           {
@@ -1931,7 +1931,7 @@ info:
 
     Example
 
-    ```shell
+    ```
     curl -X GET 
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json" 
@@ -1941,7 +1941,7 @@ info:
   
     The resource provides the following response:
       
-    ```shell
+    ```
     {
       "data": [
           {
@@ -2017,7 +2017,7 @@ info:
     
     ### Example
     
-    ```shell
+    ```
     curl -X GET 
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json" 
@@ -2025,7 +2025,7 @@ info:
     –d "https://developer.api.autodesk.com/content/v1/libraries/{libraryid}/nodes"
     ```
     
-    ```shell
+    ```
     curl -X GET 
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json" 
@@ -2033,7 +2033,7 @@ info:
     –d "https://developer.api.autodesk.com/content/v1/subLibraries/{subLibraryid}/nodes"
     ```
     
-    ```shell
+    ```
     curl -X GET 
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json" 
@@ -2043,7 +2043,7 @@ info:
     
     The resource provides the following response:
     
-    ```json
+    ```
     {
       "data": [
         {
@@ -2182,7 +2182,7 @@ info:
     
     ### Example
     
-    ```shell
+    ```
     curl -X GET 
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json" 
@@ -2192,7 +2192,7 @@ info:
     
     The resource provides the following response:
     
-    ```json
+    ```
     {
       "data": [
         {
@@ -2299,7 +2299,7 @@ info:
     
     ### Example
     
-    ```shell
+    ```
     curl -X GET 
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json" 
@@ -2309,7 +2309,7 @@ info:
     
     The resource provides the following response:
     
-    ```json
+    ```
     {
       "data": {
           "id": "d638135d-a0d8-4482-8a24-df1c5bfa4a4d",
@@ -2335,7 +2335,7 @@ info:
 
     ### Example 1
     
-    ```shell
+    ```
     curl -X PUT 
     -H "Content-Type: application/application/x-www-form-urlencoded" 
     -d "{uploadUrl Received in the Step 1}&objectKey={filename}"
@@ -2343,7 +2343,7 @@ info:
     
     ### Example 2 - with real values
     
-    ```shell
+    ```
     curl -X PUT 
     --data-binary @sfo.jpg 
     --header "Authorization:Bearer 0omL7yQwXrok4LgjiU26CoGJ89As" 
@@ -2354,7 +2354,7 @@ info:
     
     The resource provides the following response:
     
-    ```json
+    ```
     {
       "objectKey": "927591e2-169b-4401-bb51-2ca273dbf9a9.abc.png",
       "size": 56473,
@@ -2390,7 +2390,7 @@ info:
     
     ### Example
     
-    ```shell
+    ```
     curl -X POST 
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json" 
@@ -2440,7 +2440,7 @@ info:
     
     ### Example
     
-    ```shell
+    ```
     curl -X GET 
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json" 
@@ -2450,7 +2450,7 @@ info:
     
     The resource provides the following response:
     
-    ```json
+    ```
     {
       "data": {
           "id": "d638135d-a0d8-4482-8a24-df1c5bfa4a4d",
@@ -2472,7 +2472,7 @@ info:
 
     ### Example
     
-    ```shell
+    ```
     curl -X PUT 
     -H "Content-Type: application/application/x-www-form-urlencoded" 
     -d "{uploadUrl Received in the Step 1}&objectKey={filename}"
@@ -2480,7 +2480,7 @@ info:
     
     The resource provides the following response:
     
-    ```json
+    ```
     {
       "objectKey": "927591e2-169b-4401-bb51-2ca273dbf9a9.abc.png",
       "size": 56473,
@@ -2513,7 +2513,7 @@ info:
     
     ### Example
     
-    ```shell
+    ```
     curl -X PATCH 
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json" 
@@ -2550,7 +2550,7 @@ info:
     
     Once the thumbnails are added, the complete content looks as follows:
     
-    ```json
+    ```
     {
       "data": {
           "type": "contents",
@@ -2684,7 +2684,7 @@ info:
     
     ### Example
       
-    ```shell
+    ```
     curl -X GET 
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json" 
@@ -2694,7 +2694,7 @@ info:
       
     The resource provides the following response:
     
-    ```json
+    ```
     {
       "data": [
           {
@@ -2848,7 +2848,7 @@ info:
     
     The resource provides the following response:
     
-    ```json
+    ```
     {
       "data": [
         {
@@ -2920,7 +2920,7 @@ info:
     
     ### Example
     
-    ```shell
+    ```
       curl -X GET 
       -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
       -H "Accept: application/vnd.api+json" 
@@ -2930,7 +2930,7 @@ info:
     
     The resource provides the following response: 
     
-    ```json
+    ```
     {
       "data": [
         {
@@ -3111,7 +3111,7 @@ info:
     
     ### Example
     
-    ```shell
+    ```
     curl -X POST 
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json" 
@@ -3121,7 +3121,7 @@ info:
     
     The resource provides the following response that matches with the specified library Id and content title:
     
-    ```json
+    ```
     {
       "data": [
           {
@@ -3387,7 +3387,7 @@ info:
 
     This example shows creating a relationship of nodes with a library.
     
-    ```shell
+    ```
     curl -X POST 
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json"
@@ -3423,7 +3423,7 @@ info:
 
     This example shows creating a relationship of nodes with a Sub-Library.
 
-    ```shell
+    ```
     curl -X POST 
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json"
@@ -3459,7 +3459,7 @@ info:
 
     This example shows creating a relationship of contents with a node. 
 
-    ```shell
+    ```
     curl -X POST 
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json"
@@ -3507,7 +3507,7 @@ info:
     
     This example shows updating the relationship of a node with another node.
     
-    ```shell
+    ```
     curl -X PUT 
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json"
@@ -3538,7 +3538,7 @@ info:
     
     This example shows updating the relationship of a node with a Sub-Library.
     
-    ```shell
+    ```
     curl -X PUT 
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json"
@@ -3569,7 +3569,7 @@ info:
     
     This example shows updating the relationship of a content with a Node.
     
-    ```shell
+    ```
     curl -X PUT 
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json"
