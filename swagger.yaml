@@ -4416,102 +4416,51 @@ info:
     
     The following are the supported endpoints and methods related to Library.
     
-    .. include:: ../../_snippets/v1/reference/libraries.rst
+    .. include:: ../../_snippets/v1/reference/Library.rst
     
     ## Sub-Library
     
     The following are the supported endpoints and methods related to Sub-Library.
     
-    .. include:: ../../_snippets/v1/reference/subLibraries.rst
+    .. include:: ../../_snippets/v1/reference/Sub-Library.rst
     
     ## Library Nodes
     
     The following are the supported endpoints and methods related to Node.
     
-    .. include:: ../../_snippets/v1/reference/nodes.rst
+    .. include:: ../../_snippets/v1/reference/Library Node.rst
     
     ## Library Content
     
     The following are the supported endpoints and methods related to Content.
     
-    .. include:: ../../_snippets/v1/reference/contents.rst
+    .. include:: ../../_snippets/v1/reference/Library Content.rst
     
-    ## Content Search
+    ## Library Content File
     
-    The following are the supported endpoints and methods related to searching Content in a Library.
+    The following are the supported endpoints and methods related to Content File.
     
-    .. include:: ../../_snippets/v1/reference/contents.rst
-    
-    ## File Type
-    
-    The following are the supported endpoints and methods related to managing files in the Content.
-    
-    .. include:: ../../_snippets/v1/reference/fileType.rst
+    .. include:: ../../_snippets/v1/reference/Library Content File.rst
     
     ## Relationships
     
     The following are the supported endpoints and methods related to Relationship of Library, Nodes, and Content.
     
-    .. include:: ../../_snippets/v1/reference/relationships.rst
+    .. include:: ../../_snippets/v1/reference/Relationships.rst
     
-    ## Members
+    ## Library Search
     
-    The following are the supported endpoints and methods related to searching the Members.
+    The following are the supported endpoints and methods related to searching the Content.
     
-    .. include:: ../../_snippets/v1/reference/members.rst
-    
-    ## Policies
-    
-    The following are the supported endpoints and methods related to User Policy.
-    
-    .. include:: ../../_snippets/v1/reference/policies.rst
+    .. include:: ../../_snippets/v1/reference/Library Search.rst
     
     ## Forge Community
     
-    The following are the supported endpoints and methods related to features in Forge Community.
+    The following are the supported endpoints and methods related to features in Forge Community
     
-    ### Likes
+    .. include:: ../../_snippets/v1/reference/Community.rst
     
-    The following are the supported endpoints and methods related to Likes.
-    
-    .. include:: ../../_snippets/v1/reference/likes.rst
-    
-    ### Comments
-    
-    The following are the supported endpoints and methods related to Comments.
-    
-    .. include:: ../../_snippets/v1/reference/comments.rst
-    
-    ### Featured Comments
-    
-    The following are the supported endpoints and methods related to Featured Comments.
-    
-    .. include:: ../../_snippets/v1/reference/features.rst
-    
-    ### Follow and Unfollow
-    
-    The following are the supported endpoints and methods related to following and unfollowing the Community Members.
-    
-    .. include:: ../../_snippets/v1/reference/follows.rst
-    
-    ### Badwords
-    
-    The following are the supported endpoints and methods related to Badwords for Contents and Comments.
-    
-    .. include:: ../../_snippets/v1/reference/badwords.rst
-    
-    ### Quarantine
-    
-    The following are the supported endpoints and methods related to Quarantine Contents and Comments.
-    
-    .. include:: ../../_snippets/v1/reference/quarantines.rst
-    
-    ### Flags
-    
-    The following are the supported endpoints and methods related to Flags set to Contents and Comments.
-    
-    .. include:: ../../_snippets/v1/reference/flags.rst
-  
+
   contact:
     url: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+V1+Proposal
 host: developer.api.autodesk.com
