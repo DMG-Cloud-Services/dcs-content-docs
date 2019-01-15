@@ -4522,6 +4522,7 @@ paths:
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-CreateLibrary
       operationId: createLibrary
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/body_create_library'
       security:
         [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] }, { oauth2_application: [ 'data:create' ] } ]
@@ -4564,6 +4565,7 @@ paths:
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-GetLibraries
       operationId: getLibraries
       parameters:
+        - $ref: '#/parameters/commonHeaderOptional'
         - $ref: '#/parameters/role'
         - $ref: '#/parameters/tags'
         - $ref: '#/parameters/createdBy'
@@ -4589,6 +4591,7 @@ paths:
         
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-GetLibrary
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'      
       operationId: get_library
       responses:
@@ -4614,6 +4617,7 @@ paths:
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-UpdateLibrary
       operationId: update_library
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'   
         - $ref: '#/parameters/body_update_library'
       responses:
@@ -4643,6 +4647,7 @@ paths:
       description: Delete an existing library. A library can be deleted only if it has no child nodes.
       operationId: delete_library
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
       responses:
         '204':
@@ -4664,6 +4669,7 @@ paths:
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-AddapplicationidinLibrary'sinterestedAppIdslist
       operationId: update_library_interest
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
       security:
         [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] }, { oauth2_application: [ 'data:create' ] } ]
@@ -4682,6 +4688,7 @@ paths:
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-RemoveapplicationidinLibrary'sinterestedAppIdslist
       operationId: delete_library_interest
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'   
       responses:
         '204': { "description": "No content"  }
@@ -4707,6 +4714,7 @@ paths:
         [1]: https://wiki.autodesk.com/pages/viewpage.action?spaceKey=CLDSVC&title=Forge+Content+API+Flow#ForgeContentAPIFlow-CreateSub-library
       operationId: createSubLibrary
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/body_create_sub_library'
       security:
@@ -4755,6 +4763,7 @@ paths:
         [1]: https://wiki.autodesk.com/pages/viewpage.action?spaceKey=CLDSVC&title=Forge+Content+API+Flow#ForgeContentAPIFlow-GetSub-libraries
       operationId: getSubLibraries
       parameters:
+        - $ref: '#/parameters/commonHeaderOptional'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/role'
         - $ref: '#/parameters/createdBy'
@@ -4778,6 +4787,7 @@ paths:
         
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-GetSub-library
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'      
         - $ref: '#/parameters/subLibraryId'    
       operationId: getSubLibraryById
@@ -4803,6 +4813,7 @@ paths:
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-UpdateSub-library
       operationId: updateSubLibrary
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'   
         - $ref: '#/parameters/subLibraryId'
         - $ref: '#/parameters/body_update_sub_library'
@@ -4827,6 +4838,7 @@ paths:
       description: Delete an existing sub-library. A sub-library can be deleted only if it has no child nodes.
       operationId: deleteSubLibrary
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'   
         - $ref: '#/parameters/subLibraryId'
       responses:
@@ -4851,6 +4863,7 @@ paths:
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-GetNodes
       operationId: get_library_node
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/subLibraryId'
         - $ref: '#/parameters/query_filter_content_search_page_size'
@@ -4877,6 +4890,7 @@ paths:
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-CreateNode
       operationId: create_subLibrary_node
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/subLibraryId'
         - $ref: '#/parameters/body_create_subLibrary_node'
@@ -4926,6 +4940,7 @@ paths:
 
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-GetNode
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/subLibraryId'
         - $ref: '#/parameters/nodeId'
@@ -4946,6 +4961,7 @@ paths:
 
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-UpdateNode
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/subLibraryId'
         - $ref: '#/parameters/nodeId'
@@ -4974,6 +4990,7 @@ paths:
       description: |
         Delete a node.
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/subLibraryId'
         - $ref: '#/parameters/nodeId'
@@ -5004,6 +5021,7 @@ paths:
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-CreateNode
       operationId: create_library_node
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/body_create_library_node'
       responses:
@@ -5051,6 +5069,7 @@ paths:
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-GetNodes
       operationId: getAlllibraryNodes
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/query_filter_content_search_page_size'
         - $ref: '#/parameters/query_filter_content_search_page_number'
@@ -5072,6 +5091,7 @@ paths:
         
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-GetNode
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
       responses:
@@ -5091,6 +5111,7 @@ paths:
         
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-UpdateNode
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
         - $ref: '#/parameters/body_update_library_node'
@@ -5118,6 +5139,7 @@ paths:
       description: |
         Delete a node.
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
       responses:
@@ -5136,6 +5158,7 @@ paths:
     get:
       description: Get all the nodes (children & parents) under another node.
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
         - $ref: '#/parameters/node_parents_relationship'
@@ -5159,6 +5182,7 @@ paths:
         
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-GetContents
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
         - $ref: '#/parameters/content_title'
@@ -5179,6 +5203,7 @@ paths:
       description: |
         Get parent library of the node.
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
         - $ref: '#/parameters/query_filter_content_search_page_size'
@@ -5207,6 +5232,7 @@ paths:
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-CreateContent
       operationId: create_library_content
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/body_create_library_content'
       responses:
@@ -5260,6 +5286,7 @@ paths:
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-UpdateContent
       operationId: update_library_content
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/contentId'
         - $ref: '#/parameters/body_update_library_content'
@@ -5295,6 +5322,7 @@ paths:
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-UpdateContent
       operationId: get_content_by_id
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/contentId'
         - $ref: '#/parameters/version'
@@ -5317,6 +5345,7 @@ paths:
         2. In order to avoid the above stated scenario, please reference locked published contents.
       operationId: delete_content_by_id
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/contentId'
         - $ref: '#/parameters/deleteVersion'
@@ -5342,6 +5371,7 @@ paths:
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-GetMultipleContentsByIds
       operationId: get_contents_by_ids
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/version'
         - $ref: '#/parameters/loadReferencedContents'
@@ -5358,6 +5388,7 @@ paths:
     get:
       description: Get all the versions available for a content.
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/contentId'
       responses:
@@ -5373,6 +5404,7 @@ paths:
     get:
       description: Get all immediate parent nodes for the library content.
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/contentId'
       responses:
@@ -5402,6 +5434,7 @@ paths:
         
         [1]: https://wiki.autodesk.com/display/CLDSVC/Files+API+Flow+-+Advanced
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/query_filter_sublibrary_id'
         - $ref: '#/parameters/query_filter_node_id'
@@ -5442,6 +5475,7 @@ paths:
         [2]: http://docs.forgecontent.apiary.io/#reference/library-content-file/contentv1librarieslibraryidcontentscontentidfieldnameupload
 
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/contentId'
         - $ref: '#/parameters/fileType'
@@ -5516,6 +5550,7 @@ paths:
         [2]: http://docs.forgecontent.apiary.io/#reference/library-content-file/contentv1librarieslibraryidcontentscontentidfieldnameupload
 
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/contentId'
         - $ref: '#/parameters/fileType'
@@ -5569,6 +5604,7 @@ paths:
       description: |
         API to delete all files of a particular type within a content.
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/contentId'
         - $ref: '#/parameters/fileType'
@@ -5588,6 +5624,7 @@ paths:
       description: |
         API to delete a file from the content.
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/contentId'
         - $ref: '#/parameters/fileType'
@@ -5609,6 +5646,7 @@ paths:
         API to get file details from the library.
       x-ads-docs-cli-example: 'curl -X GET -H "Authorization: Bearer kEnG562yz5bhE9igXf2YTcZ2bu0z" "https://developer.api.autodesk.com/content/v1/libraries/libraryId/objectKey"'  
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/objectKey'
       responses:
@@ -5627,6 +5665,7 @@ paths:
         
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-Updatecontentrelationship
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/body_add_delete_relationships'
       responses:
@@ -5665,6 +5704,7 @@ paths:
         
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-Updatecontentrelationship
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/body_add_delete_relationships'
       responses:
@@ -5705,6 +5745,7 @@ paths:
         
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-Updatecontentrelationship
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/subLibraryId'
         - $ref: '#/parameters/body_add_delete_relationships'
@@ -5744,6 +5785,7 @@ paths:
         
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-Updatecontentrelationship
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/subLibraryId'
         - $ref: '#/parameters/body_add_delete_relationships'
@@ -5785,6 +5827,7 @@ paths:
         
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-Updatecontentrelationship
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
         - $ref: '#/parameters/body_add_delete_relationships'
@@ -5824,6 +5867,7 @@ paths:
         
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-Updatecontentrelationship
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
         - $ref: '#/parameters/body_add_delete_relationships'
@@ -5865,6 +5909,7 @@ paths:
         
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-Updatecontentrelationship
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
         - $ref: '#/parameters/body_add_delete_relationships'
@@ -5904,6 +5949,7 @@ paths:
         
         [1]: https://wiki.autodesk.com/display/CLDSVC/Forge+Content+API+Flow#ForgeContentAPIFlow-Updatecontentrelationship
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/nodeId'
         - $ref: '#/parameters/body_add_delete_relationships'
@@ -5969,6 +6015,7 @@ paths:
         
       operationId: search_library
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/query_filter_library_id'
         - $ref: '#/parameters/query_filter_content_title'
         - $ref: '#/parameters/query_filter_content_description'
@@ -6018,6 +6065,7 @@ paths:
         description: |
           Search for members using query string, filters, sorting and pagination. Query string first contains search terms followed optionally by range queries. Maximum page size per query is 100 results. Currently, only single column sort is supported.
         parameters:
+          - $ref: '#/parameters/commonHeaderRequired'
           - $ref: '#/parameters/libraryFilter'
           - $ref: '#/parameters/oxygenIdFilter'
           - $ref: '#/parameters/emailFilter'
@@ -6042,6 +6090,7 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
         parameters:
+          - $ref: '#/parameters/commonHeaderRequired'
           - $ref: '#/parameters/memberId'
         responses:
           '200': { $ref: '#/responses/memberEmailNotificationPreference' }
@@ -6066,6 +6115,7 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
         parameters:
+          - $ref: '#/parameters/commonHeaderRequired'
           - $ref: '#/parameters/memberId'
           - in: body
             name: body
@@ -6095,6 +6145,7 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
         parameters:
+          - $ref: '#/parameters/commonHeaderRequired'
           - $ref: '#/parameters/contentId'
         responses:
           '200': { $ref: '#/responses/getCommunityContentLikes' }
@@ -6106,6 +6157,7 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
         parameters:
+          - $ref: '#/parameters/commonHeaderRequired'
           - $ref: '#/parameters/contentId'
           - in: body
             name: body
@@ -6123,6 +6175,7 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
         parameters:
+          - $ref: '#/parameters/commonHeaderRequired'
           - $ref: '#/parameters/contentId'
         responses:
           '204':  { "description": "No content"  }
@@ -6138,6 +6191,7 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
         parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/libraryId'
         - in: body
           name: body
@@ -6157,13 +6211,14 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
         parameters:
-        - $ref: '#/parameters/libraryId'
-        - in: body
-          name: body
-          description: Input Feature
-          required: true
-          schema:
-            $ref: '#/definitions/json_api_input_feature_communityContent'
+          - $ref: '#/parameters/libraryId'
+          - $ref: '#/parameters/commonHeaderRequired'
+          - in: body
+            name: body
+            description: Input Feature
+            required: true
+            schema:
+              $ref: '#/definitions/json_api_input_feature_communityContent'
         responses:
           '204': {"description": "No Content"}
           '400': { $ref: '#/responses/bad_input' }
@@ -6176,8 +6231,9 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
         parameters:
-        - $ref: '#/parameters/libraryId'
-        - $ref: '#/parameters/featureFilter'
+          - $ref: '#/parameters/libraryId'
+          - $ref: '#/parameters/featureFilter'
+          - $ref: '#/parameters/commonHeaderRequired'
         responses:
           '200': { $ref: "#/responses/getFeaturedCommentsResponse"}
           '201': { $ref: "#/responses/getFeaturedContentsResponse"}
@@ -6196,7 +6252,8 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
         parameters:
-        - $ref: '#/parameters/libraryId'
+          - $ref: '#/parameters/commonHeaderRequired'
+          - $ref: '#/parameters/libraryId'
         responses:
           '200': { $ref: '#/responses/getBadWords' }
           '400': { $ref: '#/responses/bad_input' }
@@ -6209,13 +6266,14 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
         parameters:
-        - $ref: '#/parameters/libraryId'
-        - in: body
-          name: body
-          description: Input BadWord
-          required: true
-          schema:
-            $ref: '#/definitions/json_api_input_new_badword'
+          - $ref: '#/parameters/libraryId'
+          - $ref: '#/parameters/commonHeaderRequired'
+          - in: body
+            name: body
+            description: Input BadWord
+            required: true
+            schema:
+              $ref: '#/definitions/json_api_input_new_badword'
         responses:
           '201': {"description": "Created"}
           '400': { $ref: '#/responses/bad_input' }
@@ -6227,13 +6285,14 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
         parameters:
-        - $ref: '#/parameters/libraryId'
-        - in: body
-          name: body
-          description: Delete BadWord payload
-          required: true
-          schema:
-            $ref: '#/definitions/json_api_input_new_badword'
+          - $ref: '#/parameters/commonHeaderRequired'
+          - $ref: '#/parameters/libraryId'
+          - in: body
+            name: body
+            description: Delete BadWord payload
+            required: true
+            schema:
+              $ref: '#/definitions/json_api_input_new_badword'
         responses:
           '204':  { "description": "No content"  }
           '400': { $ref: '#/responses/bad_input' }
@@ -6249,6 +6308,7 @@ paths:
       security:
         [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/contentId'
         - $ref: '#/parameters/query_filter_content_search_page_size'
         - $ref: '#/parameters/query_filter_content_search_page_number'
@@ -6282,6 +6342,7 @@ paths:
       security:
         [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/contentId'
         - in: body
           name: body
@@ -6316,6 +6377,7 @@ paths:
       security:
         [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/contentId'
         - $ref: '#/parameters/commentId'
         - in: body
@@ -6334,6 +6396,7 @@ paths:
       security:
         [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/contentId'
         - $ref: '#/parameters/commentId'
       responses:
@@ -6353,6 +6416,7 @@ paths:
       security:
         [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
       parameters:
+        - $ref: '#/parameters/commonHeaderRequired'
         - $ref: '#/parameters/contentId'
         - $ref: '#/parameters/commentId'
         - $ref: '#/parameters/commentTimeSort'
@@ -6371,6 +6435,7 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
         parameters:
+          - $ref: '#/parameters/commonHeaderRequired'
           - $ref: '#/parameters/memberIdQuery'
           - $ref: '#/parameters/query_filter_content_search_page_size'
           - $ref: '#/parameters/query_filter_content_search_page_number'
@@ -6385,6 +6450,7 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
         parameters:
+          - $ref: '#/parameters/commonHeaderRequired'
           - in: body
             name: body
             description: Input schema
@@ -6406,6 +6472,7 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
         parameters:
+          - $ref: '#/parameters/commonHeaderRequired'
           - $ref: '#/parameters/memberId'
         responses:
           '204':  { "description": "No content" }
@@ -6422,6 +6489,7 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
         parameters:
+          - $ref: '#/parameters/commonHeaderRequired'
           - $ref: '#/parameters/memberIdQuery'
           - $ref: '#/parameters/query_filter_content_search_page_size'
           - $ref: '#/parameters/query_filter_content_search_page_number'
@@ -6441,13 +6509,14 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
         parameters:
-        - $ref: '#/parameters/libraryId'
-        - in: body
-          name: body
-          description: Input Flag
-          required: true
-          schema:
-            $ref: '#/definitions/json_api_input_new_flag'
+          - $ref: '#/parameters/commonHeaderRequired'
+          - $ref: '#/parameters/libraryId'
+          - in: body
+            name: body
+            description: Input Flag
+            required: true
+            schema:
+              $ref: '#/definitions/json_api_input_new_flag'
         responses:
           '201': { $ref: '#/responses/getFlag' }
           '400': { $ref: '#/responses/bad_input' }
@@ -6459,13 +6528,14 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
         parameters:
-        - $ref: '#/parameters/libraryId'
-        - in: body
-          name: body
-          description: Input Flag
-          required: true
-          schema:
-            $ref: '#/definitions/json_api_input_update_flag'
+          - $ref: '#/parameters/commonHeaderRequired'
+          - $ref: '#/parameters/libraryId'
+          - in: body
+            name: body
+            description: Input Flag
+            required: true
+            schema:
+              $ref: '#/definitions/json_api_input_update_flag'
         responses:
             '204':  { "description": "No content"  }
       get:
@@ -6476,10 +6546,11 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
         parameters:
-        - $ref: '#/parameters/libraryId'
-        - $ref: '#/parameters/flagEntityTypeFilter'
-        - $ref: '#/parameters/query_filter_content_search_page_size'
-        - $ref: '#/parameters/query_filter_content_search_page_number'
+          - $ref: '#/parameters/commonHeaderRequired'
+          - $ref: '#/parameters/libraryId'
+          - $ref: '#/parameters/flagEntityTypeFilter'
+          - $ref: '#/parameters/query_filter_content_search_page_size'
+          - $ref: '#/parameters/query_filter_content_search_page_number'
         responses:
           '200': {$ref: '#/responses/getFlaggedContentOrCommentResult'}
   
@@ -6494,6 +6565,7 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
         parameters:
+          - $ref: '#/parameters/commonHeaderRequired'
           - $ref: '#/parameters/libraryId'
           - $ref: '#/parameters/flagEntityTypeFilter'
           - $ref: '#/parameters/query_filter_content_search_page_size'
@@ -6512,6 +6584,7 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
         parameters:
+          - $ref: '#/parameters/commonHeaderRequired'
           - $ref: '#/parameters/libraryId'
           - $ref: '#/parameters/flagId'
         responses:
@@ -6529,13 +6602,14 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
         parameters:
-        - $ref: '#/parameters/libraryId'
-        - in: body
-          name: body
-          description: Input Quarantine
-          required: true
-          schema:
-            $ref: '#/definitions/json_api_input_new_quarantine'
+          - $ref: '#/parameters/commonHeaderRequired'
+          - $ref: '#/parameters/libraryId'
+          - in: body
+            name: body
+            description: Input Quarantine
+            required: true
+            schema:
+              $ref: '#/definitions/json_api_input_new_quarantine'
         responses:
           '201': {"description": "Created"}
       get:
@@ -6546,10 +6620,11 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
         parameters:
-        - $ref: '#/parameters/libraryId'
-        - $ref: '#/parameters/quarantineEntityTypeFilter'
-        - $ref: '#/parameters/query_filter_content_search_page_size'
-        - $ref: '#/parameters/query_filter_content_search_page_number'
+          - $ref: '#/parameters/commonHeaderRequired'
+          - $ref: '#/parameters/libraryId'
+          - $ref: '#/parameters/quarantineEntityTypeFilter'
+          - $ref: '#/parameters/query_filter_content_search_page_size'
+          - $ref: '#/parameters/query_filter_content_search_page_number'
         responses:
           '200': {$ref: '#/responses/getQuarantinedContentOrCommentResult'}    
     
@@ -6571,6 +6646,7 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
         parameters:
+          - $ref: '#/parameters/commonHeaderRequired'
           - $ref: '#/parameters/memberId'
           - $ref: '#/parameters/query_filter_activities_libraryId'
           - $ref: '#/parameters/query_filter_activities_activitytype'
@@ -6594,18 +6670,19 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
         parameters:
-        - $ref: '#/parameters/contentId'
-        - in: body
-          name: body
-          description: Follow Content
-          required: true
-          schema:
-            example: {
-                      "data": {
-                        "type": "contentFollowings",
-                        "attributes": {
-                          "contentId": "urn:adsk.content:content:38ae93c8-9348-46e4-a58e-eac71f2fbfd8"                          }
-                        }
+          - $ref: '#/parameters/commonHeaderRequired'
+          - $ref: '#/parameters/contentId'
+          - in: body
+            name: body
+            description: Follow Content
+            required: true
+            schema:
+              example: {
+                        "data": {
+                          "type": "contentFollowings",
+                          "attributes": {
+                            "contentId": "urn:adsk.content:content:38ae93c8-9348-46e4-a58e-eac71f2fbfd8"                          }
+                          }
                       }
         responses:
           '201': {"description": "Created"}
@@ -6618,6 +6695,7 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:read' ] }, { oauth2_implicit: [ 'data:read' ] },{ oauth2_application: [ 'data:read' ] } ]
         parameters:
+          - $ref: '#/parameters/commonHeaderRequired'
           - $ref: '#/parameters/contentId'
           - $ref: '#/parameters/query_filter_content_search_page_size'
           - $ref: '#/parameters/query_filter_content_search_page_number'
@@ -6631,11 +6709,26 @@ paths:
         security:
           [ { oauth2_access_code: [ 'data:write' ] }, { oauth2_implicit: [ 'data:write' ] },{ oauth2_application: [ 'data:write' ] } ]
         parameters:
+          - $ref: '#/parameters/commonHeaderRequired'
           - $ref: '#/parameters/contentId'
         responses:
           '204':  { "description": "No content"  }
 
 parameters:
+  commonHeaderRequired:
+    name: Authorization
+    in: header
+    type: string
+    required: true
+    description: "Bearer <Token>"
+    x-example: "Bearer <Token>"
+  commonHeaderOptional:
+    name: Authorization
+    in: header
+    type: string
+    required: false
+    description: "Bearer <Token>"
+    x-example: "Bearer <Token>"
   commentTimeSort:
     name: sort[comments][addedDate]
     in: query
