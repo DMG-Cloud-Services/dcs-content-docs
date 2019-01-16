@@ -872,6 +872,8 @@ info:
         ]
     }
     ```
+    Following table lists attributes present in error response
+    
     | Attribute | Description                                      |
     |-----------|--------------------------------------------------|
     | id        | This is unique id generated for the error        |
