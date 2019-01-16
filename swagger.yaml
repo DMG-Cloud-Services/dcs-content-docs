@@ -4334,6 +4334,7 @@ info:
     System name: **adsk.content**
 
     Available events:
+    
     | Attribute                               | Description
     | --------------------------------------- | -------------------------------------------------------------------------------------------------------
     | **entity.added**                        | Fires when a content entity has been added.
@@ -4341,6 +4342,7 @@ info:
     | **entity.deleted**                      | FIres when a content entity has been deleted.
 
     Available scopes
+    
     | Attribute                               | Description
     | --------------------------------------- | -------------------------------------------------------------------------------------------------------
     | **library**                             | Used to listen to a specific library.
