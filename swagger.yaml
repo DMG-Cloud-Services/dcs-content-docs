@@ -882,6 +882,36 @@ info:
     | detail    | This attribute contains the error message        |
     | meta      | This attribute contains additional error details |
         
+    [@overview/web-hook]: <>
+    # Webhooks
+    
+    A webhook is a way for Forge Content to send your app an HTTP POST request, when an event occurs. This eliminates the need for you to periodically poll a service to check if an event has occured. Since webhooks are able to notify you of an event occurence in near real-time, webhooks are preferred over polling.
+
+    Before you start using webhooks, you must register (or create) the webhook in Forge. When you register a webhook, you have to provide the following information:
+
+    The Service the webhook is created for.
+    The URL to send the HTTP POST request to (The callback URL).
+    Specify what event to monitor.
+    Specify what resource to monitor (The scope).     
+    For more information on creating/registering webhooks, see the [JSON API specification](/en/docs/webhooks/v1/overview/)
+    
+    ## Handling Callbacks
+    
+    The HTTP POST request that Forge sends your application contains a JSON payload. The payload can differ from event to event, and your application must handle the payload. The event documentation provides the schema of the payload as well as an example object. Pls refer to the event documentation for details
+    
+    ## Data Management Webhook Events
+    
+    Forge Content currently provides webhooks for the following data management events:
+    
+    | Event Name                              | Triggered When
+    | --------------------------------------- | -------------------------------------------------------------------------------------------------------
+    | **entity.added**                        | Fires when a content entity has been added.
+    | **entity.updated**                      | Fires when a content entity has been updated.
+    | **entity.deleted**                      | FIres when a content entity has been deleted.
+
+
+
+    
     [@tutorials]: <>
     # Step-by-Step Tutorials
     
