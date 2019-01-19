@@ -893,7 +893,8 @@ info:
     The URL to send the HTTP POST request to (The callback URL).
     Specify what event to monitor.
     Specify what resource to monitor (The scope).     
-    For more information on creating/registering webhooks, see the [JSON API specification](/en/docs/webhooks/v1/overview/)
+    For more information on creating/registering webhooks, see the [Webhooks API documentation](/en/docs/webhooks/v1/overview/).
+    
     
     ## Handling Callbacks
     
