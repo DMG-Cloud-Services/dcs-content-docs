@@ -9231,6 +9231,23 @@ definitions:
       relationships: { $ref: '#/definitions/library_relationship_definitions' }
       links: { $ref: '#/definitions/json_link_self' }
       
+  contentlikes_definition:
+    type: object
+    description: Response definition for library
+    properties:
+      type: { type: string, description: 'type', example: 'libraries' }
+      id: { type: string, description: 'id' , example: 'urn:adsk.content:library:592d9e66-c963-4975-ac59-75864e68410c'}
+      attributes:
+        type: object
+        properties:
+          memberSmallAvatar: { type: string, description: 'memberSmallAvatar', example: '' }
+          memberName: { type: string, description: 'memberName', example: 'description' }
+          userId: { type: string, description: 'userId',  example: 'BSZWLMSHYTJS' }
+          likeDate: { type: string, description: 'likeDate', example: '2019-01-09T04:54:03Z' }
+          contentId: { type: string, description: 'contentId', example: 'urn:adsk.content:content:e0658aad-7851-4cf4-803d-e68340086d25' }
+      relationships: {  }
+      links: { $ref: '#/definitions/json_link_self' }
+      
   library_node_parent_definition:
     type: object
     description: Response definition for library
@@ -10782,10 +10799,11 @@ responses:
   getCommunityContentLikes:
     description: Successful response
     schema:
-      title: schema versions
+      title: likes response
       type: object
-      allOf:
-      - type: object
+      properties:
+        data: { $ref: '#/definitions/contentlikes_definition'}
+        included: {type: array, items: { type: object }}
     headers:
         authorization:
           description: Bearer Token
