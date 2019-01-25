@@ -9230,6 +9230,32 @@ definitions:
           lastModifiedBy: { type: string, description: 'lastModifiedBy', example: 'AYK2Q7S52XRU' }
       relationships: { $ref: '#/definitions/library_relationship_definitions' }
       links: { $ref: '#/definitions/json_link_self' }
+
+  activity_definition:
+    type: object
+    description: Response definition for activity
+    properties:
+      type: { type: string, description: 'type', example: 'activities' }
+      id: { type: string, description: 'id' , example: 'UAUY4E0JKS10P3U'}
+      attributes:
+        type: object
+        properties:
+          authorableType: { type: string, description: 'authorableType', example: 'Content' }
+          lastModifiedDate: { type: string, description: 'lastModifiedDate', example: '2018-08-13T14:08:50Z' }
+          libraryId: { type: string, description: 'libraryId',  example: 'urn:adsk.content:library:244de369-91fa-4779-a668-e3b6af606445' }
+          actorFirstName: { type: string, description: 'actorFirstName', example: 'regression name' }
+          entityId: { type: string, description: 'entityId', example: 'CUAFKQQJKS10L5J' }
+          authorId: { type: string, description: 'authorId', example: 'HT6LJVYYY2TB' }
+          authorableId: { type: string, description: 'authorableId', example: 'urn:adsk.content:content:a53a4834-c82f-4471-9690-eacc7712ded9' }
+          activityDate: { type: string, description: 'activityDate', example: '2018-08-13T14:08:50Z' }
+          actorId: { type: string, description: 'actorId', example: 'HT6LJVYYY2TB' }
+          actorLastName: { type: string, description: 'actorLastName', example: 'sdfsd sdf' }
+          authorFirstName: { type: string, description: 'authorFirstName', example: 'sdfsd sdf' }
+          activityType: { type: string, description: 'activityType', example: 'COMMENT' }
+          authorImageUrl: { type: string, description: 'authorImageUrl', example: '' }
+          status: { type: string, description: 'status', example: 'sdfsd sdf' }
+      relationships: {  }
+      links: { $ref: '#/definitions/json_link_self' }
       
   contentlikes_definition:
     type: object
@@ -10843,10 +10869,11 @@ responses:
   getCommunityMemberActivities:
     description: Successful response
     schema:
-      title: schema versions
+      title: activity response
       type: object
-      allOf:
-      - type: object
+      properties:
+        data: { $ref: '#/definitions/activity_definition'}
+        included: {type: array, items: { type: object }}
     headers:
         authorization:
           description: Bearer Token
