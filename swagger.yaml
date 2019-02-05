@@ -6740,6 +6740,7 @@ paths:
           - $ref: '#/parameters/query_filter_activities_following'
           - $ref: '#/parameters/query_filter_activities_member_id'
           - $ref: '#/parameters/query_filter_activities_searchskipcache'
+          - $ref: '#/parameters/query_filter_activities_bydate'
           - $ref: '#/parameters/query_filter_content_search_page_size'
           - $ref: '#/parameters/query_filter_content_search_page_number'
         responses:
@@ -7255,6 +7256,13 @@ parameters:
     required: false
     type: string 
     x-example: "HT6LJVYYY2TB"
+  query_filter_activities_bydate:
+    name: filter[activities][query]
+    in: query
+    description: Get activity stream by date. use param & date in format - filter[activities][query]=activityDate>"2017-10-07T22:25:48Z"
+    required: false
+    type: string 
+    x-example: activityDate>"2017-10-07T22:25:48Z"
   query_filter_activities_searchskipcache:
     name: filter[activities][searchSkipCache]
     in: query
