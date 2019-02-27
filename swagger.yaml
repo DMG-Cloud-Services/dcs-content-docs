@@ -6197,7 +6197,8 @@ paths:
           Following email preference's can be used:<br/>
           WEEKLY, (default)<br/>
           DAILY, <br/>
-          AS_MADE (evey 5-mins or so)<br/>
+          AS_MADE (evey 5-mins or so),<br/>
+          NONE (turn off email notifications) <br/>
 
         security:
           [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
