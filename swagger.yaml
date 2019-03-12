@@ -7541,11 +7541,11 @@ definitions:
       data: { $ref: '#/definitions/json_api_input_data_follow_content' }
     example: {
         "data": {
-    			"type": "contentFollowings",
-    			"attributes": {
-    			  "contentId": "urn:adsk.content:content:38ae93c8-9348-46e4-a58e-eac71f2fbfd8"
-    			}
-  		  }
+          "type": "contentFollowings",
+          "attributes": {
+            "contentId": "urn:adsk.content:content:38ae93c8-9348-46e4-a58e-eac71f2fbfd8"
+          }
+        }
     }
   json_api_input_new_quarantine:
     type: object
