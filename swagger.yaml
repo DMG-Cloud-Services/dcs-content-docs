@@ -6123,6 +6123,7 @@ paths:
         - $ref: '#/parameters/query_filter_content_search_mode'
         - $ref: '#/parameters/query_filter_content_license'
         - $ref: '#/parameters/query_filter_content_facet'
+        - $ref: '#/parameters/query_filter_content_facet_record_count'
         - $ref: '#/parameters/query_filter_content_subLibrary'
         - $ref: '#/parameters/query_filter_content_externalId'
         - $ref: '#/parameters/query_filter_content_externalVersion'
@@ -7413,6 +7414,14 @@ parameters:
     required: false
     type: string
     x-example: "facets"
+  query_filter_content_facet_record_count:
+    name: filter[contents][facetRecordCount]
+    in: query
+    description: 
+        Required facet record count for each field. <br>
+        *filter[contents][facet]* must be passed for this param to take effect. A maximum of 3 fields can be passed if the requested record count is greater than the default value - 50. The maximum allowed count is 200.
+    required: false
+    type: string
   query_filter_content_search_mode:
     name: filter[contents][mode]
     in: query
