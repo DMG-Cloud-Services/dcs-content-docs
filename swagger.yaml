@@ -7227,7 +7227,6 @@ parameters:
     description: list of keys to apply to query, e.g. "filter[members][queryField]=firstName&filter[members][query]=Scott" will search for members whose firstName is Scott.
     required: false
     type: string
-    x-example: "(firstName:\"Scott\" OR lastName:\"Davis\")" 
   query_filter_library_id:
     name: filter[contents][libraryId]
     in: query
