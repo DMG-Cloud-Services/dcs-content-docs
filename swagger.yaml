@@ -1080,7 +1080,7 @@ info:
           }
         }
       }
-    }'"https://developer.api.autodesk.com/content/v1/libraries/{libraryid}/subLibraries"
+    }' "https://developer.api.autodesk.com/content/v1/libraries/{libraryid}/subLibraries"
     ```
     The resource provides the following response:
       
@@ -1551,7 +1551,7 @@ info:
     -H "Accept: application/vnd.api+json" 
     -H "Content-Type: application/vnd.api+json"
     -d
-    '
+    '{
       "data": {
         "type": "nodes",
         "attributes": {
@@ -1872,7 +1872,7 @@ info:
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json" 
     -H "Content-Type: application/vnd.api+json"
-    –d "https://developer.api.autodesk.com/content/v1/libraries"
+    "https://developer.api.autodesk.com/content/v1/libraries"
     ```      
         
       The resource provides the following response:
@@ -2021,7 +2021,7 @@ info:
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json" 
     -H "Content-Type: application/vnd.api+json"
-    –d "https://developer.api.autodesk.com/content/v1/libraries/{libraryid}/subLibraries"
+    "https://developer.api.autodesk.com/content/v1/libraries/{libraryid}/subLibraries"
     ```
   
     The resource provides the following response:
@@ -2107,7 +2107,7 @@ info:
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json" 
     -H "Content-Type: application/vnd.api+json" 
-    –d "https://developer.api.autodesk.com/content/v1/libraries/{libraryid}/nodes"
+    "https://developer.api.autodesk.com/content/v1/libraries/{libraryid}/nodes"
     ```
     
     ```
@@ -2115,7 +2115,7 @@ info:
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json" 
     -H "Content-Type: application/vnd.api+json" 
-    –d "https://developer.api.autodesk.com/content/v1/subLibraries/{subLibraryid}/nodes"
+    "https://developer.api.autodesk.com/content/v1/subLibraries/{subLibraryid}/nodes"
     ```
     
     ```
@@ -2123,7 +2123,7 @@ info:
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json" 
     -H "Content-Type: application/vnd.api+json" 
-    –d "https://developer.api.autodesk.com/content/v1/libraries/{libraryid}/nodes/{nodeId}/nodes"
+    "https://developer.api.autodesk.com/content/v1/libraries/{libraryid}/nodes/{nodeId}/nodes"
     ```
     
     The resource provides the following response:
@@ -2272,7 +2272,7 @@ info:
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json" 
     -H "Content-Type: application/vnd.api+json" 
-    –d "https://developer.api.autodesk.com/content/v1/libraries/{libraryid}/nodes/{nodeId}/contents"
+    "https://developer.api.autodesk.com/content/v1/libraries/{libraryid}/nodes/{nodeId}/contents"
     ```
     
     The resource provides the following response:
@@ -2389,7 +2389,7 @@ info:
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json" 
     -H "Content-Type: application/vnd.api+json" 
-    -d "https://developer.api.autodesk.com/content/v1/libraries/{libraryId}/uploadUrl"
+    "https://developer.api.autodesk.com/content/v1/libraries/{libraryId}/uploadUrl"
     ```
     
     The resource provides the following response:
@@ -2423,7 +2423,7 @@ info:
     ```
     curl -X PUT 
     -H "Content-Type: application/application/x-www-form-urlencoded" 
-    -d "{uploadUrl Received in the Step 1}&objectKey={filename}"
+    "{uploadUrl Received in the Step 1}&objectKey={filename}"
     ```
     
     ### Example 2 - with real values
@@ -2530,7 +2530,7 @@ info:
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json" 
     -H "Content-Type: application/vnd.api+json" 
-    -d "https://developer.api.autodesk.com/content/v1/libraries/{libraryId}/uploadUrl"
+    "https://developer.api.autodesk.com/content/v1/libraries/{libraryId}/uploadUrl"
     ```
     
     The resource provides the following response:
@@ -2560,7 +2560,7 @@ info:
     ```
     curl -X PUT 
     -H "Content-Type: application/application/x-www-form-urlencoded" 
-    -d "{uploadUrl Received in the Step 1}&objectKey={filename}"
+    "{uploadUrl Received in the Step 1}&objectKey={filename}"
     ```
     
     The resource provides the following response:
@@ -2774,7 +2774,7 @@ info:
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json" 
     -H "Content-Type: application/vnd.api+json" 
-    –d "https://developer.api.autodesk.com/content/v1/libraries"
+    "https://developer.api.autodesk.com/content/v1/libraries"
     ```      
       
     The resource provides the following response:
@@ -2928,7 +2928,7 @@ info:
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json" 
     -H "Content-Type: application/vnd.api+json" 
-    –d "https://developer.api.autodesk.com/content/v1/libraries/{libraryid}/subLibraries"
+    "https://developer.api.autodesk.com/content/v1/libraries/{libraryid}/subLibraries"
     ```
     
     The resource provides the following response:
@@ -3010,7 +3010,7 @@ info:
       -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
       -H "Accept: application/vnd.api+json" 
       -H "Content-Type: application/vnd.api+json" 
-      –d "https://developer.api.autodesk.com/content/v1/libraries/{libraryId}/nodes"
+      "https://developer.api.autodesk.com/content/v1/libraries/{libraryId}/nodes"
     ```
     
     The resource provides the following response: 
@@ -3176,6 +3176,7 @@ info:
     | **filter[contents][parents.id]**  | Searches the content for the specified parent Id.
     | **filter[contents][extension.key_name]**  | Searches the content based on the extension data set on the content or node. For example, filter[contents][extension.contentLocation].
     | **filter[contents][query]**  | Searches the content based on the specified query. You can specify the query in the `key1:value1&key2>value2` format.
+    | **filter[contents][queryField]**  | Searches the content based on the query keys. The values in `filter[contents][query]` will be matched against these keys.
     | **filter[contents][meta]**  | Searches the content based the meta data of the content. Default is `facets`.
     | **filter[contents][mode]**  | Searches the content based on the following search modes. **quick** - This mode returns the basic core attributes data of the entities. The search is performed only for the core attributes for the entities. **light** - This mode returns the basic core attributes data of the entities. The search is performed for core attributes and extension data of the entities.
     | **filter[contents][license]**  | Searches the content based on the specified license, which is mentioned for library and content.
@@ -3201,7 +3202,7 @@ info:
     -H "Authorization: Bearer 2wlSxqoUimJT3snKbaDg5HiV2Aam" 
     -H "Accept: application/vnd.api+json" 
     -H "Content-Type: application/vnd.api+json" 
-    -d "https://developer.api.autodesk.com/content/v1/contentsSearch?filter[contents][libraryId]={library Id}&filter[contents][title]={content title}"
+    "https://developer.api.autodesk.com/content/v1/contentsSearch?filter[contents][libraryId]={library Id}&filter[contents][title]={content title}"
     ```
     
     The resource provides the following response that matches with the specified library Id and content title:
@@ -6119,6 +6120,7 @@ paths:
         - $ref: '#/parameters/query_filter_content_extension_data'
         - $ref: '#/parameters/query_filter_content_community_data'
         - $ref: '#/parameters/query_filter_content_search_query'
+        - $ref: '#/parameters/query_filter_content_search_queryField'
         - $ref: '#/parameters/query_filter_content_search_meta_facets'
         - $ref: '#/parameters/query_filter_content_search_mode'
         - $ref: '#/parameters/query_filter_content_license'
@@ -6160,6 +6162,7 @@ paths:
           - $ref: '#/parameters/adminFilter'
           - $ref: '#/parameters/accountStatusFilter'
           - $ref: '#/parameters/memberNameQuery'
+          - $ref: '#/parameters/memberNameQueryField'
           - $ref: '#/parameters/query_filter_content_search_page_size'
           - $ref: '#/parameters/query_filter_content_search_page_number'
         responses:
@@ -7214,7 +7217,14 @@ parameters:
   memberNameQuery:
     name: filter[members][query]
     in: query
-    description: list of keywords (firstName and LastName) to search against as well as range expressions. eg.. filter[members][query]=(firstName:"Scott" OR lastName:"Davis")
+    description: list of keywords (firstName and LastName) to search against as well as range expressions. e.g. filter[members][query]=(firstName:"Scott" OR lastName:"Davis")
+    required: false
+    type: string
+    x-example: "(firstName:\"Scott\" OR lastName:\"Davis\")" 
+  memberNameQueryField:
+    name: filter[members][queryField]
+    in: query
+    description: list of keys to apply to query, e.g. "filter[members][queryField]=firstName&filter[members][query]=Scott" will search for members whose firstName is Scott.
     required: false
     type: string
     x-example: "(firstName:\"Scott\" OR lastName:\"Davis\")" 
@@ -7397,6 +7407,12 @@ parameters:
     required: false
     type: string
     x-example: "extension.data.glassTransition.value>59.0"
+  query_filter_content_search_queryField:
+    name: filter[contents][queryField]
+    in: query
+    description: List of keys to apply to query, e.g. "filter[contents][queryField]=title&filter[contents][query]=autodesk" will search for contents with title containing "autodesk".
+    required: false
+    type: string
   query_filter_content_search_meta_facets:
     name: filter[contents][meta]
     in: query
