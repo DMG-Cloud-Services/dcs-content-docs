@@ -6759,7 +6759,9 @@ paths:
         tags: [ "Community" ]
         operationId: followContent
         description: |
-          Follow Content.
+          Create Follow Content record. 
+          When called with a 2-legged OAuth client, which has Library Manager permission for the library, the data.attributes.memberId may be specified.
+          Otherwise, the calling user's (3-legged OAuth) Oxygen ID will be used.
         security:
           [ { oauth2_access_code: [ 'data:create' ] }, { oauth2_implicit: [ 'data:create' ] },{ oauth2_application: [ 'data:create' ] } ]
         parameters:
@@ -6774,6 +6776,8 @@ paths:
         responses:
           '201': {"description": "Created"}
           '400': { $ref: '#/responses/bad_input' }
+          '401': { $ref: '#/responses/unauthorized' }
+          '403': { $ref: '#/responses/forbidden' }
       get:
         tags: [ "Community" ]
         operationId: getFollowContent
@@ -7567,7 +7571,8 @@ definitions:
         "data": {
           "type": "contentFollowings",
           "attributes": {
-            "contentId": "urn:adsk.content:content:38ae93c8-9348-46e4-a58e-eac71f2fbfd8"
+            "contentId": "urn:adsk.content:content:38ae93c8-9348-46e4-a58e-eac71f2fbfd8",
+            "memberId": "ABCAA1A2111A"
           }
         }
     }
@@ -7621,6 +7626,7 @@ definitions:
     required: [ contentId ]
     properties:
       contentId: { type: string, description: 'content id of (communityContent or comment)' }
+      memberId: { type: string, description: 'member id of user following content (optional, defaults to calling user)' }
   json_api_input_data_attributes_quarantine:
     type: object
     required: [ quarantineItemId, quarantineItemType ]
