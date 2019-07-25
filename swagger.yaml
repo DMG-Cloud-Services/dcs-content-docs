@@ -5415,6 +5415,7 @@ paths:
         - $ref: '#/parameters/contentId'
         - $ref: '#/parameters/version'
         - $ref: '#/parameters/loadReferencedContents'
+        - $ref: '#/parameters/loadCommunityData'
       responses:
         '200': { $ref: '#/responses/content' }
         '400': { $ref: '#/responses/bad_input' }
@@ -5463,6 +5464,7 @@ paths:
         - $ref: '#/parameters/libraryId'
         - $ref: '#/parameters/version'
         - $ref: '#/parameters/loadReferencedContents'
+        - $ref: '#/parameters/loadCommunityData'
       responses:
         '200': { $ref: '#/responses/contents' }
         '400': { $ref: '#/responses/bad_input' }
@@ -7067,7 +7069,7 @@ parameters:
   version:
     name: filter[contents][version] 
     in: query
-    description: Content version to be deleted, can be a number or tip
+    description: Content version to be specified, can be a number or tip
     required: false
     type: string
     x-example: "tip"
@@ -7098,6 +7100,14 @@ parameters:
     description: Flag to load referenced contents
     required: false
     type: boolean
+    x-example: true
+  loadCommunityData:
+    name: filter[contents][loadCommunityData] 
+    in: query
+    description: Flag to load community data (number of likes, comments, etc.)
+    required: false
+    type: boolean
+    x-example: true
   role:
     name: filter[contents][role]
     in: query
