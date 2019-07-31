@@ -6745,6 +6745,7 @@ paths:
           - $ref: '#/parameters/query_filter_activities_libraryId'
           - $ref: '#/parameters/query_filter_activities_activitytype'
           - $ref: '#/parameters/query_filter_activities_following'
+          - $ref: '#/parameters/query_filter_activities_following_contents'
           - $ref: '#/parameters/query_filter_activities_member_id'
           - $ref: '#/parameters/query_filter_activities_searchskipcache'
           - $ref: '#/parameters/query_filter_activities_bydate'
@@ -7265,6 +7266,13 @@ parameters:
     name: filter[activities][members_type]
     in: query
     description: Get activity stream for a user which this user is following. This includes activities performed by the users this user is following.
+    required: false
+    type: string 
+    x-example: "following"  
+  query_filter_activities_following_contents:
+    name: filter[activities][contentsType]
+    in: query
+    description: Get activity stream for contents which this user is following. This includes activities performed on the contents this user is following.
     required: false
     type: string 
     x-example: "following"  
